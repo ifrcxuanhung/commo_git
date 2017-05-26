@@ -48,10 +48,10 @@
 $active_group = 'default';
 $active_record = TRUE;
 
-$db['default']['hostname'] = 'localhost';
-$db['default']['username'] = 'root';
-$db['default']['password'] = '';
-$db['default']['database'] = 'commo';
+$db['default']['hostname'] = '210.211.109.27';
+$db['default']['username'] = 'commo_user';
+$db['default']['password'] = 'commodata';
+$db['default']['database'] = 'data_commo';
 $db['default']['dbdriver'] = 'mysqli';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;
