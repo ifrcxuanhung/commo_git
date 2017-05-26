@@ -22,9 +22,11 @@
                 </div>
 
                 <div class="details" style="padding-right: 11px;">
+                 <?php if($data_dashboard[0]['lable_3'] !=0 || $data_dashboard[0]['lable_3'] != null) { ?>
                     <div class="number ti_font" style="text-align: right !important;"> <span style="font-size: 32px;" data-counter="counterup" data-value="<?php echo number_format((float)$data_dashboard[0]['lable_3'], $data_dashboard[0]['dec'], '.', ','); ?>" class="index_last" id="dash_0_lb3"><?php echo number_format((float)$data_dashboard[0]['lable_3'], $data_dashboard[0]['dec'], '.', ','); ?></span> <!--
   USD
   --></div>
+  <?php } ?>
                     <div class="align-right" style="margin-top: -6px"> <span>
    <span class="dash_0_lb4"><?php echo $data_dashboard[0]['lable_4']; ?></span>
   </span> </div>
