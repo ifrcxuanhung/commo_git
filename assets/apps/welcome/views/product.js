@@ -127,15 +127,15 @@ define([
 							success: function(data) {
 								
 								clearconsole();	
-								if($('.dash_0_lb1').text()!==data.data_dashboard_name){
+								if($('.dash_0_lb1').text()!==data.data_dashboard_0.name){
 									$('.dash_0_lb1').fadeOut('slow', function() {
-										$('.dash_0_lb1').html(data.data_dashboard_name);
+										$('.dash_0_lb1').html(data.data_dashboard_0.name);
 										$('.dash_0_lb1').fadeIn('slow');
 									});
 								}
-								if($('.dash_0_lb2').text()!==data.data_dashboard_unit){
+								if($('.dash_0_lb2').text()!==data.data_dashboard_0.unit){
 									$('.dash_0_lb2').fadeOut('slow', function() {						
-										$('.dash_0_lb2').html(data.data_dashboard_unit);
+										$('.dash_0_lb2').html(data.data_dashboard_0.unit);
 										$('.dash_0_lb2').fadeIn('slow');
 									});
 								}
@@ -223,157 +223,6 @@ define([
 						});
 					}, 2000);
 
-
-                   //dashboard list 1
-                   /*setInterval(function(){
-                       var data='';
-                       $.ajax({
-                           url: $simulation_url + 'product/auto_data_dashboard_list_table_1',
-                           dataType: 'json',
-                           success: function(data) {
-                               clearconsole();
-                               $.each($('.table_1_name'), function() {
-                                   var key = this.id.split("table_1_name_")[1];
-                                   if($('#'+this.id).text()!==data.data_table_1[key].name){
-                                       $('#'+this.id).fadeOut('slow', function() {
-                                           $('#'+this.id).effect("highlight", {color: '#4c87b9'}, 300);
-                                           $('#'+this.id).html(data.data_table_1[key].name);
-                                           $('#'+this.id).fadeIn('slow');
-                                       });
-
-                                   }
-                               });
-                               $.each($('.table_1_exchange'), function() {
-                                   //console.log( this.id );
-                                   var key = this.id.split("table_1_exchange_")[1];
-                                   if($('#'+this.id).text()!==data.data_table_1[key].exchange){
-                                       $('#'+this.id).fadeOut('slow', function() {
-                                           $('#'+this.id).effect("highlight", {color: '#4c87b9'}, 300);
-                                           $('#'+this.id).html(data.data_table_1[key].exchange);
-                                           $('#'+this.id).fadeIn('slow');
-                                       });
-
-                                   }
-                               });
-                               $.each($('.table_1_expiry'), function() {
-                                   //console.log( this.id );
-                                   var key = this.id.split("table_1_expiry_")[1];
-                                   if($('#'+this.id).text()!==data.data_table_1[key].expiry){
-                                       $('#'+this.id).fadeOut('slow', function() {
-                                           $('#'+this.id).effect("highlight", {color: '#4c87b9'}, 300);
-                                           $('#'+this.id).html(data.data_table_1[key].expiry);
-                                           $('#'+this.id).fadeIn('slow');
-                                       });
-
-                                   }
-                               });
-                               $.each($('.table_1_code'), function() {
-                                   //console.log( this.id );
-                                   var key = this.id.split("table_1_code_")[1];
-                                   if($('#'+this.id).text()!==data.data_table_1[key].code){
-                                       $('#'+this.id).fadeOut('slow', function() {
-                                           $('#'+this.id).effect("highlight", {color: '#4c87b9'}, 300);
-                                           $('#'+this.id).html(data.data_table_1[key].code);
-                                           $('#'+this.id).fadeIn('slow');
-                                       });
-
-                                   }
-                               });
-
-                               $.each($('.table_1_last'), function() {
-                                   //console.log( this.id );
-                                   var key = this.id.split("table_1_last_")[1];
-                                   if($('#'+this.id).text()!==data.data_table_1[key].last){
-                                       $('#'+this.id).fadeOut('slow', function() {
-                                           $('#'+this.id).effect("highlight", {color: '#4c87b9'}, 300);
-                                           $('#'+this.id).html(data.data_table_1[key].last);
-                                           $('#'+this.id).fadeIn('slow');
-                                       });
-
-                                   }
-                               });
-                               $.each($('.table_1_volume'), function() {
-                                   //console.log( this.id );
-                                   var key = this.id.split("table_1_volume_")[1];
-                                   if($('#'+this.id).text()!==data.data_table_1[key].volume){
-                                       $('#'+this.id).fadeOut('slow', function() {
-                                           $('#'+this.id).effect("highlight", {color: '#4c87b9'}, 300);
-                                           $('#'+this.id).html(data.data_table_1[key].volume);
-                                           $('#'+this.id).fadeIn('slow');
-                                       });
-
-                                   }
-                               });
-                               $.each($('.table_1_openinterest'), function() {
-                                   //console.log( this.id );
-                                   var key = this.id.split("table_1_openinterest_")[1];
-                                   if($('#'+this.id).text()!==data.data_table_1[key].openinterest){
-                                       $('#'+this.id).fadeOut('slow', function() {
-                                           $('#'+this.id).effect("highlight", {color: '#4c87b9'}, 300);
-                                           $('#'+this.id).html(data.data_table_1[key].openinterest);
-                                           $('#'+this.id).fadeIn('slow');
-                                       });
-
-                                   }
-                               });
-                               $.each($('.table_1_settlement'), function() {
-                                   //console.log( this.id );
-                                   var key = this.id.split("table_1_settlement_")[1];
-                                   if($('#'+this.id).text()!==data.data_table_1[key].settlement){
-                                       $('#'+this.id).fadeOut('slow', function() {
-                                           $('#'+this.id).effect("highlight", {color: '#4c87b9'}, 300);
-                                           $('#'+this.id).html(data.data_table_1[key].settlement);
-                                           $('#'+this.id).fadeIn('slow');
-                                       });
-
-                                   }
-                               });
-                               $.each($('.table_1_lasttimex'), function() {
-                                   //console.log( this.id );
-                                   var key = this.id.split("table_1_lasttimex_")[1];
-                                   if($('#'+this.id).text()!==data.data_table_1[key].lasttimex){
-                                       $('#'+this.id).fadeOut('slow', function() {
-                                           $('#'+this.id).effect("highlight", {color: '#4c87b9'}, 300);
-                                           $('#'+this.id).html(data.data_table_1[key].lasttimex);
-                                           $('#'+this.id).fadeIn('slow');
-                                       });
-
-                                   }
-                               });
-
-                               $.each($('.table_1_lastvar'), function() {
-                                   //console.log( this.id );
-                                   var key = this.id.split("table_1_lastvar_")[1];
-                                   if($('#'+this.id).text()!==data.data_table_1[key].lastvar){
-                                       $('#'+this.id).fadeOut('slow', function() {
-                                           $('#'+this.id).removeClass('bg_color_red');
-                                           if(data.data_table_1[key].lastvar< 0) $('#'+this.id).addClass('bg_color_red');
-                                           $('#'+this.id).effect("highlight", {color: '#4c87b9'}, 300);
-                                           $('#'+this.id).html(data.data_table_1[key].lastvar);
-                                           $('#'+this.id).fadeIn('slow');
-                                       });
-
-                                   }
-                               });
-                               $.each($('.table_1_lastchange'), function() {
-                                   //console.log( this.id );
-                                   var key = this.id.split("table_1_lastchange_")[1];
-                                   if($('#'+this.id).text()!==data.data_table_1[key].lastchange){
-                                       $('#'+this.id).fadeOut('slow', function() {
-                                           $('#'+this.id).removeClass('bg_color_red');
-                                           if(data.data_table_1[key].lastchange< 0) $('#'+this.id).addClass('bg_color_red');
-                                           $('#'+this.id).effect("highlight", {color: '#4c87b9'}, 300);
-                                           $('#'+this.id).html(data.data_table_1[key].lastchange);
-                                           $('#'+this.id).fadeIn('slow');
-                                       });
-
-                                   }
-                               });
-
-                               $('#d2_box_category1').html(data.table1);
-                           }
-                       });
-                   }, 4000);*/
 					
 					//dashboard list 1
 					setInterval(function(){
