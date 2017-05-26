@@ -121,7 +121,7 @@ define([
 				   setInterval(function(){
 						var data='';
 						 $.ajax({
-							url: $simulation_url + 'ajax/auto_data_dashboard',
+							url: $simulation_url + 'ajax/product_auto_data_dashboard',
 							dataType: 'POST',
 							 data:{bctcode:bctcode},
 							success: function(data) {
