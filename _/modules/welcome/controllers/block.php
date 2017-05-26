@@ -486,20 +486,24 @@ class Block extends MY_Controller {
     }
     public function col3_product($bctcode)
     {
+        echo 1111;
         $sql = "SELECT * FROM data_news";
         $this->data->news = $this->db->query($sql)->result_array();
 		$this->data->bctcode = $bctcode;
         $this->data->data_dashboard = $this->db->query("SELECT dl.lasttime,dl.name,dl.unit, dl.lasttimex, dl.last, dl.`change`, dl.var, dl.`dec` as dec_list, dl.exchange, dl.expiry, dd.* FROM data_dashboard_list as dl  LEFT JOIN data_dashboard as dd ON dl.type=dd.type where dl.bctcode='{$bctcode}'")->result_array();
 
-        $sql = "SELECT dsl.*,ddl.dec FROM data_series_last as dsl  RIGHT JOIN data_dashboard_list as ddl ON dsl.symbol=ddl.bctcode where dsl.symbol = '{$bctcode}' and mon<>'Cash'";
-        $data = $this->db->query($sql)->result_array();
-        $this->data->code_first = '';
+
+        $sql = "SELECT dsl.*,ddl.dec FROM data_series_last as dsl  RIGHT JOIN data_dashboard_list as ddl ON dsl.symbol=ddl.bctcode where dsl.symbol = '{$bctcode}' and mon<>'Cash' ORDER BY dsl.openinterest DESC limit 1";
+
+        $data = $this->db->query($sql)->row_array();
+        $this->data->code_first = $data;
+        /*$this->data->code_first = '';
         foreach($data as $da){
             if($da['openinterest'] != 0){
                 $this->data->code_first = $da;
                 break;
             }
-        }
+        }*/
 
         return $this->load->view('block/col3_product', $this->data, true);
     }
