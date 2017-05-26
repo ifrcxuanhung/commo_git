@@ -65,7 +65,7 @@
                 </div>
                 <div class="details_bottom details" style="margin-top: 62px">
                     <div class="number"> <span class="index_last" style="font-size: 20px;">
-  <span class="dash_0_lb7"><?php echo number_format((float)$data_dashboard[0]['lable_7'], $data_dashboard[0]['dec'], '.', ','); ?></span>
+  <span class="dash_0_lb7"><?php echo number_format((float)$data_dashboard[0]['last'], $data_dashboard[0]['dec'], '.', ','); ?></span>
   </span></div>
                     <div class="desc" style="text-align: right !important; margin-top: -6px"> <span>
                     <span class="dash_0_change"><?php echo $data_dashboard[0]['change']; ?></span>&nbsp;(<span class="dash_0_var"><?php echo $data_dashboard[0]['var']; ?></span>%)
