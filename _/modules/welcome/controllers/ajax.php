@@ -2479,7 +2479,7 @@ class Ajax extends Welcome{
     function getSpectIntraday_product2(){
         $chartcode = $_POST['chartcode'];
         $sql = "SELECT code, date, close, ds.nr,ds.chartcode FROM data_history_chart as dhc RIGHT JOIN data_dashboard ds ON dhc.code=ds.codeefrc WHERE ds.chartcode= '$chartcode'";
-        echo "<pre>";print_r($sql);exit;
+        /*echo "<pre>";print_r($sql);exit;*/
         $result = $this->db->query($sql)->result_array();
 
         echo json_encode($result);
