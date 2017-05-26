@@ -10,8 +10,8 @@ $dbUser = "simulati_user1"; // Username
 $dbPass = "@@simulation11"; // Password*/
 
 $host = "localhost"; // If you don't know what your host is, it's safe to leave it localhost
-$dbName = "commo"; // Database name
-$dbUser = "root"; // Username
-$dbPass = ""; // Password
+$dbName = "data_commo"; // Database name
+$dbUser = "commo_user"; // Username
+$dbPass = "commodata"; // Password
 
 ?>
