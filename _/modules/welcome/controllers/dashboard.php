@@ -53,12 +53,6 @@ class Dashboard extends Welcome{
 		$result["data_dashboard_2"] = $data_dashboard[2];
 		$result["data_dashboard_3"] = $data_dashboard[3];
 
-        $bctcode = $_REQUEST['bctcode'];
-        $list_request = $this->db->query("SELECT dl.lasttime,dl.name,dl.unit, dl.lasttimex, dl.last, dl.`change`, dl.var, dl.`dec` as dec_list, dl.exchange, dl.expiry, dd.* FROM data_dashboard_list as dl  LEFT JOIN data_dashboard as dd ON dl.type=dd.type where dl.bctcode='{$bctcode}'")->row_array();
-
-        $result["data_dashboard_name"] = $list_request['name'];
-        $result["data_dashboard_unit"] = $list_request['unit'];
-
 		$this->output->set_output(json_encode($result));
 	}
 	public function auto_data_dashboard_list_table_1_backup(){

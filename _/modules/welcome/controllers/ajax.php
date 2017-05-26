@@ -2818,6 +2818,11 @@ class Ajax extends Welcome{
 
 
 		$result["data_dashboard_0"] = $data_dashboard[0];
+		$bctcode = $_REQUEST['bctcode'];
+        $list_request = $this->db->query("SELECT dl.lasttime,dl.name,dl.unit, dl.lasttimex, dl.last, dl.`change`, dl.var, dl.`dec` as dec_list, dl.exchange, dl.expiry, dd.* FROM data_dashboard_list as dl  LEFT JOIN data_dashboard as dd ON dl.type=dd.type where dl.bctcode='{$bctcode}'")->row_array();
+
+        $result["data_dashboard_name"] = $list_request['name'];
+        $result["data_dashboard_unit"] = $list_request['unit'];
 		$this->output->set_output(json_encode($result));
 	}
 	public function product_auto_data_series_last(){
