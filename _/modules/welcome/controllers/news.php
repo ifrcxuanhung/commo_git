@@ -7,6 +7,7 @@ class News extends Welcome{
     }
     
     public function index() {
+        echo "hung";
 		if($this->data->permistion_menu) {
 			$block = new Block();
 			
