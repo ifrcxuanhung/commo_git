@@ -486,7 +486,6 @@ class Block extends MY_Controller {
     }
     public function col3_product($bctcode)
     {
-        echo 1111;
         $sql = "SELECT * FROM data_news";
         $this->data->news = $this->db->query($sql)->result_array();
 		$this->data->bctcode = $bctcode;
