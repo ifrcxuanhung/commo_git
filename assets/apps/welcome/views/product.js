@@ -500,7 +500,6 @@ define([
                        var date = data2[i].date;
                        res.push({'time':date,'value': parseFloat(data2[i].close).toFixed(2)});
                        var code = data2[i].code;
-                       var chartcode = data2[i].chartcode;
                        if (i==(data2.length-1)) { last_new  = data2[i].close;  time_new = data2[i].date}
                    }
 

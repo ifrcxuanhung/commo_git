@@ -2471,15 +2471,15 @@ class Ajax extends Welcome{
     }
     function getSpectIntraday_product1(){
        $chartcode = $_POST['chartcode'];
-        $sql = "SELECT code, datetime as date, last as close, ds.nr FROM data_intraday as di RIGHT JOIN data_dashboard ds ON di.code=ds.chartcode WHERE ds.chartcode= '$chartcode' order by date ASC";
+        $sql = "SELECT code, datetime as date, last as close FROM data_intraday as di WHERE code= '$chartcode' order by date ASC";
 
         $result = $this->db->query($sql)->result_array();
         echo json_encode($result);
     }
     function getSpectIntraday_product2(){
         $chartcode = $_POST['chartcode'];
-        $sql = "SELECT code, date, close, ds.nr,ds.chartcode FROM data_history_chart as dhc RIGHT JOIN data_dashboard ds ON dhc.code=ds.codeefrc WHERE ds.chartcode= '$chartcode'";
-        /*echo "<pre>";print_r($sql);exit;*/
+        $sql = "SELECT code, date, close FROM data_history_chart as dhc WHERE dhc.code= '$chartcode'";
+       // echo "<pre>";print_r($sql);exit;
         $result = $this->db->query($sql)->result_array();
 
         echo json_encode($result);
