@@ -56,9 +56,12 @@
                 </div>
 
                 <div class="details" style="padding-right: 11px;">
+                <?php if($data_dashboard[0]['lable_3'] !=0 || $data_dashboard[0]['lable_3'] != null) { ?>
+                
                     <div class="number ti_font" style="text-align: right !important;"> <span style="font-size: 32px;" data-counter="counterup" data-value="<?php echo ($data_dashboard[0]['lable_3'] !=0 || $data_dashboard[0]['lable_3'] != null)?number_format((float)$data_dashboard[0]['lable_3'], $data_dashboard[0]['dec'], '.', ','):''; ?>" class="index_last" id="dash_0_lb3"><?php echo ($data_dashboard[0]['lable_3'] !=0 || $data_dashboard[0]['lable_3'] != null)?number_format((float)$data_dashboard[0]['lable_3'], $data_dashboard[0]['dec'], '.', ','):''; ?></span> <!--
   USD
   --></div>
+  <?php } ?>
                     <div class="align-right" style="margin-top: -6px"> <span>
    <span class="dash_0_lb4"><?php echo $data_dashboard[0]['lable_4']; ?></span>
   </span> </div>
@@ -108,18 +111,20 @@
                 </div>
 
                 <div class="details" style="padding-right: 11px;">
+                 <?php if($data_dashboard[1]['lable_3'] !=0 || $data_dashboard[1]['lable_3'] != null) { ?>
                     <div class="number ti_font" style="text-align: right !important;"> <span style="font-size: 32px;" data-counter="counterup" data-value="
- <?php echo ($data_dashboard[0]['lable_3'] !=0 || $data_dashboard[0]['lable_3'] != null)?number_format((float)$data_dashboard[0]['lable_3'], $data_dashboard[0]['dec'], '.', ','):''; ?>
+ <?php echo ($data_dashboard[1]['lable_3'] !=0 || $data_dashboard[1]['lable_3'] != null)?number_format((float)$data_dashboard[1]['lable_3'], $data_dashboard[1]['dec'], '.', ','):''; ?>
   " class="index_last" id="dash_1_lb3"><?php echo ($data_dashboard[1]['lable_3'] !=0 || $data_dashboard[1]['lable_3'] != null)?number_format((float)$data_dashboard[1]['lable_3'], $data_dashboard[1]['dec'], '.', ','):''; ?></span> <!--
   USD
   --></div>
+  <?php } ?>
                     <div class="align-right" style="margin-top: -6px"> <span>
    <span class="dash_1_lb4"><?php echo $data_dashboard[1]['lable_4']; ?></span>
   </span> </div>
                 </div>
                 <div class="details_bottom details" style="margin-top: 62px">
                     <div class="number"> <span class="index_last" style="font-size: 20px;">
-  <span class="dash_1_lb7"><?php echo number_format((float)$data_dashboard[1]['lable_7'], $data_dashboard[1]['dec'], '.', ','); ?></span>
+  <span class="dash_1_lb7"><?php echo number_format((float)$data_dashboard[1]['last'], $data_dashboard[1]['dec'], '.', ','); ?></span>
   </span></div>
                     <div class="desc" style="text-align: right !important; margin-top: -6px"> <span>
                      <span class="dash_1_change"><?php echo $data_dashboard[1]['change']; ?></span>&nbsp;(<span class="dash_1_var"><?php echo $data_dashboard[1]['var']; ?></span>%)
@@ -163,18 +168,20 @@
                 </div>
 
                 <div class="details" style="padding-right: 11px;">
+                <?php if($data_dashboard[2]['lable_3'] !=0 || $data_dashboard[2]['lable_3'] != null) { ?>
                     <div class="number ti_font" style="text-align: right !important;"> <span style="font-size: 32px;" data-counter="counterup" data-value="
-<?php echo ($data_dashboard[0]['lable_3'] !=0 || $data_dashboard[0]['lable_3'] != null)?number_format((float)$data_dashboard[0]['lable_3'], $data_dashboard[0]['dec'], '.', ','):''; ?>
+<?php echo ($data_dashboard[2]['lable_3'] !=0 || $data_dashboard[2]['lable_3'] != null)?number_format((float)$data_dashboard[2]['lable_3'], $data_dashboard[2]['dec'], '.', ','):''; ?>
   " class="index_last" id="dash_2_lb3"><?php echo ($data_dashboard[2]['lable_3'] !=0 || $data_dashboard[2]['lable_3'] != null)?number_format((float)$data_dashboard[2]['lable_3'], $data_dashboard[2]['dec'], '.', ','):''; ?></span> <!--
   USD
   --></div>
+  <?php } ?>
                     <div class="align-right" style="margin-top: -6px"> <span>
    <span class="dash_2_lb4"><?php echo $data_dashboard[2]['lable_4']; ?></span>
   </span> </div>
                 </div>
                 <div class="details_bottom details" style="margin-top: 62px">
                     <div class="number"> <span class="index_last" style="font-size: 20px;">
-  <span class="dash_2_lb7"><?php echo number_format((float)$data_dashboard[2]['lable_7'], $data_dashboard[2]['dec'], '.', ','); ?></span>
+  <span class="dash_2_lb7"><?php echo number_format((float)$data_dashboard[2]['last'], $data_dashboard[2]['dec'], '.', ','); ?></span>
   </span></div>
                     <div class="desc" style="text-align: right !important; margin-top: -6px"> <span>
                     <span class="dash_2_change"><?php echo $data_dashboard[2]['change']; ?></span>&nbsp;(<span class="dash_2_var"><?php echo $data_dashboard[2]['var']; ?></span>%)
@@ -219,16 +226,18 @@
                 </div>
 
                 <div class="details" style="padding-right: 11px;">
-                    <div class="number ti_font" style="text-align: right !important;"> <span style="font-size: 32px;" data-counter="counterup" data-value="<?php echo ($data_dashboard[0]['lable_3'] !=0 || $data_dashboard[0]['lable_3'] != null)?number_format((float)$data_dashboard[0]['lable_3'], $data_dashboard[0]['dec'], '.', ','):''; ?>" class="index_last" id="dash_3_lb3"><?php echo ($data_dashboard[3]['lable_3'] !=0 || $data_dashboard[3]['lable_3'] != null)?number_format((float)$data_dashboard[3]['lable_3'], $data_dashboard[3]['dec'], '.', ','):''; ?></span> <!--
+                <?php if($data_dashboard[3]['lable_3'] !=0 || $data_dashboard[3]['lable_3'] != null) { ?>
+                    <div class="number ti_font" style="text-align: right !important;"> <span style="font-size: 32px;" data-counter="counterup" data-value="<?php echo ($data_dashboard[3]['lable_3'] !=0 || $data_dashboard[3]['lable_3'] != null)?number_format((float)$data_dashboard[3]['lable_3'], $data_dashboard[3]['dec'], '.', ','):''; ?>" class="index_last" id="dash_3_lb3"><?php echo ($data_dashboard[3]['lable_3'] !=0 || $data_dashboard[3]['lable_3'] != null)?number_format((float)$data_dashboard[3]['lable_3'], $data_dashboard[3]['dec'], '.', ','):''; ?></span> <!--
   USD
   --></div>
+  <?php } ?>
                     <div class="align-right" style="margin-top: -6px"> <span>
    <span class="dash_3_lb4"><?php echo $data_dashboard[3]['lable_4']; ?></span>
   </span> </div>
                 </div>
                 <div class="details_bottom details" style="margin-top: 62px">
                     <div class="number"> <span class="index_last" style="font-size: 20px;">
-  <span class="dash_3_lb7"><?php echo number_format((float)$data_dashboard[3]['lable_7'], $data_dashboard[3]['dec'], '.', ','); ?></span>
+  <span class="dash_3_lb7"><?php echo number_format((float)$data_dashboard[3]['last'], $data_dashboard[3]['dec'], '.', ','); ?></span>
   </span></div>
                     <div class="desc" style="text-align: right !important; margin-top: -6px"> <span>
                     <span class="dash_3_change"><?php echo $data_dashboard[3]['change']; ?></span>&nbsp;(<span class="dash_3_var"><?php echo $data_dashboard[3]['var']; ?></span>%)
