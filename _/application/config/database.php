@@ -48,7 +48,7 @@
 $active_group = 'default';
 $active_record = TRUE;
 
-$db['default']['hostname'] = 'localhost';
+$db['default']['hostname'] = '210.211.109.27';
 $db['default']['username'] = 'commo_user';
 $db['default']['password'] = 'commodata';
 $db['default']['database'] = 'data_commo';
@@ -64,7 +64,7 @@ $db['default']['swap_pre'] = '';
 $db['default']['autoinit'] = TRUE;
 $db['default']['stricton'] = FALSE;
 
-$db['database3']['hostname'] = 'localhost';
+$db['database3']['hostname'] = '210.211.109.27';
 $db['database3']['username'] = 'vndmicom_user1';
 $db['database3']['password'] = 'vndmicom';
 $db['database3']['database'] = 'vndmicom_data';
