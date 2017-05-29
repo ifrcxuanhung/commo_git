@@ -683,7 +683,7 @@ define([
 									"position": "left",
 								}, {
 									"id":"v2",
-									"axisColor": "#FCD202",
+									"axisColor": "#FF0000",
 									"axisThickness": 2,
 									/*"unit":"Mn",*/
 									"axisAlpha": 1,
@@ -713,31 +713,31 @@ define([
 									/*"bullet": "round",*/
 									"bulletBorderThickness": 1,
 									"hideBulletsCount": 30,
-									"title": "sp",
-									"valueField": "sp",
+									"title": "Oil",
+									"valueField": "oil",
 									"fillAlphas": 0,
-									"lineThickness": 2,
+									"lineThickness": 4,
 									"lineAlpha":0.9
 								}, {
 									"valueAxis": "v2",
-									"lineColor": "#FCD202",
+									"lineColor": "#FF0000",
 									/*"bullet": "square",*/
 									"bulletBorderThickness": 1,
 									"hideBulletsCount": 30,
-									"title": "oil",
-									"valueField": "oil",
+									"title": "Stock Price",
+									"valueField": "sp",
 									"fillAlphas": 0,
-									"lineThickness": 2,
+									"lineThickness": 1,
 									"lineAlpha":0.9
 								}, {
 									"valueAxis": "v3",
 									"lineColor": "#B0DE09",
 									"bulletBorderThickness": 1,
 									"hideBulletsCount": 30,
-									"title": "er",
+									"title": "Exchange Rates",
 									"valueField": "er",
 									"fillAlphas": 0,
-									"lineThickness": 2,
+									"lineThickness": 1,
 									"lineAlpha":0.9
 								}],
 								"listeners": [{
@@ -795,7 +795,7 @@ define([
 								for (var i = 1; i < data.length; ++i){
 						
 									var date = data[i].date;
-									chartData.push({'date':date,'sp': parseFloat(data[i].sp).toFixed(2),'oil':parseFloat(data[i].oil).toFixed(2),'er':parseFloat(data[i].er).toFixed(2)/*,'q_long':parseFloat(data[i].q_long/1000000).toFixed(2)*/})
+									chartData.push({'date':date,'oil': parseFloat(data[i].oil).toFixed(2),'sp':parseFloat(data[i].sp).toFixed(2),'er':parseFloat(data[i].er).toFixed(2)/*,'q_long':parseFloat(data[i].q_long/1000000).toFixed(2)*/})
 									//if (i==(data.length-1)) { last_new  = data[i].close;  time_new = data[i].date}
 								}
 								return chartData;
