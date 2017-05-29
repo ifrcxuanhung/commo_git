@@ -1,4 +1,4 @@
-<div class="col-md-6">
+<div class="col-md-7"  style="margin-bottom: 30px;">
     <div class="dashboard-stat red-thunderbird">
                 <div class="visual">
 
@@ -51,7 +51,7 @@
     <div class="portlet box blocks cus_hung" style="position:relative;">
         <div class="portlet-title" style="background:#4c87b9 !important;">
             <div class="caption">
-                <i class="fa"></i>AGRICULTURE</div>
+                <i class="fa"></i>ENERGY</div>
             <div class="tools">
                 <i class="fa fa-toggle-up fa-lg fullscreens"></i>
             </div>

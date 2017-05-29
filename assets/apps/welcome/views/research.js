@@ -647,21 +647,17 @@ define([
 						});
 					}, 4000);
 				   // chart
-				   if(typeof $("#code_chart").val() != 'undefined'){
-						var code_chart = $("#code_chart").val();
-					 }else{
-						var code_chart = '';
-					}
+
 					 var last_new;
 					 var time_new;
 					function getvalueCHART(){
 						return $.ajax({
-							url: $base_url + "ajax/getSpectIntraday6",
+							url: $base_url + "ajax/getSpectIntraday_research",
 							type: "POST",
 							async: false
 						});
 					}
-					if ($('#chartdiv6').size() != 0) {
+					if ($('#chartdiv9').size() != 0) {
 
 						$('#site_statistics_loading').hide();
 						$('#site_statistics_content').show();
@@ -670,7 +666,7 @@ define([
 						
 							var chartData = generateChartData();
 						
-							var chart = AmCharts.makeChart("chartdiv6", {
+							var chart = AmCharts.makeChart("chartdiv9", {
 								"type": "serial",
 								"theme": "none",
 								"legend": {
@@ -681,27 +677,27 @@ define([
 						
 								"valueAxes": [{
 									"id":"v1",
-									"axisColor": "#FF0000",
+									"axisColor": "#0f84c0",
 									"axisThickness": 2,
 									"axisAlpha": 1,
 									"position": "left",
 								}, {
 									"id":"v2",
-									"axisColor": "#FCD202",
+									"axisColor": "#FF0000",
 									"axisThickness": 2,
-									"unit":"Mn",
+									/*"unit":"Mn",*/
 									"axisAlpha": 1,
 									"position": "right"
-								}, /*{
+								}, {
 									"id":"v3",
 									"axisColor": "#B0DE09",
 									"axisThickness": 2,
-									"unit":"Mn",
+									/*"unit":"Mn",*/
 									"gridAlpha": 0,
 									"offset": 50,
 									"axisAlpha": 1,
 									"position": "left"
-								}, {
+								}/*, {
 										"id":"v4",
 										"axisColor": "#FFFFFF",
 										"axisThickness": 2,
@@ -713,53 +709,41 @@ define([
 									}*/],
 								"graphs": [{
 									"valueAxis": "v1",
-									"lineColor": "#FF0000",
+									"lineColor": "#0f84c0",
 									/*"bullet": "round",*/
 									"bulletBorderThickness": 1,
 									"hideBulletsCount": 30,
-									"title": "Cbot",
-									"valueField": "cbot",
+									"title": "Oil",
+									"valueField": "oil",
 									"fillAlphas": 0,
-									"lineThickness": 2,
+									"lineThickness": 4,
 									"lineAlpha":0.9
 								}, {
 									"valueAxis": "v2",
-									"lineColor": "#FCD202",
+									"lineColor": "#FF0000",
 									/*"bullet": "square",*/
 									"bulletBorderThickness": 1,
 									"hideBulletsCount": 30,
-									"title": "Q_net",
-									"valueField": "q_net",
+									"title": "Stock Price",
+									"valueField": "sp",
 									"fillAlphas": 0,
-									"lineThickness": 2,
-									"lineAlpha":0.9
-								},/* {
-									"valueAxis": "v3",
-									"lineColor": "#B0DE09",
-									/!*"bullet": "triangleUp",*!/
-									"bulletBorderThickness": 1,
-									"hideBulletsCount": 30,
-									"title": "Q_short",
-									"valueField": "q_short",
-									"fillAlphas": 0,
-									"lineThickness": 2,
+									"lineThickness": 1,
 									"lineAlpha":0.9
 								}, {
-									"valueAxis": "v4",
-									"lineColor": "#FFFFFF",
-									/!*"bullet": "triangleUp",*!/
+									"valueAxis": "v3",
+									"lineColor": "#B0DE09",
 									"bulletBorderThickness": 1,
 									"hideBulletsCount": 30,
-									"title": "Q_long",
-									"valueField": "q_long",
+									"title": "Exchange Rates",
+									"valueField": "er",
 									"fillAlphas": 0,
-									"lineThickness": 2,
+									"lineThickness": 1,
 									"lineAlpha":0.9
-								}*/],
+								}],
 								"listeners": [{
 									"event": "init",
 									"method": function(e) {
-										e.chart.zoomToIndexes(800, e.chart.endIndex);/*fix defaut zoom chart*/
+										e.chart.zoomToIndexes(2000, e.chart.endIndex);/*fix defaut zoom chart*/
 									}
 								}],
 								"chartScrollbar": {},
@@ -811,7 +795,7 @@ define([
 								for (var i = 1; i < data.length; ++i){
 						
 									var date = data[i].date;
-									chartData.push({'date':date,'cbot': parseFloat(data[i].cbot).toFixed(2),'q_net':parseFloat(data[i].q_net/1000000).toFixed(2)/*,'q_short':parseFloat(data[i].q_short/1000000).toFixed(2),'q_long':parseFloat(data[i].q_long/1000000).toFixed(2)*/})
+									chartData.push({'date':date,'oil': parseFloat(data[i].oil).toFixed(2),'sp':parseFloat(data[i].sp).toFixed(2),'er':parseFloat(data[i].er).toFixed(2)/*,'q_long':parseFloat(data[i].q_long/1000000).toFixed(2)*/})
 									//if (i==(data.length-1)) { last_new  = data[i].close;  time_new = data[i].date}
 								}
 								return chartData;
