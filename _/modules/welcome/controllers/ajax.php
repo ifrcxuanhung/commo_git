@@ -2535,6 +2535,12 @@ class Ajax extends Welcome{
        // echo "<pre>";print_r($sql);exit;
         echo json_encode($result);
     }
+    function getSpectIntraday_research(){
+
+        $sql = "SELECT date, sp, oil, er FROM data_research_chart";
+        $result = $this->db->query($sql)->result_array();
+        echo json_encode($result);
+    }
     function getSpectIntraday6_backup(){
 
         $sql = "SELECT * FROM efrc_ins_datas_1m WHERE code = 'CMDCORN'";
