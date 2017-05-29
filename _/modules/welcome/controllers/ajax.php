@@ -2509,8 +2509,9 @@ WHERE dl.type='{$type}' and dl.active = 1 and dl.top=5 and ds.expyyyymm!=0 ORDER
     }
     function getSpectIntraday_category2(){
         $type = $_POST['type'];
-        $sql = "SELECT di.* FROM data_intraday as di RIGHT JOIN ( select ds.code from data_dashboard_list as dl LEFT JOIN data_series_last as ds  ON dl.bctcode=ds.symbol  
+        $sql = "SELECT di.code, di.datetime as date, di.last as close FROM data_intraday as di RIGHT JOIN ( select ds.code from data_dashboard_list as dl LEFT JOIN data_series_last as ds  ON dl.bctcode=ds.symbol  
 WHERE dl.type='{$type}' and dl.active = 1 and dl.top=5 and ds.expyyyymm!=0 ORDER BY ds.expyyyymm ASC LImit 1 ) as a ON di.code=a.code";
+
         //echo "<pre>";print_r($sql);exit;
         $result = $this->db->query($sql)->result_array();
         echo json_encode($result);
