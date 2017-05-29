@@ -13,12 +13,8 @@ class Category extends Welcome{
 			$block = new Block();
 	
 			$this->data->col1_category = $block->col1_category($type);
-			$this->data->col3_category = $block->col3_category($type);
+			//$this->data->col3_category = $block->col3_category($type);
 			
-			$this->data->chart1 = $block->chart1('300px');
-			$this->data->chart2 = $block->chart2('300px');
-			$this->data->chart3 = $block->chart3('300px');
-			$this->data->chart4 = $block->chart4('300px');
 			
 			
 			$this->template->write_view('content', 'category', $this->data);

@@ -2451,7 +2451,7 @@ class Ajax extends Welcome{
 
     function getSpectIntraday_category1(){
         $type = $_POST['type'];
-        $sql = "SELECT code, date, close, ds.nr,ds.chartcode FROM data_history_chart as dhc RIGHT JOIN data_dashboard ds ON dhc.code=ds.codeefrc WHERE ds.type= '$type'";
+        $sql = "SELECT dhc.code, dhc.date, dhc.close FROM data_history_chart as dhc RIGHT JOIN data_dashboard_list ds ON dhc.code=ds.code WHERE ds.type= '{$type}' and ds.top=5";
         //echo "<pre>";print_r($sql);exit;
         $result = $this->db->query($sql)->result_array();
       
@@ -2493,7 +2493,7 @@ class Ajax extends Welcome{
     }
     function getSpectIntraday_category2(){
         $type = $_POST['type'];
-        $sql = "SELECT code, datetime as date, last as close, ds.nr FROM data_intraday as di RIGHT JOIN data_dashboard ds ON di.code=ds.chartcode WHERE ds.type= '$type' order by date ASC";
+        $sql = "SELECT di.code, di.datetime as date, di.last as close FROM data_intraday as di RIGHT JOIN data_dashboard_list ds ON di.code=ds.code WHERE ds.type= '{$type}' and ds.top=5 order by date ASC";
         //echo "<pre>";print_r($sql);exit;
         $result = $this->db->query($sql)->result_array();
         echo json_encode($result);
