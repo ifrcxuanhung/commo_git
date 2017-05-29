@@ -29,7 +29,7 @@
 </div>
 
 
-<div class="col-md-5" style="margin-bottom: 50px;">
+<div class="col-md-5" style="margin-bottom: 30px;">
 
 
 
