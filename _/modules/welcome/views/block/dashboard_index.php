@@ -33,7 +33,7 @@
     <div class="row">
         <?php if($data_dashboard[0]['active'] == 1){?>
         <div class="col-md-3">
-            <div class="dashboard-stat purple">
+            <div class="dashboard-stat <?php echo $data_dashboard[0]['colorbgd'];?>">
                 <div class="visual">
 
                     <i class="fa fa-line-chart"></i>
@@ -88,7 +88,7 @@
         <?php }?>
         <?php if($data_dashboard[1]['active'] == 1){?>
         <div class="col-md-3">
-            <div class="dashboard-stat red-thunderbird">
+            <div class="dashboard-stat <?php echo $data_dashboard[1]['colorbgd'];?>">
                 <div class="visual">
 
                     <i class="fa fa-line-chart"></i>
@@ -145,7 +145,7 @@
         <?php }?>
         <?php if($data_dashboard[2]['active'] == 1){?>
         <div class="col-md-3">
-            <div class="dashboard-stat green">
+            <div class="dashboard-stat <?php echo $data_dashboard[2]['colorbgd'];?>">
                 <div class="visual">
 
                     <i class="fa fa-line-chart"></i>
@@ -203,7 +203,7 @@
         <?php if($data_dashboard[3]['active'] == 1){?>
         <div class="col-md-3">
 
-            <div class="dashboard-stat yellow">
+            <div class="dashboard-stat <?php echo $data_dashboard[3]['colorbgd'];?>">
                 <div class="visual">
 
                     <i class="fa fa-line-chart"></i>
