@@ -40,7 +40,7 @@ define([
                 //var chartcode = data1[i].chartcode;
 				if (i==(data1.length-1)) { last_new  = data1[i].close;  time_new = data1[i].date}
 			}
-             $(".get_title_category").append(' (HISTORY)');
+             $(".get_title_category").append(' (INTRADAY)');
                    $(".get_title_category2").append(' (INTRADAY)');
 
 			function showChartTooltip(x, y, xValue, yValue) {

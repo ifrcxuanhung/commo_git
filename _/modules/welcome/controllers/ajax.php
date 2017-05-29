@@ -2499,18 +2499,24 @@ WHERE md.mychoice = 1 AND md.active = 1 AND md.dright = 1 AND mychart <> 0;  ";
         $symbol = $get_symbol['symbol'];
 
 
-        $sql = "select ds.code from data_dashboard_list as dl LEFT JOIN data_series_last as ds  ON dl.bctcode=ds.symbol  
-WHERE dl.symbol='{$symbol}' and dl.active = 1 and dl.top=5 and ds.expyyyymm!=0 ORDER BY ds.expyyyymm ASC LImit 1";
-        echo "<pre>";print_r($sql);exit;
+        $sql = "SELECT di.datetime as date , di.last as close FROM data_intraday as di RIGHT JOIN (select ds.code from data_dashboard_list as dl LEFT JOIN data_series_last as ds  ON dl.bctcode=ds
+.symbol  
+WHERE ds.symbol='$symbol' and dl.active = 1  and ds.expyyyymm!=0 ORDER BY ds.expyyyymm ASC Limit 1) AS A ON (di.`code` = A.code) ORDER BY date";
         //echo "<pre>";print_r($sql);exit;
         $result = $this->db->query($sql)->result_array();
 
         echo json_encode($result);
     }
     function getSpectIntraday_customise2(){
-        $type = 'AGRICULTURE';
-        $sql = "SELECT di.code, di.datetime as date, di.last as close FROM data_intraday as di RIGHT JOIN data_dashboard_list ds ON di.code=ds.code WHERE ds.type= '{$type}' and ds.top=5 order by date ASC";
-        //echo "<pre>";print_r($sql);exit;
+        $sql1 = "SELECT md.mychart,ddl.* FROM my_data md RIGHT JOIN data_dashboard_list ddl ON (md.symbol = ddl.bctcode) 
+WHERE md.mychoice = 9 AND md.active = 1 AND md.dright = 1 AND mychart <> 0;  ";
+        $get_symbol = $this->db->query($sql1)->row_array();
+        $symbol = $get_symbol['symbol'];
+
+
+        $sql = "SELECT di.datetime as date , di.last as close FROM data_intraday as di RIGHT JOIN (select ds.code from data_dashboard_list as dl LEFT JOIN data_series_last as ds  ON dl.bctcode=ds
+.symbol  
+WHERE ds.symbol='$symbol' and dl.active = 1  and ds.expyyyymm!=0 ORDER BY ds.expyyyymm ASC Limit 1) AS A ON (di.`code` = A.code) ORDER BY di.datetime ASC;";
         $result = $this->db->query($sql)->result_array();
         echo json_encode($result);
     }
