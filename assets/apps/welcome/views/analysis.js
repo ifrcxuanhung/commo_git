@@ -731,7 +731,7 @@ define([
 									"title": "Q_net",
 									"valueField": "q_net",
 									"fillAlphas": 0,
-									"lineThickness": 2,
+									"lineThickness": 1,
 									"lineAlpha":0.9
 								},/* {
 									"valueAxis": "v3",
