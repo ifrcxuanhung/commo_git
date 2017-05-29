@@ -1,5 +1,5 @@
 <div class="portlet box blocks cus_hung" style="position:relative;">
-    <div class="portlet-title" style="background:#000099 !important;"">
+    <div class="portlet-title" style="background:#000099 !important;">
         <div class="caption">
             <i class="fa"></i><?php echo $data_dashboard[0]['lable_1']; ?> (<span class="dash_0_expiry" id="dash_0_expiry_2"><?php echo $data_dashboard[0]['expiry']; ?></span>)</div>
         <div class="tools">
