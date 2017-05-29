@@ -677,7 +677,7 @@ define([
 						
 								"valueAxes": [{
 									"id":"v1",
-									"axisColor": "#FF0000",
+									"axisColor": "#0f84c0",
 									"axisThickness": 2,
 									"axisAlpha": 1,
 									"position": "left",
@@ -709,7 +709,7 @@ define([
 									}*/],
 								"graphs": [{
 									"valueAxis": "v1",
-									"lineColor": "#FF0000",
+									"lineColor": "#0f84c0",
 									/*"bullet": "round",*/
 									"bulletBorderThickness": 1,
 									"hideBulletsCount": 30,

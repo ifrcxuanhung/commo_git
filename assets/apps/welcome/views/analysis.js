@@ -681,13 +681,13 @@ define([
 						
 								"valueAxes": [{
 									"id":"v1",
-									"axisColor": "#FF0000",
+									"axisColor": "#0f84c0",
 									"axisThickness": 2,
 									"axisAlpha": 1,
 									"position": "left",
 								}, {
 									"id":"v2",
-									"axisColor": "#FCD202",
+									"axisColor": "#e4ad36",
 									"axisThickness": 2,
 									"unit":"Mn",
 									"axisAlpha": 1,
@@ -713,7 +713,7 @@ define([
 									}*/],
 								"graphs": [{
 									"valueAxis": "v1",
-									"lineColor": "#FF0000",
+									"lineColor": "#0f84c0",
 									/*"bullet": "round",*/
 									"bulletBorderThickness": 1,
 									"hideBulletsCount": 30,
@@ -724,7 +724,7 @@ define([
 									"lineAlpha":0.9
 								}, {
 									"valueAxis": "v2",
-									"lineColor": "#FCD202",
+									"lineColor": "#e4ad36",
 									/*"bullet": "square",*/
 									"bulletBorderThickness": 1,
 									"hideBulletsCount": 30,
