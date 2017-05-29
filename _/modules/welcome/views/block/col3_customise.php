@@ -1,4 +1,4 @@
-<div class="col-md-5 blocks ">
+<div class="col-md-5 blocks "  style="margin-bottom:30px;">
     <div class="col-md-12">
         <div class="col-md-12 blocks use_fullscreen">
 

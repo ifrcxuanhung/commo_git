@@ -875,11 +875,10 @@ a:focus, a:hover {
 .scroll-3d{
     overflow: auto;
     position: relative;
-    padding: 20px;
-    background: #666;
-    margin: 10px;
-    width: 740px;
-    max-width: 97%;
-    height: 400px;
+    padding: 0px;
+    background: #1d2a36;
+    margin: 0px;
+
     -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;
 }
+.mCSB_inside > .mCSB_container{ margin-right:17px !important;}
