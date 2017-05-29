@@ -38,7 +38,7 @@
             </div>
         </div>
         <div class="portlet-body background_portlet">
-            <div class="table-responsive scroller" style="height:430px;">
+            <div class="table-responsive scroller" style="height:526px;">
                 <table class="table  table-bordered table-hover table_color table_scroll table_cus">
                     <thead>
                     <tr>
