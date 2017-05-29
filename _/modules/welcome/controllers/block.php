@@ -480,7 +480,7 @@ class Block extends MY_Controller {
 
     public function col1_customise()
     {
-        $sql = "SELECT ddl.* FROM my_data md RIGHT JOIN data_dashboard_list ddl ON (md.symbol = ddl.bctcode) WHERE md.mychoice = 1 AND md.active = 1 AND md.dright = 1 ";
+        $sql = "SELECT ddl.* FROM my_data md RIGHT JOIN data_dashboard_list ddl ON (md.symbol = ddl.bctcode) WHERE md.mychoice = 1 AND md.active = 1 AND md.dright = 1 AND ddl.code is not null ";
         $detail1 = $this->db->query($sql)->result_array();
 
 
@@ -535,7 +535,7 @@ class Block extends MY_Controller {
 
 
 
-        $sql2 = "SELECT ddl.* FROM my_data md RIGHT JOIN data_dashboard_list ddl ON (md.symbol = ddl.bctcode) WHERE md.mychoice = 9 AND md.active = 1 AND md.dright = 1";
+        $sql2 = "SELECT ddl.* FROM my_data md RIGHT JOIN data_dashboard_list ddl ON (md.symbol = ddl.bctcode) WHERE md.mychoice = 9 AND md.active = 1 AND md.dright = 1 AND ddl.code is not null";
         $detail2 = $this->db->query($sql2)->result_array();
 
         /* $arr = "(";
