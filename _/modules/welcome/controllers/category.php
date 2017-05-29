@@ -9,7 +9,6 @@ class Category extends Welcome{
     public function index($type='agriculture') {
 		if($this->data->permistion_menu) {
 			$block = new Block();
-	
 			$this->data->col1_category = $block->col1_category($type);
 			//$this->data->col3_category = $block->col3_category($type);
 			$this->template->write_view('content', 'category', $this->data);
