@@ -19,7 +19,7 @@ if(!isset($_SESSION['commo']['user_id'])){
                     </div>
                 </div>
                 <div class="portlet-body background_portlet" style="margin-right:5px;">
-                    <div id="chartdiv2" class="chart" style="height: 340px; width: 110%; margin:-4%;"> </div>
+                    <div id="chartdiv2" class="chart" style="height: 325px; width: 110%; margin:-4%;"> </div>
                 </div>
             </div>
 
@@ -56,7 +56,7 @@ if(!isset($_SESSION['commo']['user_id'])){
                 </div>
                 <div class="portlet-body background_portlet" style="margin-right:5px;">
                     <input name="code_chart" id="code_chart" type="hidden" sttr='' value="<">
-                    <div id="chartdiv" class="chart" style="height:340px; width: 110%; margin:-4%;"> </div>
+                    <div id="chartdiv" class="chart" style="height:325px; width: 110%; margin:-4%;"> </div>
                 </div>
             </div>
     
