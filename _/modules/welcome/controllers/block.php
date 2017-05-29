@@ -742,6 +742,7 @@ class Block extends MY_Controller {
         }
         $this->data->d2_box_category1 = $html_table1;
         $this->data->data_dashboard = $this->db->query("SELECT * FROM data_dashboard_list as dl  RIGHT JOIN data_dashboard as dd ON dl.type=dd.type where dd.active = 1 and dl.top=5 Order by dd.nr")->result_array();
+        //echo "<pre>";print_r( $this->data->data_dashboard);exit;
         return $this->load->view('block/col1_research', $this->data, true);
     }
 
