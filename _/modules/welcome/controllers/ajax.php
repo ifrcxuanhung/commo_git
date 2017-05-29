@@ -2491,6 +2491,21 @@ class Ajax extends Welcome{
         // echo "<pre>";print_r($sql);exit;
         echo json_encode($result);
     }
+    function getSpectIntraday_customise1(){
+        $type = 'AGRICULTURE';
+        $sql = "SELECT dhc.code, dhc.date, dhc.close FROM data_history_chart as dhc RIGHT JOIN data_dashboard_list ds ON dhc.code=ds.code WHERE ds.type= '{$type}' and ds.top=5";
+        //echo "<pre>";print_r($sql);exit;
+        $result = $this->db->query($sql)->result_array();
+
+        echo json_encode($result);
+    }
+    function getSpectIntraday_customise2(){
+        $type = 'AGRICULTURE';
+        $sql = "SELECT di.code, di.datetime as date, di.last as close FROM data_intraday as di RIGHT JOIN data_dashboard_list ds ON di.code=ds.code WHERE ds.type= '{$type}' and ds.top=5 order by date ASC";
+        //echo "<pre>";print_r($sql);exit;
+        $result = $this->db->query($sql)->result_array();
+        echo json_encode($result);
+    }
     function getSpectIntraday_category2(){
         $type = $_POST['type'];
         $sql = "SELECT di.code, di.datetime as date, di.last as close FROM data_intraday as di RIGHT JOIN data_dashboard_list ds ON di.code=ds.code WHERE ds.type= '{$type}' and ds.top=5 order by date ASC";

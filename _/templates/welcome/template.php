@@ -72,10 +72,13 @@ $template_url = template_url();
 <link rel="stylesheet" type="text/css" media="screen" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/themes/smoothness/jquery-ui.css">
 <link rel="stylesheet" type="text/css" media="screen" href="<?php echo $template_url; ?>global/plugins/elfinder/css/elfinder.min.css">
 <link rel="stylesheet" type="text/css" media="screen" href="<?php echo $template_url; ?>global/plugins/elfinder/css/theme.css">
+
 <!--END ELFINDER CSS-->
 <?php }?>
+
     <!--end css JQGRID-->
  	<!--scroll-->
+        <link href="<?php echo $template_url; ?>global/css/jquery.mCustomScrollbar.css" rel="stylesheet" type="text/css"/>
 
     <!-- END THEME STYLES -->
     <link rel="shortcut icon" href="<?php echo $template_url; ?>img/favicon.ico"/>
@@ -121,6 +124,9 @@ $template_url = template_url();
 			</div>
             
             <?php echo $content; ?>
+
+            <!-- content -->
+
               
         </div> 
     </div>
@@ -211,13 +217,14 @@ $template_url = template_url();
     <script src="<?php echo $template_url; ?>pages/scripts/ui-modals.min.js" type="text/javascript"></script>
 
     <script src="<?php echo $template_url; ?>global/plugins/bootbox/bootbox.min.js" type="text/javascript"></script>
-
+    <script type="text/ecmascript" src="<?php echo $template_url; ?>global/scripts/jquery.mCustomScrollbar.concat.min.js"></script>
 
     <!--js JQGRID-->
     <script type="text/ecmascript" src="<?php echo $template_url; ?>global/test/src/i18n/grid.locale-en.js"></script>
     <!-- This is the Javascript file of jqGrid -->
     <script type="text/ecmascript" src="<?php echo $template_url; ?>global/test/js/jquery.jqGrid.min.js"></script>
     <script type="text/ecmascript" src="<?php echo $template_url; ?>global/test/src/js/jquery-ui.min.js"></script>
+
 
 
     <!--end js JQGRID-->
@@ -232,10 +239,13 @@ $template_url = template_url();
     <script src="<?php echo $template_url; ?>global/plugins/amcharts/amcharts/themes/none.js" type="text/javascript"></script>
     <script src="<?php echo $template_url; ?>global/plugins/amcharts/amcharts/themes/chalk.js" type="text/javascript"></script>
     <!--END AMCHART-->
+<!--scroll-->
 
 
 
 <script>
+$.mCustomScrollbar.defaults.scrollButtons.enable=true; //enable scrolling buttons by default
+$(".scroll-3d").mCustomScrollbar({theme:"3d"});
 $("input").keyup(function(event)
 {
     var keycode = (event.keyCode ? event.keyCode : event.which);

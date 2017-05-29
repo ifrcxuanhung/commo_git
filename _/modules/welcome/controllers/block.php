@@ -466,6 +466,8 @@ class Block extends MY_Controller {
         return $this->load->view('block/col1_category', $this->data, true);
     }
 
+
+
     public function col3_category($type)
     {
         $this->data->data_dashboard = $this->db->query("SELECT * FROM data_dashboard WHERE type = '$type'")->result_array();
@@ -474,6 +476,23 @@ class Block extends MY_Controller {
 
 
         return $this->load->view('block/col3_category', $this->data, true);
+    }
+
+    public function col1_customise()
+    {
+        $sql = "SELECT * FROM my_data WHERE mychoice = 1 AND active = 1 AND dright = 1";
+        $this->data->my_data1 = $this->db->query($sql)->result_array();
+
+        $sql = "SELECT * FROM my_data WHERE mychoice = 9 AND active = 1 AND dright = 1";
+        $this->data->my_data2 = $this->db->query($sql)->result_array();
+
+
+        return $this->load->view('block/col1_customise', $this->data, true);
+    }
+    public function col3_customise()
+    {
+
+        return $this->load->view('block/col3_customise', $this->data, true);
     }
 
 
@@ -616,7 +635,7 @@ class Block extends MY_Controller {
             $html_table1 .='<td class="td_custom table_1_lasttimex" align="right" id="table_1_lasttimex_'.$rs['id'].'">'.$rs["time_format"].'</td></tr>';
         }
         $this->data->d2_box_category1 = $html_table1;
-        $this->data->data_dashboard = $this->db->query("SELECT * FROM data_dashboard_list as dl  RIGHT JOIN data_dashboard as dd ON dl.type=dd.type where dd.active = 1 and dl.top=5 AND dd.nr =3 limit 1")->row_array();
+        $this->data->data_dashboard = $this->db->query("SELECT * FROM data_dashboard_list as dl  RIGHT JOIN data_dashboard as dd ON dl.type=dd.type where dd.active = 1 and dl.top=5 Order by dd.nr")->result_array();
         return $this->load->view('block/col1_research', $this->data, true);
     }
 
@@ -630,6 +649,7 @@ class Block extends MY_Controller {
 
         $data = $this->db->query($sql)->row_array();
         $this->data->code_first = $data;
+        echo "<pre>";print_r($data);exit;
 
         return $this->load->view('block/col3_research', $this->data, true);
     }

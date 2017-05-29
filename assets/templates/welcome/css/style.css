@@ -872,3 +872,14 @@ a:focus, a:hover {
 .text_color_cus{ color: #e6e6e6 !important;}
 .table_fix_padding > tbody > tr > td{ padding:8px 8px !important;}
 #chartdiv9 .amChartsLegend{ margin-left:0px !important;}
+.scroll-3d{
+    overflow: auto;
+    position: relative;
+    padding: 20px;
+    background: #666;
+    margin: 10px;
+    width: 740px;
+    max-width: 97%;
+    height: 400px;
+    -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;
+}

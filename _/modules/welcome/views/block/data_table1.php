@@ -9,7 +9,7 @@
     </div>
     <div class="portlet-body background_portlet">
 
-        <div class="table-responsive text_scroll scroller" style="height:225px;">
+     <div class="table-responsive text_scroll scroller" style="height:225px;">
             <table class="table  table-bordered table-hover table_color table_cus">
                 <thead>
                 <tr>
@@ -23,6 +23,7 @@
                 </thead>
                 <tbody id="dashboard_list_1"><?php echo $table1 ?></tbody>
             </table>
+
         </div>
     </div>
 </div>
