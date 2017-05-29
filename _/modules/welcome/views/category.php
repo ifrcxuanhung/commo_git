@@ -11,7 +11,7 @@ if(!isset($_SESSION['commo']['user_id'])){
         <div class="col-md-12 blocks use_fullscreen">
 
             <div class="portlet box blocks cus_hung" style="position:relative;">
-                <div class="portlet-title" style="background:#4c87b9 !important;">
+                <div class="portlet-title" style="background:#000099 !important;">
                     <div class="caption get_title_category2"></div>
                     <div class="tools">
                         <!-- <a href="" class="fullscreen"> </a>-->
@@ -27,7 +27,7 @@ if(!isset($_SESSION['commo']['user_id'])){
 
         <!--<div class="col-md-12 blocks use_fullscreen">
             <div class="portlet box blocks cus_hung" style="position:relative;">
-                <div class="portlet-title" style="background:#4c87b9 !important;">
+                <div class="portlet-title" style="background:#000099 !important;">
                     <div class="caption">
                         <i class="fa"></i>TOP 4</div>
                     <div class="tools">
@@ -46,7 +46,7 @@ if(!isset($_SESSION['commo']['user_id'])){
     	<div class="col-md-12 blocks use_fullscreen">
     
             <div class="portlet box blocks cus_hung" style="position:relative;">
-                <div class="portlet-title" style="background:#4c87b9 !important;">
+                <div class="portlet-title" style="background:#000099 !important;">
                     <div class="caption get_title_category"></div>
                     <div class="tools">
                         <!-- <a href="" class="fullscreen"> </a>-->
@@ -63,7 +63,7 @@ if(!isset($_SESSION['commo']['user_id'])){
         </div>
         <!--<div class="col-md-12 blocks use_fullscreen">
             <div class="portlet box blocks cus_hung" style="position:relative;">
-                <div class="portlet-title" style="background:#4c87b9 !important;">
+                <div class="portlet-title" style="background:#000099 !important;">
                     <div class="caption">
                         <i class="fa"></i>TOP 3</div>
                     <div class="tools">

@@ -31,7 +31,7 @@
 
 <div class="col-md-5"  style="margin-bottom: 30px;">
     <div class="portlet box blocks cus_hung" style="position:relative;">
-        <div class="portlet-title" style="background:#4c87b9 !important;">
+        <div class="portlet-title" style="background:#000099 !important;">
             <div class="caption " id="get_chartcode" value = "<?php echo (isset($code_first['code']))?$code_first['code']:''; ?>"><?php echo (isset($code_first['code']))?$code_first['code']:''; ?> (INTRADAY)</div>
             <div class="tools">
                 <!-- <a href="" class="fullscreen"> </a>-->
@@ -48,7 +48,7 @@
 
     <div class="portlet box blocks cus_hung" style="position:relative;">
 
-        <div class="portlet-title" style="background:#4c87b9 !important;">
+        <div class="portlet-title" style="background:#000099 !important;">
             <div class="caption "><?php echo (isset($code_first['code']))?$code_first['code']:''; ?> (HISTORY)</div>
             <div class="tools">
                 <!-- <a href="" class="fullscreen"> </a>-->
@@ -66,7 +66,7 @@
 
 
     <!--<div class="portlet box blocks cus_hung" style="position:relative;">
-        <div class="portlet-title" style="background:#4c87b9 !important;">
+        <div class="portlet-title" style="background:#000099 !important;">
             <div class="caption">
                 <i class="fa"></i>news (TOP 5)</div>
             <div class="tools">

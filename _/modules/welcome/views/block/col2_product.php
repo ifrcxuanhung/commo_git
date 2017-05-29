@@ -1,7 +1,7 @@
 <div class="col-md-4">
 
     <div class="portlet box blocks cus_hung" style="position:relative;">
-        <div class="portlet-title" style="background:#4c87b9 !important;">
+        <div class="portlet-title" style="background:#000099 !important;">
             <div class="caption">
                 <i class="fa"></i>specifications</div>
             <div class="tools">

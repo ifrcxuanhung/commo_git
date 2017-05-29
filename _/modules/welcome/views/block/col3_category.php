@@ -31,7 +31,7 @@
 
 <div class="col-md-6">
     <div class="portlet box blocks cus_hung" style="position:relative;">
-        <div class="portlet-title" style="background:#4c87b9 !important;">
+        <div class="portlet-title" style="background:#000099 !important;">
             <div class="caption">
                 <i class="fa"></i>news (TOP 5)</div>
             <div class="tools">
@@ -79,7 +79,7 @@
 
     </div>
     <div class="portlet box blocks cus_hung" style="position:relative;">
-        <div class="portlet-title" style="background:#4c87b9 !important;">
+        <div class="portlet-title" style="background:#000099 !important;">
             <div class="caption">
                 <i class="fa"></i><?php echo $data_dashboard[0]['lable_1']; ?></div>
             <div class="tools">
