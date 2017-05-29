@@ -12,7 +12,7 @@ if(!isset($_SESSION['commo']['user_id'])){
 
             <div class="portlet box blocks cus_hung" style="position:relative;">
                 <div class="portlet-title" style="background:#000099 !important;">
-                    <div class="caption get_title_category2"></div>
+                    <div class="caption"><?php echo $chartcode ?> (INTRADAY)</div>
                     <div class="tools">
                         <!-- <a href="" class="fullscreen"> </a>-->
                         <i class="fa fa-toggle-up fa-lg fullscreens"></i>
@@ -47,7 +47,7 @@ if(!isset($_SESSION['commo']['user_id'])){
     
             <div class="portlet box blocks cus_hung" style="position:relative;">
                 <div class="portlet-title" style="background:#000099 !important;">
-                    <div class="caption get_title_category"></div>
+                    <div class="caption"><?php echo $chartcode ?> (HISTORY)</div>
                     <div class="tools">
                         <!-- <a href="" class="fullscreen"> </a>-->
                         <i class="fa fa-toggle-up fa-lg fullscreens"></i>
