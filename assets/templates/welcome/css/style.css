@@ -876,9 +876,9 @@ a:focus, a:hover {
     overflow: auto;
     position: relative;
     padding: 0px;
-    background: #1d2a36;
-    margin: 0px;
-
+    width:100%;
     -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;
 }
-.mCSB_inside > .mCSB_container{ margin-right:17px !important;}
+.mCustomScrollBox{  width:100%;}
+.mCSB_container{ width:100% !important;}
+.mCSB_inside > .mCSB_container{ margin-right:0px !important;}
