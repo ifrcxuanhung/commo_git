@@ -41,7 +41,7 @@
         </div>
         <div class="portlet-body background_portlet" style="margin-right:5px;">
             <input name="code_chart" id="code_chart" type="hidden" sttr='' value="<?php echo $bctcode; ?>">
-            <div id="chartdiv5" class="chart" style="height:317px;"> </div>
+            <div id="chartdiv5" class="chart" style="height:297px;"> </div>
         </div>
     </div>
 
@@ -57,7 +57,7 @@
         </div>
         <div class="portlet-body background_portlet" style="margin-right:5px;">
             <input name="code_chart" id="code_chart" type="hidden" sttr='' value="<?php echo $bctcode; ?>">
-            <div id="chartdiv8" class="chart" style="height:317px;"> </div>
+            <div id="chartdiv8" class="chart" style="height:297px;"> </div>
         </div>
     </div>
 
