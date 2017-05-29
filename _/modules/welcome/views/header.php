@@ -252,9 +252,13 @@ h1, h2, h3, h4, h5, h6{
                                     <ul class="dropdown-menu dropdown-menu-fw show_sub_menu">
                                         <?php
                                         $childs = simul_child_category();
+										$current_url = current_url();
                                         foreach($childs as $child){
-                                            ?>
+                                            if(strpos($current_url, $child['type']) ===FALSE ) {?>
                                             <li>
+                                            <?php } else { ?>
+                                            <li class="active">
+                                            <?php } ?>
                                                 <a href="<?php echo base_url()?>category/<?php echo $child['type'];?>">
                                                     <?php echo $child['type'];?> </a>
                                             </li>
