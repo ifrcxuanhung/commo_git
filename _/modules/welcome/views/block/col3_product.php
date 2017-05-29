@@ -29,7 +29,7 @@
 </div>
 
 
-<div class="col-md-5">
+<div class="col-md-5"  style="margin-bottom: 30px;">
     <div class="portlet box blocks cus_hung" style="position:relative;">
         <div class="portlet-title" style="background:#4c87b9 !important;">
             <div class="caption " id="get_chartcode" value = "<?php echo (isset($code_first['code']))?$code_first['code']:''; ?>"><?php echo (isset($code_first['code']))?$code_first['code']:''; ?> (INTRADAY)</div>
