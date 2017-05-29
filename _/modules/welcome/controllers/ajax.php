@@ -2492,7 +2492,8 @@ class Ajax extends Welcome{
         echo json_encode($result);
     }
     function getSpectIntraday_customise1(){
-        $type = 'AGRICULTURE';
+        $sql = "(SELECT md.mychart,ddl.* FROM my_data md RIGHT JOIN data_dashboard_list ddl ON (md.symbol = ddl.bctcode) 
+WHERE md.mychoice = 1 AND md.active = 1 AND md.dright = 1 AND mychart <> 0;) ";
         $sql = "SELECT dhc.code, dhc.date, dhc.close FROM data_history_chart as dhc RIGHT JOIN data_dashboard_list ds ON dhc.code=ds.code WHERE ds.type= '{$type}' and ds.top=5";
         //echo "<pre>";print_r($sql);exit;
         $result = $this->db->query($sql)->result_array();
