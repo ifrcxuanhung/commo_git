@@ -242,6 +242,7 @@ define([
 					*/
 					//box chart
 			var type = $("#type_category").text();
+			var chartcode =  $("#chartcode").val();
 
 			//alert(code_chart);
 
@@ -252,7 +253,7 @@ define([
 				return $.ajax({
 					url: $base_url + "ajax/getSpectIntraday_category1",
 					type: "POST",
-					data: {type:type},
+					data: {chartcode:chartcode},
 					async: false
 				});
 			}
@@ -269,8 +270,6 @@ define([
                 //var chartcode = data1[i].chartcode;
 				if (i==(data1.length-1)) { last_new  = data1[i].close;  time_new = data1[i].date}
 			}
-             $(".get_title_category").append(code+' (HISTORY)');
-                   $(".get_title_category2").append(code+' (INTRADAY)');
 			   /*setInterval(function () {
 				   $.ajax({
 					   url: $base_url + "ajax/getSpectIntraday_category1",
@@ -421,7 +420,7 @@ define([
 					return $.ajax({
 						url: $base_url + "ajax/getSpectIntraday_category2",
 						type: "POST",
-						data: {type:type},
+						data: {chartcode:chartcode},
 						async: false
 					});
 				}
