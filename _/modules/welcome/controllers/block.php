@@ -755,7 +755,6 @@ class Block extends MY_Controller {
 
         $data = $this->db->query($sql)->row_array();
         $this->data->code_first = $data;
-        echo "<pre>";print_r($data);exit;
 
         return $this->load->view('block/col3_research', $this->data, true);
     }

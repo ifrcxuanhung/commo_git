@@ -97,11 +97,11 @@ class Dashboard extends Welcome{
             $rs["last"] = ($rs['last'] == null)?'-': number_format((float)$rs['last'], $rs['dec'], '.', ',');
             $data_table1[$rs["id"]] = $rs;
             $html_table1 .='<tr>';
-            $html_table1 .='<td class="td_custom cus_pri" align="left" width="40%"><a href="'.$link_product.'" class="uppercase table_1_name" id="table_1_name_'.$rs['id'].'">'.$rs['name'].'</a></td>';
-            $html_table1 .='<td class="td_custom" align="right"><span id="table_1_expmy_'.$rs['id'].'" class="">'.$rs['expmy'].'</span></td>';
-            $html_table1 .='<td class="td_custom" align="right"><span id="table_1_var_'.$rs['id'].'" class="bg_color_grey">'.$rs["last"].'</span></td>';
-            $html_table1 .='<td class="td_custom" align="right"><span id="table_1_var_'.$rs['id'].'" class="table_1_var '.(($rs['var'] < 0)?'bg_color_red':'bg_color_green').'">'.number_format((float)$rs['var'], 2, '.', ',').'</span></td>';
-            $html_table1 .='<td class="td_custom table_1_lasttimex" align="right" id="table_1_lasttimex_'.$rs['id'].'">'.$rs["time_format"].'</td></tr>';
+            $html_table1 .='<td class="td_custom cus_pri" align="left" width="50%"><a href="'.$link_product.'" class="uppercase table_1_name" id="table_1_name_'.$rs['id'].'">'.$rs['name'].'</a></td>';
+            $html_table1 .='<td class="td_custom" align="right" width="10%"><span id="table_1_expmy_'.$rs['id'].'" class="">'.$rs['expmy'].'</span></td>';
+            $html_table1 .='<td class="td_custom" align="right" width="15%"><span id="table_1_var_'.$rs['id'].'" class="bg_color_grey">'.$rs["last"].'</span></td>';
+            $html_table1 .='<td class="td_custom" align="right" width="15%"><span id="table_1_var_'.$rs['id'].'" class="table_1_var '.(($rs['var'] < 0)?'bg_color_red':'bg_color_green').'">'.number_format((float)$rs['var'], 2, '.', ',').'</span></td>';
+            $html_table1 .='<td class="td_custom table_1_lasttimex" align="right" width="10%" id="table_1_lasttimex_'.$rs['id'].'">'.$rs["time_format"].'</td></tr>';
 
 
 
