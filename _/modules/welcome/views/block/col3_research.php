@@ -36,7 +36,7 @@
     <div class="portlet box blocks cus_hung" style="position:relative;">
         <div class="portlet-title" style="background:#4c87b9 !important;">
             <div class="caption">
-                <i class="fa"></i><?php echo $data_dashboard[0]['lable_1']; ?></div>
+                <i class="fa"></i><?php echo $code_first['name']; ?></div>
             <div class="tools">
                 <!-- <a href="" class="fullscreen"> </a>-->
                 <i class="fa fa-toggle-up fa-lg fullscreens"></i>

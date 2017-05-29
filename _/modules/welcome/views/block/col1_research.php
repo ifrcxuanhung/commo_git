@@ -6,43 +6,43 @@
                 </div>
                 <div class="details" id="details_p">
                     <div class="number align-left" id="number_p">
-                        <span class="dash_0_lb1"><?php echo $data_dashboard[0]['lable_1']; ?></span>
+                        <span class="dash_0_lb1"><?php echo $data_dashboard['lable_1']; ?></span>
                     </div>
                     <div class="desc desc_cus desc_font"> <span>
-   <span class="dash_0_lb2"><?php echo $data_dashboard[0]['lable_2']; ?></span>
+   <span class="dash_0_lb2"><?php echo $data_dashboard['lable_2']; ?></span>
   </span></div>
                 </div>
                 <div class="details details_bottom" id="details_p" style="margin-top: 66px;">
                     <div class="ti_font number" id="number_p">
-                        <span class="dash_0_lb5"><?php echo $data_dashboard[0]['lable_5']; ?></span>
+                        <span class="dash_0_lb5"><?php echo $data_dashboard['lable_5']; ?></span>
                     </div>
                     <div class="desc desc_cus" style="margin-top: -6px"> <span>
-  <span class="dash_0_exchange"><?php echo $data_dashboard[0]['exchange']; ?></span>, <span class="dash_0_expiry"><?php echo $data_dashboard[0]['expiry']; ?></span>
+  <span class="dash_0_exchange"><?php echo $data_dashboard['exchange']; ?></span>, <span class="dash_0_expiry"><?php echo $data_dashboard['expiry']; ?></span>
   </span></div>
                 </div>
 
                 <div class="details" style="padding-right: 11px;">
-                    <div class="number ti_font" style="text-align: right !important;"> <span style="font-size: 32px;" data-counter="counterup" data-value="<?php echo number_format((float)$data_dashboard[0]['lable_3'], $data_dashboard[0]['dec'], '.', ','); ?>" class="index_last" id="dash_0_lb3"><?php echo number_format((float)$data_dashboard[0]['lable_3'], $data_dashboard[0]['dec'], '.', ','); ?></span> <!--
+                    <div class="number ti_font" style="text-align: right !important;"> <span style="font-size: 32px;" data-counter="counterup" data-value="<?php echo number_format((float)$data_dashboard['lable_3'], $data_dashboard['dec'], '.', ','); ?>" class="index_last" id="dash_0_lb3"><?php echo number_format((float)$data_dashboard['lable_3'], $data_dashboard['dec'], '.', ','); ?></span> <!--
   USD
   --></div>
                     <div class="align-right" style="margin-top: -6px"> <span>
-   <span class="dash_0_lb4"><?php echo $data_dashboard[0]['lable_4']; ?></span>
+   <span class="dash_0_lb4"><?php echo $data_dashboard['lable_4']; ?></span>
   </span> </div>
                 </div>
                 <div class="details_bottom details" style="margin-top: 62px">
                     <div class="number"> <span class="index_last" style="font-size: 20px;">
-  <span class="dash_0_lb7"><?php echo number_format((float)$data_dashboard[0]['lable_7'], $data_dashboard[0]['dec'], '.', ','); ?></span>
+  <span class="dash_0_lb7"><?php echo number_format((float)$data_dashboard['lable_7'], $data_dashboard['dec'], '.', ','); ?></span>
   </span></div>
                     <div class="desc" style="text-align: right !important; margin-top: -6px"> <span>
-                    <span class="dash_0_change"><?php echo $data_dashboard[0]['change']; ?></span>&nbsp;(<span class="dash_0_var"><?php echo $data_dashboard[0]['var']; ?></span>%)
+                    <span class="dash_0_change"><?php echo $data_dashboard['change']; ?></span>&nbsp;(<span class="dash_0_var"><?php echo $data_dashboard['var']; ?></span>%)
   </span> </div>
 
                 </div>
                 <a class="more" id="p" style="height:32px;" href="javascript:;"></a>
                 <div class="vnx_other_product"><a href="#" data-target="#order_product" data-toggle="modal" class="btn yellow-crusta" type="button">
-                        <span class="dash_0_lasttimex"><?php echo $data_dashboard[0]['lasttimex']; ?></span>
+                        <span class="dash_0_lasttimex"><?php echo $data_dashboard['lasttimex']; ?></span>
                     </a> </div>
-                <div class="vnx_other_product2"><a href="category/<?php echo $data_dashboard[0]['type']; ?>" class="btn yellow-crusta" type="button">
+                <div class="vnx_other_product2"><a href="category/<?php echo $data_dashboard['type']; ?>" class="btn yellow-crusta" type="button">
                         <span class="dash_0_lb10">other product</span>
                     </a>  <i class="m-icon-swapright m-icon-white cus_h"></i></div>
 
