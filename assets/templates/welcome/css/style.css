@@ -112,7 +112,7 @@ tr:hover{  background:#222222 !important;}
 
 .portlet{ margin-bottom:10px;}
 thead tr th{ color:#6fb9fc;}
-.red .portlet-title{ background:#4c87b9 !important; font-weight:bold;}
+.red .portlet-title{ background:#4c87b9 !important;}
 .title_red .portlet-title{ background:#4c87b9 !important; font-weight:bold;}
 .table-striped > tbody > tr:nth-of-type(2n+1){ background:#3b3b3b;}
 .table-striped > tbody > tr:nth-of-type(2n+2){ background:#333333;}
