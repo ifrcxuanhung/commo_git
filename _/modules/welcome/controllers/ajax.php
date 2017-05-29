@@ -2451,7 +2451,8 @@ class Ajax extends Welcome{
 
     function getSpectIntraday_category1(){
         $type = $_POST['type'];
-        $sql = "SELECT dhc.code, dhc.date, dhc.close FROM data_history_chart as dhc RIGHT JOIN data_dashboard_list ds ON dhc.code=ds.code WHERE ds.type= '{$type}' and ds.top=5";
+        $sql = "SELECT di.* FROM data_history_chart as di RIGHT JOIN ( select ds.code from data_dashboard_list as dl LEFT JOIN data_series_last as ds  ON dl.bctcode=ds.symbol  
+WHERE dl.type='{$type}' and dl.active = 1 and dl.top=5 ORDER BY ds.openinterest desc LImit 1 ) as a ON di.code=a.code";
         //echo "<pre>";print_r($sql);exit;
         $result = $this->db->query($sql)->result_array();
       
@@ -2508,7 +2509,8 @@ class Ajax extends Welcome{
     }
     function getSpectIntraday_category2(){
         $type = $_POST['type'];
-        $sql = "SELECT di.code, di.datetime as date, di.last as close FROM data_intraday as di RIGHT JOIN data_dashboard_list ds ON di.code=ds.code WHERE ds.type= '{$type}' and ds.top=5 order by date ASC";
+        $sql = "SELECT di.code, di.datetime as date, di.last as close FROM data_intraday as di RIGHT JOIN ( select ds.code from data_dashboard_list as dl LEFT JOIN data_series_last as ds  ON dl.bctcode=ds.symbol  
+WHERE dl.type='{$type}' and dl.active = 1 and dl.top=5 ORDER BY ds.openinterest desc LImit 1 ) as a ON di.code=a.code";
         //echo "<pre>";print_r($sql);exit;
         $result = $this->db->query($sql)->result_array();
         echo json_encode($result);
