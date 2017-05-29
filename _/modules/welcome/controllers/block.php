@@ -182,13 +182,13 @@ class Block extends MY_Controller {
 					 }
 					 $link_product = (!is_null($rs["bctcode"]) && $rs["bctcode"]!='') ? (base_url().'product/'.$rs["bctcode"]) : '#';
                     $html_table1 .='<tr>';
-                    $html_table1 .='<td class="td_custom cus_pri" align="left" width="50%"><a href="'.$link_product.'" class="uppercase table_1_name" id="table_1_name_'.$rs['id'].'">'.$rs['name'].'</a></td>';
-                    $html_table1 .='<td class="td_custom" align="right" width="10%"><span id="table_1_expmy_'.$rs['id'].'" class="">'.$rs['expmy'].'</span></td>';
+                    $html_table1 .='<td class="td_custom cus_pri" align="left" ><a href="'.$link_product.'" class="uppercase table_1_name" id="table_1_name_'.$rs['id'].'">'.$rs['name'].'</a></td>';
+                    $html_table1 .='<td class="td_custom" align="right"><span id="table_1_expmy_'.$rs['id'].'" class="">'.$rs['expmy'].'</span></td>';
 
-                    $html_table1 .='<td class="td_custom" align="right"width="15%"><span id="table_1_var_'.$rs['id'].'" class="bg_color_grey">'.(($rs['last'] == null)?'-': number_format((float)$rs['last'], $rs['dec'], '.', ',')).'</span></td>';
+                    $html_table1 .='<td class="td_custom" align="right"><span id="table_1_var_'.$rs['id'].'" class="bg_color_grey">'.(($rs['last'] == null)?'-': number_format((float)$rs['last'], $rs['dec'], '.', ',')).'</span></td>';
 
-                    $html_table1 .='<td class="td_custom" align="right"width="15%"><span id="table_1_var_'.$rs['id'].'" class="table_1_var '.(($rs['var'] < 0)?'bg_color_red':'bg_color_green').'">'.(($rs['var'] == null)?'-': number_format((float)$rs['var'], 2, '.', ',')).'</span></td>';
-                    $html_table1 .='<td class="td_custom table_1_lasttimex" align="right" width="10%" id="table_1_lasttimex_'.$rs['id'].'">'.$rs["time_format"].'</td></tr>';
+                    $html_table1 .='<td class="td_custom" align="right"><span id="table_1_var_'.$rs['id'].'" class="table_1_var '.(($rs['var'] < 0)?'bg_color_red':'bg_color_green').'">'.(($rs['var'] == null)?'-': number_format((float)$rs['var'], 2, '.', ',')).'</span></td>';
+                    $html_table1 .='<td class="td_custom table_1_lasttimex" align="right" id="table_1_lasttimex_'.$rs['id'].'">'.$rs["time_format"].'</td></tr>';
 
 
 
@@ -480,9 +480,8 @@ class Block extends MY_Controller {
 
     public function col1_customise()
     {
-        $sql = "SELECT * FROM my_data WHERE mychoice = 1 AND active = 1 AND dright = 1 LIMIT 1";
-        $result1 = $this->db->query($sql)->row_array();
-        $detail1 = $this->db->query("SELECT * FROM data_dashboard_list where type = '$result1[type]' AND active = 1  ORDER BY top DESC, name ASC")->result_array();
+        $sql = "SELECT ddl.* FROM my_data md RIGHT JOIN data_dashboard_list ddl ON (md.symbol = ddl.bctcode) WHERE md.mychoice = 1 AND md.active = 1 AND md.dright = 1 ";
+        $detail1 = $this->db->query($sql)->result_array();
 
 
         $html_table1 = '';
@@ -536,17 +535,17 @@ class Block extends MY_Controller {
 
 
 
-        $sql2 = "SELECT * FROM my_data WHERE mychoice = 9 AND active = 1 AND dright = 1";
-        $result2 = $this->db->query($sql2)->result_array();
+        $sql2 = "SELECT ddl.* FROM my_data md RIGHT JOIN data_dashboard_list ddl ON (md.symbol = ddl.bctcode) WHERE md.mychoice = 9 AND md.active = 1 AND md.dright = 1";
+        $detail2 = $this->db->query($sql2)->result_array();
 
-        $arr = "(";
-        foreach($result2 as $re2){
-            $arr .= "'".$re2['type']."',";
+        /* $arr = "(";
+         foreach($result2 as $re2){
+             $arr .= "'".$re2['type']."',";
 
-        }
-        $arr = substr($arr,0,-1);
-        $arr .= ")";
-        $detail2 = $this->db->query("SELECT * FROM data_dashboard_list where type IN $arr AND active = 1  ORDER BY top DESC, name ASC")->result_array();
+         }
+         $arr = substr($arr,0,-1);
+         $arr .= ")";
+         $detail2 = $this->db->query("SELECT * FROM data_dashboard_list where type IN $arr AND active = 1  ORDER BY top DESC, name ASC")->result_array();*/
 
 
         $html_table2 = '';
