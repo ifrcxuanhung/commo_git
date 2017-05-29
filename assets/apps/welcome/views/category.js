@@ -11,6 +11,7 @@ define([
             index: function(){
                
                $(document).ready(function(){
+				   /*
 				   var type_category = $('#type_category').text();
 				   setInterval(function(){
 						var data='';
@@ -238,6 +239,7 @@ define([
 							}
 						});
 					}, 4000);
+					*/
 					//box chart
 			var type = $("#type_category").text();
 
@@ -264,11 +266,11 @@ define([
 				var date = data1[i].date;
 				res.push({'time':date,'value': parseFloat(data1[i].close).toFixed(2)});
                 var code = data1[i].code;
-                var chartcode = data1[i].chartcode;
+                //var chartcode = data1[i].chartcode;
 				if (i==(data1.length-1)) { last_new  = data1[i].close;  time_new = data1[i].date}
 			}
              $(".get_title_category").append(code+' (HISTORY)');
-                   $(".get_title_category2").append(chartcode+' (INTRADAY)');
+                   $(".get_title_category2").append(code+' (INTRADAY)');
 			   /*setInterval(function () {
 				   $.ajax({
 					   url: $base_url + "ajax/getSpectIntraday_category1",
@@ -521,7 +523,7 @@ define([
                    }
 				
 				// chart 3
-				
+				/*
 				function getvalueCHART_3(){
 					//console.log(code_chart);
 					return $.ajax({
@@ -712,7 +714,7 @@ define([
 					});
 				
 				};
-					
+					*/
 					
                });
             },
