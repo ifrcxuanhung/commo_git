@@ -50,7 +50,7 @@
     </div>
 
     <div class="portlet box red blocks" style="margin-bottom:5px;">
-        <div class="portlet-title header-table" style="position:relative;">
+        <div class="portlet-title header-table" style="position:relative; background:#000099 !important;">
             <div class="caption">Settings</div>
             <div class="tools">
                 <!-- <a href="" class="fullscreen"> </a>-->

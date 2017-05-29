@@ -4,12 +4,11 @@
     <div class="col-md-3 blocks use_fullscreen">
         
         <div class="portlet box red blocks" style="position:relative;">
-            <div class="portlet-title">
+            <div class="portlet-title" style="background:#000099 !important;">
                 <div class="caption">
                     <i class="fa"></i><?php translate('head_box_module1'); ?></div>
                     <div class="tools">
-                        <i class="fa fa-arrows-alt fullscreens"></i>
-                        <i class="fa fa-compress minscreens"></i>
+                        
                     </div>
             </div>
             <div class="portlet-body background_portlet text-center" style="height: 250px; line-height: 250px;">
@@ -19,12 +18,11 @@
             </div>
          </div>
          <div class="portlet box red blocks" style="position:relative">
-            <div class="portlet-title">
+            <div class="portlet-title" style="background:#000099 !important;">
                 <div class="caption">
                     <i class="fa"></i><?php translate('head_box_module2'); ?></div>
                     <div class="tools">
-                        <i class="fa fa-arrows-alt fullscreens"></i>
-                        <i class="fa fa-compress minscreens"></i>
+                        
                     </div>
             </div>
             <div class="portlet-body background_portlet text-center" style="height: 150px; line-height: 150px;">
@@ -38,12 +36,11 @@
     </div>
     <div class="col-md-6 blocks use_fullscreen">
         <div class="portlet box red blocks" style="position:relative">
-            <div class="portlet-title">
+            <div class="portlet-title" style="background:#000099 !important;">
                 <div class="caption">
                     <i class="fa"></i><?php translate('head_box_module3'); ?></div>
                     <div class="tools">
-                        <i class="fa fa-arrows-alt fullscreens"></i>
-                        <i class="fa fa-compress minscreens"></i>
+                        
                     </div>
             </div>
             <div class="portlet-body background_portlet text-center" style="height: 450px; line-height: 450px;">
@@ -55,12 +52,11 @@
     </div>
     <div class="col-md-3 blocks use_fullscreen">
         <div class="portlet box red blocks" style="position:relative">
-            <div class="portlet-title">
+            <div class="portlet-title" style="background:#000099 !important;">
                 <div class="caption">
                     <i class="fa"></i><?php translate('head_box_module4'); ?></div>
                     <div class="tools">
-                        <i class="fa fa-arrows-alt fullscreens"></i>
-                        <i class="fa fa-compress minscreens"></i>
+                        
                     </div>
             </div>
             <div class="portlet-body background_portlet text-center" style="height: 450px; line-height: 450px;">
@@ -74,12 +70,11 @@
 <!-- END CONTENT -->   
 <div class="row">
     <div class="portlet box red blocks" style="position:relative">
-        <div class="portlet-title">
+        <div class="portlet-title" style="background:#000099 !important;">
             <div class="caption">
                 <i class="fa"></i><?php translate('head_box_available_modules'); ?></div>
                 <div class="tools">
-                        <i class="fa fa-arrows-alt fullscreens"></i>
-                        <i class="fa fa-compress minscreens"></i>
+                        
                     </div>
         </div>
         <div class="portlet-body background_portlet">
