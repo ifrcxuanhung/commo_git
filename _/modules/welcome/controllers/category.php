@@ -8,15 +8,10 @@ class Category extends Welcome{
     
     public function index($type='agriculture') {
 		if($this->data->permistion_menu) {
-			$data_dashboard = $this->db->query("SELECT * FROM data_dashboard WHERE type = '$type'")->result_array();
-			if(isset($data_dashboard) && count($data_dashboard) < 1 ) $type='agriculture';
 			$block = new Block();
 	
 			$this->data->col1_category = $block->col1_category($type);
 			//$this->data->col3_category = $block->col3_category($type);
-			
-			
-			
 			$this->template->write_view('content', 'category', $this->data);
 		}
 		else {
