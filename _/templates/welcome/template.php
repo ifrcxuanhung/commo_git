@@ -92,7 +92,7 @@ $template_url = template_url();
     <!-- BEGIN MAIN LAYOUT -->
 	 <div class="page-container main-container" style="margin:0px;">
          <?php echo $header; ?>
-	    <div class="container-fluid main-container margin-bottom-50"
+	    <div class="container-fluid main-container "
              <?php if( $this->router->fetch_class() == 'category' && $this->uri->segment(3) == ''){ echo 'style="margin-top: 50px;"'; }?> >
         
         	<!-- <div class="loader"></div>-->
