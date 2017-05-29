@@ -2,6 +2,7 @@
     <div class="dashboard-stat red-thunderbird">
                 <div class="visual">
 
+
                     <i class="fa fa-line-chart"></i>
                 </div>
                 <div class="details" id="details_p">

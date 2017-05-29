@@ -47,6 +47,7 @@
 
 
     <div class="portlet box blocks cus_hung" style="position:relative;">
+
         <div class="portlet-title" style="background:#4c87b9 !important;">
             <div class="caption "><?php echo (isset($code_first['code']))?$code_first['code']:''; ?> (HISTORY)</div>
             <div class="tools">
