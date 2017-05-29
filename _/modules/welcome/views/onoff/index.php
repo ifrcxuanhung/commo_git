@@ -15,7 +15,7 @@ if(!isset($_SESSION['commo']['user_id'])){
 <div class="col-md-12">
     <!-- BEGIN PORTLET-->
     <div class="portlet light form-fit bordered" style="width:100%;">
-        <div class="portlet-title" style="background:#4c87b9 !important; padding-top:0px; padding-bottom:0px; border:solid 1px #404040 !important;">
+        <div class="portlet-title" style="background:#000099 !important;" padding-top:0px; padding-bottom:0px; border:solid 1px #404040 !important;">
         <div class="caption" style="color:#fff; font-weight:bold; line-height:27px;">
             <i class="fa"></i><?php translate('head_open_close'); ?></div>
            

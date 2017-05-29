@@ -1,6 +1,6 @@
 
 <div class="portlet box blocks" style="position:relative;">
-    <div class="portlet-title" style="background:#4c87b9 !important;">
+    <div class="portlet-title" style="background:#000099 !important;"">
         <div class="caption">
             <i class="fa"></i><?php translate('head_box_flot_chat'); ?></div>
             <div class="tools">
