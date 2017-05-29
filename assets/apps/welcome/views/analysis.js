@@ -720,7 +720,7 @@ define([
 									"title": "Cbot",
 									"valueField": "cbot",
 									"fillAlphas": 0,
-									"lineThickness": 2,
+									"lineThickness": 4,
 									"lineAlpha":0.9
 								}, {
 									"valueAxis": "v2",
