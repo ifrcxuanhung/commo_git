@@ -3,7 +3,7 @@
     <div class="portlet box blocks cus_hung" style="position:relative;">
         <div class="portlet-title" style="background:#000099 !important;">
             <div class="caption">
-                <i class="fa"></i><span id="type_category">MY INDICATORS</span></div>
+                <i class="fa"></i><span id="type_category">MY PORTFOLIO</span></div>
             <div class="tools">
                 <i class="fa fa-toggle-up fa-lg fullscreens"></i>
             </div>
