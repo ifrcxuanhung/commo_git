@@ -162,8 +162,7 @@ class Edit_user extends Generic {
 			$sql[] = "DELETE FROM login_profiles WHERE user_id = :id;";
 			$sql[] = "DELETE FROM login_timestamps WHERE user_id = :id;";
 			$sql[] = "DELETE FROM user WHERE id = :id;";
-			$sql[] = "DELETE FROM user_info WHERE id_user = :id;";
-			$sql[] = "DELETE FROM vdm_user_summary WHERE id_user = :id;";
+			$sql[] = "DELETE FROM user_info WHERE id_user = :id;";			
 
 			foreach ($sql as $do) {
 				parent::query($do, $params);

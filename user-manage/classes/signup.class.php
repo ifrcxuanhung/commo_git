@@ -326,9 +326,6 @@ class SignUp extends Generic {
 				':id'			=>$user_id
 			);
 			if ( $this->use_emails ) unset($params_user[':username']);
-			//
-			parent::query("INSERT INTO `vdm_user_summary` (`id_user`,`user_name`,`initial`,`cur_value`,`perform`,`opt_nb_ord`,`opt_nb_trd`,`opt_volume`,`fut_nb_ord`,`fut_nb_trd`,`fut_volume`,`tt_nb_ord`,`tt_nb_trd`,`tt_volume`)
-			VALUES (:id,:{$this->username_type},10000000,10000000,0,0,0,0,0,0,0,0,0,0);", $params_user_vdm);
 			//$_SESSION['commo']['user_id'] = $user_id;
 
 			/* Social integration. */

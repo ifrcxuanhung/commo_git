@@ -160,9 +160,7 @@ class Add_user extends Generic {
 		parent::query("INSERT INTO `user` (`id`, `email`, `last_name`,`username`, `password`)
 						VALUES (:id, :email, :last_name, :username, :password);", $params_user);	
 		parent::query("INSERT INTO `user_info` (`id_user`,`user_level`)
-		VALUES (".$user_id.",1);");	
-		parent::query("INSERT INTO `vdm_user_summary` (`id_user`,`user_name`,`initial`,`cur_value`,`perform`,`opt_nb_ord`,`opt_nb_trd`,`opt_volume`,`fut_nb_ord`,`fut_nb_trd`,`fut_volume`,`tt_nb_ord`,`tt_nb_trd`,`tt_volume`)
-		VALUES (:id,:username,10000,10000,0,0,0,0,0,0,0,0,0,0);", array(':username'   => $this->username,':id'=>$user_id));							
+		VALUES (".$user_id.",1);");							
 
 		$shortcodes = array(
 			'site_address'	=>	SITE_PATH,
