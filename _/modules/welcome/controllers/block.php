@@ -83,7 +83,7 @@ class Block extends MY_Controller {
                 $email = $this->input->post('email');
                 $message = $this->input->post('message');
 
-				$to = 'ifrc.yenthy@gmail.com';
+				$to = 'xuanhung1606@gmail.com';
 				$subject = "Email contact of {$name} ({$email})";
 				$message = $message;
 				$send = $this->sendmail($to, $to, $name, $subject, $message, $to, $to);
