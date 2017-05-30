@@ -57,7 +57,7 @@
         <?php $url = explode("user-manage",$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']);
 			$baseURL = $url[0];
 		?>
-               <a href="http://<?php echo $baseURL;?>" style="text-decoration:none;"> <h3 style="margin-top: 18px; color:#fcd116 !important; font-weight: bold;">VIET NAM <span style="color: red;"> Derivatives Market Initiatives</span></h3></a>
+               <a href="http://<?php echo $baseURL;?>" style="text-decoration:none;"> <h3 style="margin-top: 18px; color:#fcd116 !important; font-weight: bold;">COMMODITYVN .com</h3></a>
                   
            </div>
            
