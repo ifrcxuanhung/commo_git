@@ -251,7 +251,7 @@ class Generic extends Connect {
 		$optionalParams = '';
 		ini_set( 'sendmail_from', "thy@ifrc.vn" ); 
 		ini_set( 'SMTP', "mail.ifrc.vn" ); 
-		ini_set( 'smtp_port', 465 );
+		ini_set( 'smtp_port', 25  );
 		return mail($to, $subj, nl2br(html_entity_decode($msg)), $headers, $optionalParams);
 
 	}
