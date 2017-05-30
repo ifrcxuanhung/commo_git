@@ -27,8 +27,8 @@ class Block extends MY_Controller {
         $mail->Port = 465; // set the port to use
         $mail->SMTPAuth = true; // turn on SMTP authentication
         $mail->SMTPSecure = "ssl";
-        $mail->Username = "news@upmd.fr"; // your SMTP username or your gmail username// Email gui thu
-        $mail->Password = "DmPuswen"; // your SMTP password or your gmail password
+        $mail->Username = "thy@ifrc.vn"; // your SMTP username or your gmail username// Email gui thu
+        $mail->Password = "ifrcvn"; // your SMTP password or your gmail password
         //$from = $mailfrom; // Reply to this email// Email khi reply
         $mail->CharSet = "utf-8";
         $from = $emailreplay; // Reply to this email// Email khi reply
