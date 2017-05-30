@@ -7,16 +7,15 @@ class Help extends Welcome{
     }
     
     public function index() {
-        $block = new Block();
-        
-        $this->data->dashboard_stat = $block->dashboard_stat();
-		$this->data->chart = $block->flotchart('500px');
-		$this->data->bottom_chart = $block->bottom_chart();
-        
-        $this->data->education_news = $block->table_education_news();
-        $this->data->answer_questions = $block->table_answer_questions();
-        $this->data->block_contact = $block->contact();
-		$this->template->write_view('content', 'help', $this->data);
+		if($this->data->permistion_menu) {
+			$block = new Block();
+			
+			$this->data->dashboard = $block->dashboard();
+			$this->data->block_contact = $block->contact();
+			$this->template->write_view('content', 'help', $this->data);
+		}
+		else
+		 	$this->template->write_view('content', 'not_permistion', $this->data);
 		$this->template->render();
     }
 	public function get_faq(){
