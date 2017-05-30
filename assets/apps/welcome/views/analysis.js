@@ -662,10 +662,7 @@ define([
                                 $(".loader1").show();
 
                             },
-                            complete: function(){
-                                $(".loader1").hide();
 
-                            },
 							async: false
 						});
 					}
@@ -829,6 +826,7 @@ define([
 								chart.zoomToIndexes(chart.dataProvider.length - 20, chart.dataProvider.length - 1);
 							}
 						}
+                   $(".loader1").hide();
 
 				   
                });
