@@ -11,7 +11,7 @@
                     </div>
                 </div>
                 <div class="portlet-body background_portlet" style="margin-right:5px;">
-                    <div id="chartdiv_customise1" class="chart" style="height: 325px; width: 110%; margin:-4%;"> </div>
+                    <div id="chartdiv_customise1" class="chart" style="height: 347px; width: 110%; margin:-4%;"> </div>
                 </div>
             </div>
 
@@ -33,7 +33,7 @@
                 </div>
                 <div class="portlet-body background_portlet" style="margin-right:5px;">
                     <input name="code_chart" id="code_chart" type="hidden" sttr='' value="<">
-                    <div id="chartdiv_customise2" class="chart" style="height:325px; width: 110%; margin:-4%;"> </div>
+                    <div id="chartdiv_customise2" class="chart" style="height:347px; width: 110%; margin:-4%;"> </div>
                 </div>
             </div>
 
