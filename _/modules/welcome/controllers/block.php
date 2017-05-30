@@ -616,7 +616,7 @@ class Block extends MY_Controller {
         $this->data->data_dashboard = $this->db->query("SELECT dl.lasttime,dl.name,dl.unit, dl.lasttimex, dl.last, dl.`change`, dl.var, dl.`dec` as dec_list, dl.exchange, dl.expiry, dd.* FROM data_dashboard_list as dl  LEFT JOIN data_dashboard as dd ON dl.type=dd.type where dl.bctcode='{$bctcode}'")->result_array();
 
 
-        $sql = "SELECT dsl.*,ddl.dec FROM data_series_last as dsl  RIGHT JOIN data_dashboard_list as ddl ON dsl.symbol=ddl.bctcode where dsl.symbol = '{$bctcode}' and mon<>'Cash' ORDER BY dsl.openinterest DESC limit 1";
+        $sql = "SELECT dsl.*,ddl.dec FROM data_series_last as dsl  RIGHT JOIN data_dashboard_list as ddl ON dsl.symbol=ddl.bctcode where dsl.symbol = '{$bctcode}' and mon<>'Cash' ORDER BY dsl.expyyyymm ASC limit 1";
 
         $data = $this->db->query($sql)->row_array();
         $this->data->code_first = $data;
