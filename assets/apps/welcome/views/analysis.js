@@ -658,6 +658,14 @@ define([
 						return $.ajax({
 							url: $base_url + "ajax/getSpectIntraday6",
 							type: "POST",
+                            beforeSend: function(){
+                                $(".loader1").show();
+
+                            },
+                            complete: function(){
+                                $(".loader1").hide();
+
+                            },
 							async: false
 						});
 					}

@@ -376,6 +376,14 @@ define([
                            url: $base_url + "ajax/getSpectIntraday_product1",
                            type: "POST",
                            data: {chartcode:chartcode},
+                           beforeSend: function(){
+                               $(".loader1").show();
+
+                           },
+                           complete: function(){
+                               $(".loader1").hide();
+
+                           },
                            async: false
                        });
                    }
@@ -487,6 +495,14 @@ define([
                            url: $base_url + "ajax/getSpectIntraday_product2",
                            type: "POST",
                            data: {chartcode:chartcode},
+                           beforeSend: function(){
+                               $(".loader2").show();
+
+                           },
+                           complete: function(){
+                               $(".loader2").hide();
+
+                           },
                            async: false
                        });
                    }

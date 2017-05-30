@@ -254,6 +254,14 @@ define([
 					url: $base_url + "ajax/getSpectIntraday_category1",
 					type: "POST",
 					data: {chartcode:chartcode},
+                    beforeSend: function(){
+                        $(".loader1").show();
+
+                    },
+                    complete: function(){
+                        $(".loader1").hide();
+
+                    },
 					async: false
 				});
 			}
@@ -421,6 +429,14 @@ define([
 						url: $base_url + "ajax/getSpectIntraday_category2",
 						type: "POST",
 						data: {chartcode:chartcode},
+                        beforeSend: function(){
+                            $(".loader2").show();
+
+                        },
+                        complete: function(){
+                            $(".loader2").hide();
+
+                        },
 						async: false
 					});
 				}
@@ -521,199 +537,7 @@ define([
                        return chartData;
                    }
 				
-				// chart 3
-				/*
-				function getvalueCHART_3(){
-					//console.log(code_chart);
-					return $.ajax({
-						url: $base_url + "ajax/getSpectIntraday3",
-						type: "POST",
-						data: {codeint:code_chart},
-						async: false
-					});
-				}
-				var data3 = jQuery.parseJSON(getvalueCHART_3().responseText);
-				// console.log(data1);
-				var res = [];
-				for (var i = 1; i < data3.length; ++i){
-				
-					var date = data3[i].date;
-					res.push({'time':date,'value': parseFloat(data3[i].close).toFixed(2)})
-					if (i==(data3.length-1)) { last_new  = data3[i].close;  time_new = data3[i].date}
-				}
-				if ($('#chartdiv3').size() != 0) {
 
-					$('#site_statistics_loading').hide();
-					$('#site_statistics_content').show();
-				
-					var chart = AmCharts.makeChart( "chartdiv3", {
-						"type": "serial",
-						"theme": "none",
-						"marginRight": 40,
-						"marginLeft": 70,
-						"autoMarginOffset": 20,
-						"dataDateFormat": "YYYY-MM-DD",
-						"valueAxes": [ {
-							"id": "v1",
-							"axisAlpha": 0,
-							"position": "left",
-							"ignoreAxisWidth": true
-						} ],
-						"balloon": {
-							"borderThickness": 1,
-							"shadowAlpha": 0
-						},
-						"graphs": [ {
-							"id": "g1",
-							"balloon": {
-								"drop": true,
-								"adjustBorderColor": false,
-								"color": "#ffffff",
-								"type": "smoothedLine"
-							},
-							"fillAlphas": 0.2,
-							"bullet": "round",
-							"bulletBorderAlpha": 1,
-							"bulletColor": "#FFFFFF",
-							"bulletSize": 5,
-							"hideBulletsCount": 50,
-							"lineThickness": 2,
-							"title": "red line",
-							"useLineColorForBulletBorder": true,
-							"valueField": "value",
-							"balloonText": "<span style='font-size:18px;'>[[value]]</span>"
-						} ],
-						"chartCursor": {
-							"valueLineEnabled": true,
-							"valueLineBalloonEnabled": true,
-							"cursorAlpha": 0,
-							"zoomable": false,
-							"valueZoomable": true,
-							"valueLineAlpha": 0.5
-						},
-						"valueScrollbar": {
-							"autoGridCount": true,
-							"color": "#000000",
-							"scrollbarHeight": 50
-						},
-						"categoryField": "time",
-						"categoryAxis": {
-							"parseDates": true,
-							"dashLength": 1,
-							"minorGridEnabled": true
-						},
-						"export": {
-							"enabled": true
-						},
-						"dataProvider": res
-					} );
-				
-					chart.addListener("rendered", zoomChart);
-				
-					zoomChart();
-				
-					$('#chartdiv3').closest('.portlet').find('.fullscreen').click(function() {
-						chart.invalidateSize();
-					});
-				
-				};
-				function getvalueCHART_4(){
-					//console.log(code_chart);
-					return $.ajax({
-						url: $base_url + "ajax/getSpectIntraday4",
-						type: "POST",
-						data: {codeint:code_chart},
-						async: false
-					});
-				}
-				var data4 = jQuery.parseJSON(getvalueCHART_4().responseText);
-				// console.log(data1);
-				var res = [];
-				for (var i = 1; i < data4.length; ++i){
-				
-					var date = data4[i].date;
-					res.push({'time':date,'value': parseFloat(data4[i].close).toFixed(2)})
-					if (i==(data4.length-1)) { last_new  = data4[i].close;  time_new = data4[i].date}
-				}
-				if ($('#chartdiv4').size() != 0) {
-
-					$('#site_statistics_loading').hide();
-					$('#site_statistics_content').show();
-				
-					var chart = AmCharts.makeChart( "chartdiv4", {
-						"type": "serial",
-						"theme": "none",
-						"marginRight": 40,
-						"marginLeft": 70,
-						"autoMarginOffset": 20,
-						"dataDateFormat": "YYYY-MM-DD",
-						"valueAxes": [ {
-							"id": "v1",
-							"axisAlpha": 0,
-							"position": "left",
-							"ignoreAxisWidth": true
-						} ],
-						"balloon": {
-							"borderThickness": 1,
-							"shadowAlpha": 0
-						},
-						"graphs": [ {
-							"id": "g1",
-							"balloon": {
-								"drop": true,
-								"adjustBorderColor": false,
-								"color": "#ffffff",
-								"type": "smoothedLine"
-							},
-							"fillAlphas": 0.2,
-							"bullet": "round",
-							"bulletBorderAlpha": 1,
-							"bulletColor": "#FFFFFF",
-							"bulletSize": 5,
-							"hideBulletsCount": 50,
-							"lineThickness": 2,
-							"title": "red line",
-							"useLineColorForBulletBorder": true,
-							"valueField": "value",
-							"balloonText": "<span style='font-size:18px;'>[[value]]</span>"
-						} ],
-						"chartCursor": {
-							"valueLineEnabled": true,
-							"valueLineBalloonEnabled": true,
-							"cursorAlpha": 0,
-							"zoomable": false,
-							"valueZoomable": true,
-							"valueLineAlpha": 0.5
-						},
-						"valueScrollbar": {
-							"autoGridCount": true,
-							"color": "#000000",
-							"scrollbarHeight": 50
-						},
-						"categoryField": "time",
-						"categoryAxis": {
-							"parseDates": true,
-							"dashLength": 1,
-							"minorGridEnabled": true
-						},
-						"export": {
-							"enabled": true
-						},
-						"dataProvider": res
-					} );
-				
-					chart.addListener("rendered", zoomChart);
-				
-					zoomChart();
-				
-				
-				
-					$('#chartdiv4').closest('.portlet').find('.fullscreen').click(function() {
-						chart.invalidateSize();
-					});
-				
-				};
-					*/
 					
                });
             },

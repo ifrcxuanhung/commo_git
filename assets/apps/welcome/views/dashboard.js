@@ -713,6 +713,14 @@ define([
                             url: $base_url + "ajax/getSpectIntraday1",
                             type: "POST",
                             data: {codeint:code_chart},
+                            beforeSend: function(){
+                                $(".loader_dashboard_1").show();
+
+                            },
+                            complete: function(){
+                                $(".loader_dashboard_1").hide();
+
+                            },
                             async: false
                         });
                     }
@@ -822,6 +830,14 @@ define([
 						url: $base_url + "ajax/getSpectIntraday2",
 						type: "POST",
 						data: {codeint:code_chart},
+                        beforeSend: function(){
+                            $(".loader_dashboard_2").show();
+
+                        },
+                        complete: function(){
+                            $(".loader_dashboard_2").hide();
+
+                        },
 						async: false
 					});
 				}
@@ -925,6 +941,14 @@ define([
                             url: $base_url + "ajax/getSpectIntraday3",
                             type: "POST",
                             data: {codeint:code_chart},
+                            beforeSend: function(){
+                                $(".loader_dashboard_3").show();
+
+                            },
+                            complete: function(){
+                                $(".loader_dashboard_3").hide();
+
+                            },
                             async: false
                         });
                     }
@@ -1027,6 +1051,14 @@ define([
                             url: $base_url + "ajax/getSpectIntraday4",
                             type: "POST",
                             data: {codeint:code_chart},
+                            beforeSend: function(){
+                                $(".loader_dashboard_4").show();
+
+                            },
+                            complete: function(){
+                                $(".loader_dashboard_4").hide();
+
+                            },
                             async: false
                         });
                     }

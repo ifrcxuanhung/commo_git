@@ -254,6 +254,14 @@ define([
 					url: $base_url + "ajax/getSpectIntraday_category1",
 					type: "POST",
 					data: {chartcode:chartcode},
+                    beforeSend: function(){
+                        $(".loader1").show();
+
+                    },
+                    complete: function(){
+                        $(".loader1").hide();
+
+                    },
 					async: false
 				});
 			}
@@ -421,6 +429,14 @@ define([
 						url: $base_url + "ajax/getSpectIntraday_category2",
 						type: "POST",
 						data: {chartcode:chartcode},
+                        beforeSend: function(){
+                            $(".loader2").show();
+
+                        },
+                        complete: function(){
+                            $(".loader2").hide();
+
+                        },
 						async: false
 					});
 				}

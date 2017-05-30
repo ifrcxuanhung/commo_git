@@ -23,7 +23,14 @@ define([
                        return $.ajax({
                            url: $base_url + "ajax/getSpectIntraday_customise1",
                            type: "POST",
+                           beforeSend: function(){
+                               $(".loader1").show();
 
+                           },
+                           complete: function(){
+                               $(".loader1").hide();
+
+                           },
                            async: false
                        });
                    }
@@ -134,6 +141,14 @@ define([
 					return $.ajax({
 						url: $base_url + "ajax/getSpectIntraday_customise2",
 						type: "POST",
+                        beforeSend: function(){
+                            $(".loader2").show();
+
+                        },
+                        complete: function(){
+                            $(".loader2").hide();
+
+                        },
 
 						async: false
 					});
