@@ -317,7 +317,7 @@ define([
                     var chart = AmCharts.makeChart( "chartdiv", {
                         "type": "serial",
                         "theme": "none",
-                        "marginRight": 40,
+                        "marginRight": 50,
                         "marginLeft": 70,
                         "autoMarginOffset": 20,
                         "dataDateFormat": "YYYY-MM-DD",
@@ -429,7 +429,7 @@ define([
                    var chart = AmCharts.makeChart("chartdiv2", {
                        "type": "serial",
                        "theme": "none",
-                       "marginRight": 40,
+                       "marginRight": 50,
                        "marginLeft": 70,
                        "autoMarginOffset": 20,
                        "dataProvider": chartData,

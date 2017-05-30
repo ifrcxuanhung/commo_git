@@ -399,6 +399,7 @@ class Block extends MY_Controller {
                 $rs["time_format"] = '-';
             }
             $link_product = (!is_null($rs["bctcode"]) && $rs["bctcode"] != '') ? (base_url() . 'product/' . $rs["bctcode"]) : 'javascript:void(0)';
+            $link_cate = base_url() . 'category/' . $rs["type"];
 
             $rs["last"] = ($rs['last'] == null) ? '-' : number_format((float)$rs['last'], $rs['dec'], '.', ',');
             /*$rs["change"] = ($rs['change'] == null)?'-': number_format((float)$rs['change'], 2, '.', ',');*/
@@ -409,7 +410,7 @@ class Block extends MY_Controller {
             $rs['code'] = (($rs['code'] == null) ? '' : $rs['code']);
             $data_table1[$rs["id"]] = $rs;
             $html_table1 .= '<tr>';
-            $html_table1 .='<td class="td_custom table_1_exchange" align="left" id="table_1_type_'.$rs['id'].'">'.$rs['type'].'</td>';
+            $html_table1 .='<td class="td_custom table_1_exchange" align="left" id="table_1_type_'.$rs['id'].'"><a href="' . $link_cate . '" class="uppercase table_1_name" >' .$rs['type']. '</a></td>';
             if (!is_null($rs["bctcode"]) && $rs["bctcode"] != '') {
                 $html_table1 .= '<td class="td_custom cus_pri futures_contracts_name" align="left" width="25%"><a href="' . $link_product . '" class="uppercase table_1_name" id="table_1_name_' . $rs['id'] . '">' . $rs['name'] . '</a></td>';
             }else{

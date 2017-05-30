@@ -32,7 +32,7 @@ define([
                    var chart = AmCharts.makeChart("chartdiv_customise1", {
                        "type": "serial",
                        "theme": "none",
-                       "marginRight": 40,
+                       "marginRight": 50,
                        "marginLeft": 70,
                        "autoMarginOffset": 20,
                        "dataProvider": chartData1,
@@ -143,7 +143,7 @@ define([
                    var chart = AmCharts.makeChart("chartdiv_customise2", {
                        "type": "serial",
                        "theme": "none",
-                       "marginRight": 40,
+                       "marginRight": 50,
                        "marginLeft": 70,
                        "autoMarginOffset": 20,
                        "dataProvider": chartData2,
