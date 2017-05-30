@@ -28,6 +28,7 @@ class Product extends Welcome{
     public function getContentDataNews(){
         $data = $this->db->where('id',$_REQUEST['id'])->get('data_news')->row_array();
 
+
         $this->output->set_output(json_encode($data));
     }
     public function auto_data_dashboard_list_table_1_backup(){

@@ -36,12 +36,11 @@ define([
 				
 				var date = data1[i].date;
 				res.push({'time':date,'value': parseFloat(data1[i].close).toFixed(2)});
-                var code = data1[i].code;
+                var code1 = data1[i].code;
                 //var chartcode = data1[i].chartcode;
 				if (i==(data1.length-1)) { last_new  = data1[i].close;  time_new = data1[i].date}
 			}
-             $(".get_title_category").append(' (INTRADAY)');
-                   $(".get_title_category2").append(' (INTRADAY)');
+             $(".get_title_category2").append(code1 + ' (INTRADAY)');
 
 			function showChartTooltip(x, y, xValue, yValue) {
 				$('<div id="tooltip" class="chart-tooltip">' + yValue + '<\/div>').css({
@@ -257,11 +256,14 @@ define([
                        var chartData = [];
 
                        var data2 = jQuery.parseJSON(getvalueCHART_2().responseText);
+                       var code2 = data2[0].code;
                        var res = [];
+                       $(".get_title_category").append(code2 + ' (INTRADAY)');
                        for (var i = 1; i < data2.length; ++i){
 
                            var date = data2[i].date;
-                           chartData.push({'date':date,'close': parseFloat(data2[i].close).toFixed(2)})
+                           chartData.push({'date':date,'close': parseFloat(data2[i].close).toFixed(2)});
+
 
                        }
                        return chartData;

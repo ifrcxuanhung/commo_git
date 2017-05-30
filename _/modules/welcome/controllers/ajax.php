@@ -2499,11 +2499,13 @@ WHERE md.mychoice = 1 AND md.active = 1 AND md.dright = 1 AND mychart <> 0;  ";
         $symbol = $get_symbol['symbol'];
 
 
-        $sql = "SELECT di.datetime as date , di.last as close FROM data_intraday as di RIGHT JOIN (select ds.code from data_dashboard_list as dl LEFT JOIN data_series_last as ds  ON dl.bctcode=ds
+
+        $sql = "SELECT di.datetime as date , di.last as close, di.code FROM data_intraday as di RIGHT JOIN (select ds.code from data_dashboard_list as dl LEFT JOIN data_series_last as ds  ON dl.bctcode=ds
 .symbol  
 WHERE ds.symbol='$symbol' and dl.active = 1  and ds.expyyyymm!=0 ORDER BY ds.expyyyymm ASC Limit 1) AS A ON (di.`code` = A.code) ORDER BY date";
         //echo "<pre>";print_r($sql);exit;
         $result = $this->db->query($sql)->result_array();
+
 
         echo json_encode($result);
     }
@@ -2514,7 +2516,7 @@ WHERE md.mychoice = 9 AND md.active = 1 AND md.dright = 1 AND mychart <> 0;  ";
         $symbol = $get_symbol['symbol'];
 
 
-        $sql = "SELECT di.datetime as date , di.last as close FROM data_intraday as di RIGHT JOIN (select ds.code from data_dashboard_list as dl LEFT JOIN data_series_last as ds  ON dl.bctcode=ds
+        $sql = "SELECT di.datetime as date , di.last as close, di.code FROM data_intraday as di RIGHT JOIN (select ds.code from data_dashboard_list as dl LEFT JOIN data_series_last as ds  ON dl.bctcode=ds
 .symbol  
 WHERE ds.symbol='$symbol' and dl.active = 1  and ds.expyyyymm!=0 ORDER BY ds.expyyyymm ASC Limit 1) AS A ON (di.`code` = A.code) ORDER BY di.datetime ASC;";
         $result = $this->db->query($sql)->result_array();
