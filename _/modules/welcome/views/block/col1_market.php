@@ -10,7 +10,7 @@
         </div>
         <div class="portlet-body background_portlet">
             <div class="portlet-body background_portlet" style="margin-top:10px;">
-                <div class="table-responsive text_scroll scroller" style="height:676px;">
+                <div class="table-responsive text_scroll scroller" style="height:680px;">
                     <table class="table  table-bordered table-hover table_color table_cus table_fix_padding">
                         <thead>
                         <tr>
