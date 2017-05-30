@@ -3,14 +3,14 @@
     <div class="portlet box blocks cus_hung" style="position:relative;">
         <div class="portlet-title" style="background:#000099 !important;">
             <div class="caption">
-                <i class="fa"></i><span id="type_category"><?php echo $type;?></span></div>
+                <i class="fa"></i><span id="type_category">FULL LIST</span></div>
             <div class="tools">
                 <i class="fa fa-toggle-up fa-lg fullscreens"></i>
             </div>
         </div>
         <div class="portlet-body background_portlet">
             <div class="portlet-body background_portlet" style="margin-top:10px;">
-                <div class="table-responsive text_scroll scroller" style="height:626px;">
+                <div class="table-responsive text_scroll scroller" style="height:676px;">
                     <table class="table  table-bordered table-hover table_color table_cus table_fix_padding">
                         <thead>
                         <tr>
