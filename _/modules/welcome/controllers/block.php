@@ -726,7 +726,28 @@ class Block extends MY_Controller {
 
         return $this->load->view('block/col3_research', $this->data, true);
     }
-	
+	 public function table_education_news()
+    {
+        $sql_news_seminar="select date_format(`datetime`, '%Y-%m-%d') as datetime,title,location from simul_news where type like '%seminar%'; ";
+        $this->data->simul_news = $this->db->query($sql_news_seminar)->result_array();
+        
+        $sql_news_course="select date_format(`datetime`, '%Y-%m-%d') as datetime,title,location from simul_news where type like '%program%' limit 5; ";
+        $this->data->course_news = $this->db->query($sql_news_course)->result_array();
+        
+        $sql_news_event="select date_format(`datetime`, '%Y-%m-%d') as datetime,title,location from simul_news where type like '%event%' limit 5; ";
+        $this->data->event_news = $this->db->query($sql_news_event)->result_array();
+        
+        return $this->load->view('block/table_education_news', $this->data, true);
+    }
+	public function table_answer_questions()
+    {
+		
+        $sql_faq="select * from simul_article where clean_cat = 'education' AND clean_scat='faq' order by `clean_order` asc;";
+        $this->data->questions = $this->db->query($sql_faq)->result_array();
+		
+        
+        return $this->load->view('block/table_answer_questions', $this->data, true);
+    }
 	
     
 }

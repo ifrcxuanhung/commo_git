@@ -12,6 +12,8 @@ class Help extends Welcome{
 			
 			$this->data->dashboard = $block->dashboard();
 			$this->data->block_contact = $block->contact();
+			$this->data->education_news = $block->table_education_news();
+        $this->data->answer_questions = $block->table_answer_questions();
 			$this->template->write_view('content', 'help', $this->data);
 		}
 		else
