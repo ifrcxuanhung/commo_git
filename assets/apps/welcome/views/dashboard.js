@@ -717,10 +717,7 @@ define([
                                 $(".loader_dashboard_1").show();
 
                             },
-                            complete: function(){
-                                $(".loader_dashboard_1").hide();
-
-                            },
+                           
                             async: false
                         });
                     }
@@ -834,10 +831,7 @@ define([
                             $(".loader_dashboard_2").show();
 
                         },
-                        complete: function(){
-                            $(".loader_dashboard_2").hide();
-
-                        },
+                        
 						async: false
 					});
 				}
@@ -945,10 +939,7 @@ define([
                                 $(".loader_dashboard_3").show();
 
                             },
-                            complete: function(){
-                                $(".loader_dashboard_3").hide();
-
-                            },
+                           
                             async: false
                         });
                     }
@@ -1055,10 +1046,7 @@ define([
                                 $(".loader_dashboard_4").show();
 
                             },
-                            complete: function(){
-                                $(".loader_dashboard_4").hide();
 
-                            },
                             async: false
                         });
                     }
@@ -1153,6 +1141,10 @@ define([
                         }
                         return chartData4;
                     }
+                    $(".loader_dashboard_1").hide();
+                    $(".loader_dashboard_2").hide();
+                    $(".loader_dashboard_3").hide();
+                    $(".loader_dashboard_4").hide();
 				
 				
 			});

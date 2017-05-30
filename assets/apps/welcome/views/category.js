@@ -258,10 +258,7 @@ define([
                         $(".loader1").show();
 
                     },
-                    complete: function(){
-                        $(".loader1").hide();
 
-                    },
 					async: false
 				});
 			}
@@ -433,10 +430,7 @@ define([
                             $(".loader2").show();
 
                         },
-                        complete: function(){
-                            $(".loader2").hide();
 
-                        },
 						async: false
 					});
 				}
@@ -536,6 +530,8 @@ define([
                        }
                        return chartData;
                    }
+                   $(".loader1").hide();
+                   $(".loader2").hide();
 				
 				// chart 3
 				/*
