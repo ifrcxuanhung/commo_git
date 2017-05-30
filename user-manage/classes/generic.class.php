@@ -233,7 +233,7 @@ class Generic extends Connect {
 		$headers  = 'MIME-Version: 1.0' . "\r\n";
 		$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 		//$headers .= 'From: ' . address . "\r\n";
-		$headers .= 'From: vndmi@ifrc.fr';
+		$headers .= 'From: xuanhung1606@gmail.com';
 
 		/* BCC address. */
 		if ( $bcc ) {
