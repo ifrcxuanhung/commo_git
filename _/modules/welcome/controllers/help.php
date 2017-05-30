@@ -10,7 +10,6 @@ class Help extends Welcome{
 		if($this->data->permistion_menu) {
 			$block = new Block();
 			
-			$this->data->dashboard = $block->dashboard();
 			$this->data->block_contact = $block->contact();
 			$this->data->education_news = $block->table_education_news();
         $this->data->answer_questions = $block->table_answer_questions();
