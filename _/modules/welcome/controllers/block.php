@@ -385,7 +385,7 @@ class Block extends MY_Controller {
     public function col1_market($type)
     {
 
-        $sql = "SELECT * FROM data_dashboard_list where active = 1  ORDER BY top DESC, name ASC";
+        $sql = "SELECT * FROM data_dashboard_list where active = 1  ORDER BY name ASC";
         $result = $this->db->query($sql)->result_array();
         $html_table1 = '';
         foreach($result as $rs) {

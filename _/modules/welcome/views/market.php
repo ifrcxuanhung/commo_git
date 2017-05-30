@@ -2,7 +2,7 @@
 <!-- block box -->
 <?php echo $col1_market;?>
 
-<div class="col-md-5">
+<div class="col-md-4">
     <div class="col-md-12">
         <div class="col-md-12 blocks use_fullscreen">
 

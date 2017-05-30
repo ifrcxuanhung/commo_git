@@ -1,4 +1,4 @@
-<div class="col-md-7">
+<div class="col-md-8">
 
     <div class="portlet box blocks cus_hung" style="position:relative;">
         <div class="portlet-title" style="background:#000099 !important;">
