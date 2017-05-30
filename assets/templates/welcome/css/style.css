@@ -930,6 +930,7 @@ table a:focus, table a:hover {
     boder-radius: 2px;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2), 0 3px 6px rgba(0, 0, 0, 0.26);
     transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+    text-decoration: none;
 }
 .page-header .navbar .navbar-nav > li > a{ color: #e6e6e6}
 .page-header .navbar .navbar-nav .dropdown-menu > li > a{ padding:15px;}
