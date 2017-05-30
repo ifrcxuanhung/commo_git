@@ -1,4 +1,3 @@
-  <?php echo $dashboard; ?>
     <!-- BEGIN CONTENT -->    
     <div class="row">
         
