@@ -882,3 +882,4 @@ a:focus, a:hover {
 .mCustomScrollBox{  width:100%;}
 .mCSB_container{ width:100% !important;}
 .mCSB_inside > .mCSB_container{ margin-right:0px !important;}
+.mCSB_outside + .mCSB_scrollTools{ right: -12px !important;}

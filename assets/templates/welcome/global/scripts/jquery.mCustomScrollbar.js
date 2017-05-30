@@ -110,7 +110,7 @@ and dependencies (minified).
 			position of scrollbar relative to content  
 			values (string): "inside", "outside" ("outside" requires elements with position:relative)
 			*/
-			scrollbarPosition:"inside",
+			scrollbarPosition:"outside",
 			/*
 			scrolling inertia
 			values: integer (milliseconds)
