@@ -421,7 +421,7 @@ define([
                        } ],
                        "chartScrollbar": {
                            "graph": "g1",
-                           "oppositeAxis":false,
+                           "oppositeAxis":true,// show zoom tren hay duoi (true o tren)
                            "offset":30,
                            "scrollbarHeight": 30,
                            "backgroundAlpha": 0,
