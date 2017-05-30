@@ -20,5 +20,11 @@ class News extends Welcome{
 		 	$this->template->write_view('content', 'not_permistion', $this->data);
 		$this->template->render();
     }
+    public function getContentDataNews(){
+        $data = $this->db->where('id',$_REQUEST['id'])->get('data_news')->row_array();
+
+
+        $this->output->set_output(json_encode($data));
+    }
     
 }

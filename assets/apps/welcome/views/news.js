@@ -19,17 +19,16 @@ define([
 				var $this = $(event.currentTarget);
 				var id = $this.attr('id');
 				 $.ajax({
-					url: $base_url + 'product/getContentDataNews',
+					url: $base_url + 'news/getContentDataNews',
 					type: 'POST',
 					data: {id:id},
 					cache: false,
 					success: function(response) {
 						rs = JSON.parse(response);
-						console.log(rs);
 						$('.description_help').html(rs.content);
 					}
 				});
-					
+
 			},
             actionSaveModal: function(event){
 				event.preventDefault();

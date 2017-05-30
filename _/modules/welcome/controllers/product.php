@@ -25,12 +25,7 @@ class Product extends Welcome{
 		}
 		$this->template->render();
     }
-    public function getContentDataNews(){
-        $data = $this->db->where('id',$_REQUEST['id'])->get('data_news')->row_array();
 
-
-        $this->output->set_output(json_encode($data));
-    }
     public function auto_data_dashboard_list_table_1_backup(){
 		$sql = "SELECT * FROM data_dashboard_list where nr = 1 AND active = 1  ORDER BY top DESC, name ASC";
 		$result = $this->db->query($sql)->result_array();
