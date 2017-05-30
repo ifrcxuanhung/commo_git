@@ -26,6 +26,7 @@ class Product extends Welcome{
 		$this->template->render();
     }
 
+
     public function auto_data_dashboard_list_table_1_backup(){
 		$sql = "SELECT * FROM data_dashboard_list where nr = 1 AND active = 1  ORDER BY top DESC, name ASC";
 		$result = $this->db->query($sql)->result_array();

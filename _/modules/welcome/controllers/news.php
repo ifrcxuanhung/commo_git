@@ -26,5 +26,6 @@ class News extends Welcome{
 
         $this->output->set_output(json_encode($data));
     }
+
     
 }

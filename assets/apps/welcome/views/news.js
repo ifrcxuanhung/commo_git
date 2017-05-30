@@ -18,6 +18,7 @@ define([
 			actionHandelhelp: function(event){
 				var $this = $(event.currentTarget);
 				var id = $this.attr('id');
+
 				 $.ajax({
 					url: $base_url + 'news/getContentDataNews',
 					type: 'POST',
