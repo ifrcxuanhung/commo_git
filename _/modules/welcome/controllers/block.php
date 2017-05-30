@@ -409,6 +409,7 @@ class Block extends MY_Controller {
             $rs['code'] = (($rs['code'] == null) ? '' : $rs['code']);
             $data_table1[$rs["id"]] = $rs;
             $html_table1 .= '<tr>';
+            $html_table1 .='<td class="td_custom table_1_exchange" align="left" id="table_1_type_'.$rs['id'].'">'.$rs['type'].'</td>';
             if (!is_null($rs["bctcode"]) && $rs["bctcode"] != '') {
                 $html_table1 .= '<td class="td_custom cus_pri futures_contracts_name" align="left" width="25%"><a href="' . $link_product . '" class="uppercase table_1_name" id="table_1_name_' . $rs['id'] . '">' . $rs['name'] . '</a></td>';
             }else{

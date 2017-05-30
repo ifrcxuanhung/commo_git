@@ -14,6 +14,7 @@
                     <table class="table  table-bordered table-hover table_color table_cus table_fix_padding">
                         <thead>
                         <tr>
+                            <th class="th_custom" style="text-align:left"><h6 class="color_h6 cus_type"  style="padding: 5px !important;">Category</h6>  </th>
                             <th class="th_custom" style="text-align:left"><h6 class="color_h6 cus_type"  style="padding: 5px !important;">Name</h6>  </th>
                             <th class="th_custom" style="text-align:left"><h6 class="color_h6 cus_type"  style="padding: 5px !important;">Type</h6>  </th>
                            <!-- <th class="th_custom" style="text-align:left"><h6 class="color_h6 cus_type"  style="padding: 5px !important;">Expiry</h6>  </th>-->
