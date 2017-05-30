@@ -147,23 +147,7 @@ class Block extends MY_Controller {
         @$this->data->height = $h;
         return $this->load->view('block/chart4', $this->data, true);
     }
-    public function data_table1_backup($nr)
-    {
-        $sql = "SELECT * FROM data_dashboard_list where nr = $nr AND active = 1  ORDER BY top DESC, name ASC";
-        $result = $this->db->query($sql)->result_array();
-        $html_table1 = '';
-        foreach($result as $rs){
-            $html_table1 .='<tr>';
-            $html_table1 .='<td class="td_custom cus_pri" align="left"><a href="http://commo.ifrc.vn/product" class="uppercase table_1_name" id="table_1_name_'.$rs['id'].'">'.$rs['name'].'</a></td>';
-            $html_table1 .='<td class="td_custom" align="right"><span id="table_1_var_'.$rs['id'].'" class="table_1_var '.(($rs['var'] < 0)?'bg_color_red':'bg_color_green').'">'.(($rs['last'] == null)?'-': number_format((float)$rs['last'], $rs['dec'], '.', ',')).'</span></td>';
-            $html_table1 .='<td class="td_custom table_1_lasttimex" align="right" id="table_1_lasttimex_'.$rs['id'].'">'.(($rs['lasttimex'] == null)?'-': $rs['lasttimex']).'</td>';
-            $html_table1 .='<td class="td_custom table_1_exchange" align="left" id="table_1_exchange_'.$rs['id'].'">'.(($rs['exchange'] == null)?'': $rs['exchange']).'</td></tr>';
 
-
-        }
-        $this->data->table1 = $html_table1;
-        return $this->load->view('block/data_table1', $this->data, true);
-    }
 
     public function data_table1(){
         $sql = "SELECT dl.* FROM data_dashboard as dd LEFT JOIN data_dashboard_list as dl ON dd.type=dl.type where dd.nr = 1 AND dl.active = 1 AND dd.active =1 AND dl.expmy is not null  ORDER BY dl.top DESC, dl.name ASC";
@@ -197,22 +181,7 @@ class Block extends MY_Controller {
         return $this->load->view('block/data_table1', $this->data, true);
     }
 
-    public function data_table2_backup(){
-        $sql = "SELECT dl.* FROM data_dashboard as dd LEFT JOIN data_dashboard_list as dl ON dd.type=dl.type where dd.nr = 2 AND dl.active = 1 AND dd.active =1  ORDER BY dl.top DESC, dl.name ASC";
-		$result = $this->db->query($sql)->result_array();
-		$html_table2 = '';
-		foreach($result as $rs){
-			$html_table2 .='<tr>';
-            $html_table2 .='<td class="td_custom cus_pri" align="left"><a href="http://commo.ifrc.vn/product" class="uppercase table_2_name" id="table_2_name_'.$rs['id'].'">'.$rs['name'].'</a></td>';
-            $html_table2 .='<td class="td_custom" align="right"><span id="table_2_var_'.$rs['id'].'" class="table_2_var '.(($rs['var'] < 0)?'bg_color_red':'bg_color_green').'">'.(($rs['last'] == null)?'-': number_format((float)$rs['last'], $rs['dec'], '.', ',')).'</span></td>';
-            $html_table2 .='<td class="td_custom table_2_lasttimex" align="right" id="table_2_lasttimex_'.$rs['id'].'">'.(($rs['lasttimex'] == null)?'-': date( "H:i", strtotime( $rs['lasttimex'] ) )).'</td>';
-            $html_table2 .='<td class="td_custom table_2_exchange" align="left" id="table_2_exchange_'.$rs['id'].'">'.(($rs['exchange'] == null)?'': $rs['exchange']).'</td></tr>';
 
-
-		}		
-        $this->data->table2 = $html_table2;
-        return $this->load->view('block/data_table2', $this->data, true);
-    }
     public function data_table2(){
         $sql = "SELECT dl.* FROM data_dashboard as dd LEFT JOIN data_dashboard_list as dl ON dd.type=dl.type where dd.nr = 2 AND dl.active = 1 AND dd.active =1 AND dl.expmy is not null  ORDER BY dl.top DESC, dl.name ASC";
         $result = $this->db->query($sql)->result_array();
@@ -241,23 +210,7 @@ class Block extends MY_Controller {
         $this->data->table2 = $html_table2;
         return $this->load->view('block/data_table2', $this->data, true);
     }
-    public function data_table3_backup()
-    {
-        $sql = "SELECT * FROM data_dashboard_list where nr = 3 AND active = 1  ORDER BY top DESC, name ASC";
-        $result = $this->db->query($sql)->result_array();
-        $html_table3 = '';
-        foreach($result as $rs){
-            $html_table3 .='<tr>';
-            $html_table3 .='<td class="td_custom cus_pri" align="left"><a href="http://commo.ifrc.vn/product" class="uppercase table_3_name" id="table_3_name_'.$rs['id'].'">'.($rs['name']).'</a></td>';
-            $html_table3 .='<td class="td_custom" align="right"><span id="table_3_var_'.$rs['id'].'" class="table_3_var '.(($rs['var'] < 0)?'bg_color_red':'bg_color_green').'">'.(($rs['last'] == null)?'-': number_format((float)$rs['last'], $rs['dec'], '.', ',')).'</span></td>';
-            $html_table3 .='<td class="td_custom table_3_lasttimex" align="right" id="table_3_lasttimex_'.$rs['id'].'">'.(($rs['lasttimex'] == null)?'-': $rs['lasttimex']).'</td>';
-            $html_table3 .='<td class="td_custom table_3_exchange" align="left" id="table_3_exchange_'.$rs['id'].'">'.(($rs['exchange'] == null)?'': $rs['exchange']).'</td></tr>';
 
-
-        }
-        $this->data->table3 = $html_table3;
-        return $this->load->view('block/data_table3', $this->data, true);
-    }
      public function data_table3()
     {
         $sql = "SELECT dl.* FROM data_dashboard as dd LEFT JOIN data_dashboard_list as dl ON dd.type=dl.type where dd.nr = 3 AND dl.active = 1 AND dd.active =1 AND dl.expmy is not null  ORDER BY dl.top DESC, dl.name ASC";
@@ -287,22 +240,7 @@ class Block extends MY_Controller {
         $this->data->table3 = $html_table3;
         return $this->load->view('block/data_table3', $this->data, true);
     }
-    public function data_table4_backup(){
-        $sql = "SELECT * FROM data_dashboard_list where nr = 4 AND active = 1  ORDER BY top DESC, name ASC";
-        $result = $this->db->query($sql)->result_array();
-        $html_table4 = '';
-        foreach($result as $rs){
-            $html_table4 .='<tr>';
-            $html_table4 .='<td class="td_custom cus_pri" align="left"><a href="http://commo.ifrc.vn/product" class="uppercase table_4_name" id="table_4_name_'.$rs['id'].'">'.$rs['name'].'</a></td>';
-            $html_table4 .='<td class="td_custom" align="right"><span id="table_4_var_'.$rs['id'].'" class="table_4_var '.(($rs['var'] < 0)?'bg_color_red':'bg_color_green').'">'.(($rs['last'] == null)?'-': number_format((float)$rs['last'], $rs['dec'], '.', ',')).'</span></td>';
-            $html_table4 .='<td class="td_custom table_4_lasttimex" align="right" id="table_4_lasttimex_'.$rs['id'].'">'.(($rs['lasttimex'] == null)?'-': $rs['lasttimex']).'</td>';
-            $html_table4 .='<td class="td_custom table_4_exchange" align="left" id="table_4_exchange_'.$rs['id'].'">'.(($rs['exchange'] == null)?'': $rs['exchange']).'</td></tr>';
 
-
-        }
-        $this->data->table4 = $html_table4;
-        return $this->load->view('block/data_table4', $this->data, true);
-    }
      public function data_table4()
     {
         $sql = "SELECT dl.* FROM data_dashboard as dd LEFT JOIN data_dashboard_list as dl ON dd.type=dl.type where dd.nr = 4 AND dl.active = 1 AND dd.active =1 AND dl.expmy is not null  ORDER BY dl.top DESC, dl.name ASC";
@@ -336,41 +274,7 @@ class Block extends MY_Controller {
         return $this->load->view('block/data_table4', $this->data, true);
     }
 
-    public function col1_product_backup()
-    {
-        $sql = "SELECT * FROM data_dashboard_list where nr = 1 AND active = 1  ORDER BY top DESC, name ASC";
-        $result = $this->db->query($sql)->result_array();
-        //echo "<pre>";print_r($result);exit;
-        $html_table1 = '';
-        foreach($result as $rs){
-            $rs['exchange'] = (($rs['exchange'] == null)?'': $rs['exchange']);
-            $rs["lasttimex"] = (($rs['lasttimex'] == null)?'-': $rs['lasttimex']);
-            $rs["last"] = ($rs['last'] == null)?'-': number_format((float)$rs['last'], $rs['dec'], '.', ',');
-            $rs["change"] = ($rs['change'] == null)?'-': number_format((float)$rs['change'], 2, '.', ',');
-            $rs["openinterest"] = ($rs['openinterest'] == null)?'-':number_format((float)$rs['openinterest'], 0, '.', ',');
-            $rs["settlement"] = ($rs['settlement'] == null)?'-':number_format((float)$rs['settlement'], $rs['dec'], '.', ',');
-            $rs["var"] = ($rs['var'] == null)?'-': number_format((float)$rs['var'], 2, '.', ',');
-            $rs['volume'] = (($rs['volume'] == null)?'': number_format((float)$rs['volume'], 0, '.', ','));
-            $rs['code'] = (($rs['code'] == null)?'': $rs['code']);
-            $data_table1[$rs["id"]] = $rs;
-            $html_table1 .='<tr>';
-            $html_table1 .='<td class="td_custom cus_pri futures_contracts_name" align="left"><a href="http://commo.ifrc.vn/product" class="uppercase table_1_name" id="table_1_name_'.$rs['id'].'">'.$rs['name'].'</a></td>';
 
-            $html_table1 .='<td class="td_custom table_1_exchange" align="left" id="table_1_exchange_'.$rs['id'].'">'.$rs['exchange'].'</td>';
-            $html_table1 .='<td class="td_custom table_1_expiry" align="left" id="table_1_expiry_'.$rs['id'].'">'.$rs['expiry'].'</td>';
-            $html_table1 .='<td class="td_custom table_1_code" align="left" id="table_1_code_'.$rs['id'].'">'.$rs['code'].'</td>';
-            $html_table1 .='<td class="td_custom" align="right"><span id="table_1_last_'.$rs['id'].'" class="bg_color_grey table_1_last">'.$rs["last"].'</span></td>';
-            $html_table1 .='<td class="td_custom" align="right"><span id="table_1_change_'.$rs['id'].'" class="table_1_change '.(($rs['change'] < 0)?'bg_color_red':'bg_color_green').'">'.$rs["change"].'</span></td>';
-            $html_table1 .='<td class="td_custom" align="right"><span id="table_1_var_'.$rs['id'].'" class="table_1_var '.(($rs['var'] < 0)?'bg_color_red':'bg_color_green').'">'.$rs["var"].'</span></td>';
-            $html_table1 .='<td class="td_custom table_1_volume" align="right" id="table_1_volume_'.$rs['id'].'">'.$rs['volume'].'</td>';
-            $html_table1 .='<td class="td_custom table_1_openinterest" align="right" id="table_1_openinterest_'.$rs['id'].'">'.$rs["openinterest"].'</td>';
-            $html_table1 .='<td class="td_custom table_1_settlement" align="right" id="table_1_settlement_'.$rs['id'].'">'.$rs["settlement"].'</td>';
-            $html_table1 .='<td class="td_custom table_1_lasttimex" align="right" id="table_1_lasttimex_'.$rs['id'].'">'.$rs["lasttimex"].'</td></tr>';
-        }
-        $this->data->d2_box_category1 = $html_table1;
-        $this->data->data_dashboard = $this->db->query("SELECT * FROM data_dashboard where active = 1")->result_array();
-        return $this->load->view('block/col1_product', $this->data, true);
-    }
 
     public function col1_product($bctcode)
     {
@@ -476,6 +380,69 @@ class Block extends MY_Controller {
 
 
         return $this->load->view('block/col3_category', $this->data, true);
+    }
+
+    public function col1_market($type)
+    {
+
+        $sql = "SELECT * FROM data_dashboard_list where active = 1  ORDER BY top DESC, name ASC";
+        $result = $this->db->query($sql)->result_array();
+        $html_table1 = '';
+        foreach($result as $rs) {
+            $rs['exchange'] = (($rs['exchange'] == null) ? '' : $rs['exchange']);
+            if (isset($rs['lasttimex']) && !is_null($rs['lasttimex']) && date('Y-m-d', strtotime($rs['lasttimex'])) < date('Y-m-d')) {
+                $rs["time_format"] = date('Y-m-d', strtotime($rs['lasttimex']));
+
+            } else if (isset($rs['lasttimex']) && !is_null($rs['lasttimex'])) {
+                $rs["time_format"] = date('H:i', strtotime($rs['lasttimex']));
+            } else {
+                $rs["time_format"] = '-';
+            }
+            $link_product = (!is_null($rs["bctcode"]) && $rs["bctcode"] != '') ? (base_url() . 'product/' . $rs["bctcode"]) : 'javascript:void(0)';
+
+            $rs["last"] = ($rs['last'] == null) ? '-' : number_format((float)$rs['last'], $rs['dec'], '.', ',');
+            /*$rs["change"] = ($rs['change'] == null)?'-': number_format((float)$rs['change'], 2, '.', ',');*/
+            $rs["openinterest"] = ($rs['openinterest'] == null) ? '-' : number_format((float)$rs['openinterest'], 0, '.', ',');
+            $rs["settlement"] = ($rs['settlement'] == null) ? '-' : number_format((float)$rs['settlement'], $rs['dec'], '.', ',');
+            $rs["var"] = ($rs['var'] == null) ? '-' : number_format((float)$rs['var'], 2, '.', ',');
+            $rs['volume'] = (($rs['volume'] == null) ? '' : number_format((float)$rs['volume'], 0, '.', ','));
+            $rs['code'] = (($rs['code'] == null) ? '' : $rs['code']);
+            $data_table1[$rs["id"]] = $rs;
+            $html_table1 .= '<tr>';
+            if (!is_null($rs["bctcode"]) && $rs["bctcode"] != '') {
+                $html_table1 .= '<td class="td_custom cus_pri futures_contracts_name" align="left" width="25%"><a href="' . $link_product . '" class="uppercase table_1_name" id="table_1_name_' . $rs['id'] . '">' . $rs['name'] . '</a></td>';
+            }else{
+                $html_table1 .= '<td class="td_custom cus_pri futures_contracts_name" align="left" width="25%">' . $rs['name'] . '</td>';
+            }
+
+            $html_table1 .='<td class="td_custom table_1_exchange" align="left" id="table_1_exchange_'.$rs['id'].'">'.$rs['exchange'].'</td>';
+            /*$html_table1 .='<td class="td_custom table_1_expiry" align="left" id="table_1_expiry_'.$rs['id'].'">'.$rs['expiry'].'</td>';*/
+            $html_table1 .='<td class="td_custom table_1_code" align="left" id="table_1_code_'.$rs['id'].'">'.$rs['code'].'</td>';
+
+            $html_table1 .='<td class="td_custom" align="right"><span id="table_1_last_'.$rs['id'].'" class="bg_color_grey table_1_last">'.$rs["last"].'</span></td>';
+            /*$html_table1 .='<td class="td_custom" align="right"><span id="table_1_change_'.$rs['id'].'" class="table_1_change '.(($rs['change'] < 0)?'bg_color_red':'bg_color_green').'">'.$rs["change"].'</span></td>';*/
+            $html_table1 .='<td class="td_custom" align="right"><span id="table_1_var_'.$rs['id'].'" class="table_1_var '.(($rs['var'] < 0)?'bg_color_red':'bg_color_green').'">'.$rs["var"].'</span></td>';
+            $html_table1 .='<td class="td_custom table_1_volume" align="right" id="table_1_volume_'.$rs['id'].'">'.$rs['volume'].'</td>';
+            $html_table1 .='<td class="td_custom table_1_openinterest" align="right" id="table_1_openinterest_'.$rs['id'].'">'.$rs["openinterest"].'</td>';
+            /*$html_table1 .='<td class="td_custom table_1_settlement" align="right" id="table_1_settlement_'.$rs['id'].'">'.$rs["settlement"].'</td>';*/
+            $html_table1 .='<td class="td_custom table_1_lasttimex" align="right" id="table_1_lasttimex_'.$rs['id'].'">'.$rs["time_format"].'</td></tr>';
+
+        }
+        $this->data->d2_box_category1 = $html_table1;
+
+        $this->data->data_dashboard = $this->db->query("SELECT * FROM data_dashboard WHERE type = '$type'")->result_array();
+        $this->data->type = $type;
+        return $this->load->view('block/col1_market', $this->data, true);
+    }
+
+    public function col3_market($type)
+    {
+        $this->data->data_dashboard = $this->db->query("SELECT * FROM data_dashboard WHERE type = '$type'")->result_array();
+        $sql = "SELECT * FROM data_news";
+        $this->data->news = $this->db->query($sql)->result_array();
+
+
+        return $this->load->view('block/col3_market', $this->data, true);
     }
 
     public function col1_customise()

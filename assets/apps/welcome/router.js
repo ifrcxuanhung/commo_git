@@ -23,6 +23,8 @@ define([
                 'product/*path': 'productAction',
 				'category': 'categoryAction',
                 'category/*path': 'categoryAction',
+                'market': 'marketAction',
+                'market/*path': 'marketAction',
                 'customise': 'customiseAction',
                 'customise/*path': 'customiseAction',
                 'analysis': 'analysisAction',
@@ -52,6 +54,11 @@ define([
 			categoryAction: function(){
                 require(['views/category'], function(categoryView){
                     categoryView.render();
+                });
+            },
+            marketAction: function(){
+                require(['views/market'], function(marketView){
+                    marketView.render();
                 });
             },
             customiseAction: function(){
