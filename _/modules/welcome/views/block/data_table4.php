@@ -3,6 +3,9 @@
         <div class="caption">
             <i class="fa"></i>
             MARKET</div>
+        <div class="link_category">
+        <a href="<?php echo base_url();?>category/MARKET" class="btn btn-sm red-thunderbird"> Category </a>
+        </div>
         <div class="tools">
             <i class="fa fa-toggle-up fa-lg fullscreens"></i>
         </div>

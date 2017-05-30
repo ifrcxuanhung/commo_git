@@ -883,3 +883,4 @@ a:focus, a:hover {
 .mCSB_container{ width:100% !important;}
 .mCSB_inside > .mCSB_container{ margin-right:0px !important;}
 .mCSB_outside + .mCSB_scrollTools{ right: -12px !important;}
+.link_category{ position:absolute; top:7px; right:40px;}
