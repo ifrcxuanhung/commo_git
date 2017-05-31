@@ -31,6 +31,8 @@ define([
                 'analysis/*path': 'analysisAction',
                 'research': 'researchAction',
                 'research/*path': 'researchAction',
+                'help': 'helpAction',
+                'help/*path': 'helpAction',
 				'news': 'newsAction',
                 'news/*path': 'newsAction',
                 '*actions': 'defaultAction'
@@ -54,6 +56,11 @@ define([
 			categoryAction: function(){
                 require(['views/category'], function(categoryView){
                     categoryView.render();
+                });
+            },
+            helpAction: function(){
+                require(['views/help'], function(helpView){
+                    helpView.render();
                 });
             },
             marketAction: function(){

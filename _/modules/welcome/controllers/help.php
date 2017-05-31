@@ -21,6 +21,7 @@ class Help extends Welcome{
     }
 	public function get_faq(){
 		$data = $this->db->where('type','education')->where('stype','faq')->where('active','1')->where('id',$_REQUEST['id'])->get('simul_settings')->row_array();
+
 		//echo "<pre>";print_r($_REQUEST['id']);exit;
 		if(isset($_SESSION['curent_language']['code']) && $_SESSION['curent_language']['code'] == 'fr' && $data['fr'] !=''){
 			$data['name'] = $data['fr'];
