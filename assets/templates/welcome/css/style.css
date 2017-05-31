@@ -773,7 +773,7 @@ h6.cus_type{ cursor:pointer;}
     animation: spin 2s linear infinite;
     display:none;
     position: absolute;
-    left: 10%;
+    left: 20%;
     top: 45%;
     z-index: 100000;
 }
@@ -787,7 +787,7 @@ h6.cus_type{ cursor:pointer;}
     animation: spin 2s linear infinite;
     display:none;
     position: absolute;
-    left: 60%;
+    left: 70%;
     top: 45%;
     z-index: 100000;
 }
