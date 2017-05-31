@@ -897,7 +897,8 @@ thead tr th {
 }
 .tools{ padding:12px 10px 8px !important;}
 .amChartsLegend{ margin-left:130px;}
-.format-input input{background: rgba(0, 0, 0, 0) linear-gradient(#333, #222) repeat scroll 0 0;
+.format-input input{
+    background: rgba(0, 0, 0, 0) linear-gradient(#333, #222) repeat scroll 0 0;
     border: 1px solid #444;
     border-radius: 5px;
     box-shadow: 0 2px 0 #000;
@@ -911,6 +912,25 @@ thead tr th {
     padding: 0 10px;
 
     text-shadow: 0 -1px 0 #000;}
+
+.textarea_cus{
+    background: rgba(0, 0, 0, 0) linear-gradient(#333, #222) repeat scroll 0 0;
+    border: 1px solid #444;
+    border-radius: 5px;
+    box-shadow: 0 2px 0 #000;
+    color: #888;
+    display: block;
+    float: left;
+    font-family: "Cabin",helvetica,arial,sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    margin: 10px;
+    padding: 0 10px;
+
+    text-shadow: 0 -1px 0 #000;
+}
+
+
 .format-input select{background: rgba(0, 0, 0, 0) linear-gradient(#333, #222) repeat scroll 0 0;
     border: 1px solid #444;
     border-radius: 5px;
@@ -925,6 +945,8 @@ thead tr th {
     padding: 0 10px;
     text-shadow: 0 -1px 0 #000;}
 .format-input label{ text-shadow: 0 -1px 0 #000;color: #888;}
+
+
 table a:focus, table a:hover {
     color: #fff !important;
 	background-color:#000099 !important;

@@ -152,27 +152,29 @@ class Block extends MY_Controller {
     public function data_table1(){
         $sql = "SELECT dl.* FROM data_dashboard as dd LEFT JOIN data_dashboard_list as dl ON dd.type=dl.type where dd.nr = 1 AND dl.active = 1 AND dd.active =1 AND dl.expmy is not null  ORDER BY dl.top DESC, dl.name ASC";
 
-                $result = $this->db->query($sql)->result_array();
-                $html_table1 = '';
-                foreach($result as $rs){
-					if(isset($rs['lasttimex']) && !is_null($rs['lasttimex']) && date('Y-m-d', strtotime($rs['lasttimex'])) < date('Y-m-d')){
-						$rs["time_format"] = date('Y-m-d', strtotime($rs['lasttimex']));
-                      
-                     }else if(isset($rs['lasttimex']) && !is_null($rs['lasttimex']) ){
-                        $rs["time_format"] = date('H:i', strtotime($rs['lasttimex']));
-                     }
-					 else {
-						 $rs["time_format"] ='-';
-					 }
-					 $link_product = (!is_null($rs["bctcode"]) && $rs["bctcode"]!='') ? (base_url().'product/'.$rs["bctcode"]) : '#';
-                    $html_table1 .='<tr>';
-                    $html_table1 .='<td class="td_custom cus_pri" align="left" ><a href="'.$link_product.'" class="uppercase table_1_name" id="table_1_name_'.$rs['id'].'">'.$rs['name'].'</a></td>';
-                    $html_table1 .='<td class="td_custom" align="right"><span id="table_1_expmy_'.$rs['id'].'" class="">'.$rs['expmy'].'</span></td>';
+        $result = $this->db->query($sql)->result_array();
+        $this->data->num_rows = $this->db->query($sql)->num_rows();
 
-                    $html_table1 .='<td class="td_custom" align="right"><span id="table_1_var_'.$rs['id'].'" class="bg_color_grey">'.(($rs['last'] == null)?'-': number_format((float)$rs['last'], $rs['dec'], '.', ',')).'</span></td>';
+        $html_table1 = '';
+        foreach($result as $rs){
+            if(isset($rs['lasttimex']) && !is_null($rs['lasttimex']) && date('Y-m-d', strtotime($rs['lasttimex'])) < date('Y-m-d')){
+                $rs["time_format"] = date('Y-m-d', strtotime($rs['lasttimex']));
 
-                    $html_table1 .='<td class="td_custom" align="right"><span id="table_1_var_'.$rs['id'].'" class="table_1_var '.(($rs['var'] < 0)?'bg_color_red':'bg_color_green').'">'.(($rs['var'] == null)?'-': number_format((float)$rs['var'], 2, '.', ',')).'</span></td>';
-                    $html_table1 .='<td class="td_custom table_1_lasttimex" align="right" id="table_1_lasttimex_'.$rs['id'].'">'.$rs["time_format"].'</td></tr>';
+             }else if(isset($rs['lasttimex']) && !is_null($rs['lasttimex']) ){
+                $rs["time_format"] = date('H:i', strtotime($rs['lasttimex']));
+             }
+             else {
+                 $rs["time_format"] ='-';
+             }
+             $link_product = (!is_null($rs["bctcode"]) && $rs["bctcode"]!='') ? (base_url().'product/'.$rs["bctcode"]) : '#';
+            $html_table1 .='<tr>';
+            $html_table1 .='<td class="td_custom cus_pri" align="left" ><a href="'.$link_product.'" class="uppercase table_1_name" id="table_1_name_'.$rs['id'].'">'.$rs['name'].'</a></td>';
+            $html_table1 .='<td class="td_custom" align="right"><span id="table_1_expmy_'.$rs['id'].'" class="">'.$rs['expmy'].'</span></td>';
+
+            $html_table1 .='<td class="td_custom" align="right"><span id="table_1_var_'.$rs['id'].'" class="bg_color_grey">'.(($rs['last'] == null)?'-': number_format((float)$rs['last'], $rs['dec'], '.', ',')).'</span></td>';
+
+            $html_table1 .='<td class="td_custom" align="right"><span id="table_1_var_'.$rs['id'].'" class="table_1_var '.(($rs['var'] < 0)?'bg_color_red':'bg_color_green').'">'.(($rs['var'] == null)?'-': number_format((float)$rs['var'], 2, '.', ',')).'</span></td>';
+            $html_table1 .='<td class="td_custom table_1_lasttimex" align="right" id="table_1_lasttimex_'.$rs['id'].'">'.$rs["time_format"].'</td></tr>';
 
 
 
@@ -185,6 +187,7 @@ class Block extends MY_Controller {
     public function data_table2(){
         $sql = "SELECT dl.* FROM data_dashboard as dd LEFT JOIN data_dashboard_list as dl ON dd.type=dl.type where dd.nr = 2 AND dl.active = 1 AND dd.active =1 AND dl.expmy is not null  ORDER BY dl.top DESC, dl.name ASC";
         $result = $this->db->query($sql)->result_array();
+        $this->data->num_rows = $this->db->query($sql)->num_rows();
         $html_table2 = '';
         foreach($result as $rs){
 			if(isset($rs['lasttimex']) && !is_null($rs['lasttimex']) && date('Y-m-d', strtotime($rs['lasttimex'])) < date('Y-m-d')){
@@ -215,6 +218,7 @@ class Block extends MY_Controller {
     {
         $sql = "SELECT dl.* FROM data_dashboard as dd LEFT JOIN data_dashboard_list as dl ON dd.type=dl.type where dd.nr = 3 AND dl.active = 1 AND dd.active =1 AND dl.expmy is not null  ORDER BY dl.top DESC, dl.name ASC";
 		$result = $this->db->query($sql)->result_array();
+        $this->data->num_rows = $this->db->query($sql)->num_rows();
 		$html_table3 = '';
 		foreach($result as $rs){
 			if(isset($rs['lasttimex']) && !is_null($rs['lasttimex']) && date('Y-m-d', strtotime($rs['lasttimex'])) < date('Y-m-d')){
@@ -245,6 +249,7 @@ class Block extends MY_Controller {
     {
         $sql = "SELECT dl.* FROM data_dashboard as dd LEFT JOIN data_dashboard_list as dl ON dd.type=dl.type where dd.nr = 4 AND dl.active = 1 AND dd.active =1 AND dl.expmy is not null  ORDER BY dl.top DESC, dl.name ASC";
 		$result = $this->db->query($sql)->result_array();
+        $this->data->num_rows = $this->db->query($sql)->num_rows();
 		$html_table4 = '';
 		foreach($result as $rs){
 			
@@ -322,6 +327,7 @@ class Block extends MY_Controller {
 		
 		$sql = "SELECT * FROM data_dashboard_list where type = '$type' AND active = 1  ORDER BY  name ASC";
 		$result = $this->db->query($sql)->result_array();
+        $this->data->num_rows = $this->db->query($sql)->num_rows();
 		$html_table1 = '';
 		foreach($result as $rs) {
             $rs['exchange'] = (($rs['exchange'] == null) ? '' : $rs['exchange']);
@@ -387,6 +393,7 @@ class Block extends MY_Controller {
 
         $sql = "SELECT * FROM data_dashboard_list where active = 1  ORDER BY name ASC";
         $result = $this->db->query($sql)->result_array();
+        $this->data->num_rows = $this->db->query($sql)->num_rows();
         $html_table1 = '';
         foreach($result as $rs) {
             $rs['exchange'] = (($rs['exchange'] == null) ? '' : $rs['exchange']);
@@ -617,6 +624,7 @@ class Block extends MY_Controller {
     {
         $sql = "SELECT * FROM data_dashboard_list where nr = 1 AND active = 1  ORDER BY top DESC, name ASC";
 		$result = $this->db->query($sql)->result_array();
+        $this->data->num_rows = $this->db->query($sql)->num_rows();
 		$html_table1 = '';
 		foreach($result as $rs){
 			$rs['exchange'] = (($rs['exchange'] == null)?'': $rs['exchange']);
