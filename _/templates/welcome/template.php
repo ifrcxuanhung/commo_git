@@ -99,6 +99,8 @@ $template_url = template_url();
              <?php if( $this->router->fetch_class() == 'category' && $this->uri->segment(3) == ''){ echo 'style="margin-top: 50px;"'; }?> >
         
         	<!-- <div class="loader"></div>-->
+            <div class="loader_spot_1" style="display:none;"></div>
+            <div class="loader_spot_2" style="display:none;"></div>
              <div class="loader1" style="display:none;"></div>
             <div class="loader2" style="display:none;"></div>
             <div class="loader_dashboard_1" style="display:none;"></div>
