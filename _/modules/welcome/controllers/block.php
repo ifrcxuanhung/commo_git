@@ -153,6 +153,7 @@ class Block extends MY_Controller {
         $sql = "SELECT dl.* FROM data_dashboard as dd LEFT JOIN data_dashboard_list as dl ON dd.type=dl.type where dd.nr = 1 AND dl.active = 1 AND dd.active =1 AND dl.expmy is not null  ORDER BY dl.top DESC, dl.name ASC";
 
         $result = $this->db->query($sql)->result_array();
+        $this->data->type = $this->db->query($sql)->row_array();
         $this->data->num_rows = $this->db->query($sql)->num_rows();
 
         $html_table1 = '';
@@ -187,6 +188,7 @@ class Block extends MY_Controller {
     public function data_table2(){
         $sql = "SELECT dl.* FROM data_dashboard as dd LEFT JOIN data_dashboard_list as dl ON dd.type=dl.type where dd.nr = 2 AND dl.active = 1 AND dd.active =1 AND dl.expmy is not null  ORDER BY dl.top DESC, dl.name ASC";
         $result = $this->db->query($sql)->result_array();
+        $this->data->type = $this->db->query($sql)->row_array();
         $this->data->num_rows = $this->db->query($sql)->num_rows();
         $html_table2 = '';
         foreach($result as $rs){
@@ -218,6 +220,7 @@ class Block extends MY_Controller {
     {
         $sql = "SELECT dl.* FROM data_dashboard as dd LEFT JOIN data_dashboard_list as dl ON dd.type=dl.type where dd.nr = 3 AND dl.active = 1 AND dd.active =1 AND dl.expmy is not null  ORDER BY dl.top DESC, dl.name ASC";
 		$result = $this->db->query($sql)->result_array();
+        $this->data->type = $this->db->query($sql)->row_array();
         $this->data->num_rows = $this->db->query($sql)->num_rows();
 		$html_table3 = '';
 		foreach($result as $rs){
@@ -249,6 +252,7 @@ class Block extends MY_Controller {
     {
         $sql = "SELECT dl.* FROM data_dashboard as dd LEFT JOIN data_dashboard_list as dl ON dd.type=dl.type where dd.nr = 4 AND dl.active = 1 AND dd.active =1 AND dl.expmy is not null  ORDER BY dl.top DESC, dl.name ASC";
 		$result = $this->db->query($sql)->result_array();
+        $this->data->type = $this->db->query($sql)->row_array();
         $this->data->num_rows = $this->db->query($sql)->num_rows();
 		$html_table4 = '';
 		foreach($result as $rs){
