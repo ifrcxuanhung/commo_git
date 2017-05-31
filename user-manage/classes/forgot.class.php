@@ -198,7 +198,6 @@ class Forgot extends Generic {
 
 					$subj = parent::getOption('email-forgot-subj');
 					$msg  = parent::getOption('email-forgot-msg');
-
 					// Send an email confirming their password reset
 					if(!parent::sendEmail($email, $subj, $msg, $shortcodes))
 						$this->error = '<div class="alert alert-danger">'._('ERROR. Mail not sent').'</div>';
