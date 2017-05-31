@@ -535,7 +535,7 @@ define([
                            "type": "serial",
                            "theme": "none",
                            "marginRight": 20,
-                           "marginLeft": 40,
+                           "marginLeft": 50,
                            "autoMarginOffset": 20,
                            "dataDateFormat": "YYYY-MM-DD",
                            "valueAxes": [ {
