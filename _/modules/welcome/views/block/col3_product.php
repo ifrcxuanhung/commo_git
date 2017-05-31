@@ -118,3 +118,4 @@
 
 
 </div>
+<input type="hidden" id="type_product" name="type_product" value="<?php echo  $type ?>" />

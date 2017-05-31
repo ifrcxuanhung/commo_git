@@ -2484,6 +2484,21 @@ class Ajax extends Welcome{
 
         echo json_encode($result);
     }
+	function getSpectIntraday_product_spot_1(){
+       $chartcode = $_POST['chartcode'];
+        $sql = "SELECT code, date, last as close FROM data_spot_intraday as di WHERE code= '$chartcode' order by date ASC";
+
+        $result = $this->db->query($sql)->result_array();
+        echo json_encode($result);
+    }
+    function getSpectIntraday_product_spot_2(){
+        $chartcode = $_POST['chartcode'];
+        $sql = "SELECT  code, date, last as close FROM data_spot_history as dhc WHERE dhc.code= '$chartcode'";
+       // echo "<pre>";print_r($sql);exit;
+        $result = $this->db->query($sql)->result_array();
+
+        echo json_encode($result);
+    }
     function getSpectIntraday2_backup(){
 
         $sql = "SELECT code, date, close, ds.nr FROM efrc_ins_datas_1m as 1m RIGHT JOIN data_dashboard ds ON 1m.code=ds.codeefrc WHERE ds.nr= 2 ";
@@ -2815,7 +2830,17 @@ WHERE ds.symbol='$symbol' and dl.active = 1  and ds.expyyyymm!=0 ORDER BY ds.exp
 			 else {
 				 $rs["time_format"] ='-';
 			 }
-			  $link_product = (!is_null($rs["bctcode"]) && $rs["bctcode"]!='') ? (base_url().'product/'.$rs["bctcode"]) : '#';
+			 
+			 if(($rs['exchange']!='SPOT')&& (!is_null($rs["bctcode"]) && $rs["bctcode"] != '')) {
+				
+            	$link_product = base_url() . 'product/futures/' . $rs["bctcode"];
+			}
+			else if (($rs['exchange']=='SPOT') && (!is_null($rs["code"]) && $rs["code"] !='')) {
+				$link_product = base_url() . 'product/spot/' . $rs["code"];
+			}
+			else {
+				$link_product = '';
+			}
 			$rs["last"] = ($rs['last'] == null)?'-': number_format((float)$rs['last'], $rs['dec'], '.', ',');
 			$rs["change"] = ($rs['change'] == null)?'-': number_format((float)$rs['change'], 2, '.', ',');
 			$rs["openinterest"] = ($rs['openinterest'] == null)?'-':number_format((float)$rs['openinterest'], 0, '.', ',');
@@ -2825,8 +2850,10 @@ WHERE ds.symbol='$symbol' and dl.active = 1  and ds.expyyyymm!=0 ORDER BY ds.exp
 			$rs['code'] = (($rs['code'] == null)?'': $rs['code']);
 			$data_table1[$rs["id"]] = $rs;
 			$html_table1 .='<tr>';
+			if($link_product!='')
             $html_table1 .='<td class="td_custom cus_pri futures_contracts_name" align="left" width="25%"><a href="'.$link_product.'" class="uppercase table_1_name" id="table_1_name_'.$rs['id'].'">'.$rs['name'].'</a></td>';
-			
+			else 
+			$html_table1 .='<td class="td_custom cus_pri futures_contracts_name" align="left" width="25%"><span class="uppercase table_1_name" id="table_1_name_'.$rs['id'].'">'.$rs['name'].'</span></td>';
             $html_table1 .='<td class="td_custom table_1_exchange" align="left" id="table_1_exchange_'.$rs['id'].'">'.$rs['exchange'].'</td>';
 			/*$html_table1 .='<td class="td_custom table_1_expiry" align="left" id="table_1_expiry_'.$rs['id'].'">'.$rs['expiry'].'</td>';*/
             $html_table1 .='<td class="td_custom table_1_code" align="left" id="table_1_code_'.$rs['id'].'">'.$rs['code'].'</td>';

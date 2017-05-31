@@ -93,11 +93,23 @@ class Dashboard extends Welcome{
 			 else {
 				 $rs["time_format"] ='-';
 			 }
-			$link_product = (!is_null($rs["bctcode"]) && $rs["bctcode"]!='') ? (base_url().'product/'.$rs["bctcode"]) : '#';
+			if(($rs['exchange']!='SPOT')&& (!is_null($rs["bctcode"]) && $rs["bctcode"] != '')) {
+				
+            	$link_product = base_url() . 'product/futures/' . $rs["bctcode"];
+			}
+			else if (($rs['exchange']=='SPOT') && (!is_null($rs["code"]) && $rs["code"] !='')) {
+				$link_product = base_url() . 'product/spot/' . $rs["code"];
+			}
+			else {
+				$link_product = '';
+			}
             $rs["last"] = ($rs['last'] == null)?'-': number_format((float)$rs['last'], $rs['dec'], '.', ',');
             $data_table1[$rs["id"]] = $rs;
             $html_table1 .='<tr>';
+			if($link_product!='')
             $html_table1 .='<td class="td_custom cus_pri" align="left" width="50%"><a href="'.$link_product.'" class="uppercase table_1_name" id="table_1_name_'.$rs['id'].'">'.$rs['name'].'</a></td>';
+			else
+			$html_table1 .='<td class="td_custom cus_pri" align="left" width="50%"><span class="uppercase table_1_name" id="table_1_name_'.$rs['id'].'">'.$rs['name'].'</span></td>';
             $html_table1 .='<td class="td_custom" align="right" width="10%"><span id="table_1_expmy_'.$rs['id'].'" class="">'.$rs['expmy'].'</span></td>';
             $html_table1 .='<td class="td_custom" align="right" width="15%"><span id="table_1_var_'.$rs['id'].'" class="bg_color_grey">'.$rs["last"].'</span></td>';
             $html_table1 .='<td class="td_custom" align="right" width="15%"><span id="table_1_var_'.$rs['id'].'" class="table_1_var '.(($rs['var'] < 0)?'bg_color_red':'bg_color_green').'">'.number_format((float)$rs['var'], 2, '.', ',').'</span></td>';
@@ -156,11 +168,23 @@ class Dashboard extends Welcome{
 			 else {
 				 $rs["time_format"] ='-';
 			 }
-			 $link_product = (!is_null($rs["bctcode"]) && $rs["bctcode"]!='') ? (base_url().'product/'.$rs["bctcode"]) : '#';
+			 if(($rs['exchange']!='SPOT')&& (!is_null($rs["bctcode"]) && $rs["bctcode"] != '')) {
+				
+            	$link_product = base_url() . 'product/futures/' . $rs["bctcode"];
+			}
+			else if (($rs['exchange']=='SPOT') && (!is_null($rs["code"]) && $rs["code"] !='')) {
+				$link_product = base_url() . 'product/spot/' . $rs["code"];
+			}
+			else {
+				$link_product = '';
+			}
 			$rs["last"] = ($rs['last'] == null)?'-': number_format((float)$rs['last'], $rs['dec'], '.', ',');
 			$data_table2[$rs["id"]] = $rs;
 			$html_table2 .='<tr>';
+			if($link_product!='')
             $html_table2 .='<td class="td_custom cus_pri" align="left" width="40%"><a href="'.$link_product.'" class="uppercase table_2_name" id="table_2_name_'.$rs['id'].'">'.$rs['name'].'</a></td>';
+			else
+			$html_table2 .='<td class="td_custom cus_pri" align="left" width="40%"><span class="uppercase table_2_name" id="table_2_name_'.$rs['id'].'">'.$rs['name'].'</span></td>';
             $html_table2 .='<td class="td_custom" align="right"><span id="table_1_expmy_'.$rs['id'].'" class="">'.$rs['expmy'].'</span></td>';
             $html_table2 .='<td class="td_custom" align="right"><span id="table_2_var_'.$rs['id'].'" class="bg_color_grey">'.$rs["last"].'</span></td>';
             $html_table2 .='<td class="td_custom" align="right"><span id="table_2_var_'.$rs['id'].'" class="table_2_var '.(($rs['var'] < 0)?'bg_color_red':'bg_color_green').'">'.number_format((float)$rs['var'], 2, '.', ',').'</span></td>';
@@ -219,11 +243,23 @@ class Dashboard extends Welcome{
 			 else {
 				 $rs["time_format"] ='-';
 			 }
-			 $link_product = (!is_null($rs["bctcode"]) && $rs["bctcode"]!='') ? (base_url().'product/'.$rs["bctcode"]) : '#';
+			 if(($rs['exchange']!='SPOT')&& (!is_null($rs["bctcode"]) && $rs["bctcode"] != '')) {
+				
+            	$link_product = base_url() . 'product/futures/' . $rs["bctcode"];
+			}
+			else if (($rs['exchange']=='SPOT') && (!is_null($rs["code"]) && $rs["code"] !='')) {
+				$link_product = base_url() . 'product/spot/' . $rs["code"];
+			}
+			else {
+				$link_product = '';
+			}
 			$rs["last"] = ($rs['last'] == null)?'-': number_format((float)$rs['last'], $rs['dec'], '.', ',');
 			$data_table3[$rs["id"]] = $rs;
 			$html_table3 .='<tr>';
+			if($link_product!='')
             $html_table3 .='<td class="td_custom cus_pri" align="left" width="40%"><a href="'.$link_product.'" class="uppercase table_3_name" id="table_3_name_'.$rs['id'].'">'.$rs['name'].'</a></td>';
+			else 
+			$html_table3 .='<td class="td_custom cus_pri" align="left" width="40%"><span class="uppercase table_3_name" id="table_3_name_'.$rs['id'].'">'.$rs['name'].'</span></td>';
             $html_table3 .='<td class="td_custom" align="right"><span id="table_1_expmy_'.$rs['id'].'" class="">'.$rs['expmy'].'</span></td>';
             $html_table3 .='<td class="td_custom" align="right"><span id="table_3_var_'.$rs['id'].'" class="bg_color_grey">'.$rs["last"].'</span></td>';
             $html_table3 .='<td class="td_custom" align="right"><span id="table_3_var_'.$rs['id'].'" class="table_3_var '.(($rs['var'] < 0)?'bg_color_red':'bg_color_green').'">'.number_format((float)$rs['var'], 2, '.', ',').'</span></td>';
@@ -276,10 +312,22 @@ class Dashboard extends Welcome{
 			 else {
 				 $rs["time_format"] ='-';
 			 }
-			 $link_product = (!is_null($rs["bctcode"]) && $rs["bctcode"]!='') ? (base_url().'product/'.$rs["bctcode"]) : '#';
+			 if(($rs['exchange']!='SPOT')&& (!is_null($rs["bctcode"]) && $rs["bctcode"] != '')) {
+				
+            	$link_product = base_url() . 'product/futures/' . $rs["bctcode"];
+			}
+			else if (($rs['exchange']=='SPOT') && (!is_null($rs["code"]) && $rs["code"] !='')) {
+				$link_product = base_url() . 'product/spot/' . $rs["code"];
+			}
+			else {
+				$link_product = '';
+			}
 			$data_table4[$rs["id"]] = $rs;
 			$html_table4 .='<tr>';
+			if($link_product!='')
             $html_table4 .='<td class="td_custom cus_pri" align="left" width="40%"><a href="'.$link_product.'" class="uppercase table_4_name" id="table_4_name_'.$rs['id'].'">'.$rs['name'].'</a></td>';
+			else
+			$html_table4 .='<td class="td_custom cus_pri" align="left" width="40%"><span class="uppercase table_4_name" id="table_4_name_'.$rs['id'].'">'.$rs['name'].'</span></td>';
             $html_table4 .='<td class="td_custom" align="right"><span id="table_1_expmy_'.$rs['id'].'" class="">'.$rs['expmy'].'</span></td>';
             $html_table4 .='<td class="td_custom" align="right"><span id="table_4_var_'.$rs['id'].'" class="bg_color_grey">'.$rs["last"].'</span></td>';
             $html_table4 .='<td class="td_custom" align="right"><span id="table_4_var_'.$rs['id'].'" class="table_4_var '.(($rs['var'] < 0)?'bg_color_red':'bg_color_green').'">'.number_format((float)$rs['var'], 2, '.', ',').'</span></td>';

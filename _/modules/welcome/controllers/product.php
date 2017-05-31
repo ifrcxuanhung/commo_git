@@ -6,19 +6,33 @@ class Product extends Welcome{
         parent::__construct();
     }
     
-    public function index($bctcode='ZC') {
+    public function index($type='futures', $bctcode='ZC') {
 		if($this->data->permistion_menu) {
-			$data_dashboard_list = $this->db->query("SELECT * FROM data_dashboard_list WHERE bctcode = '$bctcode'")->result_array();
-			if(isset($data_dashboard_list) && count($data_dashboard_list) < 1 ) {
-				$this->template->write_view('content', 'product_error', $this->data);
-			}else {
-				$block = new Block();
-		
-				$this->data->col1_product = $block->col1_product($bctcode);
-				//$this->data->col2_product = $block->col2_product();
-				$this->data->col3_product = $block->col3_product($bctcode);
-				$this->data->bctcode = $bctcode;
-				$this->template->write_view('content', 'product', $this->data);
+			$this->data->type = $type;
+			if($type=='futures') {
+				$data_dashboard_list = $this->db->query("SELECT * FROM data_dashboard_list WHERE bctcode = '$bctcode'")->result_array();
+				if(isset($data_dashboard_list) && count($data_dashboard_list) < 1 ) {
+					$this->template->write_view('content', 'product_error', $this->data);
+				}else {
+					$block = new Block();
+			
+					$this->data->col1_product = $block->col1_product($bctcode);
+					//$this->data->col2_product = $block->col2_product();
+					$this->data->col3_product = $block->col3_product($bctcode);
+					$this->data->bctcode = $bctcode;
+					$this->template->write_view('content', 'product', $this->data);
+				}
+			}
+			else {
+				$data_dashboard_list = $this->db->query("SELECT * FROM data_dashboard_list WHERE code = '$bctcode'")->result_array();
+				if(isset($data_dashboard_list) && count($data_dashboard_list) < 1 ) {
+					$this->template->write_view('content', 'product_error', $this->data);
+				}else {
+					$block = new Block();
+					$this->data->code = $bctcode;
+					$this->data->data_dashboard = $this->db->query("SELECT dl.lasttime,dl.name,dl.unit, dl.lasttimex, dl.last, dl.`change`, dl.var, dl.`dec` as dec_list, dl.exchange, dl.expiry, dd.* FROM data_dashboard_list as dl  LEFT JOIN data_dashboard as dd ON dl.type=dd.type where dl.code='{$bctcode}'")->result_array();
+					$this->template->write_view('content', 'product_spot', $this->data);
+				}
 			}
 		}else {
 			$this->template->write_view('content', 'not_permistion', $this->data);
