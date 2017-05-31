@@ -1,10 +1,9 @@
 <div class="portlet box red blocks" style="margin-bottom:5px;">
-    <div class="portlet-title header-table" style="position:relative;">
+    <div class="portlet-title header-table" style="position:relative; background:#000099 !important;">
         <div class="caption"><?php translate('head_box_seminar'); ?></div>
          <div class="tools">
            <!-- <a href="" class="fullscreen"> </a>-->
-            <i class="fa fa-arrows-alt fullscreens"></i>
-            <i class="fa fa-compress minscreens"></i>
+
         </div>
     </div>
     <div class="portlet-body background_portlet">
@@ -32,12 +31,11 @@
     </div>
 </div>
 <div class="portlet box red blocks" style="margin-bottom:5px;">
-    <div class="portlet-title header-table" style="position:relative;">
+    <div class="portlet-title header-table" style="position:relative; background:#000099 !important;">
         <div class="caption"><?php translate('head_box_course'); ?></div>
          <div class="tools">
            <!-- <a href="" class="fullscreen"> </a>-->
-            <i class="fa fa-arrows-alt fullscreens"></i>
-            <i class="fa fa-compress minscreens"></i>
+
         </div>
     </div>
     <div class="portlet-body background_portlet">
@@ -65,12 +63,11 @@
     </div>
 </div>
 <div class="portlet box red blocks" style="margin-bottom:5px;">
-    <div class="portlet-title header-table" style="position:relative;">
+    <div class="portlet-title header-table" style="position:relative; background:#000099 !important;">
         <div class="caption"><?php translate('head_box_event'); ?></div>
          <div class="tools">
            <!-- <a href="" class="fullscreen"> </a>-->
-            <i class="fa fa-arrows-alt fullscreens"></i>
-            <i class="fa fa-compress minscreens"></i>
+
         </div>
     </div>
     <div class="portlet-body background_portlet">

@@ -38,12 +38,11 @@
 <!--=========================================================================-->
 
 <div class="portlet box red blocks" style="margin-bottom:5px; position:relative;">
-    <div class="portlet-title header-table" style="position:relative;">
+    <div class="portlet-title header-table" style="position:relative; background:#000099 !important;">
         <div class="caption">
             <i class="fa"></i><?php translate('head_box_faq'); ?></div>
              <div class="tools">
-                        <i class="fa fa-arrows-alt fullscreens"></i>
-                        <i class="fa fa-compress minscreens"></i>
+
                     </div>
     </div>
     <!--div class="search_glosary"><input type="name" placeholder="Search..." name="query" class="form-control"></div-->

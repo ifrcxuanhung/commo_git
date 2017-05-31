@@ -1,14 +1,13 @@
 <div class="portlet box red blocks" style="margin-bottom:5px; position:relative">
-    <div class="portlet-title">
+    <div class="portlet-title" style="background:#000099 !important;">
         <div class="caption">
             <i class="fa"></i><?php translate('head_box_information_request'); ?></div>
              <div class="tools">
-                        <i class="fa fa-arrows-alt fullscreens"></i>
-                        <i class="fa fa-compress minscreens"></i>
+
                     </div>
       
     </div>
-    <div class="portlet-body background_portlet">
+    <div class="portlet-body background_portlet" >
         <div class="row" style="margin:  0px;">
         <div class="c-contact">
             <!--div class="c-content-title-1">
