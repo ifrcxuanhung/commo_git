@@ -774,7 +774,7 @@ h6.cus_type{ cursor:pointer;}
     display:none;
     position: absolute;
     left: 10%;
-    top: 35%;
+    top: 45%;
     z-index: 100000;
 }
 .loader_spot_2 {
@@ -788,7 +788,7 @@ h6.cus_type{ cursor:pointer;}
     display:none;
     position: absolute;
     left: 60%;
-    top: 35%;
+    top: 45%;
     z-index: 100000;
 }
 .loader1 {
