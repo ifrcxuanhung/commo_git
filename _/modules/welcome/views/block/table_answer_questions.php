@@ -21,7 +21,11 @@
             </div>
             
             <div class="modal-footer">
+            <?php if (  $this->session->userdata('user_level') >=8 ) { ?>
             <button type="button" style=" background-color: #3598dc ; margin-right:20px;" class="btn blue btn_show_edit_help"><?php translate('btn_edit'); ?></button>
+            <?php } else {?>
+             <button type="button" style=" background-color: #ACB5C3 ; margin-right:20px;" class="btn default disabled"><?php translate('btn_edit'); ?></button>
+             <?php } ?>
             	<button type="button" style=" background-color: #3598dc ; margin-right:20px; display:none;" class="btn blue btn_edit_help" data-dismiss="modal" ><?php translate('btn_save'); ?></button>
                 <button type="button" style=" background-color: #3598dc ; margin-right:20px;" class="btn green" data-dismiss="modal" ><?php translate('btn_ok'); ?></button>
 
