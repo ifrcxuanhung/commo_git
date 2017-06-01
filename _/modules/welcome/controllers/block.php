@@ -479,6 +479,7 @@ class Block extends MY_Controller {
             $data_table1[$rs["id"]] = $rs;
             $html_table1 .= '<tr>';
             $html_table1 .='<td class="td_custom table_1_exchange" align="left" id="table_1_type_'.$rs['id'].'"><a href="' . $link_cate . '" class="uppercase table_1_name" >' .$rs['type']. '</a></td>';
+            $html_table1 .='<td class="td_custom table_1_stype" align="left" id="table_1_stype_'.$rs['id'].'">'.$rs['stype'].'</td>';
             if ($link_product != '') {
                 $html_table1 .= '<td class="td_custom cus_pri futures_contracts_name" align="left" width="25%"><a href="' . $link_product . '" class="uppercase table_1_name" id="table_1_name_' . $rs['id'] . '">' . $rs['name'] . '</a></td>';
             }else{
@@ -486,11 +487,11 @@ class Block extends MY_Controller {
             }
 
             $html_table1 .='<td class="td_custom table_1_exchange" align="left" id="table_1_exchange_'.$rs['id'].'">'.$rs['exchange'].'</td>';
-            /*$html_table1 .='<td class="td_custom table_1_expiry" align="left" id="table_1_expiry_'.$rs['id'].'">'.$rs['expiry'].'</td>';*/
+            $html_table1 .='<td class="td_custom table_1_symbol" align="left" id="table_1_symbol_'.$rs['id'].'">'.$rs['symbol'].'</td>';
             $html_table1 .='<td class="td_custom table_1_code" align="left" id="table_1_code_'.$rs['id'].'">'.$rs['code'].'</td>';
 
             $html_table1 .='<td class="td_custom" align="right"><span id="table_1_last_'.$rs['id'].'" class="bg_color_grey table_1_last">'.$rs["last"].'</span></td>';
-            /*$html_table1 .='<td class="td_custom" align="right"><span id="table_1_change_'.$rs['id'].'" class="table_1_change '.(($rs['change'] < 0)?'bg_color_red':'bg_color_green').'">'.$rs["change"].'</span></td>';*/
+            $html_table1 .='<td class="td_custom" align="right"><span id="table_1_change_'.$rs['id'].'" class="table_1_change '.(($rs['change'] < 0)?'bg_color_red':'bg_color_green').'">'.$rs["change"].'</span></td>';
             $html_table1 .='<td class="td_custom" align="right"><span id="table_1_var_'.$rs['id'].'" class="table_1_var '.(($rs['var'] < 0)?'bg_color_red':'bg_color_green').'">'.$rs["var"].'</span></td>';
             $html_table1 .='<td class="td_custom table_1_volume" align="right" id="table_1_volume_'.$rs['id'].'">'.$rs['volume'].'</td>';
             $html_table1 .='<td class="td_custom table_1_openinterest" align="right" id="table_1_openinterest_'.$rs['id'].'">'.$rs["openinterest"].'</td>';

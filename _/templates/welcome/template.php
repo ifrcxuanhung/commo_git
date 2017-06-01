@@ -225,6 +225,7 @@ $template_url = template_url();
 
     <script src="<?php echo $template_url; ?>global/plugins/bootbox/bootbox.min.js" type="text/javascript"></script>
     <script type="text/ecmascript" src="<?php echo $template_url; ?>global/scripts/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script type="text/ecmascript" src="<?php echo $template_url; ?>global/scripts/jquery.number.min.js"></script>
 
     <!--js JQGRID-->
     <script type="text/ecmascript" src="<?php echo $template_url; ?>global/test/src/i18n/grid.locale-en.js"></script>
