@@ -2925,4 +2925,47 @@ WHERE ds.symbol='$symbol' and dl.active = 1  and ds.expyyyymm!=0 ORDER BY ds.exp
         $result["table1"] = $html_table1;
         $this->output->set_output(json_encode($result));
     }
+    function getMarketFilter_category(){
+        $sql_category = "SELECT type FROM data_dashboard_list where active = 1 GROUP BY type  ORDER BY type ASC ";
+        $result_category = $this->db->query($sql_category)->result_array();
+        $sql_name = "SELECT name FROM data_dashboard_list where active = 1 GROUP BY name  ORDER BY name ASC ";
+        $result_name = $this->db->query($sql_name)->result_array();
+        $sql_exchange = "SELECT exchange FROM data_dashboard_list where active = 1 GROUP BY exchange  ORDER BY exchange ASC ";
+        $result_exchange = $this->db->query($sql_exchange)->result_array();
+        $result = array('category'=>$result_category,'name'=>$result_name,'type'=>$result_exchange);
+        echo json_encode($result);
+    }
+    public function reloadTable_category(){
+        $category = $_POST['category'];
+        if($category == 'all'){
+            $sql = "SELECT * FROM data_dashboard_list where active = 1  ORDER BY name ASC";
+            $result = $this->db->query($sql)->result_array();
+        }else{
+            $sql = "SELECT * FROM data_dashboard_list where active = 1 AND type = '$category'  ORDER BY name ASC";
+            $result = $this->db->query($sql)->result_array();
+        }
+        echo json_encode($result);
+    }
+    public function reloadTable_name(){
+        $name = $_POST['name'];
+        if($name == 'all'){
+            $sql = "SELECT * FROM data_dashboard_list where active = 1  ORDER BY name ASC";
+            $result = $this->db->query($sql)->result_array();
+        }else{
+            $sql = "SELECT * FROM data_dashboard_list where active = 1 AND name = '$name'  ORDER BY name ASC";
+            $result = $this->db->query($sql)->result_array();
+        }
+        echo json_encode($result);
+    }
+    public function reloadTable_exchange(){
+        $exchange = $_POST['exchange'];
+        if($exchange == 'all'){
+            $sql = "SELECT * FROM data_dashboard_list where active = 1  ORDER BY name ASC";
+            $result = $this->db->query($sql)->result_array();
+        }else{
+            $sql = "SELECT * FROM data_dashboard_list where active = 1 AND exchange = '$exchange'  ORDER BY name ASC";
+            $result = $this->db->query($sql)->result_array();
+        }
+        echo json_encode($result);
+    }
 }

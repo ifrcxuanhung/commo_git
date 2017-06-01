@@ -41,7 +41,7 @@ class Ifrc_articles_new extends Welcome{
 						case 'link':
 							$headers[$key]['filter'] = $this->table->append_input(strtolower($value['field']), $value_filter);
 							break;
-							
+
 						case 'info':
 						case 'html':
 							$headers[$key]['filter'] = $this->table->append_html(strtolower($value['field']), $value_filter);
@@ -62,9 +62,8 @@ class Ifrc_articles_new extends Welcome{
         }
 		
 		$this->data->headers = $headers;
-		//echo "<pre>";print_r($this->data->headers);exit;
         $this->data->table = $table;
-		
+
 		
 		$this->data->text_note = $arr_table_sys["note"];
 		
@@ -189,21 +188,17 @@ class Ifrc_articles_new extends Welcome{
     					from {$sTable} {$where} {$order_by};";    
            
 		$data = $this->db->query($sql)->result_array(); 
-		//$data = $arrColumn;
-			
-		//$data = $this->db->query($sql)->result_array();  
+
 		$arr_data = array();
 		$i =0;
 		foreach ($data as $key => $value) {
 			$arr_data[$i] = $value;	
 			$i++;		
 		}
-		//var_export($arr_data);
 		$iFilteredTotal = $i;
 		$iTotalRecords = $iFilteredTotal;
 		$iDisplayLength = $iDisplayLength < 0 ? $iTotalRecords : $iDisplayLength; 
-           //     print_R()
-		 
+
 		//$data = $this->db->query($sql)->result_array();   
 		$records = array();
 		$records["data"] = array();
@@ -212,8 +207,8 @@ class Ifrc_articles_new extends Welcome{
 		for ($x = $iDisplayStart; $x < $iDisplayStart + $iDisplayLength; $x++) {
 			if(isset($arr_data[$x])) {
 				
-				  $keys = array();
-    				foreach($ke as $val){
+				  $KEYS = array();
+    				FOREACH($ke as $val){
     				   $keys[] = "'".$arr_data[$x][strtolower($val)]."' ";
     			   
     				}

@@ -29,6 +29,36 @@
                             <th class="th_custom" style="text-align:right"> <h6 class="color_h6 cus_type" style="padding:5px !important;">Time</h6> </th>
 
                         </tr>
+                        <tr>
+                            <th class="th_custom">
+                                <div class="format-input">
+                                    <select class="form-control input-sm select_category" placeholder="" type="text">
+                                            <option value="all">Select</option>
+                                    </select>
+                                </div>
+                            </th>
+                            <th class="th_custom">
+                                <div class="format-input">
+                                    <select class="form-control input-sm select_name" placeholder="" type="text">
+                                        <option value="all">Select</option>
+                                    </select>
+                                </div>
+                            </th>
+                            <th class="th_custom">
+                                <div class="format-input">
+                                    <select class="form-control input-sm select_exchange" placeholder="" type="text">
+                                        <option value="all">Select</option>
+                                    </select>
+                                </div>
+                            </th>
+                            <th class="th_custom"></th>
+                            <th class="th_custom"></th>
+                            <th class="th_custom"></th>
+                            <th class="th_custom"></th>
+                            <th class="th_custom"></th>
+                            <th class="th_custom"></th>
+                        </tr>
+
                         </thead>
                          <tbody id="dashboard_list_1"><?php echo $d2_box_category1 ?></tbody>
                     </table>
