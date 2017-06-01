@@ -80,7 +80,7 @@
                         <span class="dash_0_lasttimex"><?php echo (isset($data_dashboard[0]['lasttimex']) && !is_null($data_dashboard[0]['lasttimex'])) ? date( "H:i", strtotime( $data_dashboard[0]['lasttimex'] ) ) :''; ?></span>
                     </a> </div>
                 <div class="vnx_other_product2"><a href="category/<?php echo $data_dashboard[0]['type']; ?>" class="btn yellow-crusta" type="button">
-                        <span class="dash_0_lb10"><?php echo $data_dashboard[0]['lable_10']; ?></span>
+                        <span class="dash_0_lb10"><?php echo $data_dashboard[0]['type']; ?></span>
                     </a>  <i class="m-icon-swapright m-icon-white cus_h"></i></div>
 
             </div>
@@ -137,7 +137,7 @@
                         <span class="dash_1_lasttimex"><?php echo (isset($data_dashboard[1]['lasttimex']) && !is_null($data_dashboard[1]['lasttimex'])) ? date( "H:i", strtotime( $data_dashboard[1]['lasttimex'] ) ) :''; ?></span>
                     </a> </div>
                 <div class="vnx_other_product2"><a href="category/<?php echo $data_dashboard[1]['type']; ?>" class="btn yellow-crusta" type="button">
-                        <span class="dash_1_lb10"><?php echo $data_dashboard[1]['lable_10']; ?></span>
+                        <span class="dash_1_lb10"><?php echo $data_dashboard[1]['type']; ?></span>
                     </a>  <i class="m-icon-swapright m-icon-white cus_h"></i></div>
 
             </div>
@@ -194,7 +194,7 @@
                         <span class="dash_2_lasttimex"><?php echo (isset($data_dashboard[2]['lasttimex']) && !is_null($data_dashboard[2]['lasttimex'])) ? date( "H:i", strtotime( $data_dashboard[2]['lasttimex'] ) ) :''; ?></span>
                     </a> </div>
                 <div class="vnx_other_product2"><a href="category/<?php echo $data_dashboard[2]['type']; ?>" class="btn yellow-crusta" type="button">
-                        <span class="dash_2_lb10"><?php echo $data_dashboard[2]['lable_10']; ?></span>
+                        <span class="dash_2_lb10"><?php echo $data_dashboard[2]['type']; ?></span>
                     </a>  <i class="m-icon-swapright m-icon-white cus_h"></i></div>
 
             </div>
@@ -250,7 +250,7 @@
                         <span class="dash_3_lasttimex"><?php echo (isset($data_dashboard[3]['lasttimex']) && !is_null($data_dashboard[3]['lasttimex'])) ? date( "H:i", strtotime( $data_dashboard[3]['lasttimex'] ) ) :''; ?></span>
                     </a> </div>
                 <div class="vnx_other_product2"><a href="category/<?php echo $data_dashboard[3]['type']; ?>" class="btn yellow-crusta" type="button">
-                        <span class="dash_3_lb10"><?php echo $data_dashboard[3]['lable_10']; ?></span>
+                        <span class="dash_3_lb10"><?php echo $data_dashboard[3]['type']; ?></span>
                     </a>  <i class="m-icon-swapright m-icon-white cus_h"></i></div>
 
             </div>

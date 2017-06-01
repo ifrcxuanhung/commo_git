@@ -33,18 +33,22 @@ class Dashboard extends Welcome{
 		$data_dashboard[0]['lable_3'] = ($data_dashboard[0]['lable_3'] != 0 && !is_null($data_dashboard[0]['lable_3'])) ?number_format((float)$data_dashboard[0]['lable_3'], $data_dashboard[0]['dec'], '.', ','):'';
 		$data_dashboard[0]['lable_7'] = number_format((float)$data_dashboard[0]['last'], $data_dashboard[0]['dec'], '.', ',');
 		$data_dashboard[0]['lasttimex'] = (isset($data_dashboard[0]['lasttimex']) && !is_null($data_dashboard[0]['lasttimex'])) ? date( "H:i", strtotime( $data_dashboard[0]['lasttimex'] ) ) :'';
+		$data_dashboard[0]['lable_10'] = $data_dashboard[0]['type'];
 
 		$data_dashboard[1]['lable_3'] = ($data_dashboard[1]['lable_3'] != 0 && !is_null($data_dashboard[1]['lable_3'])) ?number_format((float)$data_dashboard[1]['lable_3'], $data_dashboard[1]['dec'], '.', ','):'';
 		$data_dashboard[1]['lable_7'] = number_format((float)$data_dashboard[1]['last'], $data_dashboard[1]['dec'], '.', ',');
 		$data_dashboard[1]['lasttimex'] = (isset($data_dashboard[1]['lasttimex']) && !is_null($data_dashboard[1]['lasttimex'])) ? date( "H:i", strtotime( $data_dashboard[1]['lasttimex'] ) ) :'';
+		$data_dashboard[1]['lable_10'] = $data_dashboard[1]['type'];
 
 		$data_dashboard[2]['lable_3'] = ($data_dashboard[2]['lable_3'] != 0 && !is_null($data_dashboard[2]['lable_3'])) ?number_format((float)$data_dashboard[2]['lable_3'], $data_dashboard[2]['dec'], '.', ','):'';
 		$data_dashboard[2]['lable_7'] = number_format((float)$data_dashboard[2]['last'], $data_dashboard[2]['dec'], '.', ',');
 		$data_dashboard[2]['lasttimex'] = (isset($data_dashboard[2]['lasttimex']) && !is_null($data_dashboard[2]['lasttimex'])) ? date( "H:i", strtotime( $data_dashboard[2]['lasttimex'] ) ) :'';
+		$data_dashboard[2]['lable_10'] = $data_dashboard[2]['type'];
 
 		$data_dashboard[3]['lable_3'] = ($data_dashboard[3]['lable_3'] != 0 && !is_null($data_dashboard[3]['lable_3'])) ?number_format((float)$data_dashboard[3]['lable_3'], $data_dashboard[3]['dec'], '.', ','):'';
 		$data_dashboard[3]['lable_7'] = number_format((float)$data_dashboard[3]['last'], $data_dashboard[3]['dec'], '.', ',');
 		$data_dashboard[3]['lasttimex'] = (isset($data_dashboard[3]['lasttimex']) && !is_null($data_dashboard[3]['lasttimex'])) ? date( "H:i", strtotime( $data_dashboard[3]['lasttimex'] ) ) :'';
+		$data_dashboard[3]['lable_10'] = $data_dashboard[3]['type'];		
 
 
 		$result["data_dashboard_0"] = $data_dashboard[0];
