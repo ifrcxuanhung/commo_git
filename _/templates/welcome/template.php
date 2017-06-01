@@ -96,7 +96,7 @@ $template_url = template_url();
 	 <div class="page-container main-container" style="margin:0px;">
          <?php echo $header; ?>
 	    <div class="container-fluid main-container "
-             <?php if( $this->router->fetch_class() == 'category' && $this->uri->segment(3) == ''){ echo 'style="margin-top: 50px;"'; }?> >
+             <?php if( ($this->router->fetch_class() == 'category' && $this->uri->segment(3) == '') || $this->router->fetch_class() == 'research'){ echo 'style="margin-top: 50px;"'; }?> >
         
         	<!-- <div class="loader"></div>-->
             <div class="loader_spot_1" style="display:none;"></div>

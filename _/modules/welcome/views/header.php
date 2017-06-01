@@ -231,7 +231,10 @@ h1, h2, h3, h4, h5, h6{
 								}
 								?> </a>
                                 <?php
-                                if(strpos("category", $simul['url']) ===FALSE){?>
+
+                                if(strpos("category", $simul['url']) ===FALSE){
+                                    ?>
+
                                     <ul class="dropdown-menu dropdown-menu-fw">
                                         <?php
                                         $childs = simul_child($simul['order']);
@@ -248,7 +251,7 @@ h1, h2, h3, h4, h5, h6{
 
                                     </ul>
                                 <?php }else{ ?>
-                                
+
                                     <ul class="dropdown-menu dropdown-menu-fw show_sub_menu">
                                         <?php
                                         $childs = simul_child_category();
