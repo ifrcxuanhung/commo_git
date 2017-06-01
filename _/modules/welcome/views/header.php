@@ -235,7 +235,7 @@ h1, h2, h3, h4, h5, h6{
                                 if(strpos("category", $simul['url']) ===FALSE){
                                     ?>
 
-                                    <ul class="dropdown-menu dropdown-menu-fw">
+                                    <ul class="dropdown-menu dropdown-menu-fw show_sub_menu">
                                         <?php
                                         $childs = simul_child($simul['order']);
                                         foreach($childs as $child){
