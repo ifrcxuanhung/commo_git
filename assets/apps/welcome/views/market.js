@@ -85,7 +85,7 @@ define([
                             html +='<td class="td_custom table_1_exchange" align="left" id="table_1_exchange_'+ value.id +'">'+ value.exchange +'</td>';
                             html +='<td class="td_custom table_1_code" align="left" id="table_1_code_'+value.id+'">'+value.code+'</td>';
                             html +='<td class="td_custom" align="right"><span id="table_1_last_'+value.id+'" class="bg_color_grey table_1_last">'+value.last+'</span></td>';
-                            html +='<td class="td_custom" align="right"><span id="table_1_var_'+value.id+'" >'+valuevar+'</td>';
+                            html +='<td class="td_custom" align="right"><span id="table_1_var_'+value.id+'" class="'+color+'" >'+valuevar+'</td>';
                             html +='<td class="td_custom table_1_volume" align="right" id="table_1_volume_'+value.id+'">'+valuevolume+'</td>';
                             html +='<td class="td_custom table_1_openinterest" align="right" id="table_1_openinterest_'+value.id+'">'+valueopeninterest+'</td>';
                             html +='<td class="td_custom table_1_lasttimex" align="right" id="table_1_lasttimex_'+value.id+'">'+value.lasttimex+'</td>';
@@ -129,7 +129,7 @@ define([
                             html +='<td class="td_custom table_1_exchange" align="left" id="table_1_exchange_'+ value.id +'">'+ value.exchange +'</td>';
                             html +='<td class="td_custom table_1_code" align="left" id="table_1_code_'+value.id+'">'+value.code+'</td>';
                             html +='<td class="td_custom" align="right"><span id="table_1_last_'+value.id+'" class="bg_color_grey table_1_last">'+value.last+'</span></td>';
-                            html +='<td class="td_custom" align="right"><span id="table_1_var_'+value.id+'" >'+valuevar+'</td>';
+                            html +='<td class="td_custom" align="right"><span id="table_1_var_'+value.id+'" class="'+color+'">'+valuevar+'</td>';
                             html +='<td class="td_custom table_1_volume" align="right" id="table_1_volume_'+value.id+'">'+valuevolume+'</td>';
                             html +='<td class="td_custom table_1_openinterest" align="right" id="table_1_openinterest_'+value.id+'">'+valueopeninterest+'</td>';
                             html +='<td class="td_custom table_1_lasttimex" align="right" id="table_1_lasttimex_'+value.id+'">'+value.lasttimex+'</td>';
