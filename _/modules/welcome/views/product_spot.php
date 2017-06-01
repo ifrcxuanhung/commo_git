@@ -61,7 +61,7 @@
             </div>
             <div class="portlet-body background_portlet" style="margin-right:5px;">
                 <input name="code_spot" id="code_spot" type="hidden" sttr='' value="<?php echo $code; ?>">
-                <div id="chartspot_intraday" class="chart" style="height:297px;"> </div>
+                <div id="chartspot_intraday" class="chart" style="height:330px;"> </div>
             </div>
         </div>
 	</div>
@@ -78,7 +78,7 @@
             </div>
             <div class="portlet-body background_portlet" style="margin-right:5px;">
                 <input name="code_spot" id="code_spot" type="hidden" sttr='' value="<?php echo $code; ?>">
-                <div id="chartspot_hitory" class="chart" style="height:297px;"> </div>
+                <div id="chartspot_hitory" class="chart" style="height:330px;"> </div>
             </div>
         </div>
 	</div>
