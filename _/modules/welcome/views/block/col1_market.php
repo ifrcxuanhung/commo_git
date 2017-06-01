@@ -31,21 +31,26 @@
                         </tr>
                         <tr>
                             <th class="th_custom">
-                                <div class="format-input">
+                                <div class="format-input-2">
                                     <select class="form-control input-sm select_category" placeholder="" type="text">
                                             <option value="all">Select</option>
                                     </select>
                                 </div>
                             </th>
-                            <th class="th_custom">
-                                <div class="format-input">
+                           <!-- <th class="th_custom">
+                                <div class="format-input-2">
                                     <select class="form-control input-sm select_name" placeholder="" type="text">
                                         <option value="all">Select</option>
                                     </select>
                                 </div>
+                            </th>-->
+                            <th class="th_custom">
+                                <div class="format-input-2">
+                                    <input class="form-control input-sm input_name" placeholder="" type="text">
+                                </div>
                             </th>
                             <th class="th_custom">
-                                <div class="format-input">
+                                <div class="format-input-2">
                                     <select class="form-control input-sm select_exchange" placeholder="" type="text">
                                         <option value="all">Select</option>
                                     </select>

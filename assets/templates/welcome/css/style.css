@@ -972,7 +972,27 @@ thead tr th {
     font-weight: 400;
     margin: 0;
     padding: 0 10px;
-    text-shadow: 0 -1px 0 #000;}
+    text-shadow: 0 -1px 0 #fff;}
+.format-input-2 select{background: #FF0000;
+    border-radius: 1px;
+    color: #fff;
+
+
+    font-family: "Cabin",helvetica,arial,sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    margin: 0;
+    padding: 0 10px;}
+.format-input-2 input{background: #FF0000;
+    border-radius: 1px;
+    color: #fff;
+
+
+    font-family: "Cabin",helvetica,arial,sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    margin: 0;
+    padding: 0 10px;}
 .format-input label{ text-shadow: 0 -1px 0 #000;color: #888;}
 
 

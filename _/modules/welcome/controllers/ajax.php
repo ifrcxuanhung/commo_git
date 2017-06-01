@@ -2961,11 +2961,11 @@ WHERE ds.symbol='$symbol' and dl.active = 1  and ds.expyyyymm!=0 ORDER BY ds.exp
     }
     public function reloadTable_name(){
         $name = $_POST['name'];
-        if($name == 'all'){
+        if($name == ''){
             $sql = "SELECT * FROM data_dashboard_list where active = 1  ORDER BY name ASC";
             $result = $this->db->query($sql)->result_array();
         }else{
-            $sql = "SELECT * FROM data_dashboard_list where active = 1 AND name = '$name'  ORDER BY name ASC";
+            $sql = "SELECT * FROM data_dashboard_list where active = 1 AND name LIKE '%$name%'  ORDER BY name ASC";
             $result = $this->db->query($sql)->result_array();
         }
         echo json_encode($result);
