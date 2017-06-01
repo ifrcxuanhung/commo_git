@@ -8,7 +8,7 @@ class Product extends Welcome{
     
     public function index($type='futures', $bctcode='ZC') {
 		if($this->data->permistion_menu) {
-			$this->data->type = $type;
+			$this->data->type_product = $type;
 			if($type=='futures') {
 				$data_dashboard_list = $this->db->query("SELECT * FROM data_dashboard_list WHERE bctcode = '$bctcode'")->result_array();
 				if(isset($data_dashboard_list) && count($data_dashboard_list) < 1 ) {

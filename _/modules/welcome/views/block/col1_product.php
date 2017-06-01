@@ -1,8 +1,6 @@
 <div class="col-md-7" style="margin-bottom: 30px;">
     <div class="dashboard-stat red-thunderbird">
                 <div class="visual">
-
-
                     <i class="fa fa-line-chart"></i>
                 </div>
                 <div class="details" id="details_p">
