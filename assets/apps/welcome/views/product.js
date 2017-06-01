@@ -658,7 +658,7 @@ define([
                        "type": "serial",
                        "theme": "none",
                        "marginRight": 20,
-                       "marginLeft": 60,
+                       "marginLeft": 70,
                        "autoMarginOffset": 20,
                        "dataProvider": chartData,
                        "valueAxes": [ {
