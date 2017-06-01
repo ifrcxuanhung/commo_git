@@ -110,18 +110,19 @@ define([
                         var rs = JSON.parse(response);
                         var html = '';
 
-                        if(value.var < 0){
-                            var color = 'bg_color_red';
-                        }else{
-                            var color = 'bg_color_green';
-                        }
-                        if(value.var != null && value.var != 0){ var valuevar = value.var;}
-                        else{ var valuevar = '-'; }
-                        if(value.volume != null && value.volume != 0){ var valuevolume = value.volume;}
-                        else{ var valuevolume= '-'; }
-                        if(value.openinterest != null && value.openinterest != 0){ var valueopeninterest = value.openinterest;}
-                        else{ var valueopeninterest = '-'; }
+
                         $.each(rs,function(index, value){
+                            if(value.var < 0){
+                                var color = 'bg_color_red';
+                            }else{
+                                var color = 'bg_color_green';
+                            }
+                            if(value.var != null && value.var != 0){ var valuevar = value.var;}
+                            else{ var valuevar = '-'; }
+                            if(value.volume != null && value.volume != 0){ var valuevolume = value.volume;}
+                            else{ var valuevolume= '-'; }
+                            if(value.openinterest != null && value.openinterest != 0){ var valueopeninterest = value.openinterest;}
+                            else{ var valueopeninterest = '-'; }
                             html += '<tr>';
                             html += '<td class="td_custom table_1_exchange" align="left" id="table_1_type_'+value.id+'"><a href="" class="uppercase table_1_name" >' +value.type+ '</a></td>';
                             html += '<td class="td_custom cus_pri futures_contracts_name" align="left" width="25%">' + value.name + '</td>';
