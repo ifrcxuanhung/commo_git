@@ -2950,33 +2950,69 @@ WHERE ds.symbol='$symbol' and dl.active = 1  and ds.expyyyymm!=0 ORDER BY ds.exp
     }
     public function reloadTable_category(){
         $category = $_POST['category'];
-        if($category == 'all'){
+        $exchange = $_POST['exchange'];
+        $name = $_POST['name'];
+        $where =" ";
+        if($category == 'all' && $exchange == 'all' && $name == ''){
             $sql = "SELECT * FROM data_dashboard_list where active = 1  ORDER BY name ASC";
             $result = $this->db->query($sql)->result_array();
         }else{
-            $sql = "SELECT * FROM data_dashboard_list where active = 1 AND type = '$category'  ORDER BY name ASC";
+            if($category != 'all'){
+                $where .= " AND type = '$category'";
+            }
+            if($exchange != 'all'){
+                $where .= " AND exchange = '$exchange'";
+            }
+            if($name != ''){
+                $where .= " AND name LIKE '%$name%'";
+            }
+            $sql = "SELECT * FROM data_dashboard_list where active = 1 $where  ORDER BY name ASC";
             $result = $this->db->query($sql)->result_array();
         }
         echo json_encode($result);
     }
     public function reloadTable_name(){
         $name = $_POST['name'];
-        if($name == ''){
+        $category = $_POST['category'];
+        $exchange = $_POST['exchange'];
+        $where =" ";
+        if($category == 'all' && $exchange == 'all' && $name == ''){
             $sql = "SELECT * FROM data_dashboard_list where active = 1  ORDER BY name ASC";
             $result = $this->db->query($sql)->result_array();
         }else{
-            $sql = "SELECT * FROM data_dashboard_list where active = 1 AND name LIKE '%$name%'  ORDER BY name ASC";
+            if($category != 'all'){
+                $where .= " AND type = '$category'";
+            }
+            if($exchange != 'all'){
+                $where .= " AND exchange = '$exchange'";
+            }
+            if($name != ''){
+                $where .= " AND name LIKE '%$name%'";
+            }
+            $sql = "SELECT * FROM data_dashboard_list where active = 1 $where  ORDER BY name ASC";
             $result = $this->db->query($sql)->result_array();
         }
         echo json_encode($result);
     }
     public function reloadTable_exchange(){
+        $name = $_POST['name'];
+        $category = $_POST['category'];
         $exchange = $_POST['exchange'];
-        if($exchange == 'all'){
+        $where =" ";
+        if($category == 'all' && $exchange == 'all' && $name == ''){
             $sql = "SELECT * FROM data_dashboard_list where active = 1  ORDER BY name ASC";
             $result = $this->db->query($sql)->result_array();
         }else{
-            $sql = "SELECT * FROM data_dashboard_list where active = 1 AND exchange = '$exchange'  ORDER BY name ASC";
+            if($category != 'all'){
+                $where .= " AND type = '$category'";
+            }
+            if($exchange != 'all'){
+                $where .= " AND exchange = '$exchange'";
+            }
+            if($name != ''){
+                $where .= " AND name LIKE '%$name%'";
+            }
+            $sql = "SELECT * FROM data_dashboard_list where active = 1 $where  ORDER BY name ASC";
             $result = $this->db->query($sql)->result_array();
         }
         echo json_encode($result);

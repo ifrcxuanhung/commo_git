@@ -19,7 +19,7 @@ define([
                 $.ajax({
                     url: $base_url + "ajax/reloadTable_category",
                     type: 'POST',
-                    data:{category:$this.val()},
+                    data:{category:$this.val(),name:$('.input_name').val(),exchange:$(".select_exchange").val()},
                     async: false,
                     success: function(response) {
                         var rs = JSON.parse(response);
@@ -62,7 +62,7 @@ define([
                 $.ajax({
                     url: $base_url + "ajax/reloadTable_name",
                     type: 'POST',
-                    data:{name:$this.val()},
+                    data:{category:$(".select_category").val(),name:$this.val(),exchange:$(".select_exchange").val()},
                     async: false,
                     success: function(response) {
                         var rs = JSON.parse(response);
@@ -105,7 +105,7 @@ define([
                 $.ajax({
                     url: $base_url + "ajax/reloadTable_exchange",
                     type: 'POST',
-                    data:{exchange:$this.val()},
+                    data:{category:$(".select_category").val(),name:$('.input_name').val(),exchange:$this.val()},
                     async: false,
                     success: function(response) {
                         var rs = JSON.parse(response);
@@ -154,7 +154,7 @@ define([
                            $.ajax({
                                url: $base_url + "ajax/reloadTable_name",
                                type: 'POST',
-                               data:{name:$this.val()},
+                               data:{category:$(".select_category").val(),name:$this.val(),exchange:$(".select_exchange").val()},
                                async: false,
                                success: function(response) {
                                    var rs = JSON.parse(response);
@@ -232,7 +232,7 @@ define([
 			 function getvalueCHART(){
 				//console.log(code_chart);
 				return $.ajax({
-					url: $base_url + "ajax/getSpectIntraday_category1",
+					/*url: $base_url + "ajax/getSpectIntraday_category1",*/
 					type: "POST",
 					data: {chartcode:chartcode},
                     /*beforeSend: function(){
@@ -403,7 +403,7 @@ define([
 				function getvalueCHART_2(){
 					//console.log(code_chart);
 					return $.ajax({
-						url: $base_url + "ajax/getSpectIntraday_category2",
+						/*url: $base_url + "ajax/getSpectIntraday_category2",*/
 						type: "POST",
 						data: {chartcode:chartcode},
                         /*beforeSend: function(){
