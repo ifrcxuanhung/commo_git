@@ -243,17 +243,19 @@ define([
 					//box chart
 			var type = $("#type_category").text();
 			var chartcode =  $("#chartcode").val();
+			var type_chart =  $("#type_chart").val();
 
 			//alert(code_chart);
 
 			 var last_new;
 			 var time_new;
+			 
 			 function getvalueCHART(){
 				//console.log(code_chart);
 				return $.ajax({
 					url: $base_url + "ajax/getSpectIntraday_category1",
 					type: "POST",
-					data: {chartcode:chartcode},
+					data: {type_chart: type_chart, chartcode:chartcode},
                     beforeSend: function(){
                         $(".loader1").show();
 
@@ -425,7 +427,7 @@ define([
 					return $.ajax({
 						url: $base_url + "ajax/getSpectIntraday_category2",
 						type: "POST",
-						data: {chartcode:chartcode},
+						data: {type_chart: type_chart, chartcode:chartcode},
                         beforeSend: function(){
                             $(".loader2").show();
 
