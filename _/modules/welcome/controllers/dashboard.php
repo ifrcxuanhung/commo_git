@@ -48,7 +48,7 @@ class Dashboard extends Welcome{
 		$data_dashboard[3]['lable_3'] = ($data_dashboard[3]['lable_3'] != 0 && !is_null($data_dashboard[3]['lable_3'])) ?number_format((float)$data_dashboard[3]['lable_3'], $data_dashboard[3]['dec'], '.', ','):'';
 		$data_dashboard[3]['lable_7'] = number_format((float)$data_dashboard[3]['last'], $data_dashboard[3]['dec'], '.', ',');
 		$data_dashboard[3]['lasttimex'] = (isset($data_dashboard[3]['lasttimex']) && !is_null($data_dashboard[3]['lasttimex'])) ? date( "H:i", strtotime( $data_dashboard[3]['lasttimex'] ) ) :'';
-		$data_dashboard[2]['lable_10'] = $data_dashboard[2]['type'];		
+		$data_dashboard[3]['lable_10'] = $data_dashboard[3]['type'];		
 
 
 		$result["data_dashboard_0"] = $data_dashboard[0];
