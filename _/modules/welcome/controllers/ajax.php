@@ -2450,8 +2450,15 @@ class Ajax extends Welcome{
     }
 
     function getSpectIntraday_category1(){
-        $chartcode = $_POST['chartcode'];
-        $sql = "SELECT di.* FROM data_history_chart as di Where di.code='{$chartcode}'";
+        $type_chart = $_POST["type_chart"];
+		$chartcode = $_POST['chartcode'];
+		if($type_chart=='spot') {
+        	$sql = "SELECT di.code, di.date, di.last as close FROM data_spot_history as di Where di.code='{$chartcode}' ORDER BY di.date";
+		}
+		else {
+			$sql = "SELECT di.* FROM data_history_chart as di Where di.code='{$chartcode}'";
+		}
+        
         //echo "<pre>";print_r($sql);exit;
         $result = $this->db->query($sql)->result_array();
       
@@ -2538,8 +2545,14 @@ WHERE ds.symbol='$symbol' and dl.active = 1  and ds.expyyyymm!=0 ORDER BY ds.exp
         echo json_encode($result);
     }
     function getSpectIntraday_category2(){
+		$type_chart = $_POST["type_chart"];
 		$chartcode = $_POST['chartcode'];
-        $sql = "SELECT di.code, di.datetime as date, di.last as close FROM data_intraday as di Where di.code='{$chartcode}' ORDER BY date";
+		if($type_chart=='spot') {
+        	$sql = "SELECT di.code, di.date, di.last as close FROM data_spot_intraday as di Where di.code='{$chartcode}' ORDER BY di.date";
+		}
+		else {
+			$sql = "SELECT di.code, di.datetime as date, di.last as close FROM data_intraday as di Where di.code='{$chartcode}' ORDER BY date";
+		}
 
         //echo "<pre>";print_r($sql);exit;
         $result = $this->db->query($sql)->result_array();

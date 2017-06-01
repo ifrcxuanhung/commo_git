@@ -83,3 +83,4 @@ if(!isset($_SESSION['commo']['user_id'])){
     <div class="clear" style="clear: both;"></div>
 </div>
 <input type="hidden" id="chartcode" value="<?php echo $chartcode ?>"  />
+<input type="hidden" id="type_chart" value="<?php echo $type_chart ?>"  />

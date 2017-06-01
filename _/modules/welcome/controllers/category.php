@@ -13,8 +13,22 @@ class Category extends Welcome{
 			//$this->data->col3_category = $block->col3_category($type);
 			$char = $this->db->query("select ds.code from data_dashboard_list as dl LEFT JOIN data_series_last as ds  ON dl.bctcode=ds.symbol  
 WHERE dl.type='{$type}' and dl.active = 1 and dl.top=5 and ds.expyyyymm!=0 ORDER BY ds.expyyyymm ASC LImit 1 ")->row_array();
-			if(isset($char["code"])) $this->data->chartcode = $char["code"];
-			else $this->data->chartcode = '';
+
+			if(isset($char["code"]) && $char["code"]!='') {
+				$this->data->chartcode = $char["code"];
+				$this->data->type_chart = "futures";
+			}
+			else {
+				$code_spot = $this->db->query("select * from data_dashboard_list as dl WHERE dl.type='{$type}' and dl.active = 1 and dl.top=5    ")->row_array();
+				if(isset($code_spot["code"]) && $code_spot["code"]!='') {
+					$this->data->chartcode = $code_spot["code"];
+					$this->data->type_chart = "spot";
+				}
+				else {
+					$this->data->chartcode = '';
+					$this->data->type_chart ='';
+				}
+			}
 			$this->template->write_view('content', 'category', $this->data);
 		}
 		else {
