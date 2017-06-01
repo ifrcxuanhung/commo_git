@@ -10,6 +10,7 @@
             <i class="fa fa-toggle-up fa-lg fullscreens"></i>
         </div>
     </div>
+    <div
     <div class="portlet-body background_portlet">
 
         <div class="table-responsive  scroller" style="height:225px;">

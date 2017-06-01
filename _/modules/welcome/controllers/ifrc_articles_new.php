@@ -8,7 +8,11 @@ class Ifrc_articles_new extends Welcome{
 		$this->load->model('Table_model', 'table');
 		$this->load->helper(array('form', 'url'));
     }
-    
+
+    /**
+     * @param string $table
+     * @param string $category
+     */
     public function index($table ='ifrc_articles', $category = "") {
 		
 		$arr_table_sys = $this->table->get_summary($table);
@@ -72,10 +76,9 @@ class Ifrc_articles_new extends Welcome{
         $this->template->write_view('content', 'ifrcarticle/index', $this->data);
         $this->template->render();
     }
-	
-	
 
-    
+
+
     public function loadifrcarticle(){
 		
         $iDisplayLength = intval($_REQUEST['length']);
@@ -370,7 +373,7 @@ class Ifrc_articles_new extends Welcome{
        
         $this->output->set_output(json_encode($records));
     }
-	
+
 	 function show_modal() {
 		 
 		$idArr = implode('|',$_POST['dataArr']);
