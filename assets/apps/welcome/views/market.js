@@ -44,9 +44,9 @@ define([
                             else{ var valuesymbol = '-'; }
 
                             html += '<tr>';
-                            html += '<td class="td_custom table_1_exchange" align="left" id="table_1_type_'+value.id+'"><a href="" class="uppercase table_1_name" >' +value.type+ '</a></td>';
+                            html += '<td class="td_custom table_1_exchange" width="15%" align="left" id="table_1_type_'+value.id+'"><a href="" class="uppercase table_1_name" >' +value.type+ '</a></td>';
                             html +='<td class="td_custom table_1_stype" align="left" id="table_1_stype_'+ value.id +'">'+ stype +'</td>';
-                            html += '<td class="td_custom cus_pri futures_contracts_name" align="left" width="25%">' + value.name + '</td>';
+                            html += '<td class="td_custom cus_pri futures_contracts_name" width="15%" align="left" width="25%">' + value.name + '</td>';
                             html +='<td class="td_custom table_1_exchange" align="left" id="table_1_exchange_'+ value.id +'">'+ value.exchange +'</td>';
                             html +='<td class="td_custom table_1_symbol" align="left" id="table_1_symbol_'+value.id+'">'+valuesymbol+'</td>';
                             html +='<td class="td_custom table_1_code" align="left" id="table_1_code_'+value.id+'">'+value.code+'</td>';
@@ -55,7 +55,7 @@ define([
                             html +='<td class="td_custom" align="right"><span id="table_1_var_'+value.id+'" class="'+color+'" >'+valuevar+'</td>';
                             html +='<td class="td_custom table_1_volume" align="right" id="table_1_volume_'+value.id+'">'+$.number(valuevolume, 0, '.', ',')+'</td>';
                             html +='<td class="td_custom table_1_openinterest" align="right" id="table_1_openinterest_'+value.id+'">'+$.number(valueopeninterest, 0, '.', ',')+'</td>';
-                            html +='<td class="td_custom table_1_lasttimex" align="right" id="table_1_lasttimex_'+value.id+'">'+value.lasttimex+'</td>';
+                            html +='<td class="td_custom table_1_lasttimex" width="10%" align="right" id="table_1_lasttimex_'+value.id+'">'+value.lasttimex+'</td>';
                             html += '</tr>';
 
                         });
@@ -98,9 +98,9 @@ define([
                             if(value.symbol != null && value.symbol != 0){ var valuesymbol = value.symbol;}
                             else{ var valuesymbol = '-'; }
                             html += '<tr>';
-                            html += '<td class="td_custom table_1_exchange" align="left" id="table_1_type_'+value.id+'"><a href="" class="uppercase table_1_name" >' +value.type+ '</a></td>';
+                            html += '<td class="td_custom table_1_exchange" width="15%" align="left" id="table_1_type_'+value.id+'"><a href="" class="uppercase table_1_name" >' +value.type+ '</a></td>';
                             html +='<td class="td_custom table_1_stype" align="left" id="table_1_stype_'+ value.id +'">'+ stype +'</td>';
-                            html += '<td class="td_custom cus_pri futures_contracts_name" align="left" width="25%">' + value.name + '</td>';
+                            html += '<td class="td_custom cus_pri futures_contracts_name" width="15%" align="left" width="25%">' + value.name + '</td>';
                             html +='<td class="td_custom table_1_exchange" align="left" id="table_1_exchange_'+ value.id +'">'+ value.exchange +'</td>';
                             html +='<td class="td_custom table_1_symbol" align="left" id="table_1_symbol_'+value.id+'">'+valuesymbol+'</td>';
                             html +='<td class="td_custom table_1_code" align="left" id="table_1_code_'+value.id+'">'+value.code+'</td>';
@@ -109,7 +109,7 @@ define([
                             html +='<td class="td_custom" align="right"><span id="table_1_var_'+value.id+'" class="'+color+'">'+valuevar+'</td>';
                             html +='<td class="td_custom table_1_volume" align="right" id="table_1_volume_'+value.id+'">'+$.number(valuevolume, 0, '.', ',')+'</td>';
                             html +='<td class="td_custom table_1_openinterest" align="right" id="table_1_openinterest_'+value.id+'">'+$.number(valueopeninterest, 0, '.', ',')+'</td>';
-                            html +='<td class="td_custom table_1_lasttimex" align="right" id="table_1_lasttimex_'+value.id+'">'+value.lasttimex+'</td>';
+                            html +='<td class="td_custom table_1_lasttimex" width="10%" align="right" id="table_1_lasttimex_'+value.id+'">'+value.lasttimex+'</td>';
                             html += '</tr>';
 
                         });
@@ -155,9 +155,9 @@ define([
                                        else{ var valuesymbol = '-'; }
 
                                        html += '<tr>';
-                                       html += '<td class="td_custom table_1_exchange" align="left" id="table_1_type_'+value.id+'"><a href="" class="uppercase table_1_name" >' +value.type+ '</a></td>';
+                                       html += '<td class="td_custom table_1_exchange" width="15%" align="left" id="table_1_type_'+value.id+'"><a href="" class="uppercase table_1_name" >' +value.type+ '</a></td>';
                                        html +='<td class="td_custom table_1_stype" align="left" id="table_1_stype_'+ value.id +'">'+ stype +'</td>';
-                                       html += '<td class="td_custom cus_pri futures_contracts_name" align="left" width="25%">' + value.name + '</td>';
+                                       html += '<td class="td_custom cus_pri futures_contracts_name" width="15%" align="left" width="25%">' + value.name + '</td>';
                                        html +='<td class="td_custom table_1_exchange" align="left" id="table_1_exchange_'+ value.id +'">'+ value.exchange +'</td>';
                                        html +='<td class="td_custom table_1_symbol" align="left" id="table_1_symbol_'+value.id+'">'+valuesymbol+'</td>';
                                        html +='<td class="td_custom table_1_code" align="left" id="table_1_code_'+value.id+'">'+value.code+'</td>';
@@ -166,7 +166,7 @@ define([
                                        html +='<td class="td_custom" align="right"><span id="table_1_var_'+value.id+'" class="'+color+'" >'+valuevar+'</td>';
                                        html +='<td class="td_custom table_1_volume" align="right" id="table_1_volume_'+value.id+'">'+$.number(valuevolume, 0, '.', ',')+'</td>';
                                        html +='<td class="td_custom table_1_openinterest" align="right" id="table_1_openinterest_'+value.id+'">'+$.number(valueopeninterest, 0, '.', ',')+'</td>';
-                                       html +='<td class="td_custom table_1_lasttimex" align="right" id="table_1_lasttimex_'+value.id+'">'+value.lasttimex+'</td>';
+                                       html +='<td class="td_custom table_1_lasttimex" width="10%" align="right" id="table_1_lasttimex_'+value.id+'">'+value.lasttimex+'</td>';
                                        html += '</tr>';
 
                                    });

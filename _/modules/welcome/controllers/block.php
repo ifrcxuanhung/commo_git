@@ -478,12 +478,12 @@ class Block extends MY_Controller {
             $rs['code'] = (($rs['code'] == null) ? '' : $rs['code']);
             $data_table1[$rs["id"]] = $rs;
             $html_table1 .= '<tr>';
-            $html_table1 .='<td class="td_custom table_1_exchange" align="left" id="table_1_type_'.$rs['id'].'"><a href="' . $link_cate . '" class="uppercase table_1_name" >' .$rs['type']. '</a></td>';
+            $html_table1 .='<td class="td_custom table_1_exchange" align="left" width="15%" id="table_1_type_'.$rs['id'].'"><a href="' . $link_cate . '" class="uppercase table_1_name" >' .$rs['type']. '</a></td>';
             $html_table1 .='<td class="td_custom table_1_stype" align="left" id="table_1_stype_'.$rs['id'].'">'.$rs['stype'].'</td>';
             if ($link_product != '') {
-                $html_table1 .= '<td class="td_custom cus_pri futures_contracts_name" align="left" width="25%"><a href="' . $link_product . '" class="uppercase table_1_name" id="table_1_name_' . $rs['id'] . '">' . $rs['name'] . '</a></td>';
+                $html_table1 .= '<td class="td_custom cus_pri futures_contracts_name" align="left" width="15%"><a href="' . $link_product . '" class="uppercase table_1_name" id="table_1_name_' . $rs['id'] . '">' . $rs['name'] . '</a></td>';
             }else{
-                $html_table1 .= '<td class="td_custom cus_pri futures_contracts_name" align="left" width="25%">' . $rs['name'] . '</td>';
+                $html_table1 .= '<td class="td_custom cus_pri futures_contracts_name" align="left" width="15%">' . $rs['name'] . '</td>';
             }
 
             $html_table1 .='<td class="td_custom table_1_exchange" align="left" id="table_1_exchange_'.$rs['id'].'">'.$rs['exchange'].'</td>';
@@ -496,7 +496,7 @@ class Block extends MY_Controller {
             $html_table1 .='<td class="td_custom table_1_volume" align="right" id="table_1_volume_'.$rs['id'].'">'.$rs['volume'].'</td>';
             $html_table1 .='<td class="td_custom table_1_openinterest" align="right" id="table_1_openinterest_'.$rs['id'].'">'.$rs["openinterest"].'</td>';
             /*$html_table1 .='<td class="td_custom table_1_settlement" align="right" id="table_1_settlement_'.$rs['id'].'">'.$rs["settlement"].'</td>';*/
-            $html_table1 .='<td class="td_custom table_1_lasttimex" align="right" id="table_1_lasttimex_'.$rs['id'].'">'.$rs["time_format"].'</td></tr>';
+            $html_table1 .='<td class="td_custom table_1_lasttimex" width="10%" align="right" id="table_1_lasttimex_'.$rs['id'].'">'.$rs["time_format"].'</td></tr>';
 
         }
         $this->data->d2_box_category1 = $html_table1;
