@@ -13,7 +13,7 @@
                 </div>
                 <div class="details details_bottom" id="details_p" style="margin-top: 66px;">
                     <div class="ti_font number" id="number_p">
-                        <span class="dash_0_lb5"><?php echo $data_dashboard[0]['lable_5']; ?></span>
+                        SPOT
                     </div>
                     <div class="desc desc_cus" style="margin-top: -6px"> <span>
   <span class="dash_0_exchange"><?php echo $data_dashboard[0]['exchange']; ?></span>, <span class="dash_0_expiry"><?php echo $data_dashboard[0]['expiry']; ?></span>
