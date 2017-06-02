@@ -79,7 +79,7 @@ define([
                 });
                 $('.select_category').get(0).selectedIndex = 0;
                 $('.select_exchange').get(0).selectedIndex = 0;
-                $('.select_category').get(0).selectedIndex = 0;
+                $('.select_stype').get(0).selectedIndex = 0;
                 $('.input_name').val('');
                 $('.input_symbol').val('');
 
