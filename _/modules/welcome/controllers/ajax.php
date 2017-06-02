@@ -2972,6 +2972,16 @@ WHERE ds.symbol='$symbol' and dl.active = 1  and ds.expyyyymm!=0 ORDER BY ds.exp
             }
             $sql = "SELECT * FROM data_dashboard_list where active = 1 $where  ORDER BY name ASC";
             $result = $this->db->query($sql)->result_array();
+
+        }
+        $datecurrent = date("Y-m-d");
+
+        foreach($result as $k=>$rs){
+            if($datecurrent == date("Y-m-d",strtotime($rs['lasttime']))){
+                $result[$k]["lasttime"] = date("h:i:s",strtotime($rs['lasttime']));
+            }else{
+                $result[$k]["lasttime"] = date("Y-m-d",strtotime($rs['lasttime']));
+            }
         }
         echo json_encode($result);
     }
@@ -3000,6 +3010,15 @@ WHERE ds.symbol='$symbol' and dl.active = 1  and ds.expyyyymm!=0 ORDER BY ds.exp
             $sql = "SELECT * FROM data_dashboard_list where active = 1 $where  ORDER BY name ASC";
             $result = $this->db->query($sql)->result_array();
         }
+        $datecurrent = date("Y-m-d");
+
+        foreach($result as $k=>$rs){
+            if($datecurrent == date("Y-m-d",strtotime($rs['lasttime']))){
+                $result[$k]["lasttime"] = date("h:i:s",strtotime($rs['lasttime']));
+            }else{
+                $result[$k]["lasttime"] = date("Y-m-d",strtotime($rs['lasttime']));
+            }
+        }
         echo json_encode($result);
     }
     public function reloadTable_symbol(){
@@ -3027,6 +3046,15 @@ WHERE ds.symbol='$symbol' and dl.active = 1  and ds.expyyyymm!=0 ORDER BY ds.exp
             $sql = "SELECT * FROM data_dashboard_list where active = 1 $where  ORDER BY name ASC";
             $result = $this->db->query($sql)->result_array();
         }
+        $datecurrent = date("Y-m-d");
+
+        foreach($result as $k=>$rs){
+            if($datecurrent == date("Y-m-d",strtotime($rs['lasttime']))){
+                $result[$k]["lasttime"] = date("h:i:s",strtotime($rs['lasttime']));
+            }else{
+                $result[$k]["lasttime"] = date("Y-m-d",strtotime($rs['lasttime']));
+            }
+        }
         echo json_encode($result);
     }
     public function reloadTable_exchange(){
@@ -3053,6 +3081,15 @@ WHERE ds.symbol='$symbol' and dl.active = 1  and ds.expyyyymm!=0 ORDER BY ds.exp
             }
             $sql = "SELECT * FROM data_dashboard_list where active = 1 $where  ORDER BY name ASC";
             $result = $this->db->query($sql)->result_array();
+        }
+        $datecurrent = date("Y-m-d");
+
+        foreach($result as $k=>$rs){
+            if($datecurrent == date("Y-m-d",strtotime($rs['lasttime']))){
+                $result[$k]["lasttime"] = date("h:i:s",strtotime($rs['lasttime']));
+            }else{
+                $result[$k]["lasttime"] = date("Y-m-d",strtotime($rs['lasttime']));
+            }
         }
         echo json_encode($result);
     }
