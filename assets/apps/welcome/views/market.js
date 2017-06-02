@@ -76,6 +76,13 @@ define([
 
                     }
                 });
+                $('.select_category').get(0).selectedIndex = 0;
+                $('.select_exchange').get(0).selectedIndex = 0;
+                $('.select_category').get(0).selectedIndex = 0;
+                $('.input_name').val('');
+                $('.input_symbol').val('');
+
+
             },
 
             categoryChange: function(event) {
@@ -119,10 +126,10 @@ define([
                             }
 
                             html += '<tr>';
-                            html += '<td class="td_custom table_1_exchange" width="15%" align="left" id="table_1_type_'+value.id+'">' +
+                            html += '<td class="td_custom table_1_exchange"  align="left" id="table_1_type_'+value.id+'">' +
                                 '<a href="' + $base_url + 'category/' + value.type + '" class="uppercase table_1_type" >' +value.type+ '</a></td>';
                             html +='<td class="td_custom table_1_stype" align="left" id="table_1_stype_'+ value.id +'">'+ stype +'</td>';
-                            html += '<td class="td_custom cus_pri futures_contracts_name" width="15%" align="left" width="25%">' +
+                            html += '<td class="td_custom cus_pri futures_contracts_name"  align="left" width="25%">' +
                                 '<a href="' + $link_product + '" class="uppercase table_1_name" >' +value.name+ '</a></td>';
                             html +='<td class="td_custom table_1_exchange" align="left" id="table_1_exchange_'+ value.id +'">'+ value.exchange +'</td>';
                             html +='<td class="td_custom table_1_symbol" align="left" id="table_1_symbol_'+value.id+'">'+valuesymbol+'</td>';
@@ -132,7 +139,7 @@ define([
                             html +='<td class="td_custom" align="right"><span id="table_1_var_'+value.id+'" class="'+color+'" >'+$.number(valuevar,2,'.',',')+'</td>';
                             html +='<td class="td_custom table_1_volume" align="right" id="table_1_volume_'+value.id+'">'+$.number(valuevolume, 0, '.', ',')+'</td>';
                             html +='<td class="td_custom table_1_openinterest" align="right" id="table_1_openinterest_'+value.id+'">'+$.number(valueopeninterest, 0, '.', ',')+'</td>';
-                            html +='<td class="td_custom table_1_lasttime" width="10%" align="right" id="table_1_lasttime_'+value.id+'">'+value.lasttime+'</td>';
+                            html +='<td class="td_custom table_1_lasttime"  align="right" id="table_1_lasttime_'+value.id+'">'+value.lasttime+'</td>';
                             html += '</tr>';
 
                         });
@@ -186,10 +193,10 @@ define([
                             }
 
                             html += '<tr>';
-                            html += '<td class="td_custom table_1_exchange" width="15%" align="left" id="table_1_type_'+value.id+'">' +
+                            html += '<td class="td_custom table_1_exchange"  align="left" id="table_1_type_'+value.id+'">' +
                                 '<a href="' + $base_url + 'category/' + value.type + '" class="uppercase table_1_type" >' +value.type+ '</a></td>';
                             html +='<td class="td_custom table_1_stype" align="left" id="table_1_stype_'+ value.id +'">'+ stype +'</td>';
-                            html += '<td class="td_custom cus_pri futures_contracts_name" width="15%" align="left" width="25%">' +
+                            html += '<td class="td_custom cus_pri futures_contracts_name"  align="left" width="25%">' +
                                 '<a href="' + $link_product + '" class="uppercase table_1_name" >' +value.name+ '</a></td>';
                             html +='<td class="td_custom table_1_exchange" align="left" id="table_1_exchange_'+ value.id +'">'+ value.exchange +'</td>';
                             html +='<td class="td_custom table_1_symbol" align="left" id="table_1_symbol_'+value.id+'">'+valuesymbol+'</td>';
@@ -199,7 +206,7 @@ define([
                             html +='<td class="td_custom" align="right"><span id="table_1_var_'+value.id+'" class="'+color+'" >'+$.number(valuevar,2,'.',',')+'</td>';
                             html +='<td class="td_custom table_1_volume" align="right" id="table_1_volume_'+value.id+'">'+$.number(valuevolume, 0, '.', ',')+'</td>';
                             html +='<td class="td_custom table_1_openinterest" align="right" id="table_1_openinterest_'+value.id+'">'+$.number(valueopeninterest, 0, '.', ',')+'</td>';
-                            html +='<td class="td_custom table_1_lasttime" width="10%" align="right" id="table_1_lasttime_'+value.id+'">'+value.lasttime+'</td>';
+                            html +='<td class="td_custom table_1_lasttime"  align="right" id="table_1_lasttime_'+value.id+'">'+value.lasttime+'</td>';
                             html += '</tr>';
 
                         });
@@ -256,10 +263,10 @@ define([
                                        }
 
                                        html += '<tr>';
-                                       html += '<td class="td_custom table_1_exchange" width="15%" align="left" id="table_1_type_'+value.id+'">' +
+                                       html += '<td class="td_custom table_1_exchange" align="left" id="table_1_type_'+value.id+'">' +
                                            '<a href="' + $base_url + 'category/' + value.type + '" class="uppercase table_1_type" >' +value.type+ '</a></td>';
                                        html +='<td class="td_custom table_1_stype" align="left" id="table_1_stype_'+ value.id +'">'+ stype +'</td>';
-                                       html += '<td class="td_custom cus_pri futures_contracts_name" width="15%" align="left" width="25%">' +
+                                       html += '<td class="td_custom cus_pri futures_contracts_name"  align="left" width="25%">' +
                                            '<a href="' + $link_product + '" class="uppercase table_1_name" >' +value.name+ '</a></td>';
                                        html +='<td class="td_custom table_1_exchange" align="left" id="table_1_exchange_'+ value.id +'">'+ value.exchange +'</td>';
                                        html +='<td class="td_custom table_1_symbol" align="left" id="table_1_symbol_'+value.id+'">'+valuesymbol+'</td>';
@@ -269,7 +276,7 @@ define([
                                        html +='<td class="td_custom" align="right"><span id="table_1_var_'+value.id+'" class="'+color+'" >'+$.number(valuevar,2,'.',',')+'</td>';
                                        html +='<td class="td_custom table_1_volume" align="right" id="table_1_volume_'+value.id+'">'+$.number(valuevolume, 0, '.', ',')+'</td>';
                                        html +='<td class="td_custom table_1_openinterest" align="right" id="table_1_openinterest_'+value.id+'">'+$.number(valueopeninterest, 0, '.', ',')+'</td>';
-                                       html +='<td class="td_custom table_1_lasttime" width="10%" align="right" id="table_1_lasttime_'+value.id+'">'+value.lasttime+'</td>';
+                                       html +='<td class="td_custom table_1_lasttime"  align="right" id="table_1_lasttime_'+value.id+'">'+value.lasttime+'</td>';
                                        html += '</tr>';
 
                                    });
@@ -323,10 +330,10 @@ define([
                                        }
 
                                        html += '<tr>';
-                                       html += '<td class="td_custom table_1_exchange" width="15%" align="left" id="table_1_type_'+value.id+'">' +
+                                       html += '<td class="td_custom table_1_exchange"  align="left" id="table_1_type_'+value.id+'">' +
                                            '<a href="' + $base_url + 'category/' + value.type + '" class="uppercase table_1_type" >' +value.type+ '</a></td>';
                                        html +='<td class="td_custom table_1_stype" align="left" id="table_1_stype_'+ value.id +'">'+ stype +'</td>';
-                                       html += '<td class="td_custom cus_pri futures_contracts_name" width="15%" align="left" width="25%">' +
+                                       html += '<td class="td_custom cus_pri futures_contracts_name" align="left" width="25%">' +
                                            '<a href="' + $link_product + '" class="uppercase table_1_name" >' +value.name+ '</a></td>';
                                        html +='<td class="td_custom table_1_exchange" align="left" id="table_1_exchange_'+ value.id +'">'+ value.exchange +'</td>';
                                        html +='<td class="td_custom table_1_symbol" align="left" id="table_1_symbol_'+value.id+'">'+valuesymbol+'</td>';
@@ -336,7 +343,7 @@ define([
                                        html +='<td class="td_custom" align="right"><span id="table_1_var_'+value.id+'" class="'+color+'" >'+$.number(valuevar,2,'.',',')+'</td>';
                                        html +='<td class="td_custom table_1_volume" align="right" id="table_1_volume_'+value.id+'">'+$.number(valuevolume, 0, '.', ',')+'</td>';
                                        html +='<td class="td_custom table_1_openinterest" align="right" id="table_1_openinterest_'+value.id+'">'+$.number(valueopeninterest, 0, '.', ',')+'</td>';
-                                       html +='<td class="td_custom table_1_lasttime" width="10%" align="right" id="table_1_lasttime_'+value.id+'">'+value.lasttime+'</td>';
+                                       html +='<td class="td_custom table_1_lasttime" align="right" id="table_1_lasttime_'+value.id+'">'+value.lasttime+'</td>';
                                        html += '</tr>';
 
                                    });
