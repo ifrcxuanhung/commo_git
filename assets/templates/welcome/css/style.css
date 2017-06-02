@@ -1037,3 +1037,4 @@ table a:focus, table a:hover {
 .reset_filter{ color:#fff; font-weight:bold;}
 .reset_filter:hover{ color:#fff; font-weight:bold;}
 .btn.focus, .btn:focus, .btn:hover{ color:#e6e6e6;}
+.page-header .navbar .navbar-nav li.open:hover > a, .page-header .navbar .navbar-nav li.open > a{ color: #e6e6e6; background: #337ab7;}
