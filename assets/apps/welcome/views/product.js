@@ -224,167 +224,44 @@ define([
 					}, 2000);
 
 					
-					//dashboard list 1
-					/*setInterval(function(){
-						var data='';
-						 $.ajax({
-							url: $simulation_url + 'product/auto_data_dashboard_list_table_1',
-							dataType: 'json',
-							success: function(data) {
-								clearconsole();								
-								$.each($('.table_1_name'), function() {
-									var key = this.id.split("table_1_name_")[1]; 
-									if($('#'+this.id).text()!==data.data_table_1[key].name){
-										$('#'+this.id).fadeOut('slow', function() {
-											$('#'+this.id).effect("highlight", {color: '#4c87b9'}, 300);
-											$('#'+this.id).html(data.data_table_1[key].name);
-												$('#'+this.id).fadeIn('slow');
-										});
-										
-									}
-								});
-
-								$.each($('.table_1_date'), function() {
-									//console.log( this.id );
-									var key = this.id.split("table_1_date_")[1]; 
-									if($('#'+this.id).text()!==data.data_table_1[key].date){
-										$('#'+this.id).fadeOut('slow', function() {
-											$('#'+this.id).effect("highlight", {color: '#4c87b9'}, 300);
-											$('#'+this.id).html(data.data_table_1[key].date);
-												$('#'+this.id).fadeIn('slow');
-										});
-										
-									}
-								}); 
-								
-								$.each($('.table_1_code'), function() {
-									//console.log( this.id );
-									var key = this.id.split("table_1_code_")[1]; 
-									if($('#'+this.id).text()!==data.data_table_1[key].code){
-										$('#'+this.id).fadeOut('slow', function() {
-											$('#'+this.id).effect("highlight", {color: '#4c87b9'}, 300);
-											$('#'+this.id).html(data.data_table_1[key].code);
-												$('#'+this.id).fadeIn('slow');
-										});
-										
-									}
-								});
-								
-								$.each($('.table_1_last'), function() {
-									//console.log( this.id );
-									var key = this.id.split("table_1_last_")[1]; 
-									if($('#'+this.id).text()!==data.data_table_1[key].last){
-										$('#'+this.id).fadeOut('slow', function() {
-											$('#'+this.id).effect("highlight", {color: '#4c87b9'}, 300);
-											$('#'+this.id).html(data.data_table_1[key].last);
-												$('#'+this.id).fadeIn('slow');
-										});
-										
-									}
-								});
-								$.each($('.table_1_volume'), function() {
-									//console.log( this.id );
-									var key = this.id.split("table_1_volume_")[1]; 
-									if($('#'+this.id).text()!==data.data_table_1[key].volume){
-										$('#'+this.id).fadeOut('slow', function() {
-											$('#'+this.id).effect("highlight", {color: '#4c87b9'}, 300);
-											$('#'+this.id).html(data.data_table_1[key].volume);
-												$('#'+this.id).fadeIn('slow');
-										});
-										
-									}
-								});
-								$.each($('.table_1_openinterest'), function() {
-									//console.log( this.id );
-									var key = this.id.split("table_1_openinterest_")[1]; 
-									if($('#'+this.id).text()!==data.data_table_1[key].openinterest){
-										$('#'+this.id).fadeOut('slow', function() {
-											$('#'+this.id).effect("highlight", {color: '#4c87b9'}, 300);
-											$('#'+this.id).html(data.data_table_1[key].openinterest);
-												$('#'+this.id).fadeIn('slow');
-										});
-										
-									}
-								});
-								$.each($('.table_1_pclose'), function() {
-									//console.log( this.id );
-									var key = this.id.split("table_1_pclose_")[1];
-									if($('#'+this.id).text()!==data.data_table_1[key].pclose){
-										$('#'+this.id).fadeOut('slow', function() {
-											$('#'+this.id).effect("highlight", {color: '#4c87b9'}, 300);
-											$('#'+this.id).html(data.data_table_1[key].pclose);
-												$('#'+this.id).fadeIn('slow');
-										});
-										
-									}
-								});
-								$.each($('.table_1_mon'), function() {
-									//console.log( this.id );
-									var key = this.id.split("table_1_mon_")[1]; 
-									if($('#'+this.id).text()!==data.data_table_1[key].mon){
-										$('#'+this.id).fadeOut('slow', function() {
-											$('#'+this.id).effect("highlight", {color: '#4c87b9'}, 300);
-											$('#'+this.id).html(data.data_table_1[key].mon);
-												$('#'+this.id).fadeIn('slow');
-										});
-										
-									}
-								});
-								
-								$.each($('.table_1_var'), function() {
-									//console.log( this.id );
-									var key = this.id.split("table_1_var_")[1]; 
-									if($('#'+this.id).text()!==data.data_table_1[key].var){
-										$('#'+this.id).fadeOut('slow', function() {
-											$('#'+this.id).removeClass('bg_color_red');
-											if(data.data_table_1[key].var< 0) $('#'+this.id).addClass('bg_color_red');
-											$('#'+this.id).effect("highlight", {color: '#4c87b9'}, 300);
-											$('#'+this.id).html(data.data_table_1[key].var);
-												$('#'+this.id).fadeIn('slow');
-										});
-										
-									}
-								});
-								$.each($('.table_1_change'), function() {
-									//console.log( this.id );
-									var key = this.id.split("table_1_change_")[1]; 
-									if($('#'+this.id).text()!==data.data_table_1[key].change){
-										$('#'+this.id).fadeOut('slow', function() {
-											$('#'+this.id).removeClass('bg_color_red');
-											if(data.data_table_1[key].change< 0) $('#'+this.id).addClass('bg_color_red');
-											$('#'+this.id).effect("highlight", {color: '#4c87b9'}, 300);
-											$('#'+this.id).html(data.data_table_1[key].change);
-												$('#'+this.id).fadeIn('slow');
-										});
-										
-									}
-								});
-								
-								$('#d2_box_category1').html(data.table1);							
-							}
-						});
-					}, 4000);
-					//chart
-*/
-		if($("#type_product").val()=='futures') {
+				// chart
+				
                    var chartcode = $("#get_chartcode").attr("value");
                    var last_new;
                    var time_new;
-                   function getvalueCHART(){
-                       //console.log(code_chart);
-                       return $.ajax({
-                           url: $base_url + "ajax/getSpectIntraday_product1",
-                           type: "POST",
-                           data: {chartcode:chartcode},
-                           beforeSend: function(){
-                               $(".loader1").show();
-
-                           },
-                           
-                           async: false
-                       });
-                   }
-
+				   var type_product = $("#type_product").val();
+				   if(type_product=='spot') {
+					   function getvalueCHART(){
+						   //console.log(code_chart);
+						   return $.ajax({
+							   url: $base_url + "ajax/getSpectIntraday_product_spot_1",
+							   type: "POST",
+							   data: {chartcode:chartcode},
+							   beforeSend: function(){
+								   $(".loader_spot_1").show();
+	
+							   },
+							   
+							   async: false
+						   });
+					   }
+				   }
+				   else {
+					   function getvalueCHART(){
+						   //console.log(code_chart);
+						   return $.ajax({
+							   url: $base_url + "ajax/getSpectIntraday_product1",
+							   type: "POST",
+							   data: {chartcode:chartcode},
+							   beforeSend: function(){
+								   $(".loader1").show();
+	
+							   },
+							   
+							   async: false
+						   });
+					   }
+				   }
                    var chartData = generateChartData();
 
                    var chart = AmCharts.makeChart("chartdiv5", {
@@ -485,22 +362,38 @@ define([
                    //end chart
 
 				   // chart 2
-
-                   function getvalueCHART_2(){
-                       //console.log(code_chart);
-                       return $.ajax({
-                           url: $base_url + "ajax/getSpectIntraday_product2",
-                           type: "POST",
-                           data: {chartcode:chartcode},
-                           beforeSend: function(){
-                               $(".loader2").show();
-
-                           },
-                          
-                           async: false
-                       });
-                   }
-
+					if(type_product=='spot') {
+						 function getvalueCHART_2(){
+						   //console.log(code_chart);
+						   return $.ajax({
+							   url: $base_url + "ajax/getSpectIntraday_product_spot_2",
+							   type: "POST",
+							   data: {chartcode:chartcode},
+							   beforeSend: function(){
+								   $(".loader_spot_2").show();
+	
+							   },
+							  
+							   async: false
+						   });
+					   }
+					}
+					else {
+					   function getvalueCHART_2(){
+						   //console.log(code_chart);
+						   return $.ajax({
+							   url: $base_url + "ajax/getSpectIntraday_product2",
+							   type: "POST",
+							   data: {chartcode:chartcode},
+							   beforeSend: function(){
+								   $(".loader2").show();
+	
+							   },
+							  
+							   async: false
+						   });
+					   }
+					}
                    var data2 = jQuery.parseJSON(getvalueCHART_2().responseText);
                    // console.log(data1);
 
@@ -630,277 +523,16 @@ define([
                    function zoomChart2() {
 
                    }
-                   $(".loader1").hide();
-                   $(".loader2").hide();
+				   if(type_product=='spot') {
+					   $(".loader_spot_1").hide();
+					   $(".loader_spot_2").hide();
+				   }
+				   else {
+					   $(".loader1").hide();
+					   $(".loader2").hide();
+				   }
                    //end chart 2
-		} else {
-			var chartcode = $("#code_spot").attr("value");
-                   var last_new;
-                   var time_new;
-                   function getvalueCHART(){
-                       //console.log(code_chart);
-                       return $.ajax({
-                           url: $base_url + "ajax/getSpectIntraday_product_spot_1",
-                           type: "POST",
-                           data: {chartcode:chartcode},
-                           beforeSend: function(){
-                               $(".loader_spot_1").show();
-
-                           },
-                           
-                           async: false
-                       });
-                   }
-
-                   var chartData = generateChartData();
-
-                   var chart = AmCharts.makeChart("chartspot_intraday", {
-                       "type": "serial",
-                       "theme": "none",
-                       "marginRight": 20,
-                       "marginLeft": 70,
-                       "autoMarginOffset": 20,
-                       "dataProvider": chartData,
-                       "valueAxes": [ {
-                           "id": "v1",
-                           "axisAlpha": 0,
-                           "position": "left",
-                           "ignoreAxisWidth": true
-                       } ],
-                       "balloon": {
-                           "borderThickness": 1,
-                           "shadowAlpha": 0
-                       },
-                       "graphs": [ {
-                           "id": "g1",
-                           "balloon": {
-                               "drop": true,
-                               "adjustBorderColor": false,
-                               "color": "#ffffff",
-                               "type": "smoothedLine"
-                           },
-                           "fillAlphas": 0.2,
-                           "bullet": "round",
-                           "bulletBorderAlpha": 1,
-                           "bulletColor": "#FFFFFF",
-                           "bulletSize": 5,
-                           "hideBulletsCount": 50,
-                           "lineThickness": 2,
-                           "title": "red line",
-                           "useLineColorForBulletBorder": true,
-                           "valueField": "close",
-                           "balloonText": "<span style='font-size:18px;'>[[value]]</span>"
-                       } ],
-                       "chartScrollbar": {
-                           "graph": "g1",
-                           "oppositeAxis":true,// show zoom tren hay duoi (true o tren)
-                           "offset":30,
-                           "scrollbarHeight": 30,
-                           "backgroundAlpha": 0,
-                           "selectedBackgroundAlpha": 0.1,
-                           "selectedBackgroundColor": "#888888",
-                           "graphFillAlpha": 0,
-                           "graphLineAlpha": 0.5,
-                           "selectedGraphFillAlpha": 0,
-                           "selectedGraphLineAlpha": 1,
-                           "autoGridCount":true,
-                           "color":"#AAAAAA"
-                       },
-                       "chartCursor": {
-                           "valueLineEnabled": true,
-                           "valueLineBalloonEnabled": true,
-                           "cursorAlpha": 0,
-                           "zoomable": false,
-                           "valueZoomable": true,
-                           "valueLineAlpha": 0.5,
-                           "categoryBalloonDateFormat": "JJ:NN:SS, DD MMMM",
-                           "cursorPosition": "mouse"
-                       },
-                       "valueScrollbar": {
-                           "autoGridCount": true,
-                           "color": "#000000",
-                           "scrollbarHeight": 50
-                       },
-                       "categoryField": "date",
-                       "categoryAxis": {
-
-                           "minPeriod": "mm",
-                           "parseDates": true,
-                           "dashLength": 1,
-                           "minorGridEnabled": true
-                       }
-                   });
-
-                   chart.addListener("dataUpdated", zoomChart);
-                   zoomChart();
-                   function zoomChart() {
-                     //  chart.zoomToIndexes(chartData.length - 250, chartData.length - 100);
-                   }
-                   function generateChartData() {
-                       var chartData = [];
-
-                       var data = jQuery.parseJSON(getvalueCHART().responseText);
-                       var res = [];
-                       for (var i = 1; i < data.length; ++i){
-
-                           var date = data[i].date;
-                           chartData.push({'date':date,'close': parseFloat(data[i].close).toFixed(2)})
-
-                       }
-                       return chartData;
-                   }
-
-                   //end chart
-
-				   // chart 2
-
-                   function getvalueCHART_2(){
-                       //console.log(code_chart);
-                       return $.ajax({
-                           url: $base_url + "ajax/getSpectIntraday_product_spot_2",
-                           type: "POST",
-                           data: {chartcode:chartcode},
-                           beforeSend: function(){
-                               $(".loader_spot_2").show();
-
-                           },
-                          
-                           async: false
-                       });
-                   }
-
-                   var data2 = jQuery.parseJSON(getvalueCHART_2().responseText);
-                   // console.log(data1);
-
-                   var res = [];
-                   for (var i = 1; i < data2.length; ++i){
-
-                       var date = data2[i].date;
-                       res.push({'time':date,'value': parseFloat(data2[i].close).toFixed(2)});
-                       var code = data2[i].code;
-                       if (i==(data2.length-1)) { last_new  = data2[i].close;  time_new = data2[i].date}
-                   }
-
-
-                   function showChartTooltip(x, y, xValue, yValue) {
-                       $('<div id="tooltip" class="chart-tooltip">' + yValue + '<\/div>').css({
-                           position: 'absolute',
-                           display: 'none',
-                           top: y - 40,
-                           left: x - 40,
-                           border: '0px solid #ccc',
-                           padding: '2px 6px',
-                           'background-color': '#fff'
-                       }).appendTo("body").fadeIn(200);
-                   }
-                   if ($('#chartspot_hitory').size() != 0) {
-
-
-                       $('#site_statistics_loading').hide();
-                       $('#site_statistics_content').show();
-
-                       var chart = AmCharts.makeChart( "chartspot_hitory", {
-                           "type": "serial",
-                           "theme": "none",
-                           "marginRight": 20,
-                           "marginLeft": 60,
-                           "autoMarginOffset": 20,
-                           "dataDateFormat": "YYYY-MM-DD",
-                           "valueAxes": [ {
-                               "id": "v1",
-                               "axisAlpha": 0,
-                               "position": "left",
-                               "ignoreAxisWidth": true
-                           } ],
-                           "balloon": {
-                               "borderThickness": 1,
-                               "shadowAlpha": 0,
-                           },
-                           "graphs": [ {
-                               "id": "g1",
-                               "balloon": {
-                                   "drop": true,
-                                   "adjustBorderColor": false,
-                                   "color": "#ffffff",
-                                   "type": "smoothedLine"
-                               },
-                               "fillAlphas": 0.2,
-                               "bullet": "round",
-                               "bulletBorderAlpha": 1,
-                               "bulletColor": "#FFFFFF",
-                               "bulletSize": 5,
-                               "hideBulletsCount": 50,
-                               "lineThickness": 2,
-                               "title": "red line",
-                               "useLineColorForBulletBorder": true,
-                               "valueField": "value",
-                               "balloonText": "<span style='font-size:18px;'>[[value]]</span>"
-                           } ],
-                           "chartScrollbar": {
-                               "graph": "g1",
-                               "oppositeAxis":true,
-                               "offset":30,
-                               "scrollbarHeight": 30,
-                               "backgroundAlpha": 0,
-                               "selectedBackgroundAlpha": 0.1,
-                               "selectedBackgroundColor": "#888888",
-                               "graphFillAlpha": 0,
-                               "graphLineAlpha": 0.5,
-                               "selectedGraphFillAlpha": 0,
-                               "selectedGraphLineAlpha": 1,
-                               "autoGridCount":true,
-                               "color":"#AAAAAA"
-                           },
-                           "chartCursor": {
-                               "valueLineEnabled": true,
-                               "valueLineBalloonEnabled": true,
-                               "cursorAlpha": 0,
-                               "zoomable": false,
-                               "valueZoomable": true,
-                               "valueLineAlpha": 0.5
-                           },
-                           "valueScrollbar": {
-                               "autoGridCount": true,
-                               "color": "#000000",
-                               "scrollbarHeight": 50
-                           },
-                           "categoryField": "time",
-                           "categoryAxis": {
-                               "parseDates": true,
-                               "dashLength": 1,
-                               "minorGridEnabled": true,
-                               "labelColorField": "color",
-							   /*"labelFunction": function(valueText, serialDataItem, categoryAxis) {
-								var p_type = valueText.substring(valueText.length - 10, 0);
-								var p_date = valueText.substring(valueText.length - 10);
-								valueText = p_type + "\n" + p_date;
-								return valueText;
-								}*/
-                           },
-                           "export": {
-                               "enabled": true
-                           },
-                           "dataProvider": res
-                       } );
-
-                       chart.addListener("rendered", zoomChart2);
-
-                       zoomChart2();
-
-
-
-                       $('#chartspot_hitory').closest('.portlet').find('.fullscreen').click(function() {
-                           chart.invalidateSize();
-                       });
-
-
-                   };
-                   function zoomChart2() {
-
-                   }
-                   $(".loader_spot_1").hide();
-                   $(".loader_spot_2").hide();
-		}
+		
 
                });
 			   
