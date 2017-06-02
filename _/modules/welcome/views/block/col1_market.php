@@ -4,6 +4,9 @@
         <div class="portlet-title" style="background:#000099 !important;">
             <div class="caption">
                 <i class="fa"></i><span id="type_category">FULL LIST (<?php echo $num_rows;?>)</span></div>
+            <div class="reset_filter_div" style="position: absolute; top: 6px; right: 32px;">
+                <button class="btn btn-sm red-thunderbird reset_filter"> Reset filter </button>
+            </div>
             <div class="tools">
                 <i class="fa fa-toggle-up fa-lg fullscreens"></i>
             </div>
@@ -26,6 +29,7 @@
                             <th class="th_custom" style="text-align:right"> <h6 class="color_h6 cus_type" style="padding:5px !important;">Volume</h6> </th>
                             <th class="th_custom" style="text-align:right"> <h6 class="color_h6 cus_type" style="padding:5px !important;">O.I.</h6> </th>
                             <th class="th_custom" style="text-align:left" width="10%"> <h6 class="color_h6 cus_type" style="padding:5px !important;">Time</h6> </th>
+
 
                         </tr>
                         <tr>
@@ -68,6 +72,7 @@
                             <th class="th_custom" ></th>
                             <th class="th_custom" ></th>
                             <th class="th_custom" width="10%"></th>
+
                         </tr>
 
                         </thead>
