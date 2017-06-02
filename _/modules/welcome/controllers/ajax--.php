@@ -2885,7 +2885,7 @@ WHERE ds.symbol='$symbol' and dl.active = 1  and ds.expyyyymm!=0 ORDER BY ds.exp
 		$this->output->set_output(json_encode($result));
 	}
 	 
-    public function product_auto_data_dashboard(){
+	  public function product_auto_data_dashboard(){
 		  $bctcode =$_REQUEST["bctcode"];
 		$data_dashboard = $this->db->query("SELECT dl.lasttime, dl.name,dl.unit, dl.lasttime, dl.last, dl.`change`, dl.var, dl.expiry, dl.exchange, dl.`dec` as dec_list, dd.* FROM data_dashboard_list as dl  LEFT JOIN data_dashboard as dd ON dl.type=dd.type where dl.bctcode='{$bctcode}'")->result_array();
 
@@ -2899,7 +2899,6 @@ WHERE ds.symbol='$symbol' and dl.active = 1  and ds.expyyyymm!=0 ORDER BY ds.exp
 		
 		$this->output->set_output(json_encode($result));
 	}
-
 	public function product_auto_data_series_last(){
 		$symbol =$_POST["symbol"];
         $sql = "SELECT dsl.*,ddl.dec FROM data_series_last as dsl  RIGHT JOIN data_dashboard_list as ddl ON dsl.symbol=ddl.bctcode where symbol = '{$symbol}'";
@@ -2939,7 +2938,6 @@ WHERE ds.symbol='$symbol' and dl.active = 1  and ds.expyyyymm!=0 ORDER BY ds.exp
         $result["table1"] = $html_table1;
         $this->output->set_output(json_encode($result));
     }
-
     function getMarketFilter(){
         $sql_category = "SELECT type FROM data_dashboard_list where active = 1 GROUP BY type  ORDER BY type ASC ";
         $result_category = $this->db->query($sql_category)->result_array();
@@ -3003,5 +3001,167 @@ WHERE ds.symbol='$symbol' and dl.active = 1  and ds.expyyyymm!=0 ORDER BY ds.exp
         }
         echo json_encode($result);
     }
+    public function reloadTable_category(){
+        $category = $_POST['category'];
+        $exchange = $_POST['exchange'];
+        $name = $_POST['name'];
+        $symbol = $_POST['symbol'];
+        $stype = $_POST['stype'];
+        $where =" ";
+        if($category == 'all' && $exchange == 'all' && $stype == 'all' && $name == '' && $symbol == '' ){
+            $sql = "SELECT * FROM data_dashboard_list where active = 1  ORDER BY name ASC";
+            $result = $this->db->query($sql)->result_array();
+        }else{
+            if($category != 'all'){
+                $where .= " AND type = '$category'";
+            }
+            if($exchange != 'all'){
+                $where .= " AND exchange = '$exchange'";
+            }
+            if($stype != 'all'){
+                $where .= " AND stype = '$stype'";
+            }
+            if($name != ''){
+                $where .= " AND name LIKE '%$name%'";
+            }
+            if($symbol != ''){
+                $where .= " AND symbol LIKE '%$symbol%'";
+            }
+            $sql = "SELECT * FROM data_dashboard_list where active = 1 $where  ORDER BY name ASC";
+            $result = $this->db->query($sql)->result_array();
 
+        }
+        $datecurrent = date("Y-m-d");
+
+        foreach($result as $k=>$rs){
+            if($datecurrent == date("Y-m-d",strtotime($rs['lasttime']))){
+                $result[$k]["lasttime"] = date("h:i:s",strtotime($rs['lasttime']));
+            }else{
+                $result[$k]["lasttime"] = date("Y-m-d",strtotime($rs['lasttime']));
+            }
+        }
+        echo json_encode($result);
+    }
+    public function reloadTable_name(){
+        $name = $_POST['name'];
+        $category = $_POST['category'];
+        $exchange = $_POST['exchange'];
+        $symbol = $_POST['symbol'];
+        $where =" ";
+        if($category == 'all' && $exchange == 'all' && $name == '' && $symbol == ''){
+            $sql = "SELECT * FROM data_dashboard_list where active = 1  ORDER BY name ASC";
+            $result = $this->db->query($sql)->result_array();
+        }else{
+            if($category != 'all'){
+                $where .= " AND type = '$category'";
+            }
+            if($exchange != 'all'){
+                $where .= " AND exchange = '$exchange'";
+            }
+            if($name != ''){
+                $where .= " AND name LIKE '%$name%'";
+            }
+            if($symbol != ''){
+                $where .= " AND symbol LIKE '%$symbol%'";
+            }
+            $sql = "SELECT * FROM data_dashboard_list where active = 1 $where  ORDER BY name ASC";
+            $result = $this->db->query($sql)->result_array();
+        }
+        $datecurrent = date("Y-m-d");
+
+        foreach($result as $k=>$rs){
+            if($datecurrent == date("Y-m-d",strtotime($rs['lasttime']))){
+                $result[$k]["lasttime"] = date("h:i:s",strtotime($rs['lasttime']));
+            }else{
+                $result[$k]["lasttime"] = date("Y-m-d",strtotime($rs['lasttime']));
+            }
+        }
+        echo json_encode($result);
+    }
+    public function reloadTable_symbol(){
+        $name = $_POST['name'];
+        $category = $_POST['category'];
+        $exchange = $_POST['exchange'];
+        $symbol = $_POST['symbol'];
+        $where =" ";
+        if($category == 'all' && $exchange == 'all' && $name == '' && $symbol == ''){
+            $sql = "SELECT * FROM data_dashboard_list where active = 1  ORDER BY name ASC";
+            $result = $this->db->query($sql)->result_array();
+        }else{
+            if($category != 'all'){
+                $where .= " AND type = '$category'";
+            }
+            if($exchange != 'all'){
+                $where .= " AND exchange = '$exchange'";
+            }
+            if($name != ''){
+                $where .= " AND name LIKE '%$name%'";
+            }
+            if($symbol != ''){
+                $where .= " AND symbol LIKE '%$symbol%'";
+            }
+            $sql = "SELECT * FROM data_dashboard_list where active = 1 $where  ORDER BY name ASC";
+            $result = $this->db->query($sql)->result_array();
+        }
+        $datecurrent = date("Y-m-d");
+
+        foreach($result as $k=>$rs){
+            if($datecurrent == date("Y-m-d",strtotime($rs['lasttime']))){
+                $result[$k]["lasttime"] = date("h:i:s",strtotime($rs['lasttime']));
+            }else{
+                $result[$k]["lasttime"] = date("Y-m-d",strtotime($rs['lasttime']));
+            }
+        }
+        echo json_encode($result);
+    }
+    public function reloadTable_exchange(){
+        $name = $_POST['name'];
+        $category = $_POST['category'];
+        $exchange = $_POST['exchange'];
+        $symbol = $_POST['symbol'];
+        $where =" ";
+        if($category == 'all' && $exchange == 'all' && $name == '' && $symbol == ''){
+            $sql = "SELECT * FROM data_dashboard_list where active = 1  ORDER BY name ASC";
+            $result = $this->db->query($sql)->result_array();
+        }else{
+            if($category != 'all'){
+                $where .= " AND type = '$category'";
+            }
+            if($exchange != 'all'){
+                $where .= " AND exchange = '$exchange'";
+            }
+            if($name != ''){
+                $where .= " AND name LIKE '%$name%'";
+            }
+            if($symbol != ''){
+                $where .= " AND symbol LIKE '%$symbol%'";
+            }
+            $sql = "SELECT * FROM data_dashboard_list where active = 1 $where  ORDER BY name ASC";
+            $result = $this->db->query($sql)->result_array();
+        }
+        $datecurrent = date("Y-m-d");
+
+        foreach($result as $k=>$rs){
+            if($datecurrent == date("Y-m-d",strtotime($rs['lasttime']))){
+                $result[$k]["lasttime"] = date("h:i:s",strtotime($rs['lasttime']));
+            }else{
+                $result[$k]["lasttime"] = date("Y-m-d",strtotime($rs['lasttime']));
+            }
+        }
+        echo json_encode($result);
+    }
+
+    public function reloadTable_reset(){
+        $sql = "SELECT * FROM data_dashboard_list where active = 1  ORDER BY name ASC";
+        $result = $this->db->query($sql)->result_array();
+        $datecurrent = date("Y-m-d");
+        foreach($result as $k=>$rs){
+            if($datecurrent == date("Y-m-d",strtotime($rs['lasttime']))){
+                $result[$k]["lasttime"] = date("h:i:s",strtotime($rs['lasttime']));
+            }else{
+                $result[$k]["lasttime"] = date("Y-m-d",strtotime($rs['lasttime']));
+            }
+        }
+        echo json_encode($result);
+    }
 }
