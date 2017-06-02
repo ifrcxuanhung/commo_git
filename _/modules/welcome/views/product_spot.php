@@ -15,9 +15,6 @@
                     <div class="ti_font number" id="number_p">
                         SPOT
                     </div>
-                    <div class="desc desc_cus" style="margin-top: -6px"> <span>
-  <span class="dash_0_exchange"><?php echo $data_dashboard[0]['exchange']; ?></span>, <span class="dash_0_expiry"><?php echo $data_dashboard[0]['expiry']; ?></span>
-  </span></div>
                 </div>
 
                 <div class="details" style="padding-right: 11px;">

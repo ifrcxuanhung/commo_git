@@ -46,10 +46,10 @@ define([
 										$('.dash_0_lb4').fadeIn('slow');
 									});
 								}
-								if($('.dash_0_lb5').text()!==data.data_dashboard_0.lable_5){
-									$('.dash_0_lb5').fadeOut('slow', function() {						
-										$('.dash_0_lb5').html(data.data_dashboard_0.lable_5);
-										$('.dash_0_lb5').fadeIn('slow');
+								if($('.dash_0_ptype').text()!==data.data_dashboard_0.ptype){
+									$('.dash_0_ptype').fadeOut('slow', function() {						
+										$('.dash_0_ptype').html(data.data_dashboard_0.ptype);
+										$('.dash_0_ptype').fadeIn('slow');
 									});
 								}
 								if($('.dash_0_lb6').text()!==data.data_dashboard_0.lable_6){
