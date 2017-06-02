@@ -41,7 +41,7 @@ define([
                             if(value.openinterest != null && value.openinterest != 0){ var valueopeninterest = value.openinterest;}
                             else{ var valueopeninterest = '-'; }
                             if(value.symbol != null && value.symbol != 0){ var valuesymbol = value.symbol;}
-                            else{ var valuesymbol = '-'; }
+                            else{ var valuesymbol = '-'; }                                        if(value.cur != null && value.cur != 0){ var valuecur = value.cur;}                                        else{ var valuecur = '-'; }
 
                             if((value.exchange!='SPOT')&& (value.bctcode != null && value.bctcode != '')) {
 
@@ -114,6 +114,8 @@ define([
                             else{ var valueopeninterest = '-'; }
                             if(value.symbol != null && value.symbol != 0){ var valuesymbol = value.symbol;}
                             else{ var valuesymbol = '-'; }
+                            if(value.cur != null && value.cur != 0){ var valuecur = value.cur;}
+                            else{ var valuecur = '-'; }
 
                             if((value.exchange!='SPOT')&& (value.bctcode != null && value.bctcode != '')) {
 
@@ -135,6 +137,7 @@ define([
                             html +='<td class="td_custom table_1_exchange" align="left" id="table_1_exchange_'+ value.id +'">'+ value.exchange +'</td>';
                             html +='<td class="td_custom table_1_symbol" align="left" id="table_1_symbol_'+value.id+'">'+valuesymbol+'</td>';
                             html +='<td class="td_custom table_1_code" align="left" id="table_1_code_'+value.id+'">'+value.code+'</td>';
+                            html +='<td class="td_custom table_1_cur" align="left" id="table_1_cur_'+value.id+'">'+valuecur+'</td>';
                             html +='<td class="td_custom" align="right"><span id="table_1_last_'+value.id+'" class="bg_color_grey table_1_last">'+$.number(value.last,value.dec,'.',',')+'</span></td>';
                             html +='<td class="td_custom" align="right"><span id="table_1_change_'+value.id+'" class="'+color+'" >'+$.number(valuechange,2,'.',',')+'</td>';
                             html +='<td class="td_custom" align="right"><span id="table_1_var_'+value.id+'" class="'+color+'" >'+$.number(valuevar,2,'.',',')+'</td>';
@@ -180,6 +183,8 @@ define([
                             else{ var valueopeninterest = '-'; }
                             if(value.symbol != null && value.symbol != 0){ var valuesymbol = value.symbol;}
                             else{ var valuesymbol = '-'; }
+                            if(value.cur != null && value.cur != 0){ var valuecur = value.cur;}
+                            else{ var valuecur = '-'; }
 
                             if((value.exchange!='SPOT')&& (value.bctcode != null && value.bctcode != '')) {
 
@@ -201,6 +206,7 @@ define([
                             html +='<td class="td_custom table_1_exchange" align="left" id="table_1_exchange_'+ value.id +'">'+ value.exchange +'</td>';
                             html +='<td class="td_custom table_1_symbol" align="left" id="table_1_symbol_'+value.id+'">'+valuesymbol+'</td>';
                             html +='<td class="td_custom table_1_code" align="left" id="table_1_code_'+value.id+'">'+value.code+'</td>';
+                            html +='<td class="td_custom table_1_cur" align="left" id="table_1_cur_'+value.id+'">'+valuecur+'</td>';
                             html +='<td class="td_custom" align="right"><span id="table_1_last_'+value.id+'" class="bg_color_grey table_1_last">'+$.number(value.last,value.dec,'.',',')+'</span></td>';
                             html +='<td class="td_custom" align="right"><span id="table_1_change_'+value.id+'" class="'+color+'" >'+$.number(valuechange,2,'.',',')+'</td>';
                             html +='<td class="td_custom" align="right"><span id="table_1_var_'+value.id+'" class="'+color+'" >'+$.number(valuevar,2,'.',',')+'</td>';
@@ -248,6 +254,8 @@ define([
                             else{ var valueopeninterest = '-'; }
                             if(value.symbol != null && value.symbol != 0){ var valuesymbol = value.symbol;}
                             else{ var valuesymbol = '-'; }
+                            if(value.cur != null && value.cur != 0){ var valuecur = value.cur;}
+                            else{ var valuecur = '-'; }
                             if((value.exchange!='SPOT')&& (value.bctcode != null && value.bctcode != '')) {
 
                                 $link_product = $base_url + 'product/futures/' + value.bctcode;
@@ -268,6 +276,7 @@ define([
                             html +='<td class="td_custom table_1_exchange" align="left" id="table_1_exchange_'+ value.id +'">'+ value.exchange +'</td>';
                             html +='<td class="td_custom table_1_symbol" align="left" id="table_1_symbol_'+value.id+'">'+valuesymbol+'</td>';
                             html +='<td class="td_custom table_1_code" align="left" id="table_1_code_'+value.id+'">'+value.code+'</td>';
+                            html +='<td class="td_custom table_1_cur" align="left" id="table_1_cur_'+value.id+'">'+valuecur+'</td>';
                             html +='<td class="td_custom" align="right"><span id="table_1_last_'+value.id+'" class="bg_color_grey table_1_last">'+$.number(value.last,value.dec,'.',',')+'</span></td>';
                             html +='<td class="td_custom" align="right"><span id="table_1_change_'+value.id+'" class="'+color+'" >'+$.number(valuechange,2,'.',',')+'</td>';
                             html +='<td class="td_custom" align="right"><span id="table_1_var_'+value.id+'" class="'+color+'" >'+$.number(valuevar,2,'.',',')+'</td>';
@@ -317,6 +326,8 @@ define([
                                        else{ var valueopeninterest = '-'; }
                                        if(value.symbol != null && value.symbol != 0){ var valuesymbol = value.symbol;}
                                        else{ var valuesymbol = '-'; }
+                                       if(value.cur != null && value.cur != 0){ var valuecur = value.cur;}
+                                       else{ var valuecur = '-'; }
 
                                        if((value.exchange!='SPOT')&& (value.bctcode != null && value.bctcode != '')) {
 
@@ -338,6 +349,7 @@ define([
                                        html +='<td class="td_custom table_1_exchange" align="left" id="table_1_exchange_'+ value.id +'">'+ value.exchange +'</td>';
                                        html +='<td class="td_custom table_1_symbol" align="left" id="table_1_symbol_'+value.id+'">'+valuesymbol+'</td>';
                                        html +='<td class="td_custom table_1_code" align="left" id="table_1_code_'+value.id+'">'+value.code+'</td>';
+                                       html +='<td class="td_custom table_1_cur" align="left" id="table_1_cur_'+value.id+'">'+valuecur+'</td>';
                                        html +='<td class="td_custom" align="right"><span id="table_1_last_'+value.id+'" class="bg_color_grey table_1_last">'+$.number(value.last,value.dec,'.',',')+'</span></td>';
                                        html +='<td class="td_custom" align="right"><span id="table_1_change_'+value.id+'" class="'+color+'" >'+$.number(valuechange,2,'.',',')+'</td>';
                                        html +='<td class="td_custom" align="right"><span id="table_1_var_'+value.id+'" class="'+color+'" >'+$.number(valuevar,2,'.',',')+'</td>';
@@ -384,6 +396,8 @@ define([
                                        else{ var valueopeninterest = '-'; }
                                        if(value.symbol != null && value.symbol != 0){ var valuesymbol = value.symbol;}
                                        else{ var valuesymbol = '-'; }
+                                       if(value.cur != null && value.cur != 0){ var valuecur = value.cur;}
+                                       else{ var valuecur = '-'; }
 
                                        if((value.exchange!='SPOT')&& (value.bctcode != null && value.bctcode != '')) {
 
@@ -405,6 +419,7 @@ define([
                                        html +='<td class="td_custom table_1_exchange" align="left" id="table_1_exchange_'+ value.id +'">'+ value.exchange +'</td>';
                                        html +='<td class="td_custom table_1_symbol" align="left" id="table_1_symbol_'+value.id+'">'+valuesymbol+'</td>';
                                        html +='<td class="td_custom table_1_code" align="left" id="table_1_code_'+value.id+'">'+value.code+'</td>';
+                                       html +='<td class="td_custom table_1_cur" align="left" id="table_1_cur_'+value.id+'">'+valuecur+'</td>';
                                        html +='<td class="td_custom" align="right"><span id="table_1_last_'+value.id+'" class="bg_color_grey table_1_last">'+$.number(value.last,value.dec,'.',',')+'</span></td>';
                                        html +='<td class="td_custom" align="right"><span id="table_1_change_'+value.id+'" class="'+color+'" >'+$.number(valuechange,2,'.',',')+'</td>';
                                        html +='<td class="td_custom" align="right"><span id="table_1_var_'+value.id+'" class="'+color+'" >'+$.number(valuevar,2,'.',',')+'</td>';

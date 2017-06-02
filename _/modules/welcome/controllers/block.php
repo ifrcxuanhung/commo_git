@@ -490,6 +490,7 @@ class Block extends MY_Controller {
             $html_table1 .='<td class="td_custom table_1_exchange" align="left" id="table_1_exchange_'.$rs['id'].'">'.$rs['exchange'].'</td>';
             $html_table1 .='<td class="td_custom table_1_symbol" align="left" id="table_1_symbol_'.$rs['id'].'">'.$rs['symbol'].'</td>';
             $html_table1 .='<td class="td_custom table_1_code" align="left" id="table_1_code_'.$rs['id'].'">'.$rs['code'].'</td>';
+            $html_table1 .='<td class="td_custom table_1_cur" align="left" id="table_1_cur_'.$rs['id'].'">'.$rs['cur'].'</td>';
 
             $html_table1 .='<td class="td_custom" align="right"><span id="table_1_last_'.$rs['id'].'" class="bg_color_grey table_1_last">'.$rs["last"].'</span></td>';
             $html_table1 .='<td class="td_custom" align="right"><span id="table_1_change_'.$rs['id'].'" class="table_1_change '.(($rs['change'] < 0)?'bg_color_red':'bg_color_green').'">'.$rs["change"].'</span></td>';
