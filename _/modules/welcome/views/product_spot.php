@@ -13,10 +13,14 @@
                 </div>
                 <div class="details details_bottom" id="details_p" style="margin-top: 66px;">
                     <div class="ti_font number" id="number_p">
-                        SPOT
+                        <span class="dash_0_ptype"><?php echo $data_dashboard[0]['ptype']; ?></span>
                     </div>
+                    <?php if(($data_dashboard[0]['ptype']=='FUTURES') || ($data_dashboard[0]['ptype']=='OPTION')) { ?>
+                    <div class="desc desc_cus" style="margin-top: -6px"> <span>
+  <span class="dash_0_exchange"><?php echo $data_dashboard[0]['exchange']; ?></span>, <span class="dash_0_expiry"><?php echo $data_dashboard[0]['expiry']; ?></span>
+  </span></div>
+  <?php } ?>
                 </div>
-
                 <div class="details" style="padding-right: 11px;">
                     <!--<div class="number ti_font" style="text-align: right !important;"> <span style="font-size: 32px;" data-counter="counterup" data-value="<?php /*echo number_format((float)$data_dashboard[0]['lable_3'], $data_dashboard[0]['dec'], '.', ','); */?>" class="index_last" id="dash_0_lb3"><?php /*echo ($data_dashboard[0]['lable_3'] !=0 || $data_dashboard[0]['lable_3'] != null)?number_format((float)$data_dashboard[0]['lable_3'], $data_dashboard[0]['dec'], '.', ','):''; */?></span>
   </div>-->
