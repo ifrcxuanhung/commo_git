@@ -60,7 +60,7 @@ class Cronjob extends MY_Controller{
 
 						if($row && isset($row['idx_last']) && !is_null($row['idx_last']) && $row['idx_last'] != 0 && ($row['date'] !='0000-00-00' || $row['time'] !='00:00:00')  ){
 
-							$this->db->query("update data_feed_commo set `last`= {$row['idx_last']}, `time` = '".($row['date'].' '.$row['time'])."' where codeint= '{$item['codeint']}'; ");
+							$this->db->query("update data_feed_commo set `last`= {$row['idx_last']}, `time` = '".($row['date'].' '.$row['time'])."', `pclose`= {$row['idx_pclose']} where codeint= '{$item['codeint']}'; ");
 
 							$this->db->query("UPDATE data_feed_commo set `var` = 100*((last-pclose)/pclose) Where codeint='{$item['codeint']}';"); 
 
