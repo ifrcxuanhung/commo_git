@@ -32,15 +32,15 @@
                         </tr>
                         <tr>
                             <th class="th_custom">
-                                <div class="format-input-2">
+                                <div class="format-input-2 ">
                                     <select class="form-control input-sm select_category" placeholder="" type="text">
                                             <option value="all">Select</option>
                                     </select>
                                 </div>
                             </th>
-                            <th class="th_custom">
-                                <div class="format-input-2">
-                                    <select class="form-control input-sm select_stype" placeholder="" type="text">
+                            <th class="th_custom ">
+                                <div class="format-input-2 ">
+                                    <select class="form-control input-sm select_stype " placeholder="" type="text">
                                         <option value="all">Select</option>
                                     </select>
                                 </div>
