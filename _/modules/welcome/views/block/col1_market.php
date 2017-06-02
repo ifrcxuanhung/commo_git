@@ -40,7 +40,13 @@
                                     </select>
                                 </div>
                             </th>
-                            <th class="th_custom"></th>
+                            <th class="th_custom">
+                                <div class="format-input-2">
+                                    <select class="form-control input-sm select_stype" placeholder="" type="text">
+                                        <option value="all">Select</option>
+                                    </select>
+                                </div>
+                            </th>
                            <!-- <th class="th_custom">
                                 <div class="format-input-2">
                                     <select class="form-control input-sm select_name" placeholder="" type="text">
