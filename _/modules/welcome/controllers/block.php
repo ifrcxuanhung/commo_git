@@ -473,6 +473,7 @@ class Block extends MY_Controller {
             /*$rs["change"] = ($rs['change'] == null)?'-': number_format((float)$rs['change'], 2, '.', ',');*/
             $rs["openinterest"] = ($rs['openinterest'] == null) ? '-' : number_format((float)$rs['openinterest'], 0, '.', ',');
             $rs["settlement"] = ($rs['settlement'] == null) ? '-' : number_format((float)$rs['settlement'], $rs['dec'], '.', ',');
+            $rs["change"] = ($rs['change'] == null) ? '-' : number_format((float)$rs['change'], 2, '.', ',');
             $rs["var"] = ($rs['var'] == null) ? '-' : number_format((float)$rs['var'], 2, '.', ',');
             $rs['volume'] = (($rs['volume'] == null) ? '' : number_format((float)$rs['volume'], 0, '.', ','));
             $rs['code'] = (($rs['code'] == null) ? '' : $rs['code']);
