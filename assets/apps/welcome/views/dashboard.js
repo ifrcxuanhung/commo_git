@@ -118,10 +118,10 @@ define([
 										$('.dash_0_var').fadeIn('slow');
 									});
 								}
-								if($('.dash_0_lasttimex').text()!==data.data_dashboard_0.lasttimex){
-									$('.dash_0_lasttimex').fadeOut('slow', function() {
-										$('.dash_0_lasttimex').html(data.data_dashboard_0.lasttimex);
-										$('.dash_0_lasttimex').fadeIn('slow');
+								if($('.dash_0_lasttime').text()!==data.data_dashboard_0.lasttime){
+									$('.dash_0_lasttime').fadeOut('slow', function() {
+										$('.dash_0_lasttime').html(data.data_dashboard_0.lasttime);
+										$('.dash_0_lasttime').fadeIn('slow');
 									});
 								}
 								/* box 2 */
@@ -221,10 +221,10 @@ define([
 										$('.dash_1_var').fadeIn('slow');
 									});
 								}
-								if($('.dash_1_lasttimex').text()!==data.data_dashboard_1.lasttimex){
-									$('.dash_1_lasttimex').fadeOut('slow', function() {						
-										$('.dash_1_lasttimex').html(data.data_dashboard_1.lasttimex);
-										$('.dash_1_lasttimex').fadeIn('slow');
+								if($('.dash_1_lasttime').text()!==data.data_dashboard_1.lasttime){
+									$('.dash_1_lasttime').fadeOut('slow', function() {
+										$('.dash_1_lasttime').html(data.data_dashboard_1.lasttime);
+										$('.dash_1_lasttime').fadeIn('slow');
 									});
 								}
 								/* box 3 */
@@ -325,10 +325,10 @@ define([
 										$('.dash_2_var').fadeIn('slow');
 									});
 								}
-								if($('.dash_2_lasttimex').text()!==data.data_dashboard_2.lasttimex){
-									$('.dash_2_lasttimex').fadeOut('slow', function() {						
-										$('.dash_2_lasttimex').html(data.data_dashboard_2.lasttimex);
-										$('.dash_2_lasttimex').fadeIn('slow');
+								if($('.dash_2_lasttime').text()!==data.data_dashboard_2.lasttime){
+									$('.dash_2_lasttime').fadeOut('slow', function() {
+										$('.dash_2_lasttime').html(data.data_dashboard_2.lasttime);
+										$('.dash_2_lasttime').fadeIn('slow');
 									});
 								}
 								/* box 4 */
@@ -428,10 +428,10 @@ define([
 										$('.dash_3_var').fadeIn('slow');
 									});
 								}
-								if($('.dash_3_lasttimex').text()!==data.data_dashboard_3.lasttimex){
-									$('.dash_3_lasttimex').fadeOut('slow', function() {						
-										$('.dash_3_lasttimex').html(data.data_dashboard_3.lasttimex);
-										$('.dash_3_lasttimex').fadeIn('slow');
+								if($('.dash_3_lasttime').text()!==data.data_dashboard_3.lasttime){
+									$('.dash_3_lasttime').fadeOut('slow', function() {
+										$('.dash_3_lasttime').html(data.data_dashboard_3.lasttime);
+										$('.dash_3_lasttime').fadeIn('slow');
 									});
 								}
 																
@@ -471,9 +471,9 @@ define([
 									}
 								});
 								
-								$.each($('.table_1_lasttimex'), function() {
+								$.each($('.table_1_lasttime'), function() {
 									//console.log( this.id );
-									var key = this.id.split("table_1_lasttimex_")[1]; 
+									var key = this.id.split("table_1_lasttime_")[1];
 									if($('#'+this.id).text()!==data.data_table_1[key].time_format){
 										$('#'+this.id).fadeOut('slow', function() {
 											$('#'+this.id).effect("highlight", {color: '#4c87b9'}, 300);
@@ -535,9 +535,9 @@ define([
 									}
 								});
 								
-								$.each($('.table_2_lasttimex'), function() {
+								$.each($('.table_2_lasttime'), function() {
 									//console.log( this.id );
-									var key = this.id.split("table_2_lasttimex_")[1]; 
+									var key = this.id.split("table_2_lasttime_")[1];
 									if($('#'+this.id).text()!==data.data_table_2[key].time_format){
 										$('#'+this.id).fadeOut('slow', function() {
 											$('#'+this.id).effect("highlight", {color: '#4c87b9'}, 300);
@@ -599,9 +599,9 @@ define([
 									}
 								});
 								
-								$.each($('.table_3_lasttimex'), function() {
+								$.each($('.table_3_lasttime'), function() {
 									//console.log( this.id );
-									var key = this.id.split("table_3_lasttimex_")[1]; 
+									var key = this.id.split("table_3_lasttime_")[1];
 									if($('#'+this.id).text()!==data.data_table_3[key].time_format){
 										$('#'+this.id).fadeOut('slow', function() {
 											$('#'+this.id).effect("highlight", {color: '#4c87b9'}, 300);
@@ -665,9 +665,9 @@ define([
 									}
 								});
 								
-								$.each($('.table_4_lasttimex'), function() {
+								$.each($('.table_4_lasttime'), function() {
 									//console.log( this.id );
-									var key = this.id.split("table_4_lasttimex_")[1]; 
+									var key = this.id.split("table_4_lasttime_")[1];
 									if($('#'+this.id).text()!==data.data_table_4[key].time_format){
 										$('#'+this.id).fadeOut('slow', function() {
 											$('#'+this.id).effect("highlight", {color: '#4c87b9'}, 400);

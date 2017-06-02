@@ -193,9 +193,9 @@ define([
 										
 									}
 								});
-								$.each($('.table_1_lasttimex'), function() {
+								$.each($('.table_1_lasttime'), function() {
 									//console.log( this.id );
-									var key = this.id.split("table_1_lasttimex_")[1]; 
+									var key = this.id.split("table_1_lasttime_")[1];
 									if($('#'+this.id).text()!==data.data_table_1[key].time_format){
 										$('#'+this.id).fadeOut('slow', function() {
 											$('#'+this.id).effect("highlight", {color: '#4c87b9'}, 300);

@@ -212,10 +212,10 @@ define([
 										$('.dash_0_var').fadeIn('slow');
 									});
 								}
-								if($('.dash_0_lasttimex').text()!==data.data_dashboard_0.lasttimex){
-									$('.dash_0_lasttimex').fadeOut('slow', function() {						
-										$('.dash_0_lasttimex').html(data.data_dashboard_0.lasttimex);
-										$('.dash_0_lasttimex').fadeIn('slow');
+								if($('.dash_0_lasttime').text()!==data.data_dashboard_0.lasttime){
+									$('.dash_0_lasttime').fadeOut('slow', function() {
+										$('.dash_0_lasttime').html(data.data_dashboard_0.lasttime);
+										$('.dash_0_lasttime').fadeIn('slow');
 									});
 								}																
 							

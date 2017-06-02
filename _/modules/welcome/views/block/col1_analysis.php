@@ -42,7 +42,7 @@
                 </div>
                 <a class="more" id="p" style="height:32px;" href="javascript:;"></a>
                 <div class="vnx_other_product"><a href="#" data-target="#order_product" data-toggle="modal" class="btn yellow-crusta" type="button">
-                        <span class="dash_0_lasttimex"><?php echo $data_dashboard[0]['lasttimex']; ?></span>
+                        <span class="dash_0_lasttime"><?php echo $data_dashboard[0]['lasttime']; ?></span>
                     </a> </div>
                 <div class="vnx_other_product2"><a href="category/<?php echo $data_dashboard[0]['type']; ?>" class="btn yellow-crusta" type="button">
                         <span class="dash_0_lb10">other product</span>

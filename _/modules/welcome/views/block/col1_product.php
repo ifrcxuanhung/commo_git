@@ -38,7 +38,7 @@
                 </div>
                 <a class="more" id="p" style="height:32px;" href="javascript:;"></a>
                 <div class="vnx_other_product"><a href="#" data-target="#order_product" data-toggle="modal" class="btn yellow-crusta" type="button">
-                        <span class="dash_0_lasttimex"><?php echo (isset($data_dashboard[0]['lasttimex']) && !is_null($data_dashboard[0]['lasttimex'])) ? date( "H:i", strtotime( $data_dashboard[0]['lasttimex'] ) ) :'' ; ?></span>
+                        <span class="dash_0_lasttime"><?php echo (isset($data_dashboard[0]['lasttime']) && !is_null($data_dashboard[0]['lasttime'])) ? date( "H:i", strtotime( $data_dashboard[0]['lasttime'] ) ) :'' ; ?></span>
                     </a> </div>
                 <div class="vnx_other_product2"><a href="<?php echo base_url()?>market" class="btn yellow-crusta" type="button">
                         <span class="dash_0_lb10">other product</span>

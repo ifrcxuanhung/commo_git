@@ -159,11 +159,11 @@ class Block extends MY_Controller {
 
         $html_table1 = '';
         foreach($result as $rs){
-            if(isset($rs['lasttimex']) && !is_null($rs['lasttimex']) && date('Y-m-d', strtotime($rs['lasttimex'])) < date('Y-m-d')){
-                $rs["time_format"] = date('Y-m-d', strtotime($rs['lasttimex']));
+            if(isset($rs['lasttime']) && !is_null($rs['lasttime']) && date('Y-m-d', strtotime($rs['lasttime'])) < date('Y-m-d')){
+                $rs["time_format"] = date('Y-m-d', strtotime($rs['lasttime']));
 
-             }else if(isset($rs['lasttimex']) && !is_null($rs['lasttimex']) ){
-                $rs["time_format"] = date('H:i', strtotime($rs['lasttimex']));
+             }else if(isset($rs['lasttime']) && !is_null($rs['lasttime']) ){
+                $rs["time_format"] = date('H:i', strtotime($rs['lasttime']));
              }
              else {
                  $rs["time_format"] ='-';
@@ -176,7 +176,7 @@ class Block extends MY_Controller {
             $html_table1 .='<td class="td_custom" align="right"><span id="table_1_var_'.$rs['id'].'" class="bg_color_grey">'.(($rs['last'] == null)?'-': number_format((float)$rs['last'], $rs['dec'], '.', ',')).'</span></td>';
 
             $html_table1 .='<td class="td_custom" align="right"><span id="table_1_var_'.$rs['id'].'" class="table_1_var '.(($rs['var'] < 0)?'bg_color_red':'bg_color_green').'">'.(($rs['var'] == null)?'-': number_format((float)$rs['var'], 2, '.', ',')).'</span></td>';
-            $html_table1 .='<td class="td_custom table_1_lasttimex" align="right" id="table_1_lasttimex_'.$rs['id'].'">'.$rs["time_format"].'</td></tr>';
+            $html_table1 .='<td class="td_custom table_1_lasttime" align="right" id="table_1_lasttime_'.$rs['id'].'">'.$rs["time_format"].'</td></tr>';
 
 
 
@@ -193,11 +193,11 @@ class Block extends MY_Controller {
         $this->data->num_rows = $this->db->query($sql)->num_rows();
         $html_table2 = '';
         foreach($result as $rs){
-			if(isset($rs['lasttimex']) && !is_null($rs['lasttimex']) && date('Y-m-d', strtotime($rs['lasttimex'])) < date('Y-m-d')){
-				$rs["time_format"] = date('Y-m-d', strtotime($rs['lasttimex']));
+			if(isset($rs['lasttime']) && !is_null($rs['lasttime']) && date('Y-m-d', strtotime($rs['lasttime'])) < date('Y-m-d')){
+				$rs["time_format"] = date('Y-m-d', strtotime($rs['lasttime']));
 			  
-			 }else if(isset($rs['lasttimex']) && !is_null($rs['lasttimex']) ){
-				$rs["time_format"] = date('H:i', strtotime($rs['lasttimex']));
+			 }else if(isset($rs['lasttime']) && !is_null($rs['lasttime']) ){
+				$rs["time_format"] = date('H:i', strtotime($rs['lasttime']));
 			 }
 			 else {
 				 $rs["time_format"] ='-';
@@ -221,7 +221,7 @@ class Block extends MY_Controller {
             $html_table2 .='<td class="td_custom" align="right"><span id="table_1_expmy_'.$rs['id'].'" class="">'.$rs['expmy'].'</span></td>';
             $html_table2 .='<td class="td_custom" align="right"><span id="table_2_var_'.$rs['id'].'" class="bg_color_grey">'.(($rs['last'] == null)?'-': number_format((float)$rs['last'], $rs['dec'], '.', ',')).'</span></td>';
             $html_table2 .='<td class="td_custom" align="right"><span id="table_2_var_'.$rs['id'].'" class="table_2_var '.(($rs['var'] < 0)?'bg_color_red':'bg_color_green').'">'.(($rs['var'] == null)?'-': number_format((float)$rs['var'], 2, '.', ',')).'</span></td>';
-            $html_table2 .='<td class="td_custom table_2_lasttimex" align="right" id="table_2_lasttimex_'.$rs['id'].'">'.$rs["time_format"].'</td></tr>';
+            $html_table2 .='<td class="td_custom table_2_lasttime" align="right" id="table_2_lasttime_'.$rs['id'].'">'.$rs["time_format"].'</td></tr>';
 
 
 
@@ -238,11 +238,11 @@ class Block extends MY_Controller {
         $this->data->num_rows = $this->db->query($sql)->num_rows();
 		$html_table3 = '';
 		foreach($result as $rs){
-			if(isset($rs['lasttimex']) && !is_null($rs['lasttimex']) && date('Y-m-d', strtotime($rs['lasttimex'])) < date('Y-m-d')){
-				$rs["time_format"] = date('Y-m-d', strtotime($rs['lasttimex']));
+			if(isset($rs['lasttime']) && !is_null($rs['lasttime']) && date('Y-m-d', strtotime($rs['lasttime'])) < date('Y-m-d')){
+				$rs["time_format"] = date('Y-m-d', strtotime($rs['lasttime']));
 			  
-			 }else if(isset($rs['lasttimex']) && !is_null($rs['lasttimex']) ){
-				$rs["time_format"] = date('H:i', strtotime($rs['lasttimex']));
+			 }else if(isset($rs['lasttime']) && !is_null($rs['lasttime']) ){
+				$rs["time_format"] = date('H:i', strtotime($rs['lasttime']));
 			 }
 			 else {
 				 $rs["time_format"] ='-';
@@ -265,7 +265,7 @@ class Block extends MY_Controller {
             $html_table3 .='<td class="td_custom" align="right"><span id="table_1_expmy_'.$rs['id'].'" class="">'.$rs['expmy'].'</span></td>';
             $html_table3 .='<td class="td_custom" align="right"><span id="table_3_var_'.$rs['id'].'" class="bg_color_grey">'.(($rs['last'] == null)?'-': number_format((float)$rs['last'], $rs['dec'], '.', ',')).'</span></td>';
             $html_table3 .='<td class="td_custom" align="right"><span id="table_3_var_'.$rs['id'].'" class="table_3_var '.(($rs['var'] < 0)?'bg_color_red':'bg_color_green').'">'.(($rs['var'] == null)?'-': number_format((float)$rs['var'], 2, '.', ',')).'</span></td>';
-            $html_table3 .='<td class="td_custom table_3_lasttimex" align="right" id="table_3_lasttimex_'.$rs['id'].'">'.$rs["time_format"].'</td></tr>';
+            $html_table3 .='<td class="td_custom table_3_lasttime" align="right" id="table_3_lasttime_'.$rs['id'].'">'.$rs["time_format"].'</td></tr>';
 
 
 
@@ -284,11 +284,11 @@ class Block extends MY_Controller {
 		foreach($result as $rs){
 			
 			$rs['exchange'] = (($rs['exchange'] == null)?'': $rs['exchange']);
-			if(isset($rs['lasttimex']) && !is_null($rs['lasttimex']) && date('Y-m-d', strtotime($rs['lasttimex'])) < date('Y-m-d')){
-				$rs["time_format"] = date('Y-m-d', strtotime($rs['lasttimex']));
+			if(isset($rs['lasttime']) && !is_null($rs['lasttime']) && date('Y-m-d', strtotime($rs['lasttime'])) < date('Y-m-d')){
+				$rs["time_format"] = date('Y-m-d', strtotime($rs['lasttime']));
 			  
-			 }else if(isset($rs['lasttimex']) && !is_null($rs['lasttimex']) ){
-				$rs["time_format"] = date('H:i', strtotime($rs['lasttimex']));
+			 }else if(isset($rs['lasttime']) && !is_null($rs['lasttime']) ){
+				$rs["time_format"] = date('H:i', strtotime($rs['lasttime']));
 			 }
 			 else {
 				 $rs["time_format"] ='-';
@@ -312,7 +312,7 @@ class Block extends MY_Controller {
             $html_table4 .='<td class="td_custom" align="right"><span id="table_1_expmy_'.$rs['id'].'" class="">'.$rs['expmy'].'</span></td>';
             $html_table4 .='<td class="td_custom" align="right"><span id="table_4_var_'.$rs['id'].'" class="bg_color_grey">'.$rs["last"].'</span></td>';
             $html_table4 .='<td class="td_custom" align="right"><span id="table_4_var_'.$rs['id'].'" class="table_4_var '.(($rs['var'] < 0)?'bg_color_red':'bg_color_green').'">'.number_format((float)$rs['var'], 2, '.', ',').'</span></td>';
-            $html_table4 .='<td class="td_custom table_4_lasttimex" align="right" id="table_4_lasttimex_'.$rs['id'].'">'.$rs["time_format"].'</td></tr>';
+            $html_table4 .='<td class="td_custom table_4_lasttime" align="right" id="table_4_lasttime_'.$rs['id'].'">'.$rs["time_format"].'</td></tr>';
 
 
 
@@ -358,7 +358,7 @@ class Block extends MY_Controller {
 		}		
         $this->data->d2_box_category1 = $html_table1;
 
-		$this->data->data_dashboard = $this->db->query("SELECT dl.lasttime,dl.name,dl.unit, dl.lasttimex, dl.last, dl.`change`, dl.var, dl.`dec` as dec_list, dl.exchange, dl.expiry, dd.* FROM data_dashboard_list as dl  LEFT JOIN data_dashboard as dd ON dl.type=dd.type where dl.bctcode='{$bctcode}'")->result_array();
+		$this->data->data_dashboard = $this->db->query("SELECT dl.lasttime,dl.name,dl.unit, dl.lasttime, dl.last, dl.`change`, dl.var, dl.`dec` as dec_list, dl.exchange, dl.expiry, dd.* FROM data_dashboard_list as dl  LEFT JOIN data_dashboard as dd ON dl.type=dd.type where dl.bctcode='{$bctcode}'")->result_array();
 
 
         return $this->load->view('block/col1_product', $this->data, true);
@@ -373,11 +373,11 @@ class Block extends MY_Controller {
 		$html_table1 = '';
 		foreach($result as $rs) {
             $rs['exchange'] = (($rs['exchange'] == null) ? '' : $rs['exchange']);
-            if (isset($rs['lasttimex']) && !is_null($rs['lasttimex']) && date('Y-m-d', strtotime($rs['lasttimex'])) < date('Y-m-d')) {
-                $rs["time_format"] = date('Y-m-d', strtotime($rs['lasttimex']));
+            if (isset($rs['lasttime']) && !is_null($rs['lasttime']) && date('Y-m-d', strtotime($rs['lasttime'])) < date('Y-m-d')) {
+                $rs["time_format"] = date('Y-m-d', strtotime($rs['lasttime']));
 
-            } else if (isset($rs['lasttimex']) && !is_null($rs['lasttimex'])) {
-                $rs["time_format"] = date('H:i', strtotime($rs['lasttimex']));
+            } else if (isset($rs['lasttime']) && !is_null($rs['lasttime'])) {
+                $rs["time_format"] = date('H:i', strtotime($rs['lasttime']));
             } else {
                 $rs["time_format"] = '-';
             }
@@ -418,7 +418,7 @@ class Block extends MY_Controller {
 			$html_table1 .='<td class="td_custom table_1_volume" align="right" id="table_1_volume_'.$rs['id'].'">'.$rs['volume'].'</td>';
 			$html_table1 .='<td class="td_custom table_1_openinterest" align="right" id="table_1_openinterest_'.$rs['id'].'">'.$rs["openinterest"].'</td>';
 			/*$html_table1 .='<td class="td_custom table_1_settlement" align="right" id="table_1_settlement_'.$rs['id'].'">'.$rs["settlement"].'</td>';*/
-            $html_table1 .='<td class="td_custom table_1_lasttimex" align="right" id="table_1_lasttimex_'.$rs['id'].'">'.$rs["time_format"].'</td></tr>';
+            $html_table1 .='<td class="td_custom table_1_lasttime" align="right" id="table_1_lasttime_'.$rs['id'].'">'.$rs["time_format"].'</td></tr>';
 
 		}		
         $this->data->d2_box_category1 = $html_table1;
@@ -449,11 +449,11 @@ class Block extends MY_Controller {
         $html_table1 = '';
         foreach($result as $rs) {
             $rs['exchange'] = (($rs['exchange'] == null) ? '' : $rs['exchange']);
-            if (isset($rs['lasttimex']) && !is_null($rs['lasttimex']) && date('Y-m-d', strtotime($rs['lasttimex'])) < date('Y-m-d')) {
-                $rs["time_format"] = date('Y-m-d', strtotime($rs['lasttimex']));
+            if (isset($rs['lasttime']) && !is_null($rs['lasttime']) && date('Y-m-d', strtotime($rs['lasttime'])) < date('Y-m-d')) {
+                $rs["time_format"] = date('Y-m-d', strtotime($rs['lasttime']));
 
-            } else if (isset($rs['lasttimex']) && !is_null($rs['lasttimex'])) {
-                $rs["time_format"] = date('H:i', strtotime($rs['lasttimex']));
+            } else if (isset($rs['lasttime']) && !is_null($rs['lasttime'])) {
+                $rs["time_format"] = date('H:i', strtotime($rs['lasttime']));
             } else {
                 $rs["time_format"] = '-';
             }
@@ -496,7 +496,7 @@ class Block extends MY_Controller {
             $html_table1 .='<td class="td_custom table_1_volume" align="right" id="table_1_volume_'.$rs['id'].'">'.$rs['volume'].'</td>';
             $html_table1 .='<td class="td_custom table_1_openinterest" align="right" id="table_1_openinterest_'.$rs['id'].'">'.$rs["openinterest"].'</td>';
             /*$html_table1 .='<td class="td_custom table_1_settlement" align="right" id="table_1_settlement_'.$rs['id'].'">'.$rs["settlement"].'</td>';*/
-            $html_table1 .='<td class="td_custom table_1_lasttimex" width="10%" align="right" id="table_1_lasttimex_'.$rs['id'].'">'.$rs["time_format"].'</td></tr>';
+            $html_table1 .='<td class="td_custom table_1_lasttime" width="10%" align="right" id="table_1_lasttime_'.$rs['id'].'">'.$rs["time_format"].'</td></tr>';
 
         }
         $this->data->d2_box_category1 = $html_table1;
@@ -525,11 +525,11 @@ class Block extends MY_Controller {
         $html_table1 = '';
         foreach($detail1 as $rs) {
             $rs['exchange'] = (($rs['exchange'] == null) ? '' : $rs['exchange']);
-            if (isset($rs['lasttimex']) && !is_null($rs['lasttimex']) && date('Y-m-d', strtotime($rs['lasttimex'])) < date('Y-m-d')) {
-                $rs["time_format"] = date('Y-m-d', strtotime($rs['lasttimex']));
+            if (isset($rs['lasttime']) && !is_null($rs['lasttime']) && date('Y-m-d', strtotime($rs['lasttime'])) < date('Y-m-d')) {
+                $rs["time_format"] = date('Y-m-d', strtotime($rs['lasttime']));
 
-            } else if (isset($rs['lasttimex']) && !is_null($rs['lasttimex'])) {
-                $rs["time_format"] = date('H:i', strtotime($rs['lasttimex']));
+            } else if (isset($rs['lasttime']) && !is_null($rs['lasttime'])) {
+                $rs["time_format"] = date('H:i', strtotime($rs['lasttime']));
             } else {
                 $rs["time_format"] = '-';
             }
@@ -569,7 +569,7 @@ class Block extends MY_Controller {
             $html_table1 .='<td class="td_custom table_1_volume" align="right" id="table_1_volume_'.$rs['id'].'">'.$rs['volume'].'</td>';
             $html_table1 .='<td class="td_custom table_1_openinterest" align="right" id="table_1_openinterest_'.$rs['id'].'">'.$rs["openinterest"].'</td>';
             /*$html_table1 .='<td class="td_custom table_1_settlement" align="right" id="table_1_settlement_'.$rs['id'].'">'.$rs["settlement"].'</td>';*/
-            $html_table1 .='<td class="td_custom table_1_lasttimex" align="right" id="table_1_lasttimex_'.$rs['id'].'">'.$rs["time_format"].'</td></tr>';
+            $html_table1 .='<td class="td_custom table_1_lasttime" align="right" id="table_1_lasttime_'.$rs['id'].'">'.$rs["time_format"].'</td></tr>';
 
         }
         $this->data->d2_box_customise1 = $html_table1;
@@ -589,11 +589,11 @@ class Block extends MY_Controller {
         $html_table2 = '';
         foreach($detail2 as $rs) {
             $rs['exchange'] = (($rs['exchange'] == null) ? '' : $rs['exchange']);
-            if (isset($rs['lasttimex']) && !is_null($rs['lasttimex']) && date('Y-m-d', strtotime($rs['lasttimex'])) < date('Y-m-d')) {
-                $rs["time_format"] = date('Y-m-d', strtotime($rs['lasttimex']));
+            if (isset($rs['lasttime']) && !is_null($rs['lasttime']) && date('Y-m-d', strtotime($rs['lasttime'])) < date('Y-m-d')) {
+                $rs["time_format"] = date('Y-m-d', strtotime($rs['lasttime']));
 
-            } else if (isset($rs['lasttimex']) && !is_null($rs['lasttimex'])) {
-                $rs["time_format"] = date('H:i', strtotime($rs['lasttimex']));
+            } else if (isset($rs['lasttime']) && !is_null($rs['lasttime'])) {
+                $rs["time_format"] = date('H:i', strtotime($rs['lasttime']));
             } else {
                 $rs["time_format"] = '-';
             }
@@ -633,7 +633,7 @@ class Block extends MY_Controller {
             $html_table2 .='<td class="td_custom table_1_volume" align="right" id="table_1_volume_'.$rs['id'].'">'.$rs['volume'].'</td>';
             $html_table2 .='<td class="td_custom table_1_openinterest" align="right" id="table_1_openinterest_'.$rs['id'].'">'.$rs["openinterest"].'</td>';
             /*$html_table2 .='<td class="td_custom table_1_settlement" align="right" id="table_1_settlement_'.$rs['id'].'">'.$rs["settlement"].'</td>';*/
-            $html_table2 .='<td class="td_custom table_1_lasttimex" align="right" id="table_1_lasttimex_'.$rs['id'].'">'.$rs["time_format"].'</td></tr>';
+            $html_table2 .='<td class="td_custom table_1_lasttime" align="right" id="table_1_lasttime_'.$rs['id'].'">'.$rs["time_format"].'</td></tr>';
 
         }
         $this->data->d2_box_customise2 = $html_table2;
@@ -660,7 +660,7 @@ class Block extends MY_Controller {
         $sql = "SELECT * FROM data_news";
         $this->data->news = $this->db->query($sql)->result_array();
 		$this->data->bctcode = $bctcode;
-        $this->data->data_dashboard = $this->db->query("SELECT dl.lasttime,dl.name,dl.unit, dl.lasttimex, dl.last, dl.`change`, dl.var, dl.`dec` as dec_list, dl.exchange, dl.expiry, dd.* FROM data_dashboard_list as dl  LEFT JOIN data_dashboard as dd ON dl.type=dd.type where dl.bctcode='{$bctcode}'")->result_array();
+        $this->data->data_dashboard = $this->db->query("SELECT dl.lasttime,dl.name,dl.unit, dl.lasttime, dl.last, dl.`change`, dl.var, dl.`dec` as dec_list, dl.exchange, dl.expiry, dd.* FROM data_dashboard_list as dl  LEFT JOIN data_dashboard as dd ON dl.type=dd.type where dl.bctcode='{$bctcode}'")->result_array();
 
 
         $sql = "SELECT dsl.*,ddl.dec FROM data_series_last as dsl  RIGHT JOIN data_dashboard_list as ddl ON dsl.symbol=ddl.bctcode where dsl.symbol = '{$bctcode}' and mon<>'Cash' ORDER BY dsl.expyyyymm ASC limit 1";
@@ -699,11 +699,11 @@ class Block extends MY_Controller {
 		$html_table1 = '';
 		foreach($result as $rs){
 			$rs['exchange'] = (($rs['exchange'] == null)?'': $rs['exchange']);
-            if(isset($rs['lasttimex']) && !is_null($rs['lasttimex']) && date('Y-m-d', strtotime($rs['lasttimex'])) < date('Y-m-d')){
-                $rs["time_format"] = date('Y-m-d', strtotime($rs['lasttimex']));
+            if(isset($rs['lasttime']) && !is_null($rs['lasttime']) && date('Y-m-d', strtotime($rs['lasttime'])) < date('Y-m-d')){
+                $rs["time_format"] = date('Y-m-d', strtotime($rs['lasttime']));
 
-            }else if(isset($rs['lasttimex']) && !is_null($rs['lasttimex']) ){
-                $rs["time_format"] = date('H:i', strtotime($rs['lasttimex']));
+            }else if(isset($rs['lasttime']) && !is_null($rs['lasttime']) ){
+                $rs["time_format"] = date('H:i', strtotime($rs['lasttime']));
             }
             else {
                 $rs["time_format"] ='-';
@@ -718,7 +718,7 @@ class Block extends MY_Controller {
 			else {
 				$link_product = '';
 			}
-			$rs["lasttimex"] = (($rs['lasttimex'] == null)?'-': $rs['lasttimex']);
+			$rs["lasttime"] = (($rs['lasttime'] == null)?'-': $rs['lasttime']);
 			$rs["last"] = ($rs['last'] == null)?'-': number_format((float)$rs['last'], $rs['dec'], '.', ',');
 			$rs["change"] = ($rs['change'] == null)?'-': number_format((float)$rs['change'], 2, '.', ',');
 			$rs["openinterest"] = ($rs['openinterest'] == null)?'-':number_format((float)$rs['openinterest'], 0, '.', ',');
@@ -742,7 +742,7 @@ class Block extends MY_Controller {
 			$html_table1 .='<td class="td_custom table_1_volume" align="right" id="table_1_volume_'.$rs['id'].'">'.$rs['volume'].'</td>';
 			$html_table1 .='<td class="td_custom table_1_openinterest" align="right" id="table_1_openinterest_'.$rs['id'].'">'.$rs["openinterest"].'</td>';
 			$html_table1 .='<td class="td_custom table_1_settlement" align="right" id="table_1_settlement_'.$rs['id'].'">'.$rs["settlement"].'</td>';
-            $html_table1 .='<td class="td_custom table_1_lasttimex" align="right" id="table_1_lasttimex_'.$rs['id'].'">'.$rs["time_format"].'</td></tr>';
+            $html_table1 .='<td class="td_custom table_1_lasttime" align="right" id="table_1_lasttime_'.$rs['id'].'">'.$rs["time_format"].'</td></tr>';
 		}		
         $this->data->d2_box_category1 = $html_table1;
 		$this->data->data_dashboard = $this->db->query("SELECT * FROM data_dashboard_list as dl  RIGHT JOIN data_dashboard as dd ON dl.type=dd.type where dd.active = 1 and dl.top=5 Order by dd.nr")->result_array();
@@ -766,11 +766,11 @@ class Block extends MY_Controller {
         $html_table1 = '';
         foreach($result as $rs){
             $rs['exchange'] = (($rs['exchange'] == null)?'': $rs['exchange']);
-            if(isset($rs['lasttimex']) && !is_null($rs['lasttimex']) && date('Y-m-d', strtotime($rs['lasttimex'])) < date('Y-m-d')){
-                $rs["time_format"] = date('Y-m-d', strtotime($rs['lasttimex']));
+            if(isset($rs['lasttime']) && !is_null($rs['lasttime']) && date('Y-m-d', strtotime($rs['lasttime'])) < date('Y-m-d')){
+                $rs["time_format"] = date('Y-m-d', strtotime($rs['lasttime']));
 
-            }else if(isset($rs['lasttimex']) && !is_null($rs['lasttimex']) ){
-                $rs["time_format"] = date('H:i', strtotime($rs['lasttimex']));
+            }else if(isset($rs['lasttime']) && !is_null($rs['lasttime']) ){
+                $rs["time_format"] = date('H:i', strtotime($rs['lasttime']));
             }
             else {
                 $rs["time_format"] ='-';
@@ -785,7 +785,7 @@ class Block extends MY_Controller {
 			else {
 				$link_product = '';
 			}
-            $rs["lasttimex"] = (($rs['lasttimex'] == null)?'-': $rs['lasttimex']);
+            $rs["lasttime"] = (($rs['lasttime'] == null)?'-': $rs['lasttime']);
             $rs["last"] = ($rs['last'] == null)?'-': number_format((float)$rs['last'], $rs['dec'], '.', ',');
             $rs["change"] = ($rs['change'] == null)?'-': number_format((float)$rs['change'], 2, '.', ',');
             $rs["openinterest"] = ($rs['openinterest'] == null)?'-':number_format((float)$rs['openinterest'], 0, '.', ',');
@@ -809,7 +809,7 @@ class Block extends MY_Controller {
             $html_table1 .='<td class="td_custom table_1_volume" align="right" id="table_1_volume_'.$rs['id'].'">'.$rs['volume'].'</td>';
             $html_table1 .='<td class="td_custom table_1_openinterest" align="right" id="table_1_openinterest_'.$rs['id'].'">'.$rs["openinterest"].'</td>';
             $html_table1 .='<td class="td_custom table_1_settlement" align="right" id="table_1_settlement_'.$rs['id'].'">'.$rs["settlement"].'</td>';
-            $html_table1 .='<td class="td_custom table_1_lasttimex" align="right" id="table_1_lasttimex_'.$rs['id'].'">'.$rs["time_format"].'</td></tr>';
+            $html_table1 .='<td class="td_custom table_1_lasttime" align="right" id="table_1_lasttime_'.$rs['id'].'">'.$rs["time_format"].'</td></tr>';
         }
         $this->data->d2_box_category1 = $html_table1;
         $this->data->data_dashboard = $this->db->query("SELECT * FROM data_dashboard_list as dl  RIGHT JOIN data_dashboard as dd ON dl.type=dd.type where dd.active = 1 AND dl.type = 'ENERGY' and dl.top=5 Order by dd.nr")->result_array();

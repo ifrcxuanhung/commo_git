@@ -30,7 +30,7 @@ class Product extends Welcome{
 				}else {
 					$block = new Block();
 					$this->data->code = $bctcode;
-					$this->data->data_dashboard = $this->db->query("SELECT dl.lasttime,dl.name,dl.unit, dl.lasttimex, dl.last, dl.`change`, dl.var, dl.`dec` as dec_list, dl.exchange, dl.expiry, dd.* FROM data_dashboard_list as dl  LEFT JOIN data_dashboard as dd ON dl.type=dd.type where dl.code='{$bctcode}'")->result_array();
+					$this->data->data_dashboard = $this->db->query("SELECT dl.lasttime,dl.name,dl.unit, dl.lasttime, dl.last, dl.`change`, dl.var, dl.`dec` as dec_list, dl.exchange, dl.expiry, dd.* FROM data_dashboard_list as dl  LEFT JOIN data_dashboard as dd ON dl.type=dd.type where dl.code='{$bctcode}'")->result_array();
 					$this->template->write_view('content', 'product_spot', $this->data);
 				}
 			}
@@ -49,7 +49,7 @@ class Product extends Welcome{
 		$data_table1 = array();
 		foreach($result as $rs){
 			$rs['exchange'] = (($rs['exchange'] == null)?'': $rs['exchange']);
-			$rs["lasttimex"] = (($rs['lasttimex'] == null)?'-': $rs['lasttimex']);
+			$rs["lasttime"] = (($rs['lasttime'] == null)?'-': $rs['lasttime']);
 			$rs["last"] = ($rs['last'] == null)?'-': number_format((float)$rs['last'], $rs['dec'], '.', ',');
 			$rs["change"] = ($rs['change'] == null)?'-': number_format((float)$rs['change'], 2, '.', ',');
 			$rs["openinterest"] = ($rs['openinterest'] == null)?'-':number_format((float)$rs['openinterest'], 0, '.', ',');
@@ -70,7 +70,7 @@ class Product extends Welcome{
 			$html_table1 .='<td class="td_custom table_1_volume" align="right" id="table_1_volume_'.$rs['id'].'">'.$rs['volume'].'</td>';
 			$html_table1 .='<td class="td_custom table_1_openinterest" align="right" id="table_1_openinterest_'.$rs['id'].'">'.$rs["openinterest"].'</td>';
 			$html_table1 .='<td class="td_custom table_1_settlement" align="right" id="table_1_settlement_'.$rs['id'].'">'.$rs["settlement"].'</td>';
-            $html_table1 .='<td class="td_custom table_1_lasttimex" align="right" id="table_1_lasttimex_'.$rs['id'].'">'.$rs["lasttimex"].'</td></tr>';
+            $html_table1 .='<td class="td_custom table_1_lasttime" align="right" id="table_1_lasttime_'.$rs['id'].'">'.$rs["lasttime"].'</td></tr>';
 		}		
 		$result["data_table_1"] = $data_table1;
 		$result["table1"] = $html_table1;
@@ -85,7 +85,7 @@ class Product extends Welcome{
         $data_table1 = array();
         foreach($result as $rs){
             $rs['exchange'] = (($rs['exchange'] == null)?'': $rs['exchange']);
-            $rs["lasttimex"] = (($rs['lasttimex'] == null)?'-': $rs['lasttimex']);
+            $rs["lasttime"] = (($rs['lasttime'] == null)?'-': $rs['lasttime']);
             $rs["last"] = ($rs['last'] == null)?'-': number_format((float)$rs['last'], $rs['dec'], '.', ',');
             $rs["change"] = ($rs['change'] == null)?'-': number_format((float)$rs['change'], 2, '.', ',');
             $rs["openinterest"] = ($rs['openinterest'] == null)?'-':number_format((float)$rs['openinterest'], 0, '.', ',');
@@ -106,7 +106,7 @@ class Product extends Welcome{
             $html_table1 .='<td class="td_custom table_1_volume" align="right" id="table_1_volume_'.$rs['id'].'">'.$rs['volume'].'</td>';
             $html_table1 .='<td class="td_custom table_1_openinterest" align="right" id="table_1_openinterest_'.$rs['id'].'">'.$rs["openinterest"].'</td>';
             $html_table1 .='<td class="td_custom table_1_settlement" align="right" id="table_1_settlement_'.$rs['id'].'">'.$rs["settlement"].'</td>';
-            $html_table1 .='<td class="td_custom table_1_lasttimex" align="right" id="table_1_lasttimex_'.$rs['id'].'">'.$rs["lasttimex"].'</td></tr>';
+            $html_table1 .='<td class="td_custom table_1_lasttime" align="right" id="table_1_lasttime_'.$rs['id'].'">'.$rs["lasttime"].'</td></tr>';
         }
         $result["data_table_1"] = $data_table1;
         $result["table1"] = $html_table1;

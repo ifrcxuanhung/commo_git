@@ -2834,11 +2834,11 @@ WHERE ds.symbol='$symbol' and dl.active = 1  and ds.expyyyymm!=0 ORDER BY ds.exp
 		$data_table1 = array();
 		foreach($result as $rs){
 			$rs['exchange'] = (($rs['exchange'] == null)?'': $rs['exchange']);
-			if(isset($rs['lasttimex']) && !is_null($rs['lasttimex']) && date('Y-m-d', strtotime($rs['lasttimex'])) < date('Y-m-d')){
-				$rs["time_format"] = date('Y-m-d', strtotime($rs['lasttimex']));
+			if(isset($rs['lasttime']) && !is_null($rs['lasttime']) && date('Y-m-d', strtotime($rs['lasttime'])) < date('Y-m-d')){
+				$rs["time_format"] = date('Y-m-d', strtotime($rs['lasttime']));
 			  
-			 }else if(isset($rs['lasttimex']) && !is_null($rs['lasttimex']) ){
-				$rs["time_format"] = date('H:i', strtotime($rs['lasttimex']));
+			 }else if(isset($rs['lasttime']) && !is_null($rs['lasttime']) ){
+				$rs["time_format"] = date('H:i', strtotime($rs['lasttime']));
 			 }
 			 else {
 				 $rs["time_format"] ='-';
@@ -2877,7 +2877,7 @@ WHERE ds.symbol='$symbol' and dl.active = 1  and ds.expyyyymm!=0 ORDER BY ds.exp
 			$html_table1 .='<td class="td_custom table_1_volume" align="right" id="table_1_volume_'.$rs['id'].'">'.$rs['volume'].'</td>';
 			$html_table1 .='<td class="td_custom table_1_openinterest" align="right" id="table_1_openinterest_'.$rs['id'].'">'.$rs["openinterest"].'</td>';
 			/*$html_table1 .='<td class="td_custom table_1_settlement" align="right" id="table_1_settlement_'.$rs['id'].'">'.$rs["settlement"].'</td>';*/
-            $html_table1 .='<td class="td_custom table_1_lasttimex" align="right" id="table_1_lasttimex_'.$rs['id'].'">'.$rs["time_format"].'</td></tr>';
+            $html_table1 .='<td class="td_custom table_1_lasttime" align="right" id="table_1_lasttime_'.$rs['id'].'">'.$rs["time_format"].'</td></tr>';
 
 		}		
 		$result["data_table_1"] = $data_table1;
@@ -2887,12 +2887,12 @@ WHERE ds.symbol='$symbol' and dl.active = 1  and ds.expyyyymm!=0 ORDER BY ds.exp
 	 
 	  public function product_auto_data_dashboard(){
 		  $bctcode =$_REQUEST["bctcode"];
-		$data_dashboard = $this->db->query("SELECT dl.lasttime, dl.name,dl.unit, dl.lasttimex, dl.last, dl.`change`, dl.var, dl.expiry, dl.exchange, dl.`dec` as dec_list, dd.* FROM data_dashboard_list as dl  LEFT JOIN data_dashboard as dd ON dl.type=dd.type where dl.bctcode='{$bctcode}'")->result_array();
+		$data_dashboard = $this->db->query("SELECT dl.lasttime, dl.name,dl.unit, dl.lasttime, dl.last, dl.`change`, dl.var, dl.expiry, dl.exchange, dl.`dec` as dec_list, dd.* FROM data_dashboard_list as dl  LEFT JOIN data_dashboard as dd ON dl.type=dd.type where dl.bctcode='{$bctcode}'")->result_array();
 
 
 		$data_dashboard[0]['lable_3'] = number_format((float)$data_dashboard[0]['lable_3'], $data_dashboard[0]['dec'], '.', ',');
 		$data_dashboard[0]['lable_7'] = number_format((float)$data_dashboard[0]['last'], $data_dashboard[0]['dec_list'], '.', ',');
-		$data_dashboard[0]['lasttimex'] = (isset($data_dashboard[0]['lasttimex']) && !is_null($data_dashboard[0]['lasttimex'])) ? date( "H:i", strtotime( $data_dashboard[0]['lasttimex'] ) ) :'';
+		$data_dashboard[0]['lasttime'] = (isset($data_dashboard[0]['lasttime']) && !is_null($data_dashboard[0]['lasttime'])) ? date( "H:i", strtotime( $data_dashboard[0]['lasttime'] ) ) :'';
 
 
 		$result["data_dashboard_0"] = $data_dashboard[0];

@@ -77,7 +77,7 @@
                 </div>
                 <a class="more" id="p" style="height:32px;" href="javascript:;"></a>
                 <div class="vnx_other_product"><a href="#" data-target="#order_product" data-toggle="modal" class="btn yellow-crusta" type="button">
-                        <span class="dash_0_lasttimex"><?php echo (isset($data_dashboard[0]['lasttimex']) && !is_null($data_dashboard[0]['lasttimex'])) ? date( "H:i", strtotime( $data_dashboard[0]['lasttimex'] ) ) :''; ?></span>
+                        <span class="dash_0_lasttime"><?php echo (isset($data_dashboard[0]['lasttime']) && !is_null($data_dashboard[0]['lasttime'])) ? date( "H:i", strtotime( $data_dashboard[0]['lasttime'] ) ) :''; ?></span>
                     </a> </div>
                 <div class="vnx_other_product2"><a href="category/<?php echo $data_dashboard[0]['type']; ?>" class="btn yellow-crusta" type="button">
                         <span class="dash_0_lb10"><?php echo $data_dashboard[0]['type']; ?></span>
@@ -134,7 +134,7 @@
                 </div>
                 <a class="more" id="p" style="height:32px;" href="javascript:;"></a>
                 <div class="vnx_other_product"><a href="#" data-target="#order_product" data-toggle="modal" class="btn yellow-crusta" type="button">
-                        <span class="dash_1_lasttimex"><?php echo (isset($data_dashboard[1]['lasttimex']) && !is_null($data_dashboard[1]['lasttimex'])) ? date( "H:i", strtotime( $data_dashboard[1]['lasttimex'] ) ) :''; ?></span>
+                        <span class="dash_1_lasttime"><?php echo (isset($data_dashboard[1]['lasttime']) && !is_null($data_dashboard[1]['lasttime'])) ? date( "H:i", strtotime( $data_dashboard[1]['lasttime'] ) ) :''; ?></span>
                     </a> </div>
                 <div class="vnx_other_product2"><a href="category/<?php echo $data_dashboard[1]['type']; ?>" class="btn yellow-crusta" type="button">
                         <span class="dash_1_lb10"><?php echo $data_dashboard[1]['type']; ?></span>
@@ -191,7 +191,7 @@
                 </div>
                 <a class="more" id="p" style="height:32px;" href="javascript:;"></a>
                 <div class="vnx_other_product"><a href="#" data-target="#order_product" data-toggle="modal" class="btn yellow-crusta" type="button">
-                        <span class="dash_2_lasttimex"><?php echo (isset($data_dashboard[2]['lasttimex']) && !is_null($data_dashboard[2]['lasttimex'])) ? date( "H:i", strtotime( $data_dashboard[2]['lasttimex'] ) ) :''; ?></span>
+                        <span class="dash_2_lasttime"><?php echo (isset($data_dashboard[2]['lasttime']) && !is_null($data_dashboard[2]['lasttime'])) ? date( "H:i", strtotime( $data_dashboard[2]['lasttime'] ) ) :''; ?></span>
                     </a> </div>
                 <div class="vnx_other_product2"><a href="category/<?php echo $data_dashboard[2]['type']; ?>" class="btn yellow-crusta" type="button">
                         <span class="dash_2_lb10"><?php echo $data_dashboard[2]['type']; ?></span>
@@ -247,7 +247,7 @@
                 </div>
                 <a class="more" id="p" style="height:32px;" href="javascript:;"></a>
                 <div class="vnx_other_product"><a href="#" data-target="#order_product" data-toggle="modal" class="btn yellow-crusta" type="button">
-                        <span class="dash_3_lasttimex"><?php echo (isset($data_dashboard[3]['lasttimex']) && !is_null($data_dashboard[3]['lasttimex'])) ? date( "H:i", strtotime( $data_dashboard[3]['lasttimex'] ) ) :''; ?></span>
+                        <span class="dash_3_lasttime"><?php echo (isset($data_dashboard[3]['lasttime']) && !is_null($data_dashboard[3]['lasttime'])) ? date( "H:i", strtotime( $data_dashboard[3]['lasttime'] ) ) :''; ?></span>
                     </a> </div>
                 <div class="vnx_other_product2"><a href="category/<?php echo $data_dashboard[3]['type']; ?>" class="btn yellow-crusta" type="button">
                         <span class="dash_3_lb10"><?php echo $data_dashboard[3]['type']; ?></span>

@@ -55,7 +55,7 @@ define([
                             html +='<td class="td_custom" align="right"><span id="table_1_var_'+value.id+'" class="'+color+'" >'+valuevar+'</td>';
                             html +='<td class="td_custom table_1_volume" align="right" id="table_1_volume_'+value.id+'">'+$.number(valuevolume, 0, '.', ',')+'</td>';
                             html +='<td class="td_custom table_1_openinterest" align="right" id="table_1_openinterest_'+value.id+'">'+$.number(valueopeninterest, 0, '.', ',')+'</td>';
-                            html +='<td class="td_custom table_1_lasttimex" width="10%" align="right" id="table_1_lasttimex_'+value.id+'">'+value.lasttimex+'</td>';
+                            html +='<td class="td_custom table_1_lasttime" width="10%" align="right" id="table_1_lasttime_'+value.id+'">'+value.lasttime+'</td>';
                             html += '</tr>';
 
                         });
@@ -109,7 +109,7 @@ define([
                             html +='<td class="td_custom" align="right"><span id="table_1_var_'+value.id+'" class="'+color+'">'+valuevar+'</td>';
                             html +='<td class="td_custom table_1_volume" align="right" id="table_1_volume_'+value.id+'">'+$.number(valuevolume, 0, '.', ',')+'</td>';
                             html +='<td class="td_custom table_1_openinterest" align="right" id="table_1_openinterest_'+value.id+'">'+$.number(valueopeninterest, 0, '.', ',')+'</td>';
-                            html +='<td class="td_custom table_1_lasttimex" width="10%" align="right" id="table_1_lasttimex_'+value.id+'">'+value.lasttimex+'</td>';
+                            html +='<td class="td_custom table_1_lasttime" width="10%" align="right" id="table_1_lasttime_'+value.id+'">'+value.lasttime+'</td>';
                             html += '</tr>';
 
                         });
@@ -166,7 +166,7 @@ define([
                                        html +='<td class="td_custom" align="right"><span id="table_1_var_'+value.id+'" class="'+color+'" >'+valuevar+'</td>';
                                        html +='<td class="td_custom table_1_volume" align="right" id="table_1_volume_'+value.id+'">'+$.number(valuevolume, 0, '.', ',')+'</td>';
                                        html +='<td class="td_custom table_1_openinterest" align="right" id="table_1_openinterest_'+value.id+'">'+$.number(valueopeninterest, 0, '.', ',')+'</td>';
-                                       html +='<td class="td_custom table_1_lasttimex" width="10%" align="right" id="table_1_lasttimex_'+value.id+'">'+value.lasttimex+'</td>';
+                                       html +='<td class="td_custom table_1_lasttime" width="10%" align="right" id="table_1_lasttime_'+value.id+'">'+value.lasttime+'</td>';
                                        html += '</tr>';
 
                                    });

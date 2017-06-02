@@ -32,22 +32,22 @@ class Dashboard extends Welcome{
 
 		$data_dashboard[0]['lable_3'] = ($data_dashboard[0]['lable_3'] != 0 && !is_null($data_dashboard[0]['lable_3'])) ?number_format((float)$data_dashboard[0]['lable_3'], $data_dashboard[0]['dec'], '.', ','):'';
 		$data_dashboard[0]['lable_7'] = number_format((float)$data_dashboard[0]['last'], $data_dashboard[0]['dec'], '.', ',');
-		$data_dashboard[0]['lasttimex'] = (isset($data_dashboard[0]['lasttimex']) && !is_null($data_dashboard[0]['lasttimex'])) ? date( "H:i", strtotime( $data_dashboard[0]['lasttimex'] ) ) :'';
+		$data_dashboard[0]['lasttime'] = (isset($data_dashboard[0]['lasttime']) && !is_null($data_dashboard[0]['lasttime'])) ? date( "H:i", strtotime( $data_dashboard[0]['lasttime'] ) ) :'';
 		$data_dashboard[0]['lable_10'] = $data_dashboard[0]['type'];
 
 		$data_dashboard[1]['lable_3'] = ($data_dashboard[1]['lable_3'] != 0 && !is_null($data_dashboard[1]['lable_3'])) ?number_format((float)$data_dashboard[1]['lable_3'], $data_dashboard[1]['dec'], '.', ','):'';
 		$data_dashboard[1]['lable_7'] = number_format((float)$data_dashboard[1]['last'], $data_dashboard[1]['dec'], '.', ',');
-		$data_dashboard[1]['lasttimex'] = (isset($data_dashboard[1]['lasttimex']) && !is_null($data_dashboard[1]['lasttimex'])) ? date( "H:i", strtotime( $data_dashboard[1]['lasttimex'] ) ) :'';
+		$data_dashboard[1]['lasttime'] = (isset($data_dashboard[1]['lasttime']) && !is_null($data_dashboard[1]['lasttime'])) ? date( "H:i", strtotime( $data_dashboard[1]['lasttime'] ) ) :'';
 		$data_dashboard[1]['lable_10'] = $data_dashboard[1]['type'];
 
 		$data_dashboard[2]['lable_3'] = ($data_dashboard[2]['lable_3'] != 0 && !is_null($data_dashboard[2]['lable_3'])) ?number_format((float)$data_dashboard[2]['lable_3'], $data_dashboard[2]['dec'], '.', ','):'';
 		$data_dashboard[2]['lable_7'] = number_format((float)$data_dashboard[2]['last'], $data_dashboard[2]['dec'], '.', ',');
-		$data_dashboard[2]['lasttimex'] = (isset($data_dashboard[2]['lasttimex']) && !is_null($data_dashboard[2]['lasttimex'])) ? date( "H:i", strtotime( $data_dashboard[2]['lasttimex'] ) ) :'';
+		$data_dashboard[2]['lasttime'] = (isset($data_dashboard[2]['lasttime']) && !is_null($data_dashboard[2]['lasttime'])) ? date( "H:i", strtotime( $data_dashboard[2]['lasttime'] ) ) :'';
 		$data_dashboard[2]['lable_10'] = $data_dashboard[2]['type'];
 
 		$data_dashboard[3]['lable_3'] = ($data_dashboard[3]['lable_3'] != 0 && !is_null($data_dashboard[3]['lable_3'])) ?number_format((float)$data_dashboard[3]['lable_3'], $data_dashboard[3]['dec'], '.', ','):'';
 		$data_dashboard[3]['lable_7'] = number_format((float)$data_dashboard[3]['last'], $data_dashboard[3]['dec'], '.', ',');
-		$data_dashboard[3]['lasttimex'] = (isset($data_dashboard[3]['lasttimex']) && !is_null($data_dashboard[3]['lasttimex'])) ? date( "H:i", strtotime( $data_dashboard[3]['lasttimex'] ) ) :'';
+		$data_dashboard[3]['lasttime'] = (isset($data_dashboard[3]['lasttime']) && !is_null($data_dashboard[3]['lasttime'])) ? date( "H:i", strtotime( $data_dashboard[3]['lasttime'] ) ) :'';
 		$data_dashboard[3]['lable_10'] = $data_dashboard[3]['type'];		
 
 
@@ -68,11 +68,11 @@ class Dashboard extends Welcome{
         $data_table1 = array();
         foreach($result as $rs){
             $rs['exchange'] = (($rs['exchange'] == null)?'': $rs['exchange']);
-            if(isset($rs['lasttimex']) && !is_null($rs['lasttimex']) && date('Y-m-d', strtotime($rs['lasttimex'])) < date('Y-m-d')){
-				$rs["time_format"] = date('Y-m-d', strtotime($rs['lasttimex']));
+            if(isset($rs['lasttime']) && !is_null($rs['lasttime']) && date('Y-m-d', strtotime($rs['lasttime'])) < date('Y-m-d')){
+				$rs["time_format"] = date('Y-m-d', strtotime($rs['lasttime']));
 			  
-			 }else if(isset($rs['lasttimex']) && !is_null($rs['lasttimex']) ){
-				$rs["time_format"] = date('H:i', strtotime($rs['lasttimex']));
+			 }else if(isset($rs['lasttime']) && !is_null($rs['lasttime']) ){
+				$rs["time_format"] = date('H:i', strtotime($rs['lasttime']));
 			 }
 			 else {
 				 $rs["time_format"] ='-';
@@ -97,7 +97,7 @@ class Dashboard extends Welcome{
             $html_table1 .='<td class="td_custom" align="right" width="10%"><span id="table_1_expmy_'.$rs['id'].'" class="">'.$rs['expmy'].'</span></td>';
             $html_table1 .='<td class="td_custom" align="right" width="15%"><span id="table_1_var_'.$rs['id'].'" class="bg_color_grey">'.$rs["last"].'</span></td>';
             $html_table1 .='<td class="td_custom" align="right" width="15%"><span id="table_1_var_'.$rs['id'].'" class="table_1_var '.(($rs['var'] < 0)?'bg_color_red':'bg_color_green').'">'.number_format((float)$rs['var'], 2, '.', ',').'</span></td>';
-            $html_table1 .='<td class="td_custom table_1_lasttimex" align="right" width="10%" id="table_1_lasttimex_'.$rs['id'].'">'.$rs["time_format"].'</td></tr>';
+            $html_table1 .='<td class="td_custom table_1_lasttime" align="right" width="10%" id="table_1_lasttime_'.$rs['id'].'">'.$rs["time_format"].'</td></tr>';
 
 
 
@@ -114,11 +114,11 @@ class Dashboard extends Welcome{
 		$data_table2 = array();
 		foreach($result as $rs){
 			$rs['exchange'] = (($rs['exchange'] == null)?'': $rs['exchange']);
-			if(isset($rs['lasttimex']) && !is_null($rs['lasttimex']) && date('Y-m-d', strtotime($rs['lasttimex'])) < date('Y-m-d')){
-				$rs["time_format"] = date('Y-m-d', strtotime($rs['lasttimex']));
+			if(isset($rs['lasttime']) && !is_null($rs['lasttime']) && date('Y-m-d', strtotime($rs['lasttime'])) < date('Y-m-d')){
+				$rs["time_format"] = date('Y-m-d', strtotime($rs['lasttime']));
 			  
-			 }else if(isset($rs['lasttimex']) && !is_null($rs['lasttimex']) ){
-				$rs["time_format"] = date('H:i', strtotime($rs['lasttimex']));
+			 }else if(isset($rs['lasttime']) && !is_null($rs['lasttime']) ){
+				$rs["time_format"] = date('H:i', strtotime($rs['lasttime']));
 			 }
 			 else {
 				 $rs["time_format"] ='-';
@@ -143,7 +143,7 @@ class Dashboard extends Welcome{
             $html_table2 .='<td class="td_custom" align="right"><span id="table_1_expmy_'.$rs['id'].'" class="">'.$rs['expmy'].'</span></td>';
             $html_table2 .='<td class="td_custom" align="right"><span id="table_2_var_'.$rs['id'].'" class="bg_color_grey">'.$rs["last"].'</span></td>';
             $html_table2 .='<td class="td_custom" align="right"><span id="table_2_var_'.$rs['id'].'" class="table_2_var '.(($rs['var'] < 0)?'bg_color_red':'bg_color_green').'">'.number_format((float)$rs['var'], 2, '.', ',').'</span></td>';
-            $html_table2 .='<td class="td_custom table_2_lasttimex" align="right" id="table_2_lasttimex_'.$rs['id'].'">'.$rs["time_format"].'</td></tr>';
+            $html_table2 .='<td class="td_custom table_2_lasttime" align="right" id="table_2_lasttime_'.$rs['id'].'">'.$rs["time_format"].'</td></tr>';
 
 
 
@@ -160,11 +160,11 @@ class Dashboard extends Welcome{
 		$data_table3 = array();
 		foreach($result as $rs){
 			$rs['exchange'] = (($rs['exchange'] == null)?'': $rs['exchange']);
-			if(isset($rs['lasttimex']) && !is_null($rs['lasttimex']) && date('Y-m-d', strtotime($rs['lasttimex'])) < date('Y-m-d')){
-				$rs["time_format"] = date('Y-m-d', strtotime($rs['lasttimex']));
+			if(isset($rs['lasttime']) && !is_null($rs['lasttime']) && date('Y-m-d', strtotime($rs['lasttime'])) < date('Y-m-d')){
+				$rs["time_format"] = date('Y-m-d', strtotime($rs['lasttime']));
 			  
-			 }else if(isset($rs['lasttimex']) && !is_null($rs['lasttimex']) ){
-				$rs["time_format"] = date('H:i', strtotime($rs['lasttimex']));
+			 }else if(isset($rs['lasttime']) && !is_null($rs['lasttime']) ){
+				$rs["time_format"] = date('H:i', strtotime($rs['lasttime']));
 			 }
 			 else {
 				 $rs["time_format"] ='-';
@@ -189,7 +189,7 @@ class Dashboard extends Welcome{
             $html_table3 .='<td class="td_custom" align="right"><span id="table_1_expmy_'.$rs['id'].'" class="">'.$rs['expmy'].'</span></td>';
             $html_table3 .='<td class="td_custom" align="right"><span id="table_3_var_'.$rs['id'].'" class="bg_color_grey">'.$rs["last"].'</span></td>';
             $html_table3 .='<td class="td_custom" align="right"><span id="table_3_var_'.$rs['id'].'" class="table_3_var '.(($rs['var'] < 0)?'bg_color_red':'bg_color_green').'">'.number_format((float)$rs['var'], 2, '.', ',').'</span></td>';
-            $html_table3 .='<td class="td_custom table_3_lasttimex" align="right" id="table_3_lasttimex_'.$rs['id'].'">'.$rs["time_format"].'</td></tr>';
+            $html_table3 .='<td class="td_custom table_3_lasttime" align="right" id="table_3_lasttime_'.$rs['id'].'">'.$rs["time_format"].'</td></tr>';
 
 
 
@@ -208,11 +208,11 @@ class Dashboard extends Welcome{
 		foreach($result as $rs){
 			$rs['exchange'] = (($rs['exchange'] == null)?'': $rs['exchange']);
 			$rs["last"] = ($rs['last'] == null)?'-': number_format((float)$rs['last'], $rs['dec'], '.', ',');
-			if(isset($rs['lasttimex']) && !is_null($rs['lasttimex']) && date('Y-m-d', strtotime($rs['lasttimex'])) < date('Y-m-d')){
-				$rs["time_format"] = date('Y-m-d', strtotime($rs['lasttimex']));
+			if(isset($rs['lasttime']) && !is_null($rs['lasttime']) && date('Y-m-d', strtotime($rs['lasttime'])) < date('Y-m-d')){
+				$rs["time_format"] = date('Y-m-d', strtotime($rs['lasttime']));
 			  
-			 }else if(isset($rs['lasttimex']) && !is_null($rs['lasttimex']) ){
-				$rs["time_format"] = date('H:i', strtotime($rs['lasttimex']));
+			 }else if(isset($rs['lasttime']) && !is_null($rs['lasttime']) ){
+				$rs["time_format"] = date('H:i', strtotime($rs['lasttime']));
 			 }
 			 else {
 				 $rs["time_format"] ='-';
@@ -236,7 +236,7 @@ class Dashboard extends Welcome{
             $html_table4 .='<td class="td_custom" align="right"><span id="table_1_expmy_'.$rs['id'].'" class="">'.$rs['expmy'].'</span></td>';
             $html_table4 .='<td class="td_custom" align="right"><span id="table_4_var_'.$rs['id'].'" class="bg_color_grey">'.$rs["last"].'</span></td>';
             $html_table4 .='<td class="td_custom" align="right"><span id="table_4_var_'.$rs['id'].'" class="table_4_var '.(($rs['var'] < 0)?'bg_color_red':'bg_color_green').'">'.number_format((float)$rs['var'], 2, '.', ',').'</span></td>';
-            $html_table4 .='<td class="td_custom table_4_lasttimex" align="right" id="table_4_lasttimex_'.$rs['id'].'">'.$rs["time_format"].'</td></tr>';
+            $html_table4 .='<td class="td_custom table_4_lasttime" align="right" id="table_4_lasttime_'.$rs['id'].'">'.$rs["time_format"].'</td></tr>';
 
 
 
