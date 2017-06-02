@@ -43,10 +43,23 @@ define([
                             if(value.symbol != null && value.symbol != 0){ var valuesymbol = value.symbol;}
                             else{ var valuesymbol = '-'; }
 
+                            if((value.exchange!='SPOT')&& (value.bctcode != null && value.bctcode != '')) {
+
+                                $link_product = $base_url + 'product/futures/' + value.bctcode;
+                            }
+                            else if ((value.exchange=='SPOT') && (value.code != null && value.code !='')) {
+                                $link_product = $base_url + 'product/spot/' + value.code;
+                            }
+                            else {
+                                $link_product = '';
+                            }
+
                             html += '<tr>';
-                            html += '<td class="td_custom table_1_exchange" width="15%" align="left" id="table_1_type_'+value.id+'"><a href="" class="uppercase table_1_name" >' +value.type+ '</a></td>';
+                            html += '<td class="td_custom table_1_exchange" width="15%" align="left" id="table_1_type_'+value.id+'">' +
+                                '<a href="' + $base_url + 'category/' + value.type + '" class="uppercase table_1_type" >' +value.type+ '</a></td>';
                             html +='<td class="td_custom table_1_stype" align="left" id="table_1_stype_'+ value.id +'">'+ stype +'</td>';
-                            html += '<td class="td_custom cus_pri futures_contracts_name" width="15%" align="left" width="25%">' + value.name + '</td>';
+                            html += '<td class="td_custom cus_pri futures_contracts_name" width="15%" align="left" width="25%">' +
+                                '<a href="' + $link_product + '" class="uppercase table_1_name" >' +value.name+ '</a></td>';
                             html +='<td class="td_custom table_1_exchange" align="left" id="table_1_exchange_'+ value.id +'">'+ value.exchange +'</td>';
                             html +='<td class="td_custom table_1_symbol" align="left" id="table_1_symbol_'+value.id+'">'+valuesymbol+'</td>';
                             html +='<td class="td_custom table_1_code" align="left" id="table_1_code_'+value.id+'">'+value.code+'</td>';
@@ -97,10 +110,23 @@ define([
                             else{ var valueopeninterest = '-'; }
                             if(value.symbol != null && value.symbol != 0){ var valuesymbol = value.symbol;}
                             else{ var valuesymbol = '-'; }
+                            if((value.exchange!='SPOT')&& (value.bctcode != null && value.bctcode != '')) {
+
+                                $link_product = $base_url + 'product/futures/' + value.bctcode;
+                            }
+                            else if ((value.exchange=='SPOT') && (value.code != null && value.code !='')) {
+                                $link_product = $base_url + 'product/spot/' + value.code;
+                            }
+                            else {
+                                $link_product = '';
+                            }
+
                             html += '<tr>';
-                            html += '<td class="td_custom table_1_exchange" width="15%" align="left" id="table_1_type_'+value.id+'"><a href="" class="uppercase table_1_name" >' +value.type+ '</a></td>';
+                            html += '<td class="td_custom table_1_exchange" width="15%" align="left" id="table_1_type_'+value.id+'">' +
+                                '<a href="' + $base_url + 'category/' + value.type + '" class="uppercase table_1_type" >' +value.type+ '</a></td>';
                             html +='<td class="td_custom table_1_stype" align="left" id="table_1_stype_'+ value.id +'">'+ stype +'</td>';
-                            html += '<td class="td_custom cus_pri futures_contracts_name" width="15%" align="left" width="25%">' + value.name + '</td>';
+                            html += '<td class="td_custom cus_pri futures_contracts_name" width="15%" align="left" width="25%">' +
+                                '<a href="' + $link_product + '" class="uppercase table_1_name" >' +value.name+ '</a></td>';
                             html +='<td class="td_custom table_1_exchange" align="left" id="table_1_exchange_'+ value.id +'">'+ value.exchange +'</td>';
                             html +='<td class="td_custom table_1_symbol" align="left" id="table_1_symbol_'+value.id+'">'+valuesymbol+'</td>';
                             html +='<td class="td_custom table_1_code" align="left" id="table_1_code_'+value.id+'">'+value.code+'</td>';
@@ -154,10 +180,23 @@ define([
                                        if(value.symbol != null && value.symbol != 0){ var valuesymbol = value.symbol;}
                                        else{ var valuesymbol = '-'; }
 
+                                       if((value.exchange!='SPOT')&& (value.bctcode != null && value.bctcode != '')) {
+
+                                           $link_product = $base_url + 'product/futures/' + value.bctcode;
+                                       }
+                                       else if ((value.exchange=='SPOT') && (value.code != null && value.code !='')) {
+                                           $link_product = $base_url + 'product/spot/' + value.code;
+                                       }
+                                       else {
+                                           $link_product = '';
+                                       }
+
                                        html += '<tr>';
-                                       html += '<td class="td_custom table_1_exchange" width="15%" align="left" id="table_1_type_'+value.id+'"><a href="" class="uppercase table_1_name" >' +value.type+ '</a></td>';
+                                       html += '<td class="td_custom table_1_exchange" width="15%" align="left" id="table_1_type_'+value.id+'">' +
+                                           '<a href="' + $base_url + 'category/' + value.type + '" class="uppercase table_1_type" >' +value.type+ '</a></td>';
                                        html +='<td class="td_custom table_1_stype" align="left" id="table_1_stype_'+ value.id +'">'+ stype +'</td>';
-                                       html += '<td class="td_custom cus_pri futures_contracts_name" width="15%" align="left" width="25%">' + value.name + '</td>';
+                                       html += '<td class="td_custom cus_pri futures_contracts_name" width="15%" align="left" width="25%">' +
+                                           '<a href="' + $link_product + '" class="uppercase table_1_name" >' +value.name+ '</a></td>';
                                        html +='<td class="td_custom table_1_exchange" align="left" id="table_1_exchange_'+ value.id +'">'+ value.exchange +'</td>';
                                        html +='<td class="td_custom table_1_symbol" align="left" id="table_1_symbol_'+value.id+'">'+valuesymbol+'</td>';
                                        html +='<td class="td_custom table_1_code" align="left" id="table_1_code_'+value.id+'">'+value.code+'</td>';
@@ -208,10 +247,23 @@ define([
                                        if(value.symbol != null && value.symbol != 0){ var valuesymbol = value.symbol;}
                                        else{ var valuesymbol = '-'; }
 
+                                       if((value.exchange!='SPOT')&& (value.bctcode != null && value.bctcode != '')) {
+
+                                           $link_product = $base_url + 'product/futures/' + value.bctcode;
+                                       }
+                                       else if ((value.exchange=='SPOT') && (value.code != null && value.code !='')) {
+                                           $link_product = $base_url + 'product/spot/' + value.code;
+                                       }
+                                       else {
+                                           $link_product = '';
+                                       }
+
                                        html += '<tr>';
-                                       html += '<td class="td_custom table_1_exchange" width="15%" align="left" id="table_1_type_'+value.id+'"><a href="" class="uppercase table_1_name" >' +value.type+ '</a></td>';
+                                       html += '<td class="td_custom table_1_exchange" width="15%" align="left" id="table_1_type_'+value.id+'">' +
+                                           '<a href="' + $base_url + 'category/' + value.type + '" class="uppercase table_1_type" >' +value.type+ '</a></td>';
                                        html +='<td class="td_custom table_1_stype" align="left" id="table_1_stype_'+ value.id +'">'+ stype +'</td>';
-                                       html += '<td class="td_custom cus_pri futures_contracts_name" width="15%" align="left" width="25%">' + value.name + '</td>';
+                                       html += '<td class="td_custom cus_pri futures_contracts_name" width="15%" align="left" width="25%">' +
+                                           '<a href="' + $link_product + '" class="uppercase table_1_name" >' +value.name+ '</a></td>';
                                        html +='<td class="td_custom table_1_exchange" align="left" id="table_1_exchange_'+ value.id +'">'+ value.exchange +'</td>';
                                        html +='<td class="td_custom table_1_symbol" align="left" id="table_1_symbol_'+value.id+'">'+valuesymbol+'</td>';
                                        html +='<td class="td_custom table_1_code" align="left" id="table_1_code_'+value.id+'">'+value.code+'</td>';
