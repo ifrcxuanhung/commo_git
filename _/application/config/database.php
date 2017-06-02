@@ -80,6 +80,22 @@ $db['database3']['swap_pre'] = '';
 $db['database3']['autoinit'] = TRUE;
 $db['database3']['stricton'] = FALSE;
 
+$db['database5']['hostname'] = '210.211.109.27';
+$db['database5']['username'] = 'imsrt_user1';
+$db['database5']['password'] = 'imsrt_pass';
+$db['database5']['database'] = 'imsrt_data';
+$db['database5']['dbdriver'] = 'mysqli';
+$db['database5']['dbprefix'] = '';
+$db['database5']['pconnect'] = TRUE;
+$db['database5']['db_debug'] = TRUE;
+$db['database5']['cache_on'] = FALSE;
+$db['database5']['cachedir'] = '';
+$db['database5']['char_set'] = 'utf8';
+$db['database5']['dbcollat'] = 'utf8_general_ci';
+$db['database5']['swap_pre'] = '';
+$db['database5']['autoinit'] = TRUE;
+$db['database5']['stricton'] = FALSE;
+
 /*Config DB Send Mail*/
 $db['default']['hostname_db_mail'] = 'local.itvn.fr';
 $db['default']['username_db_mail'] = 'local';
