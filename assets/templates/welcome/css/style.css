@@ -1034,3 +1034,5 @@ table a:focus, table a:hover {
 .link_category{ position:absolute; top:7px; right:40px;}
 
 .page-header .navbar .navbar-nav .dropdown-menu > li > a{ font-weight: bold; color: #e6e6e6;}
+.reset_filter{ color:#fff; font-weight:bold;}
+.reset_filter:hover{ color:#fff; font-weight:bold;}

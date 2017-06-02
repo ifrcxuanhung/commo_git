@@ -70,7 +70,7 @@
                                     <input class="form-control input-sm input_symbol" placeholder="" type="text">
                                 </div>
                             </th>
-                            <th class="th_custom" > <button class="btn btn-sm red-thunderbird reset_filter"> Reset filter </button></th>
+                            <th class="th_custom" > <button class="btn btn-sm bg_color_grey reset_filter"> Reset filter </button></th>
                             <th class="th_custom" ></th>
                             <th class="th_custom" ></th>
                             <th class="th_custom" ></th>
