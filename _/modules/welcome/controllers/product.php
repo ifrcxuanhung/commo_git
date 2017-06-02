@@ -15,7 +15,6 @@ class Product extends Welcome{
 					$this->template->write_view('content', 'product_error', $this->data);
 				}else {
 					$block = new Block();
-			
 					$this->data->col1_product = $block->col1_product($bctcode);
 					//$this->data->col2_product = $block->col2_product();
 					$this->data->col3_product = $block->col3_product($bctcode);
@@ -31,6 +30,8 @@ class Product extends Welcome{
 					$block = new Block();
 					$this->data->code = $bctcode;
 					$this->data->data_dashboard = $this->db->query("SELECT dl.lasttime,dl.ptype, dl.name,dl.unit, dl.lasttime, dl.last, dl.`change`, dl.var, dl.`dec` as dec_list, dl.exchange, dl.expiry, dd.* FROM data_dashboard_list as dl  LEFT JOIN data_dashboard as dd ON dl.type=dd.type where dl.code='{$bctcode}'")->result_array();
+					$this->data->chart_intraday=  $this->db->query("SELECT code, date, last as close FROM data_spot_intraday as di WHERE code= '{$bctcode}'")->result_array();
+					$this->data->chart_history=  $this->db->query("SELECT  code, date, last as close FROM data_spot_history as dhc WHERE dhc.code= '$bctcode'")->result_array();
 					$this->template->write_view('content', 'product_spot', $this->data);
 				}
 			}

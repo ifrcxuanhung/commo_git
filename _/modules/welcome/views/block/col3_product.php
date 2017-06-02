@@ -30,9 +30,10 @@
 
 
 <div class="col-md-5"  style="margin-bottom: 30px;">
+<?php if (isset($chart_intraday) && count($chart_intraday) > 0) { ?>
     <div class="portlet box blocks cus_hung" style="position:relative;">
         <div class="portlet-title" style="background:#000099 !important;">
-            <div class="caption " id="get_chartcode" value = "<?php echo (isset($code_first['code']))?$code_first['code']:''; ?>"><?php echo (isset($code_first['code']))?$code_first['code']:''; ?> (INTRADAY)</div>
+            <div class="caption "><?php echo (isset($code_first['code']))?$code_first['code']:''; ?> (INTRADAY)</div>
             <div class="tools">
                 <!-- <a href="" class="fullscreen"> </a>-->
                 <i class="fa fa-toggle-up fa-lg fullscreens"></i>
@@ -44,7 +45,11 @@
             <div id="chartdiv5" class="chart" style="height:297px;"> </div>
         </div>
     </div>
-
+    <input type="hidden" id="chart_intraday_disable" value="false" />
+<?php } else {?>
+<input type="hidden" id="chart_intraday_disable" value="true" />
+<?php } ?>
+<?php if (isset($chart_history) && count($chart_history) > 0) { ?>
 
     <div class="portlet box blocks cus_hung" style="position:relative;">
 
@@ -61,61 +66,10 @@
             <div id="chartdiv8" class="chart" style="height:297px;"> </div>
         </div>
     </div>
-
-
-
-
-    <!--<div class="portlet box blocks cus_hung" style="position:relative;">
-        <div class="portlet-title" style="background:#000099 !important;">
-            <div class="caption">
-                <i class="fa"></i>news (TOP 5)</div>
-            <div class="tools">
-                <i class="fa fa-toggle-up fa-lg fullscreens"></i>
-            </div>
-        </div>
-        <div class="portlet-body background_portlet">
-            <div class="table-responsive scroller" style="height:225px;">
-                <table class="table  table-bordered table-hover table_color table_scroll table_cus">
-                    <thead>
-                    <tr>
-
-                        <th class="th_custom" id="cld_datetime" style="text-align:left;"><h6 class="color_h6 cus_type">datetime</h6></th>
-                        <th class="th_custom" id="cld_title" style="text-align:left"><h6 class="color_h6 cus_type">title</h6> </th>
-                        <th class="th_custom" id="cld_loca" style="text-align:left"><h6 class="color_h6 cus_type">source</h6> </th>
-                        <th class="th_custom" id="cld_more" style="text-align:left"><h6 class="color_h6 cus_type">more</h6> </th>
-
-
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <?php
-/*                    foreach($news as $new){*/?>
-                    <tr>
-
-                        <td class="td_custom" align="left" style="width: 20%;"> <?php /*echo $new['datetime'];*/?> </td>
-                        <td class="td_custom cus_pri" align="left"><?php /*echo $new['title'];*/?></td>
-                        <td class="td_custom" align="center"><?php /*echo $new['source']; */?></td>
-                        <?php /*if($new['content'] !=null){*/?>
-                        <td class="td_custom" align="center"><a href="javascript:;" data-target="#show_more" data-toggle="modal" class=" handel_help" id="<?php /*echo $new['id'] */?>">
-                                <img src="<?php /*echo template_url() */?>/images/more.png">
-                            </a></td>
-                        <?php /*}else{ */?>
-                            <td class="td_custom" align="center"></td>
-                       <?php /*}*/?>
-                    </tr>
-                    <?php /*}*/?>
-
-
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
-
-    </div>-->
-
-
-
-
+    <input type="hidden" id="chart_history_disable" value="false" />
+    <?php } else {?>
+<input type="hidden" id="chart_history_disable" value="true" />
+<?php } ?>
 </div>
 <input type="hidden" id="type_product" name="type_product" value="futures" />
+<input type="hidden" id="get_chartcode" value = "<?php echo (isset($code_first['code']))?$code_first['code']:''; ?>" />

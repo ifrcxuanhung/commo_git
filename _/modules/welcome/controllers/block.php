@@ -676,6 +676,9 @@ class Block extends MY_Controller {
                 break;
             }
         }*/
+		$code  = (isset($data['code']))?$data['code']:'';
+		$this->data->chart_intraday=  $this->db->query("SELECT code, datetime as date, last as close FROM data_intraday as di WHERE code= '$code'")->result_array();
+		$this->data->chart_history=  $this->db->query("SELECT code, date, close FROM data_history_chart as dhc WHERE dhc.code= '$code'")->result_array();
 
         return $this->load->view('block/col3_product', $this->data, true);
     }

@@ -50,6 +50,7 @@
 
 </div>
 <div class="col-md-12">
+<?php if (isset($chart_history) && count($chart_history) > 0) { ?>
     <div class="col-md-6" >
         <div class="portlet box blocks cus_hung" style="position:relative;">
 
@@ -67,10 +68,15 @@
             </div>
         </div>
     </div>
+    <input type="hidden" id="chart_history_disable" value="false" />
+    <?php } else {?>
+<input type="hidden" id="chart_history_disable" value="true" />
+<?php } ?>
+    <?php if (isset($chart_intraday) && count($chart_intraday) > 0) { ?>
 	<div class="col-md-6" >
         <div class="portlet box blocks cus_hung" style="position:relative;">
             <div class="portlet-title" style="background:#000099 !important;">
-                <div class="caption " id="get_chartcode" value = "<?php echo $code; ?>">INTRADAY</div>
+                <div class="caption ">INTRADAY</div>
                 <div class="tools">
                     <!-- <a href="" class="fullscreen"> </a>-->
                     <i class="fa fa-toggle-up fa-lg fullscreens"></i>
@@ -83,7 +89,10 @@
             </div>
         </div>
 	</div>
-
-
+<input type="hidden" id="chart_intraday_disable" value="false" />
+<?php } else {?>
+<input type="hidden" id="chart_intraday_disable" value="true" />
+<?php } ?>
 </div>
 <input type="hidden" id="type_product" name="type_product" value="spot" />
+<input type="hidden" id="get_chartcode" value = "<?php echo $code; ?>" />
