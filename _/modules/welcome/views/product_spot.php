@@ -46,6 +46,23 @@
 
 </div>
 <div class="col-md-12">
+    <div class="col-md-6" >
+        <div class="portlet box blocks cus_hung" style="position:relative;">
+
+            <div class="portlet-title" style="background:#000099 !important;">
+                <div class="caption ">HISTORY</div>
+                <div class="tools">
+                    <!-- <a href="" class="fullscreen"> </a>-->
+                    <i class="fa fa-toggle-up fa-lg fullscreens"></i>
+                    <!--<i class="fa fa-compress minscreens"></i>-->
+                </div>
+            </div>
+            <div class="portlet-body background_portlet" style="margin-right:5px;">
+                <input name="code_spot" id="code_spot" type="hidden" sttr='' value="<?php echo $code; ?>">
+                <div id="chartspot_hitory" class="chart" style="height:400px;"> </div>
+            </div>
+        </div>
+    </div>
 	<div class="col-md-6" >
         <div class="portlet box blocks cus_hung" style="position:relative;">
             <div class="portlet-title" style="background:#000099 !important;">
@@ -62,23 +79,7 @@
             </div>
         </div>
 	</div>
-	<div class="col-md-6" >
-        <div class="portlet box blocks cus_hung" style="position:relative;">
-            
-            <div class="portlet-title" style="background:#000099 !important;">
-                <div class="caption ">HISTORY</div>
-                <div class="tools">
-                    <!-- <a href="" class="fullscreen"> </a>-->
-                    <i class="fa fa-toggle-up fa-lg fullscreens"></i>
-                    <!--<i class="fa fa-compress minscreens"></i>-->
-                </div>
-            </div>
-            <div class="portlet-body background_portlet" style="margin-right:5px;">
-                <input name="code_spot" id="code_spot" type="hidden" sttr='' value="<?php echo $code; ?>">
-                <div id="chartspot_hitory" class="chart" style="height:400px;"> </div>
-            </div>
-        </div>
-	</div>
+
 
 </div>
 <input type="hidden" id="type_product" name="type_product" value="spot" />
