@@ -4,9 +4,7 @@
         <div class="portlet-title" style="background:#000099 !important;">
             <div class="caption">
                 <i class="fa"></i><span id="type_category">FULL LIST (<?php echo $num_rows;?>)</span></div>
-            <div class="reset_filter_div" style="position: absolute; top: 6px; right: 32px;">
-                <button class="btn btn-sm red-thunderbird reset_filter"> Reset filter </button>
-            </div>
+
             <div class="tools">
                 <i class="fa fa-toggle-up fa-lg fullscreens"></i>
             </div>
@@ -17,10 +15,10 @@
                     <table class="table  table-bordered table-hover table_color table_cus table_fix_padding">
                         <thead>
                         <tr>
-                            <th class="th_custom" style="text-align:left" width="10%"><h6 class="color_h6 cus_type"  style="padding: 5px !important;">Category</h6>  </th>
+                            <th class="th_custom" style="text-align:left" width="8%"><h6 class="color_h6 cus_type"  style="padding: 5px !important;">Category</h6>  </th>
                             <th class="th_custom" style="text-align:left"  width="8%"><h6 class="color_h6 cus_type"  style="padding: 5px !important;">SUBTYPE</h6>  </th>
-                            <th class="th_custom" style="text-align:left"  width="15%"><h6 class="color_h6 cus_type"  style="padding: 5px !important;">Name</h6>  </th>
-                            <th class="th_custom" style="text-align:left" width="5%" ><h6 class="color_h6 cus_type"  style="padding: 5px !important;">MARKET</h6>  </th>
+                            <th class="th_custom" style="text-align:left"  width="14%"><h6 class="color_h6 cus_type"  style="padding: 5px !important;">Name</h6>  </th>
+                            <th class="th_custom" style="text-align:left" width="8%" ><h6 class="color_h6 cus_type"  style="padding: 5px !important;">MARKET</h6>  </th>
                             <th class="th_custom" style="text-align:left" width="8%" ><h6 class="color_h6 cus_type"  style="padding: 5px !important;">SYMBOL</h6>  </th>
                             <th class="th_custom" style="text-align:left" width="6%"><h6 class="color_h6 cus_type"  style="padding: 5px !important;">Code</h6>  </th>
                             <th class="th_custom" style="text-align:left" width="8%"><h6 class="color_h6 cus_type"  style="padding: 5px !important;">Last</h6>  </th>
@@ -34,15 +32,15 @@
                         </tr>
                         <tr>
                             <th class="th_custom">
-                                <div class="format-input-2">
+                                <div class="format-input-2 ">
                                     <select class="form-control input-sm select_category" placeholder="" type="text">
                                             <option value="all">Select</option>
                                     </select>
                                 </div>
                             </th>
-                            <th class="th_custom">
-                                <div class="format-input-2">
-                                    <select class="form-control input-sm select_stype" placeholder="" type="text">
+                            <th class="th_custom ">
+                                <div class="format-input-2 ">
+                                    <select class="form-control input-sm select_stype " placeholder="" type="text">
                                         <option value="all">Select</option>
                                     </select>
                                 </div>
@@ -71,7 +69,7 @@
                                     <input class="form-control input-sm input_symbol" placeholder="" type="text">
                                 </div>
                             </th>
-                            <th class="th_custom" ></th>
+                            <th class="th_custom" > <button class="btn btn-sm red-thunderbird reset_filter"> Reset filter </button></th>
                             <th class="th_custom" ></th>
                             <th class="th_custom" ></th>
                             <th class="th_custom" ></th>
