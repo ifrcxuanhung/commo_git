@@ -1033,4 +1033,4 @@ table a:focus, table a:hover {
 .mCSB_outside + .mCSB_scrollTools{ right: -12px !important;}
 .link_category{ position:absolute; top:7px; right:40px;}
 
-.page-header .navbar .navbar-nav .dropdown-menu > li > a{ font-weight: bold; color: #e6e6e6;}
+.page-header .navbar .navbar-nav .dropdown-menu > li > a{ font-weight: bold; color: #e6e6e6 !important;}
