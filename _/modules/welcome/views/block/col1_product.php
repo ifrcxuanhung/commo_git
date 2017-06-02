@@ -90,7 +90,7 @@
     <div class="portlet box blocks cus_hung" style="position:relative;">
         <div class="portlet-title" style="background:#000099 !important;">
             <div class="caption">
-                <i class="fa"></i>FUTURES</div>
+                <i class="fa"></i><?php echo $data_dashboard[0]['ptype']; ?></div>
             <div class="tools">
                 <i class="fa fa-toggle-up fa-lg fullscreens"></i>
             </div>
