@@ -62,15 +62,15 @@
                 </div>
             </div>
             <div class="portlet-body background_portlet" style="margin-right:5px;">
-                <input name="code_spot" id="code_spot" type="hidden" sttr='' value="<?php echo $code; ?>">
-                <div id="chartspot_hitory" class="chart" style="height:400px;"> </div>
+                <div id="chartdiv8" class="chart" style="height:400px;"> </div>
+                 <input name="code_chart" id="code_chart" type="hidden" sttr='' value="<?php echo $code; ?>">
             </div>
         </div>
     </div>
 	<div class="col-md-6" >
         <div class="portlet box blocks cus_hung" style="position:relative;">
             <div class="portlet-title" style="background:#000099 !important;">
-                <div class="caption ">INTRADAY</div>
+                <div class="caption " id="get_chartcode" value = "<?php echo $code; ?>">INTRADAY</div>
                 <div class="tools">
                     <!-- <a href="" class="fullscreen"> </a>-->
                     <i class="fa fa-toggle-up fa-lg fullscreens"></i>
@@ -78,8 +78,8 @@
                 </div>
             </div>
             <div class="portlet-body background_portlet" style="margin-right:5px;">
-                <input name="code_spot" id="code_spot" type="hidden" sttr='' value="<?php echo $code; ?>">
-                <div id="chartspot_intraday" class="chart" style="height:400px;"> </div>
+                <div id="chartdiv5" class="chart" style="height:400px;"> </div>
+                 <input name="code_chart" id="code_chart" type="hidden" sttr='' value="<?php echo $code; ?>">
             </div>
         </div>
 	</div>
