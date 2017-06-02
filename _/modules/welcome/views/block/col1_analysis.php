@@ -1,4 +1,4 @@
-<div class="col-md-6">
+<div class="col-md-7">
     <div class="dashboard-stat red-thunderbird">
                 <div class="visual">
 
