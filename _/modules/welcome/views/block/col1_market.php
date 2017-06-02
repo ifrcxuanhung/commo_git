@@ -22,12 +22,12 @@
                             <th class="th_custom" style="text-align:left" width="8%" ><h6 class="color_h6 cus_type"  style="padding: 5px !important;">SYMBOL</h6>  </th>
                             <th class="th_custom" style="text-align:left" width="6%"><h6 class="color_h6 cus_type"  style="padding: 5px !important;">Code</h6>  </th>
                             <th class="th_custom" style="text-align:left" width="5%" ><h6 class="color_h6 cus_type"  style="padding: 5px !important;">CUR</h6>  </th>
-                            <th class="th_custom" style="text-align:left" width="7%"><h6 class="color_h6 cus_type"  style="padding: 5px !important;">Last</h6>  </th>
+                            <th class="th_custom" style="text-align:right" width="7%"><h6 class="color_h6 cus_type"  style="padding: 5px !important;">Last</h6>  </th>
                             <th class="th_custom" style="text-align:right" width="7%"> <h6 class="color_h6 cus_type" style="padding:5px !important;">Change</h6> </th>
                             <th class="th_custom" style="text-align:right" width="7%"> <h6 class="color_h6 cus_type" style="padding:5px !important;">%</h6> </th>
                             <th class="th_custom" style="text-align:right" width="7%"> <h6 class="color_h6 cus_type" style="padding:5px !important;">Volume</h6> </th>
                             <th class="th_custom" style="text-align:right" width="7%"> <h6 class="color_h6 cus_type" style="padding:5px !important;">O.I.</h6> </th>
-                            <th class="th_custom" style="text-align:left" width="8%"> <h6 class="color_h6 cus_type" style="padding:5px !important;">Time</h6> </th>
+                            <th class="th_custom" style="text-align:right" width="8%"> <h6 class="color_h6 cus_type" style="padding:5px !important;">Time</h6> </th>
 
 
                         </tr>

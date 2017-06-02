@@ -469,12 +469,12 @@ class Block extends MY_Controller {
 			}
             $link_cate = base_url() . 'category/' . $rs["type"];
 
-            $rs["last"] = ($rs['last'] == null) ? '-' : number_format((float)$rs['last'], $rs['dec'], '.', ',');
+            $rs["last"] = ($rs['last'] == null || $rs['last'] == 0) ? '-' : number_format((float)$rs['last'], $rs['dec'], '.', ',');
             /*$rs["change"] = ($rs['change'] == null)?'-': number_format((float)$rs['change'], 2, '.', ',');*/
             $rs["openinterest"] = ($rs['openinterest'] == null) ? '-' : number_format((float)$rs['openinterest'], 0, '.', ',');
             $rs["settlement"] = ($rs['settlement'] == null) ? '-' : number_format((float)$rs['settlement'], $rs['dec'], '.', ',');
-            $rs["change"] = ($rs['change'] == null) ? '-' : number_format((float)$rs['change'], 2, '.', ',');
-            $rs["var"] = ($rs['var'] == null) ? '-' : number_format((float)$rs['var'], 2, '.', ',');
+            $rs["change"] = ($rs['change'] == null || $rs['change'] == 0) ? '-' : number_format((float)$rs['change'], 2, '.', ',');
+            $rs["var"] = ($rs['var'] == null || $rs['var'] == 0) ? '-' : number_format((float)$rs['var'], 2, '.', ',');
             $rs['volume'] = (($rs['volume'] == null) ? '' : number_format((float)$rs['volume'], 0, '.', ','));
             $rs['code'] = (($rs['code'] == null) ? '' : $rs['code']);
             $data_table1[$rs["id"]] = $rs;
