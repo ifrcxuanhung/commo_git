@@ -30,7 +30,7 @@ class Product extends Welcome{
 				}else {
 					$block = new Block();
 					$this->data->code = $bctcode;
-					$this->data->data_dashboard = $this->db->query("SELECT dl.lasttime,dl.name,dl.unit, dl.lasttime, dl.last, dl.`change`, dl.var, dl.`dec` as dec_list, dl.exchange, dl.expiry, dd.* FROM data_dashboard_list as dl  LEFT JOIN data_dashboard as dd ON dl.type=dd.type where dl.code='{$bctcode}'")->result_array();
+					$this->data->data_dashboard = $this->db->query("SELECT dl.lasttime,dl.ptype, dl.name,dl.unit, dl.lasttime, dl.last, dl.`change`, dl.var, dl.`dec` as dec_list, dl.exchange, dl.expiry, dd.* FROM data_dashboard_list as dl  LEFT JOIN data_dashboard as dd ON dl.type=dd.type where dl.code='{$bctcode}'")->result_array();
 					$this->template->write_view('content', 'product_spot', $this->data);
 				}
 			}
