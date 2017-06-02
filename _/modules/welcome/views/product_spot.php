@@ -33,7 +33,7 @@
   <span class="dash_0_lb7"><?php echo number_format((float)$data_dashboard[0]['last'], $data_dashboard[0]['dec_list'], '.', ','); ?></span>
   </span></div>
                     <div class="desc" style="text-align: right !important; margin-top: -6px"> <span>
-                    <span class="dash_0_change"><?php echo $data_dashboard[0]['change']; ?></span>&nbsp;(<span class="dash_0_var"><?php echo $data_dashboard[0]['var']; ?></span>%)
+                    <span class="dash_0_change"><?php echo number_format($data_dashboard[0]['change'],2,'.',','); ?></span>&nbsp;(<span class="dash_0_var"><?php echo number_format($data_dashboard[0]['var'],2,'.',','); ?></span>%)
   </span> </div>
 
                 </div>
