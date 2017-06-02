@@ -48,11 +48,13 @@
                 </div>
                 <div class="details details_bottom" id="details_p" style="margin-top: 66px;">
                     <div class="ti_font number" id="number_p">
-                        <span class="dash_0_lb5"><?php echo $data_dashboard[0]['lable_5']; ?></span>
+                        <span class="dash_0_ptype"><?php echo $data_dashboard[0]['ptype']; ?></span>
                     </div>
+                    <?php if(($data_dashboard[0]['ptype']=='FUTURES') || ($data_dashboard[0]['ptype']=='OPTION')) { ?>
                     <div class="desc desc_cus" style="margin-top: -6px"> <span>
   <span class="dash_0_exchange" id="dash_0_exchange_1"><?php echo $data_dashboard[0]['exchange']; ?></span>, <span class="dash_0_expiry" id="dash_0_expiry_1"><?php echo $data_dashboard[0]['expiry']; ?></span>
   </span></div>
+  <?php } ?>
                 </div>
 
                 <div class="details" style="padding-right: 11px;">
@@ -103,11 +105,13 @@
                 </div>
                 <div class="details details_bottom" id="details_p" style="margin-top: 66px;">
                     <div class="ti_font number" id="number_p">
-                        <span class="dash_1_lb5"><?php echo $data_dashboard[1]['lable_5']; ?></span>
+                        <span class="dash_1_ptype"><?php echo $data_dashboard[1]['ptype']; ?></span>
                     </div>
+                    <?php if(($data_dashboard[1]['ptype']=='FUTURES') || ($data_dashboard[1]['ptype']=='OPTION')) { ?>
                     <div class="desc desc_cus" style="margin-top: -6px"> <span>
   <span class="dash_1_exchange" id="dash_1_exchange_1"><?php echo $data_dashboard[1]['exchange']; ?></span>, <span class="dash_1_expiry" id="dash_1_expiry_1"><?php echo $data_dashboard[1]['expiry']; ?></span>
   </span></div>
+  <?php } ?>
                 </div>
 
                 <div class="details" style="padding-right: 11px;">
@@ -160,11 +164,13 @@
                 </div>
                 <div class="details details_bottom" id="details_p" style="margin-top: 66px;">
                     <div class="ti_font number" id="number_p">
-                        <span class="dash_2_lb5"><?php echo $data_dashboard[2]['lable_5']; ?></span>
+                        <span class="dash_2_ptype"><?php echo $data_dashboard[2]['ptype']; ?></span>
                     </div>
+                    <?php if(($data_dashboard[2]['ptype']=='FUTURES') || ($data_dashboard[2]['ptype']=='OPTION')) { ?>
                     <div class="desc desc_cus" style="margin-top: -6px"> <span>
   <span class="dash_2_exchange"><?php echo $data_dashboard[2]['exchange']; ?></span>, <span class="dash_2_expiry"><?php echo $data_dashboard[2]['expiry']; ?></span>
   </span></div>
+  <?php } ?>
                 </div>
 
                 <div class="details" style="padding-right: 11px;">
@@ -218,11 +224,13 @@
                 </div>
                 <div class="details details_bottom" id="details_p" style="margin-top: 66px;">
                     <div class="ti_font number" id="number_p">
-                        <span class="dash_3_lb5"><?php echo $data_dashboard[3]['lable_5']; ?></span>
+                        <span class="dash_3_ptype"><?php echo $data_dashboard[3]['ptype']; ?></span>
                     </div>
+                    <?php if(($data_dashboard[3]['ptype']=='FUTURES') || ($data_dashboard[3]['ptype']=='OPTION')) { ?>
                     <div class="desc desc_cus" style="margin-top: -6px"> <span>
   <span class="dash_3_exchange" id="dash_3_exchange_1"><?php echo $data_dashboard[3]['exchange']; ?></span>, <span class="dash_3_expiry" id="dash_3_expiry_1"><?php echo $data_dashboard[3]['expiry']; ?></span>
   </span></div>
+  <?php } ?>
                 </div>
 
                 <div class="details" style="padding-right: 11px;">

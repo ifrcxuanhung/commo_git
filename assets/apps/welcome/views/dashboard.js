@@ -44,10 +44,10 @@ define([
 										$('.dash_0_lb4').fadeIn('slow');
 									});
 								}
-								if($('.dash_0_lb5').text()!==data.data_dashboard_0.lable_5){
-									$('.dash_0_lb5').fadeOut('slow', function() {
-										$('.dash_0_lb5').html(data.data_dashboard_0.lable_5);
-										$('.dash_0_lb5').fadeIn('slow');
+								if($('.dash_0_ptype').text()!==data.data_dashboard_0.ptype){
+									$('.dash_0_ptype').fadeOut('slow', function() {
+										$('.dash_0_ptype').html(data.data_dashboard_0.ptype);
+										$('.dash_0_ptype').fadeIn('slow');
 									});
 								}
 								if($('.dash_0_lb6').text()!==data.data_dashboard_0.lable_6){
@@ -149,10 +149,10 @@ define([
 										$('.dash_1_lb4').fadeIn('slow');
 									});
 								}
-								if($('.dash_1_lb5').text()!==data.data_dashboard_1.lable_5){
-									$('.dash_1_lb5').fadeOut('slow', function() {						
-										$('.dash_1_lb5').html(data.data_dashboard_1.lable_5);
-										$('.dash_1_lb5').fadeIn('slow');
+								if($('.dash_1_ptype').text()!==data.data_dashboard_1.ptype){
+									$('.dash_1_ptype').fadeOut('slow', function() {						
+										$('.dash_1_ptype').html(data.data_dashboard_1.ptype);
+										$('.dash_1_ptype').fadeIn('slow');
 									});
 								}
 								if($('.dash_1_lb6').text()!==data.data_dashboard_1.lable_6){
@@ -253,10 +253,10 @@ define([
 										$('.dash_2_lb4').fadeIn('slow');
 									});
 								}
-								if($('.dash_2_lb5').text()!==data.data_dashboard_2.lable_5){
-									$('.dash_2_lb5').fadeOut('slow', function() {						
-										$('.dash_2_lb5').html(data.data_dashboard_2.lable_5);
-										$('.dash_2_lb5').fadeIn('slow');
+								if($('.dash_2_ptype').text()!==data.data_dashboard_2.ptype){
+									$('.dash_2_ptype').fadeOut('slow', function() {						
+										$('.dash_2_ptype').html(data.data_dashboard_2.ptype);
+										$('.dash_2_ptype').fadeIn('slow');
 									});
 								}
 								if($('.dash_2_lb6').text()!==data.data_dashboard_2.lable_6){
@@ -356,10 +356,10 @@ define([
 										$('.dash_3_lb4').fadeIn('slow');
 									});
 								}
-								if($('.dash_3_lb5').text()!==data.data_dashboard_3.lable_5){
-									$('.dash_3_lb5').fadeOut('slow', function() {						
-										$('.dash_3_lb5').html(data.data_dashboard_3.lable_5);
-										$('.dash_3_lb5').fadeIn('slow');
+								if($('.dash_3_ptype').text()!==data.data_dashboard_3.ptype){
+									$('.dash_3_ptype').fadeOut('slow', function() {						
+										$('.dash_3_ptype').html(data.data_dashboard_3.ptype);
+										$('.dash_3_ptype').fadeIn('slow');
 									});
 								}
 								if($('.dash_3_lb6').text()!==data.data_dashboard_3.lable_6){

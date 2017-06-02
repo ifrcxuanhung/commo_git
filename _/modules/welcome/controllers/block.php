@@ -358,7 +358,7 @@ class Block extends MY_Controller {
 		}		
         $this->data->d2_box_category1 = $html_table1;
 
-		$this->data->data_dashboard = $this->db->query("SELECT dl.lasttime,dl.name,dl.unit, dl.lasttime, dl.last, dl.`change`, dl.var, dl.`dec` as dec_list, dl.exchange, dl.expiry, dd.* FROM data_dashboard_list as dl  LEFT JOIN data_dashboard as dd ON dl.type=dd.type where dl.bctcode='{$bctcode}'")->result_array();
+		$this->data->data_dashboard = $this->db->query("SELECT dl.lasttime,dl.name,dl.ptype, dl.unit, dl.lasttime, dl.last, dl.`change`, dl.var, dl.`dec` as dec_list, dl.exchange, dl.expiry, dd.* FROM data_dashboard_list as dl  LEFT JOIN data_dashboard as dd ON dl.type=dd.type where dl.bctcode='{$bctcode}'")->result_array();
 
 
         return $this->load->view('block/col1_product', $this->data, true);
