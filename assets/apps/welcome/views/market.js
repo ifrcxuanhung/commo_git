@@ -104,10 +104,6 @@ define([
                             }
                             if(value.stype != null && value.stype != 0){ var stype = value.stype;}
                             else{ var stype = '-'; }
-                            if(value.change != null && value.change != 0){ var valuechange = value.change;}
-                            else{ var valuechange = '-'; }
-                            if(value.var != null && value.var != 0){ var valuevar = value.var;}
-                            else{ var valuevar = '-'; }
                             if(value.volume != null && value.volume != 0){ var valuevolume = value.volume;}
                             else{ var valuevolume= '-'; }
                             if(value.openinterest != null && value.openinterest != 0){ var valueopeninterest = value.openinterest;}
@@ -138,9 +134,9 @@ define([
                             html +='<td class="td_custom table_1_symbol" align="left" id="table_1_symbol_'+value.id+'">'+valuesymbol+'</td>';
                             html +='<td class="td_custom table_1_code" align="left" id="table_1_code_'+value.id+'">'+value.code+'</td>';
                             html +='<td class="td_custom table_1_cur" align="left" id="table_1_cur_'+value.id+'">'+valuecur+'</td>';
-                            html +='<td class="td_custom" align="right"><span id="table_1_last_'+value.id+'" class="bg_color_grey table_1_last">'+$.number(value.last,value.dec,'.',',')+'</span></td>';
-                            html +='<td class="td_custom" align="right"><span id="table_1_change_'+value.id+'" class="'+color+'" >'+$.number(valuechange,2,'.',',')+'</td>';
-                            html +='<td class="td_custom" align="right"><span id="table_1_var_'+value.id+'" class="'+color+'" >'+$.number(valuevar,2,'.',',')+'</td>';
+                            html +='<td class="td_custom" align="right"><span id="table_1_last_'+value.id+'" class="bg_color_grey table_1_last">'+value.last+'</span></td>';
+                            html +='<td class="td_custom" align="right"><span id="table_1_change_'+value.id+'" class="'+color+'" >'+value.change+'</td>';
+                            html +='<td class="td_custom" align="right"><span id="table_1_var_'+value.id+'" class="'+color+'" >'+value.var+'</td>';
                             html +='<td class="td_custom table_1_volume" align="right" id="table_1_volume_'+value.id+'">'+$.number(valuevolume, 0, '.', ',')+'</td>';
                             html +='<td class="td_custom table_1_openinterest" align="right" id="table_1_openinterest_'+value.id+'">'+$.number(valueopeninterest, 0, '.', ',')+'</td>';
                             html +='<td class="td_custom table_1_lasttime"  align="right" id="table_1_lasttime_'+value.id+'">'+value.lasttime+'</td>';
@@ -173,10 +169,6 @@ define([
                             }
                             if(value.stype != null && value.stype != 0){ var stype = value.stype;}
                             else{ var stype = '-'; }
-                            if(value.change != null && value.change != 0){ var valuechange = value.change;}
-                            else{ var valuechange = '-'; }
-                            if(value.var != null && value.var != 0){ var valuevar = value.var;}
-                            else{ var valuevar = '-'; }
                             if(value.volume != null && value.volume != 0){ var valuevolume = value.volume;}
                             else{ var valuevolume= '-'; }
                             if(value.openinterest != null && value.openinterest != 0){ var valueopeninterest = value.openinterest;}
@@ -207,9 +199,9 @@ define([
                             html +='<td class="td_custom table_1_symbol" align="left" id="table_1_symbol_'+value.id+'">'+valuesymbol+'</td>';
                             html +='<td class="td_custom table_1_code" align="left" id="table_1_code_'+value.id+'">'+value.code+'</td>';
                             html +='<td class="td_custom table_1_cur" align="left" id="table_1_cur_'+value.id+'">'+valuecur+'</td>';
-                            html +='<td class="td_custom" align="right"><span id="table_1_last_'+value.id+'" class="bg_color_grey table_1_last">'+$.number(value.last,value.dec,'.',',')+'</span></td>';
-                            html +='<td class="td_custom" align="right"><span id="table_1_change_'+value.id+'" class="'+color+'" >'+$.number(valuechange,2,'.',',')+'</td>';
-                            html +='<td class="td_custom" align="right"><span id="table_1_var_'+value.id+'" class="'+color+'" >'+$.number(valuevar,2,'.',',')+'</td>';
+                            html +='<td class="td_custom" align="right"><span id="table_1_last_'+value.id+'" class="bg_color_grey table_1_last">'+value.last+'</span></td>';
+                            html +='<td class="td_custom" align="right"><span id="table_1_change_'+value.id+'" class="'+color+'" >'+value.change+'</td>';
+                            html +='<td class="td_custom" align="right"><span id="table_1_var_'+value.id+'" class="'+color+'" >'+value.var+'</td>';
                             html +='<td class="td_custom table_1_volume" align="right" id="table_1_volume_'+value.id+'">'+$.number(valuevolume, 0, '.', ',')+'</td>';
                             html +='<td class="td_custom table_1_openinterest" align="right" id="table_1_openinterest_'+value.id+'">'+$.number(valueopeninterest, 0, '.', ',')+'</td>';
                             html +='<td class="td_custom table_1_lasttime"  align="right" id="table_1_lasttime_'+value.id+'">'+value.lasttime+'</td>';
@@ -244,10 +236,6 @@ define([
                             }
                             if(value.stype != null && value.stype != 0){ var stype = value.stype;}
                             else{ var stype = '-'; }
-                            if(value.change != null && value.change != 0){ var valuechange = value.change;}
-                            else{ var valuechange = '-'; }
-                            if(value.var != null && value.var != 0){ var valuevar = value.var;}
-                            else{ var valuevar = '-'; }
                             if(value.volume != null && value.volume != 0){ var valuevolume = value.volume;}
                             else{ var valuevolume= '-'; }
                             if(value.openinterest != null && value.openinterest != 0){ var valueopeninterest = value.openinterest;}
@@ -256,6 +244,7 @@ define([
                             else{ var valuesymbol = '-'; }
                             if(value.cur != null && value.cur != 0){ var valuecur = value.cur;}
                             else{ var valuecur = '-'; }
+
                             if((value.exchange!='SPOT')&& (value.bctcode != null && value.bctcode != '')) {
 
                                 $link_product = $base_url + 'product/futures/' + value.bctcode;
@@ -271,15 +260,15 @@ define([
                             html += '<td class="td_custom table_1_exchange"  align="left" id="table_1_type_'+value.id+'">' +
                                 '<a href="' + $base_url + 'category/' + value.type + '" class="uppercase table_1_type" >' +value.type+ '</a></td>';
                             html +='<td class="td_custom table_1_stype" align="left" id="table_1_stype_'+ value.id +'">'+ stype +'</td>';
-                            html += '<td class="td_custom cus_pri futures_contracts_name"  align="left">' +
+                            html += '<td class="td_custom cus_pri futures_contracts_name"  align="left" >' +
                                 '<a href="' + $link_product + '" class="uppercase table_1_name" >' +value.name+ '</a></td>';
                             html +='<td class="td_custom table_1_exchange" align="left" id="table_1_exchange_'+ value.id +'">'+ value.exchange +'</td>';
                             html +='<td class="td_custom table_1_symbol" align="left" id="table_1_symbol_'+value.id+'">'+valuesymbol+'</td>';
                             html +='<td class="td_custom table_1_code" align="left" id="table_1_code_'+value.id+'">'+value.code+'</td>';
                             html +='<td class="td_custom table_1_cur" align="left" id="table_1_cur_'+value.id+'">'+valuecur+'</td>';
-                            html +='<td class="td_custom" align="right"><span id="table_1_last_'+value.id+'" class="bg_color_grey table_1_last">'+$.number(value.last,value.dec,'.',',')+'</span></td>';
-                            html +='<td class="td_custom" align="right"><span id="table_1_change_'+value.id+'" class="'+color+'" >'+$.number(valuechange,2,'.',',')+'</td>';
-                            html +='<td class="td_custom" align="right"><span id="table_1_var_'+value.id+'" class="'+color+'" >'+$.number(valuevar,2,'.',',')+'</td>';
+                            html +='<td class="td_custom" align="right"><span id="table_1_last_'+value.id+'" class="bg_color_grey table_1_last">'+value.last+'</span></td>';
+                            html +='<td class="td_custom" align="right"><span id="table_1_change_'+value.id+'" class="'+color+'" >'+value.change+'</td>';
+                            html +='<td class="td_custom" align="right"><span id="table_1_var_'+value.id+'" class="'+color+'" >'+value.var+'</td>';
                             html +='<td class="td_custom table_1_volume" align="right" id="table_1_volume_'+value.id+'">'+$.number(valuevolume, 0, '.', ',')+'</td>';
                             html +='<td class="td_custom table_1_openinterest" align="right" id="table_1_openinterest_'+value.id+'">'+$.number(valueopeninterest, 0, '.', ',')+'</td>';
                             html +='<td class="td_custom table_1_lasttime"  align="right" id="table_1_lasttime_'+value.id+'">'+value.lasttime+'</td>';
@@ -316,10 +305,6 @@ define([
                                        }
                                        if(value.stype != null && value.stype != 0){ var stype = value.stype;}
                                        else{ var stype = '-'; }
-                                       if(value.change != null && value.change != 0){ var valuechange = value.change;}
-                                       else{ var valuechange = '-'; }
-                                       if(value.var != null && value.var != 0){ var valuevar = value.var;}
-                                       else{ var valuevar = '-'; }
                                        if(value.volume != null && value.volume != 0){ var valuevolume = value.volume;}
                                        else{ var valuevolume= '-'; }
                                        if(value.openinterest != null && value.openinterest != 0){ var valueopeninterest = value.openinterest;}
@@ -341,18 +326,18 @@ define([
                                        }
 
                                        html += '<tr>';
-                                       html += '<td class="td_custom table_1_exchange" align="left" id="table_1_type_'+value.id+'">' +
+                                       html += '<td class="td_custom table_1_exchange"  align="left" id="table_1_type_'+value.id+'">' +
                                            '<a href="' + $base_url + 'category/' + value.type + '" class="uppercase table_1_type" >' +value.type+ '</a></td>';
                                        html +='<td class="td_custom table_1_stype" align="left" id="table_1_stype_'+ value.id +'">'+ stype +'</td>';
-                                       html += '<td class="td_custom cus_pri futures_contracts_name"  align="left">' +
+                                       html += '<td class="td_custom cus_pri futures_contracts_name"  align="left" >' +
                                            '<a href="' + $link_product + '" class="uppercase table_1_name" >' +value.name+ '</a></td>';
                                        html +='<td class="td_custom table_1_exchange" align="left" id="table_1_exchange_'+ value.id +'">'+ value.exchange +'</td>';
                                        html +='<td class="td_custom table_1_symbol" align="left" id="table_1_symbol_'+value.id+'">'+valuesymbol+'</td>';
                                        html +='<td class="td_custom table_1_code" align="left" id="table_1_code_'+value.id+'">'+value.code+'</td>';
                                        html +='<td class="td_custom table_1_cur" align="left" id="table_1_cur_'+value.id+'">'+valuecur+'</td>';
-                                       html +='<td class="td_custom" align="right"><span id="table_1_last_'+value.id+'" class="bg_color_grey table_1_last">'+$.number(value.last,value.dec,'.',',')+'</span></td>';
-                                       html +='<td class="td_custom" align="right"><span id="table_1_change_'+value.id+'" class="'+color+'" >'+$.number(valuechange,2,'.',',')+'</td>';
-                                       html +='<td class="td_custom" align="right"><span id="table_1_var_'+value.id+'" class="'+color+'" >'+$.number(valuevar,2,'.',',')+'</td>';
+                                       html +='<td class="td_custom" align="right"><span id="table_1_last_'+value.id+'" class="bg_color_grey table_1_last">'+value.last+'</span></td>';
+                                       html +='<td class="td_custom" align="right"><span id="table_1_change_'+value.id+'" class="'+color+'" >'+value.change+'</td>';
+                                       html +='<td class="td_custom" align="right"><span id="table_1_var_'+value.id+'" class="'+color+'" >'+value.var+'</td>';
                                        html +='<td class="td_custom table_1_volume" align="right" id="table_1_volume_'+value.id+'">'+$.number(valuevolume, 0, '.', ',')+'</td>';
                                        html +='<td class="td_custom table_1_openinterest" align="right" id="table_1_openinterest_'+value.id+'">'+$.number(valueopeninterest, 0, '.', ',')+'</td>';
                                        html +='<td class="td_custom table_1_lasttime"  align="right" id="table_1_lasttime_'+value.id+'">'+value.lasttime+'</td>';
@@ -386,10 +371,6 @@ define([
                                        }
                                        if(value.stype != null && value.stype != 0){ var stype = value.stype;}
                                        else{ var stype = '-'; }
-                                       if(value.change != null && value.change != 0){ var valuechange = value.change;}
-                                       else{ var valuechange = '-'; }
-                                       if(value.var != null && value.var != 0){ var valuevar = value.var;}
-                                       else{ var valuevar = '-'; }
                                        if(value.volume != null && value.volume != 0){ var valuevolume = value.volume;}
                                        else{ var valuevolume= '-'; }
                                        if(value.openinterest != null && value.openinterest != 0){ var valueopeninterest = value.openinterest;}
@@ -414,18 +395,18 @@ define([
                                        html += '<td class="td_custom table_1_exchange"  align="left" id="table_1_type_'+value.id+'">' +
                                            '<a href="' + $base_url + 'category/' + value.type + '" class="uppercase table_1_type" >' +value.type+ '</a></td>';
                                        html +='<td class="td_custom table_1_stype" align="left" id="table_1_stype_'+ value.id +'">'+ stype +'</td>';
-                                       html += '<td class="td_custom cus_pri futures_contracts_name" align="left" >' +
+                                       html += '<td class="td_custom cus_pri futures_contracts_name"  align="left" >' +
                                            '<a href="' + $link_product + '" class="uppercase table_1_name" >' +value.name+ '</a></td>';
                                        html +='<td class="td_custom table_1_exchange" align="left" id="table_1_exchange_'+ value.id +'">'+ value.exchange +'</td>';
                                        html +='<td class="td_custom table_1_symbol" align="left" id="table_1_symbol_'+value.id+'">'+valuesymbol+'</td>';
                                        html +='<td class="td_custom table_1_code" align="left" id="table_1_code_'+value.id+'">'+value.code+'</td>';
                                        html +='<td class="td_custom table_1_cur" align="left" id="table_1_cur_'+value.id+'">'+valuecur+'</td>';
-                                       html +='<td class="td_custom" align="right"><span id="table_1_last_'+value.id+'" class="bg_color_grey table_1_last">'+$.number(value.last,value.dec,'.',',')+'</span></td>';
-                                       html +='<td class="td_custom" align="right"><span id="table_1_change_'+value.id+'" class="'+color+'" >'+$.number(valuechange,2,'.',',')+'</td>';
-                                       html +='<td class="td_custom" align="right"><span id="table_1_var_'+value.id+'" class="'+color+'" >'+$.number(valuevar,2,'.',',')+'</td>';
+                                       html +='<td class="td_custom" align="right"><span id="table_1_last_'+value.id+'" class="bg_color_grey table_1_last">'+value.last+'</span></td>';
+                                       html +='<td class="td_custom" align="right"><span id="table_1_change_'+value.id+'" class="'+color+'" >'+value.change+'</td>';
+                                       html +='<td class="td_custom" align="right"><span id="table_1_var_'+value.id+'" class="'+color+'" >'+value.var+'</td>';
                                        html +='<td class="td_custom table_1_volume" align="right" id="table_1_volume_'+value.id+'">'+$.number(valuevolume, 0, '.', ',')+'</td>';
                                        html +='<td class="td_custom table_1_openinterest" align="right" id="table_1_openinterest_'+value.id+'">'+$.number(valueopeninterest, 0, '.', ',')+'</td>';
-                                       html +='<td class="td_custom table_1_lasttime" align="right" id="table_1_lasttime_'+value.id+'">'+value.lasttime+'</td>';
+                                       html +='<td class="td_custom table_1_lasttime"  align="right" id="table_1_lasttime_'+value.id+'">'+value.lasttime+'</td>';
                                        html += '</tr>';
 
                                    });

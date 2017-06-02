@@ -2982,6 +2982,7 @@ WHERE ds.symbol='$symbol' and dl.active = 1  and ds.expyyyymm!=0 ORDER BY ds.exp
                 $where .= " AND symbol LIKE '%$symbol%'";
             }
             $sql = "SELECT * FROM data_dashboard_list where active = 1 $where  ORDER BY name ASC";
+
             $result = $this->db->query($sql)->result_array();
 
         }
@@ -2993,6 +2994,9 @@ WHERE ds.symbol='$symbol' and dl.active = 1  and ds.expyyyymm!=0 ORDER BY ds.exp
             }else{
                 $result[$k]["lasttime"] = date("Y-m-d",strtotime($rs['lasttime']));
             }
+            $result[$k]['change'] = ($rs['change'] == null || $rs['change'] == 0)?'-': number_format((float)$rs['change'], 2, '.', ',');
+            $result[$k]['var'] = ($rs['var'] == null || $rs['var'] == 0)?'-': number_format((float)$rs['var'], 2, '.', ',');
+            $result[$k]['last'] = ($rs['last'] == null || $rs['last'] == 0)?'-': number_format((float)$rs['last'], $rs['dec'], '.', ',');
         }
         echo json_encode($result);
     }
