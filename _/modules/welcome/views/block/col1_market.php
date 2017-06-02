@@ -56,7 +56,11 @@
                                     </select>
                                 </div>
                             </th>
-                            <th class="th_custom" ></th>
+                            <th class="th_custom" >
+                                <div class="format-input-2">
+                                    <input class="form-control input-sm input_symbol" placeholder="" type="text">
+                                </div>
+                            </th>
                             <th class="th_custom" ></th>
                             <th class="th_custom" ></th>
                             <th class="th_custom" ></th>
