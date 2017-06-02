@@ -2994,9 +2994,10 @@ WHERE ds.symbol='$symbol' and dl.active = 1  and ds.expyyyymm!=0 ORDER BY ds.exp
             }else{
                 $result[$k]["lasttime"] = date("Y-m-d",strtotime($rs['lasttime']));
             }
-            $result[$k]['change'] = ($rs['change'] == null || $rs['change'] == 0)?'-': number_format((float)$rs['change'], 2, '.', ',');
-            $result[$k]['var'] = ($rs['var'] == null || $rs['var'] == 0)?'-': number_format((float)$rs['var'], 2, '.', ',');
-            $result[$k]['last'] = ($rs['last'] == null || $rs['last'] == 0)?'-': number_format((float)$rs['last'], $rs['dec'], '.', ',');
+            $result[$k]['change'] = ($rs['change'] == null)?'-': number_format((float)$rs['change'], 2, '.', ',');
+            $result[$k]['var'] = ($rs['var'] == null)?'-': number_format((float)$rs['var'], 2, '.', ',');
+            $result[$k]['last'] = ($rs['last'] == null)?'-': number_format((float)$rs['last'], $rs['dec'], '.', ',');
+            $result[$k]['size'] = ($rs['size'] == null)?'-': $rs['size'];
         }
         echo json_encode($result);
     }

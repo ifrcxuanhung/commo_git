@@ -469,13 +469,15 @@ class Block extends MY_Controller {
 			}
             $link_cate = base_url() . 'category/' . $rs["type"];
 
-            $rs["last"] = ($rs['last'] == null || $rs['last'] == 0) ? '-' : number_format((float)$rs['last'], $rs['dec'], '.', ',');
+            $rs["last"] = ($rs['last'] == null) ? '-' : number_format((float)$rs['last'], $rs['dec'], '.', ',');
             /*$rs["change"] = ($rs['change'] == null)?'-': number_format((float)$rs['change'], 2, '.', ',');*/
             $rs["openinterest"] = ($rs['openinterest'] == null) ? '-' : number_format((float)$rs['openinterest'], 0, '.', ',');
             $rs["settlement"] = ($rs['settlement'] == null) ? '-' : number_format((float)$rs['settlement'], $rs['dec'], '.', ',');
-            $rs["change"] = ($rs['change'] == null || $rs['change'] == 0) ? '-' : number_format((float)$rs['change'], 2, '.', ',');
-            $rs["var"] = ($rs['var'] == null || $rs['var'] == 0) ? '-' : number_format((float)$rs['var'], 2, '.', ',');
-            $rs['volume'] = (($rs['volume'] == null) ? '' : number_format((float)$rs['volume'], 0, '.', ','));
+            $rs["change"] = ($rs['change'] == null) ? '-' : number_format((float)$rs['change'], 2, '.', ',');
+            $rs["var"] = ($rs['var'] == null) ? '-' : number_format((float)$rs['var'], 2, '.', ',');
+            $rs['volume'] = (($rs['volume'] == null) ? '-' : number_format((float)$rs['volume'], 0, '.', ','));
+            $rs['cur'] = (($rs['cur'] == null) ? '-' : $rs['cur']);
+            $rs['size'] = (($rs['size'] == null) ? '-' : $rs['size']);
             $rs['code'] = (($rs['code'] == null) ? '' : $rs['code']);
             $data_table1[$rs["id"]] = $rs;
             $html_table1 .= '<tr>';
@@ -491,6 +493,7 @@ class Block extends MY_Controller {
             $html_table1 .='<td class="td_custom table_1_symbol" align="left" id="table_1_symbol_'.$rs['id'].'">'.$rs['symbol'].'</td>';
             $html_table1 .='<td class="td_custom table_1_code" align="left" id="table_1_code_'.$rs['id'].'">'.$rs['code'].'</td>';
             $html_table1 .='<td class="td_custom table_1_cur" align="left" id="table_1_cur_'.$rs['id'].'">'.$rs['cur'].'</td>';
+            $html_table1 .='<td class="td_custom table_1_size" align="left" id="table_1_size_'.$rs['id'].'">'.$rs['size'].'</td>';
 
             $html_table1 .='<td class="td_custom" align="right"><span id="table_1_last_'.$rs['id'].'" class="bg_color_grey table_1_last">'.$rs["last"].'</span></td>';
             $html_table1 .='<td class="td_custom" align="right"><span id="table_1_change_'.$rs['id'].'" class="table_1_change '.(($rs['change'] < 0)?'bg_color_red':'bg_color_green').'">'.$rs["change"].'</span></td>';

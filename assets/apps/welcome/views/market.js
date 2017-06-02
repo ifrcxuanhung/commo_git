@@ -134,6 +134,7 @@ define([
                             html +='<td class="td_custom table_1_symbol" align="left" id="table_1_symbol_'+value.id+'">'+valuesymbol+'</td>';
                             html +='<td class="td_custom table_1_code" align="left" id="table_1_code_'+value.id+'">'+value.code+'</td>';
                             html +='<td class="td_custom table_1_cur" align="left" id="table_1_cur_'+value.id+'">'+valuecur+'</td>';
+                            html +='<td class="td_custom table_1_size" align="left" id="table_1_size_'+value.id+'">'+value.size+'</td>';
                             html +='<td class="td_custom" align="right"><span id="table_1_last_'+value.id+'" class="bg_color_grey table_1_last">'+value.last+'</span></td>';
                             html +='<td class="td_custom" align="right"><span id="table_1_change_'+value.id+'" class="'+color+'" >'+value.change+'</td>';
                             html +='<td class="td_custom" align="right"><span id="table_1_var_'+value.id+'" class="'+color+'" >'+value.var+'</td>';
@@ -199,6 +200,7 @@ define([
                             html +='<td class="td_custom table_1_symbol" align="left" id="table_1_symbol_'+value.id+'">'+valuesymbol+'</td>';
                             html +='<td class="td_custom table_1_code" align="left" id="table_1_code_'+value.id+'">'+value.code+'</td>';
                             html +='<td class="td_custom table_1_cur" align="left" id="table_1_cur_'+value.id+'">'+valuecur+'</td>';
+                            html +='<td class="td_custom table_1_size" align="left" id="table_1_size_'+value.id+'">'+value.size+'</td>';
                             html +='<td class="td_custom" align="right"><span id="table_1_last_'+value.id+'" class="bg_color_grey table_1_last">'+value.last+'</span></td>';
                             html +='<td class="td_custom" align="right"><span id="table_1_change_'+value.id+'" class="'+color+'" >'+value.change+'</td>';
                             html +='<td class="td_custom" align="right"><span id="table_1_var_'+value.id+'" class="'+color+'" >'+value.var+'</td>';
@@ -266,6 +268,7 @@ define([
                             html +='<td class="td_custom table_1_symbol" align="left" id="table_1_symbol_'+value.id+'">'+valuesymbol+'</td>';
                             html +='<td class="td_custom table_1_code" align="left" id="table_1_code_'+value.id+'">'+value.code+'</td>';
                             html +='<td class="td_custom table_1_cur" align="left" id="table_1_cur_'+value.id+'">'+valuecur+'</td>';
+                            html +='<td class="td_custom table_1_size" align="left" id="table_1_size_'+value.id+'">'+value.size+'</td>';
                             html +='<td class="td_custom" align="right"><span id="table_1_last_'+value.id+'" class="bg_color_grey table_1_last">'+value.last+'</span></td>';
                             html +='<td class="td_custom" align="right"><span id="table_1_change_'+value.id+'" class="'+color+'" >'+value.change+'</td>';
                             html +='<td class="td_custom" align="right"><span id="table_1_var_'+value.id+'" class="'+color+'" >'+value.var+'</td>';
@@ -335,6 +338,7 @@ define([
                                        html +='<td class="td_custom table_1_symbol" align="left" id="table_1_symbol_'+value.id+'">'+valuesymbol+'</td>';
                                        html +='<td class="td_custom table_1_code" align="left" id="table_1_code_'+value.id+'">'+value.code+'</td>';
                                        html +='<td class="td_custom table_1_cur" align="left" id="table_1_cur_'+value.id+'">'+valuecur+'</td>';
+                                       html +='<td class="td_custom table_1_size" align="left" id="table_1_size_'+value.id+'">'+value.size+'</td>';
                                        html +='<td class="td_custom" align="right"><span id="table_1_last_'+value.id+'" class="bg_color_grey table_1_last">'+value.last+'</span></td>';
                                        html +='<td class="td_custom" align="right"><span id="table_1_change_'+value.id+'" class="'+color+'" >'+value.change+'</td>';
                                        html +='<td class="td_custom" align="right"><span id="table_1_var_'+value.id+'" class="'+color+'" >'+value.var+'</td>';
@@ -401,6 +405,7 @@ define([
                                        html +='<td class="td_custom table_1_symbol" align="left" id="table_1_symbol_'+value.id+'">'+valuesymbol+'</td>';
                                        html +='<td class="td_custom table_1_code" align="left" id="table_1_code_'+value.id+'">'+value.code+'</td>';
                                        html +='<td class="td_custom table_1_cur" align="left" id="table_1_cur_'+value.id+'">'+valuecur+'</td>';
+                                       html +='<td class="td_custom table_1_size" align="left" id="table_1_size_'+value.id+'">'+value.size+'</td>';
                                        html +='<td class="td_custom" align="right"><span id="table_1_last_'+value.id+'" class="bg_color_grey table_1_last">'+value.last+'</span></td>';
                                        html +='<td class="td_custom" align="right"><span id="table_1_change_'+value.id+'" class="'+color+'" >'+value.change+'</td>';
                                        html +='<td class="td_custom" align="right"><span id="table_1_var_'+value.id+'" class="'+color+'" >'+value.var+'</td>';
