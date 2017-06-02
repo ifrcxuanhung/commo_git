@@ -5,6 +5,7 @@ class Cronjob extends MY_Controller{
     public function __construct() {
         parent::__construct();
 		$this->db3 = $this->load->database('database3', TRUE);
+		$this->db5 = $this->load->database('database5', TRUE);
     }
     
     public function index() {
@@ -15,7 +16,7 @@ class Cronjob extends MY_Controller{
 		$sql_truncate = "truncate data_feed_temp;";
 		$this->db->query($sql_truncate);
 		
-		$data_feeed = $this->db3->select("code,last,name,pclose,change,var,time,date")->get("vdm_underlying_setting")->result_array();
+		$data_feeed = $this->db3->select("code,last,name,pclose,change,var,time,date")->get("data_feed_commo")->result_array();
 		
 		$this->db->insert_batch('data_feed_temp', $data_feeed);
 		
@@ -37,6 +38,108 @@ class Cronjob extends MY_Controller{
 		$this->db->query($sql_update);
 		
 		
+	}
+	public function update_feed_imsrt(){
+		
+
+		$command = "select * from data_feed_commo where table_imsrt!=''";
+
+		$rows = $this->db->query($command)->result_array();
+
+		//echo "<pre>";print_r($rows);exit;
+
+		if (!empty($rows)) {
+
+			foreach ($rows as $item) {
+
+			//    $data[]= $item;
+
+					if($item['table_imsrt']=='idx_specs_rt'){
+
+						$row = $this->db5->query("select * from {$item['table_imsrt']}  where codeint='{$item['codeint']}'")->row_array();
+
+						if($row && isset($row['idx_last']) && !is_null($row['idx_last']) && $row['idx_last'] != 0 && ($row['date'] !='0000-00-00' || $row['time'] !='00:00:00')  ){
+
+							$this->db->query("update data_feed_commo set `last`= {$row['idx_last']}, `time` = '".($row['date'].' '.$row['time'])."' where codeint= '{$item['codeint']}'; ");
+
+							$this->db->query("UPDATE data_feed_commo set `var` = 100*((last-pclose)/pclose) Where codeint='{$item['codeint']}';"); 
+
+							$this->db->query("UPDATE data_feed_commo set `change` = (last-pclose) Where codeint='{$item['codeint']}';"); 
+
+						}
+
+					}
+
+					else if($item['table_imsrt']=='stk_prices_rt'){
+
+						$row = $this->db5->query("select * from {$item['table_imsrt']}  where codeint='{$item['codeint']}'")->row_array();
+
+						if($row && isset($row['stk_last']) && !is_null($row['stk_last']) && $row['stk_last'] != 0 && ($row['date'] !='0000-00-00' || $row['time'] !='00:00:00')){
+
+							$this->db->query("update data_feed_commo set `last`= {$row['stk_last']} , `time` = '".($row['date'].' '.$row['time'])."' where codeint= '{$item['codeint']}'; ");
+
+							$this->db->query("UPDATE data_feed_commo set `var` = 100*((last-pclose)/pclose) Where codeint='{$item['codeint']}';"); 
+
+							$this->db->query("UPDATE data_feed_commo set `change` = (last-pclose) Where codeint='{$item['codeint']}';");
+
+						}
+
+					}
+
+					else if($item['table_imsrt']=='ind_feed_rt'){
+
+						$row = $this->db5->query("select * from {$item['table_imsrt']}  where code='{$item['codeint']}'")->row_array();
+						//echo "<pre>";print_r($row);exit; 
+
+						if($row && isset($row['last']) && !is_null($row['last']) && $row['last'] !=0 && ($row['date'] !='0000-00-00' || $row['time'] !='00:00:00')){
+
+							$this->db->query("update data_feed_commo set `last`= {$row['last']} , `time` = '".($row['date'].' '.$row['time'])."' where codeint= '{$item['codeint']}'; ");
+
+							$this->db->query("UPDATE data_feed_commo set `var` = 100*((last-pclose)/pclose) Where codeint='{$item['codeint']}';"); 
+
+							$this->db->query("UPDATE data_feed_commo set `change` = (last-pclose) Where codeint='{$item['codeint']}';");
+						}
+
+					}
+
+					else if(($item['table_imsrt']=='cmd_feed_rt') || ($item['table_imsrt']=='bnd_feed_rt')){
+
+						$row = $this->db5->query("select * from {$item['table_imsrt']}  where code='{$item['codeint']}'")->row_array();
+
+						if($row  && isset($row['last']) && !is_null($row['last']) && $row['last'] !=0 && ($row['date'] !='0000-00-00' || $row['time'] !='00:00:00')){
+
+							$this->db->query("update data_feed_commo set `last`= {$row['last']} , `pclose`= {$row['pclose']}, `time` = '".($row['date'].' '.$row['time'])."' where codeint= '{$item['codeint']}'; ");
+
+							$this->db->query("UPDATE data_feed_commo set `var` = 100*((last-pclose)/pclose) Where codeint='{$item['codeint']}';"); 
+
+							$this->db->query("UPDATE data_feed_commo set `change` = (last-pclose) Where codeint='{$item['codeint']}';");
+
+						}
+
+					}
+
+					else if($item['table_imsrt']=='cur_feed_rt'){
+
+						$row = $this->db5->query("select * from {$item['table_imsrt']}  where code='{$item['codeint']}'")->row_array();
+
+						if($row && isset($row['last']) && !is_null($row['last'])  && $row['last'] !=0 && ($row['date'] !='0000-00-00' || $row['time'] !='00:00:00') ){
+
+							$this->db->query("update data_feed_commo set `last`= {$row['last']} , `time` = '".($row['date'].' '.$row['time'])."' where codeint= '{$item['codeint']}'; ");
+
+							$this->db->query("UPDATE data_feed_commo set `var` = 100*((last-pclose)/pclose) Where codeint='{$item['codeint']}';"); 
+
+							$this->db->query("UPDATE data_feed_commo set `change` = (last-pclose) Where codeint='{$item['codeint']}';");
+						}
+
+					}
+
+			}
+
+		}
+
+    
+
+	
 	}
 	 function runQuery(){
         
