@@ -20,7 +20,7 @@
                             <th class="th_custom" style="text-align:left" ><h6 class="color_h6 cus_type"  style="padding: 5px !important;">MARKET</h6>  </th>
                             <th class="th_custom" style="text-align:left" ><h6 class="color_h6 cus_type"  style="padding: 5px !important;">SYMBOL</h6>  </th>
                             <th class="th_custom" style="text-align:left" ><h6 class="color_h6 cus_type"  style="padding: 5px !important;">Code</h6>  </th>
-                            <th class="th_custom" style="text-align:right> <h6 class="color_h6 cus_type" style="padding:5px !important;">Last</h6> </th>
+                            <th class="th_custom" style="text-align:left" ><h6 class="color_h6 cus_type"  style="padding: 5px !important;">Last</h6>  </th>
                             <th class="th_custom" style="text-align:right"> <h6 class="color_h6 cus_type" style="padding:5px !important;">Change</h6> </th>
                             <th class="th_custom" style="text-align:right"> <h6 class="color_h6 cus_type" style="padding:5px !important;">%</h6> </th>
                             <th class="th_custom" style="text-align:right"> <h6 class="color_h6 cus_type" style="padding:5px !important;">Volume</h6> </th>
