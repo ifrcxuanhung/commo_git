@@ -137,7 +137,10 @@ class Cronjob extends MY_Controller{
 
 		}
 
-    
+    //update dashboard_list
+		$sql_update ="update data_dashboard_list as a INNER JOIN data_feed_commo as b ON a.`code`=b.`codeefrc` 
+		set a.last=b.`last`, a.change=b.change, a.`var`=b.`var`,a.`lasttime`=b.`time`, a.date=b.date; ";
+		$this->db->query($sql_update);
 
 	
 	}
