@@ -363,6 +363,8 @@ class Block extends MY_Controller {
 
 
         $sql = "SELECT * FROM data_dashboard_list WHERE mother = (SELECT symbol FROM data_dashboard_list WHERE bctcode = '$bctcode');";
+
+        
         $result = $this->db->query($sql)->result_array();
         $this->data->num_rows = $this->db->query($sql)->num_rows();
         $html_table2 = '';

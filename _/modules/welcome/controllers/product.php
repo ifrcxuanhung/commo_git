@@ -42,7 +42,6 @@ class Product extends Welcome{
 		$this->template->render();
     }
     public function quote($bctcode='ZC'){
-
         $data_dashboard_list = $this->db->query("SELECT * FROM data_dashboard_list WHERE mother = (SELECT symbol FROM data_dashboard_list WHERE bctcode = '$bctcode');")->result_array();
 
         $block = new Block();
