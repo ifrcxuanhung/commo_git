@@ -992,6 +992,15 @@ class Block extends MY_Controller {
         
         return $this->load->view('block/table_answer_questions', $this->data, true);
     }
+	public function table_article_services()
+    {
+		
+        $sql_faq="select * from simul_article where clean_cat = 'services' order by `clean_order` asc;";
+        $this->data->services = $this->db->query($sql_faq)->result_array();
+		
+        
+        return $this->load->view('block/table_article_services', $this->data, true);
+    }
 	
     
 }

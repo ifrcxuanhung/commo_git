@@ -33,6 +33,8 @@ define([
                 'research/*path': 'researchAction',
                 'help': 'helpAction',
                 'help/*path': 'helpAction',
+				'services': 'servicesAction',
+                'services/*path': 'servicesAction',
 				'news': 'newsAction',
                 'news/*path': 'newsAction',
                 '*actions': 'defaultAction'
@@ -113,6 +115,11 @@ define([
 			newsAction: function(){
                 require(['views/news'], function(newsView){
                     newsView.render();
+                });
+            },
+			servicesAction: function(){
+                require(['views/services'], function(servicesView){
+                    servicesView.render();
                 });
             },
             defaultAction: function(actions) {
