@@ -86,9 +86,11 @@
                         </thead>
                          <tbody id="dashboard_list_1"><?php echo $d2_box_category1 ?></tbody>
                     </table>
+
                 </div>
             </div>
         </div>
     </div>
 
 </div>
+<input type="hidden" id="getfilter" param="<?php echo $param;?>">

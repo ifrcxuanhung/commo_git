@@ -2968,6 +2968,7 @@ WHERE ds.symbol='$symbol' and dl.active = 1  and ds.expyyyymm!=0 ORDER BY ds.exp
             $sql = "SELECT * FROM data_dashboard_list where active = 1  ORDER BY name ASC";
             $result = $this->db->query($sql)->result_array();
         }else{
+
             if($category != 'all'){
                 $where .= " AND type = '$category'";
             }

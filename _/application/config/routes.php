@@ -50,6 +50,7 @@ $route['news'] = "welcome/news/index";
 
 $route['module/(:any)'] = "welcome/module/index/$1";
 $route['table/(:any)'] = "welcome/table/index/$1";
+$route['market/(:any)'] = "welcome/market/index/$1";
 $route['category/(:any)'] = "welcome/category/index/$1";
 $route['product/(:any)/(:any)'] = "welcome/product/index/$1/$2";
 $route['product/quote'] = "welcome/product/quote";

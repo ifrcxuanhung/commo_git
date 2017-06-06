@@ -58,7 +58,7 @@
         </div>
         <div class="portlet-body background_portlet format-input">
             <div class="table-responsive setting_cus">
-                <div style="margin-bottom:55px;">
+                <!--<div style="margin-bottom:55px;">
                     <div class="col-md-6">
                         <div class="form-group">
                             <label class="col-md-4 control-label text_color_cus">StartDate:</label>
@@ -75,7 +75,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>-->
                 <div class="col-md-6">
                     <div class="form-group">
                         <label class="col-md-4 control-label text_color_cus">Line 1:</label>

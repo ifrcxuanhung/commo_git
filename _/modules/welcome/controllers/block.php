@@ -543,7 +543,7 @@ class Block extends MY_Controller {
         return $this->load->view('block/col3_category', $this->data, true);
     }
 
-    public function col1_market($type)
+    public function col1_market($param,$type)
     {
 
         $sql = "SELECT * FROM data_dashboard_list where active = 1  ORDER BY name ASC";
@@ -608,6 +608,7 @@ class Block extends MY_Controller {
 
         }
         $this->data->d2_box_category1 = $html_table1;
+        $this->data->param = $param;
 
         $this->data->data_dashboard = $this->db->query("SELECT * FROM data_dashboard WHERE type = '$type'")->result_array();
         $this->data->type = $type;
