@@ -138,7 +138,7 @@ class Welcome extends MY_Controller {
         //echo "<pre>";print_r($menu_main);exit;
 		$sql ="select active  From simul_settings Where `type` ='menu' and (`url` like '%".$this->router->fetch_class()."%' ) limit 1";
 	    $menu_active = $this->db->query($sql)->row_array();
-		if(isset($menu_active["active"]) && $menu_active["active"] <=  $this->session->userdata('user_level')) {
+		if(isset($menu_active["level"]) && $menu_active["level"] <=  $this->session->userdata('user_level')) {
 			$this->data->permistion_menu = TRUE;
 		}
 		else 
