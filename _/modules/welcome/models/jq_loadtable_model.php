@@ -17,6 +17,9 @@ class Jq_loadtable_model extends CI_Model{
 		
 		$array_get = array();
 		$where = "where 1=1";
+		if($jq_table == 'simul_settings'){
+            $where .=" AND active = 1 ";
+        }
 		$sql_count = "SELECT COUNT(*) AS count FROM $jq_table $where "; 
 		//count filter
 	
