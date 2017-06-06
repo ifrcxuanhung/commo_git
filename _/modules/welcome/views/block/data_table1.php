@@ -4,7 +4,7 @@
             <i class="fa"></i>
              <?php echo $type['type'].' ('.$num_rows.')';?></div>
         <div class="link_category">
-         <a href="<?php echo base_url();?>category/<?php echo $type['type'];?>" class="btn btn-sm red-thunderbird"> Category </a>
+         <a href="<?php echo base_url();?>market/<?php echo $type['type'];?>" class="btn btn-sm red-thunderbird"> Category </a>
         </div>
         <div class="tools">
 
