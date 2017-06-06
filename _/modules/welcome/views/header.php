@@ -240,7 +240,7 @@ h1, h2, h3, h4, h5, h6{
                                         foreach($childs as $child){
                                             ?>
                                             <li>
-                                                <a href="<?php echo $child['url'];?>">
+                                                <a href="<?php echo base_url()?><?php echo $child['url'];?>">
                                                     <?php if(isset($child['icon'])&&$child['icon']!=''){?>
                                                         <i class="<?php echo $child['icon'];?>"></i>
                                                     <?php } ?>
