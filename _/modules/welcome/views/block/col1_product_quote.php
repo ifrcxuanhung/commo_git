@@ -60,7 +60,7 @@
         </div>
         <div class="portlet-body background_portlet">
             <div class="portlet-body background_portlet" style="margin-top:10px;">
-                <div class="table-responsive text_scroll scroll-3d" style="height:250px;">
+                <div class="table-responsive text_scroll scroll-3d" style="height:210px;">
                     <table class="table  table-bordered table-hover table_color table_cus table_fix_padding">
                         <thead>
                         <tr>
@@ -97,7 +97,7 @@
         </div>
         <div class="portlet-body background_portlet">
             <div class="portlet-body background_portlet" style="margin-top:10px;">
-                <div class="table-responsive text_scroll scroll-3d" style="height:250px;">
+                <div class="table-responsive text_scroll scroll-3d" style="height:210px;">
                     <table class="table  table-bordered table-hover table_color table_cus table_fix_padding">
                         <thead>
                         <tr>
