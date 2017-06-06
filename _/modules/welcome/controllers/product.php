@@ -23,6 +23,7 @@ class Product extends Welcome{
 					$this->template->write_view('content', 'product', $this->data);
 				}
 			}
+
 			else {
 				$data_dashboard_list = $this->db->query("SELECT * FROM data_dashboard_list WHERE code = '$bctcode'")->result_array();
 				if(isset($data_dashboard_list) && count($data_dashboard_list) < 1 ) {
