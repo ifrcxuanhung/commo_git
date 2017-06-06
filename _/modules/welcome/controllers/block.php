@@ -326,6 +326,7 @@ class Block extends MY_Controller {
     public function col1_product($bctcode)
     {
 		$sql = "SELECT dsl.*,ddl.dec FROM data_series_last as dsl  RIGHT JOIN data_dashboard_list as ddl ON dsl.symbol=ddl.bctcode where dsl.symbol = '{$bctcode}' and mon<>'Cash' and ddl.active = 1";
+
 		$result = $this->db->query($sql)->result_array();
 
         $date_current = date('Y-m-d');

@@ -233,7 +233,7 @@ $template_url = template_url();
     <script type="text/ecmascript" src="<?php echo $template_url; ?>global/test/src/js/jquery-ui.min.js"></script>
     <!--end js JQGRID-->
 
-   <!-- <script data-main="<?php /*echo base_url(); */?>assets/apps/welcome/main" src="<?php /*echo base_url(); */?>assets/bundles/require.js"></script>-->
+    <script data-main="<?php echo base_url(); ?>assets/apps/welcome/main" src="<?php echo base_url(); ?>assets/bundles/require.js"></script>
     <!--BEGIN AMCHART-->
     <script src="<?php echo $template_url; ?>global/plugins/amcharts/amcharts/amcharts.js" type="text/javascript"></script>
     <script src="<?php echo $template_url; ?>global/plugins/amcharts/amcharts/serial.js" type="text/javascript"></script>
