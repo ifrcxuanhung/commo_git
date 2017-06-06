@@ -121,7 +121,7 @@ class Welcome extends MY_Controller {
 		
 
 
-		$simul_settings = $this->db->order_by('order')->get('simul_settings')->result_array();
+		$simul_settings = $this->db->where('active = 1')->order_by('order')->get('simul_settings')->result_array();
 
 		$menu_main = array();
         $check_exists_cat = array();
