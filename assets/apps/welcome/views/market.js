@@ -9,8 +9,8 @@ define([
                 $(document).bind('.input_name', this.on_keypress);
                 if($("#getfilter").attr('param') != ''){
                     this.paramfilter();
-                    this.paramfiltergetSelect();
                 }
+                this.paramfiltergetSelect();
 
             },
             events: {
