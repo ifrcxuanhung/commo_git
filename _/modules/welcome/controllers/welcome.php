@@ -127,7 +127,7 @@ class Welcome extends MY_Controller {
         $check_exists_cat = array();
 		foreach($simul_settings as $simul){
 			$arr_simul[$simul['type']][$simul['stype']][] = $simul;
-			if(($simul['type']=='menu') && ($simul['stype']=='main' ) && ( $simul['active'] <=  $this->session->userdata('user_level')))
+			if(($simul['type']=='menu') && ($simul['stype']=='main' ) && ( $simul['level'] <=  $this->session->userdata('user_level')))
 			$menu_main[] = $simul;
             $check_exists_cat[] = $simul['url'];
 		}
