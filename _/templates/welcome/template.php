@@ -96,7 +96,7 @@ $template_url = template_url();
 	 <div class="page-container main-container" style="margin:0px;">
          <?php echo $header; ?>
 	    <div class="container-fluid main-container "
-             <?php if( ($this->router->fetch_class() == 'category' && $this->uri->segment(3) == '') || $this->router->fetch_class() == 'research'){ echo 'style="margin-top: 50px;"'; }?> >
+             <?php if( ($this->router->fetch_class() == 'category' && $this->uri->segment(3) == '') || $this->router->fetch_class() == 'research' || $this->router->fetch_class() == 'product'){ echo 'style="margin-top: 50px;"'; }?> >
         
         	<!-- <div class="loader"></div>-->
             <div class="loader_spot_1" style="display:none;"></div>
@@ -226,18 +226,14 @@ $template_url = template_url();
     <script src="<?php echo $template_url; ?>global/plugins/bootbox/bootbox.min.js" type="text/javascript"></script>
     <script type="text/ecmascript" src="<?php echo $template_url; ?>global/scripts/jquery.mCustomScrollbar.concat.min.js"></script>
     <script type="text/ecmascript" src="<?php echo $template_url; ?>global/scripts/jquery.number.min.js"></script>
-
     <!--js JQGRID-->
     <script type="text/ecmascript" src="<?php echo $template_url; ?>global/test/src/i18n/grid.locale-en.js"></script>
     <!-- This is the Javascript file of jqGrid -->
     <script type="text/ecmascript" src="<?php echo $template_url; ?>global/test/js/jquery.jqGrid.min.js"></script>
     <script type="text/ecmascript" src="<?php echo $template_url; ?>global/test/src/js/jquery-ui.min.js"></script>
-
-
-
     <!--end js JQGRID-->
 
-    <script data-main="<?php echo base_url(); ?>assets/apps/welcome/main" src="<?php echo base_url(); ?>assets/bundles/require.js"></script>
+   <!-- <script data-main="<?php /*echo base_url(); */?>assets/apps/welcome/main" src="<?php /*echo base_url(); */?>assets/bundles/require.js"></script>-->
     <!--BEGIN AMCHART-->
     <script src="<?php echo $template_url; ?>global/plugins/amcharts/amcharts/amcharts.js" type="text/javascript"></script>
     <script src="<?php echo $template_url; ?>global/plugins/amcharts/amcharts/serial.js" type="text/javascript"></script>

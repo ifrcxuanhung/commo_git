@@ -265,5 +265,5 @@ define([
                 }
             }
         });
-    return new marketView;
+        return new marketView;
 });
