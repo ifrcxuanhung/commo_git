@@ -7,6 +7,7 @@ class Product extends Welcome{
     }
     
     public function index($type='futures', $bctcode='ZC') {
+
 		if($this->data->permistion_menu) {
 			$this->data->type_product = $type;
 			if($type=='futures') {
@@ -39,6 +40,17 @@ class Product extends Welcome{
 			$this->template->write_view('content', 'not_permistion', $this->data);
 		}
 		$this->template->render();
+    }
+    public function quote($bctcode='ZC'){
+
+        $data_dashboard_list = $this->db->query("SELECT * FROM data_dashboard_list WHERE mother = (SELECT symbol FROM data_dashboard_list WHERE bctcode = '$bctcode');")->result_array();
+
+        $block = new Block();
+        $this->data->col1_product_quote = $block->col1_product_quote($bctcode);
+        $this->data->col3_product_quote = $block->col3_product_quote($bctcode);
+        $this->data->bctcode = $bctcode;
+        $this->template->write_view('content', 'product_quote', $this->data);
+        $this->template->render();
     }
 
 

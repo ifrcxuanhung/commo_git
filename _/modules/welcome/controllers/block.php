@@ -321,6 +321,108 @@ class Block extends MY_Controller {
         return $this->load->view('block/data_table4', $this->data, true);
     }
 
+    public function col1_product_quote($bctcode)
+    {
+        // table 1
+        $sql = "SELECT dsl.*,ddl.dec FROM data_series_last as dsl  RIGHT JOIN data_dashboard_list as ddl ON dsl.symbol=ddl.bctcode where dsl.symbol = '{$bctcode}' and mon<>'Cash' and ddl.active = 1";
+
+        $result = $this->db->query($sql)->result_array();
+
+        $date_current = date('Y-m-d');
+        $html_table1 = '';
+        foreach($result as $rs){
+            if($date_current == date("Y-m-d",strtotime($rs['date']))){
+                $date_data = date("H:i:s",strtotime($rs['date']));
+            }else{
+                $date_data = date("Y-m-d",strtotime($rs['date']));
+            }
+            $rs['code'] = (($rs['code'] == null)?'': $rs['code']);
+            $rs["date"] = (($rs['date'] == null)?'-': $rs['date']);
+            $rs["change"] = ($rs['change'] == null)?'-': number_format((float)$rs['change'], 2, '.', ',');
+            $rs["var"] = ($rs['var'] == null)?'-': number_format((float)$rs['var'], 2, '.', ',');
+            $rs['volume'] = (($rs['volume'] == null)?'': number_format((float)$rs['volume'], 0, '.', ','));
+            $rs["openinterest"] = ($rs['openinterest'] == null)?'-':number_format((float)$rs['openinterest'], 0, '.', ',');
+            $rs["pclose"] = ($rs['pclose'] == null)?'-':number_format((float)$rs['pclose'], 2, '.', ',');
+            $rs["mon"] = (($rs['mon'] == null)?'': $rs['mon']);
+
+            $html_table1 .='<tr>';
+            $html_table1 .='<td class="td_custom table_1_code" align="left" id="table_1_code_'.$rs['id'].'">'.$rs['code'].'</td>';
+            $html_table1 .='<td class="td_custom table_1_date" align="left" id="table_1_date_'.$rs['id'].'">'.$date_data.'</td>';
+            $html_table1 .='<td class="td_custom" align="right"><span id="table_1_last_'.$rs['id'].'" class="bg_color_grey table_1_last">'.number_format((float)$rs['last'], $rs['dec'], '.', ',').'</span></td>';
+            $html_table1 .='<td class="td_custom" align="right"><span id="table_1_change_'.$rs['id'].'" class="table_1_change '.(($rs['change'] < 0)?'bg_color_red':'bg_color_green').'">'.$rs["change"].'</span></td>';
+            $html_table1 .='<td class="td_custom" align="right"><span id="table_1_var_'.$rs['id'].'" class="table_1_var '.(($rs['var'] < 0)?'bg_color_red':'bg_color_green').'">'.$rs["var"].'</span></td>';
+            $html_table1 .='<td class="td_custom table_1_volume" align="right" id="table_1_volume_'.$rs['id'].'">'.$rs['volume'].'</td>';
+            $html_table1 .='<td class="td_custom table_1_openinterest" align="right" id="table_1_openinterest_'.$rs['id'].'">'.$rs["openinterest"].'</td>';
+            $html_table1 .='<td class="td_custom table_1_pclose" align="right" id="table_1_pclose_'.$rs['id'].'">'.$rs["pclose"].'</td>';
+            $html_table1 .='<td class="td_custom table_1_mon" align="right" id="table_1_mon_'.$rs['id'].'">'.$rs["mon"].'</td></tr>';
+        }
+        $this->data->d2_box_category1 = $html_table1;
+
+        // table 2
+
+
+
+        $sql = "SELECT * FROM data_dashboard_list WHERE mother = (SELECT symbol FROM data_dashboard_list WHERE bctcode = '$bctcode');";
+        $result = $this->db->query($sql)->result_array();
+        $this->data->num_rows = $this->db->query($sql)->num_rows();
+        $html_table2 = '';
+        foreach($result as $rs) {
+            $rs['exchange'] = (($rs['exchange'] == null) ? '' : $rs['exchange']);
+            if (isset($rs['lasttime']) && !is_null($rs['lasttime']) && date('Y-m-d', strtotime($rs['lasttime'])) < date('Y-m-d')) {
+                $rs["time_format"] = date('Y-m-d', strtotime($rs['lasttime']));
+
+            } else if (isset($rs['lasttime']) && !is_null($rs['lasttime'])) {
+                $rs["time_format"] = date('H:i', strtotime($rs['lasttime']));
+            } else {
+                $rs["time_format"] = '-';
+            }
+            if(($rs['exchange']!='SPOT')&& (!is_null($rs["bctcode"]) && $rs["bctcode"] != '')) {
+
+                $link_product = base_url() . 'product/futures/' . $rs["bctcode"];
+            }
+            else if (($rs['exchange']=='SPOT') && (!is_null($rs["code"]) && $rs["code"] !='')) {
+                $link_product = base_url() . 'product/spot/' . $rs["code"];
+            }
+            else {
+                $link_product = '';
+            }
+
+
+            $rs["last"] = ($rs['last'] == null) ? '-' : number_format((float)$rs['last'], $rs['dec'], '.', ',');
+            /*$rs["change"] = ($rs['change'] == null)?'-': number_format((float)$rs['change'], 2, '.', ',');*/
+            $rs["openinterest"] = ($rs['openinterest'] == null) ? '-' : number_format((float)$rs['openinterest'], 0, '.', ',');
+            $rs["settlement"] = ($rs['settlement'] == null) ? '-' : number_format((float)$rs['settlement'], $rs['dec'], '.', ',');
+            $rs["var"] = ($rs['var'] == null) ? '-' : number_format((float)$rs['var'], 2, '.', ',');
+            $rs['volume'] = (($rs['volume'] == null) ? '' : number_format((float)$rs['volume'], 0, '.', ','));
+            $rs['code'] = (($rs['code'] == null) ? '' : $rs['code']);
+            $data_table1[$rs["id"]] = $rs;
+            $html_table2 .= '<tr>';
+            if ($link_product != '') {
+                $html_table2 .= '<td class="td_custom cus_pri futures_contracts_name" align="left" width="25%"><a href="' . $link_product . '" class="uppercase table_1_name" id="table_1_name_' . $rs['id'] . '">' . $rs['name'] . '</a></td>';
+            }else{
+                $html_table2 .= '<td class="td_custom cus_pri futures_contracts_name" align="left" width="25%">' . $rs['name'] . '</td>';
+            }
+
+            $html_table2 .='<td class="td_custom table_1_exchange" align="left" id="table_1_exchange_'.$rs['id'].'">'.$rs['exchange'].'</td>';
+            /*$html_table2 .='<td class="td_custom table_1_expiry" align="left" id="table_1_expiry_'.$rs['id'].'">'.$rs['expiry'].'</td>';*/
+            $html_table2 .='<td class="td_custom table_1_code" align="left" id="table_1_code_'.$rs['id'].'">'.$rs['code'].'</td>';
+
+            $html_table2 .='<td class="td_custom" align="right"><span id="table_1_last_'.$rs['id'].'" class="bg_color_grey table_1_last">'.$rs["last"].'</span></td>';
+            /*$html_table2 .='<td class="td_custom" align="right"><span id="table_1_change_'.$rs['id'].'" class="table_1_change '.(($rs['change'] < 0)?'bg_color_red':'bg_color_green').'">'.$rs["change"].'</span></td>';*/
+            $html_table2 .='<td class="td_custom" align="right"><span id="table_1_var_'.$rs['id'].'" class="table_1_var '.(($rs['var'] < 0)?'bg_color_red':'bg_color_green').'">'.$rs["var"].'</span></td>';
+            $html_table2 .='<td class="td_custom table_1_volume" align="right" id="table_1_volume_'.$rs['id'].'">'.$rs['volume'].'</td>';
+            $html_table2 .='<td class="td_custom table_1_openinterest" align="right" id="table_1_openinterest_'.$rs['id'].'">'.$rs["openinterest"].'</td>';
+            /*$html_table2 .='<td class="td_custom table_1_settlement" align="right" id="table_1_settlement_'.$rs['id'].'">'.$rs["settlement"].'</td>';*/
+            $html_table2 .='<td class="td_custom table_1_lasttime" align="right" id="table_1_lasttime_'.$rs['id'].'">'.$rs["time_format"].'</td></tr>';
+
+        }
+        $this->data->d2_box_category2 = $html_table2;
+
+        $this->data->data_dashboard = $this->db->query("SELECT dl.lasttime,dl.name,dl.ptype, dl.unit, dl.lasttime, dl.last, dl.`change`, dl.var, dl.`dec` as dec_list, dl.exchange, dl.expiry, dd.* FROM data_dashboard_list as dl  LEFT JOIN data_dashboard as dd ON dl.type=dd.type where dl.bctcode='{$bctcode}'")->result_array();
+
+        return $this->load->view('block/col1_product_quote', $this->data, true);
+    }
+
 
 
     public function col1_product($bctcode)
@@ -685,6 +787,33 @@ class Block extends MY_Controller {
 		$this->data->chart_history=  $this->db->query("SELECT code, date, close FROM data_history_chart as dhc WHERE dhc.code= '$code'")->result_array();
 
         return $this->load->view('block/col3_product', $this->data, true);
+    }
+
+    public function col3_product_quote($bctcode)
+    {
+        $sql = "SELECT * FROM data_news";
+        $this->data->news = $this->db->query($sql)->result_array();
+        $this->data->bctcode = $bctcode;
+        $this->data->data_dashboard = $this->db->query("SELECT dl.lasttime,dl.name,dl.unit, dl.lasttime, dl.last, dl.`change`, dl.var, dl.`dec` as dec_list, dl.exchange, dl.expiry, dd.* FROM data_dashboard_list as dl  LEFT JOIN data_dashboard as dd ON dl.type=dd.type where dl.bctcode='{$bctcode}'")->result_array();
+
+
+        $sql = "SELECT dsl.*,ddl.dec FROM data_series_last as dsl  RIGHT JOIN data_dashboard_list as ddl ON dsl.symbol=ddl.bctcode where dsl.symbol = '{$bctcode}' and mon<>'Cash' ORDER BY dsl.expyyyymm ASC limit 1";
+
+        $data = $this->db->query($sql)->row_array();
+        $this->data->code_first = $data;
+        /*$this->data->code_first = '';
+        foreach($data as $da){
+            if($da['openinterest'] != 0){
+                $this->data->code_first = $da;
+                break;
+            }
+        }*/
+        $code  = (isset($data['code']))?$data['code']:'';
+
+        $this->data->chart_intraday=  $this->db->query("SELECT code, datetime as date, last as close FROM data_intraday as di WHERE code= '$code'")->result_array();
+        $this->data->chart_history=  $this->db->query("SELECT code, date, close FROM data_history_chart as dhc WHERE dhc.code= '$code'")->result_array();
+
+        return $this->load->view('block/col3_product_quote', $this->data, true);
     }
 
     public function news_left()
