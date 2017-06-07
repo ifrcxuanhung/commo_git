@@ -53,6 +53,7 @@ $route['table/(:any)'] = "welcome/table/index/$1";
 $route['market/(:any)'] = "welcome/market/index/$1";
 $route['category/(:any)'] = "welcome/category/index/$1";
 
+
 /*$route['product/(:any)/(:any)'] = "welcome/product/index/$1/$2";*/
 $route['product/spot/(:any)'] = "welcome/product/spot/$1";
 $route['product/futures/quote/(:any)'] = "welcome/product/quote/$1";
