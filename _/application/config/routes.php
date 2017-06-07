@@ -55,6 +55,7 @@ $route['category/(:any)'] = "welcome/category/index/$1";
 /*$route['product/(:any)/(:any)'] = "welcome/product/index/$1/$2";*/
 $route['product/spot/(:any)'] = "welcome/product/spot/$1";
 $route['product/futures/quote/(:any)'] = "welcome/product/quote/$1";
+$route['product/futures'] = "welcome/product/index";
 $route['vnxindex/(:any)'] = "welcome/vnxindex/index/$1";  
 $route['portfolio/(:any)'] = "welcome/portfolio/index/$1";
 $route['cleanarticle'] = "welcome/cleanarticle";
