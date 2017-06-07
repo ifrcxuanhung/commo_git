@@ -130,27 +130,27 @@ class Ajax extends Welcome{
     public function jq_loadtable(){
 		//echo "<pre>";print_r($_REQUEST);exit;
 		$jq_table = $_REQUEST['jq_table'];
-		$page = $_REQUEST['page']; 
- 
-		// get how many rows we want to have into the grid - rowNum parameter in the grid 
-		$limit = $_REQUEST['rows']; 
+		$page = $_REQUEST['page'];
+
+		// get how many rows we want to have into the grid - rowNum parameter in the grid
+		$limit = $_REQUEST['rows'];
 		$sidx = $_REQUEST['sidx'];
-		$filter_get = array(); 
-		
+		$filter_get = array();
+
 		if(isset($_REQUEST['filter_get_all'])){
 			$filter_get = json_decode($_REQUEST['filter_get_all']);
 		}
 		// get index row - i.e. user click to sort. At first time sortname parameter -
-		// after that the index from colModel 
-		// sorting order - at first time sortorder 
-	
-		if(!$sidx) $sidx =1; 
+		// after that the index from colModel
+		// sorting order - at first time sortorder
+
+		if(!$sidx) $sidx =1;
 		//echo "hung";exit;
 		 $this->load->model('jq_loadtable_model');
 		 $sord = $_REQUEST['sord'];
 
 		$filter = $_REQUEST;
-		
+
 		$result = $this->jq_loadtable_model->getTable($page,$limit,$sord,$sidx,$filter,$filter_get,$jq_table);
 		//var_export($result);exit;
 		echo json_encode($result);

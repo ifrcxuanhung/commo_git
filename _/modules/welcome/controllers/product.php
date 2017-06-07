@@ -42,6 +42,28 @@ class Product extends Welcome{
 		}
 		$this->template->render();
     }
+    public function spot($bctcode='ZC') {
+
+        if($this->data->permistion_menu) {
+            $this->data->type_product = 'spot';
+
+                $data_dashboard_list = $this->db->query("SELECT * FROM data_dashboard_list WHERE code = '$bctcode'")->result_array();
+                if(isset($data_dashboard_list) && count($data_dashboard_list) < 1 ) {
+                    $this->template->write_view('content', 'product_error', $this->data);
+                }else {
+                    $block = new Block();
+                    $this->data->code = $bctcode;
+                    $this->data->data_dashboard = $this->db->query("SELECT dl.lasttime,dl.ptype, dl.name,dl.unit, dl.lasttime, dl.last, dl.`change`, dl.var, dl.`dec` as dec_list, dl.exchange, dl.expiry, dd.* FROM data_dashboard_list as dl  LEFT JOIN data_dashboard as dd ON dl.type=dd.type where dl.code='{$bctcode}'")->result_array();
+                    $this->data->chart_intraday=  $this->db->query("SELECT code, date, last as close FROM data_spot_intraday as di WHERE code= '{$bctcode}'")->result_array();
+                    $this->data->chart_history=  $this->db->query("SELECT  code, date, last as close FROM data_spot_history as dhc WHERE dhc.code= '$bctcode'")->result_array();
+                    $this->template->write_view('content', 'product_spot', $this->data);
+                }
+
+        }else {
+            $this->template->write_view('content', 'not_permistion', $this->data);
+        }
+        $this->template->render();
+    }
     public function quote($bctcode='ZC'){
         $data_dashboard_list = $this->db->query("SELECT * FROM data_dashboard_list WHERE mother = (SELECT symbol FROM data_dashboard_list WHERE bctcode = '$bctcode');")->result_array();
 
